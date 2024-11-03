@@ -1,0 +1,154 @@
+<hurgleburgler>
+
+    <append xpath="/recipes">
+        <!-- ========================================================== -->
+        <!-- ==================== Level 1 Drinks ====================== -->
+        <!-- ========================================================== -->
+
+        <!-- Filthy Joe - Quick, basic coffee with minimal effects -->
+        <recipe name="drinkFilthyJoe" count="5" craft_area="campfire" craft_tool="toolBeaker" craft_time="30">
+            <ingredient name="drinkJarRiverWater" count="5"/>
+            <ingredient name="resourceCropCoffeeBeans" count="2"/>
+        </recipe>
+
+        <!-- Hot Cup of Joe - Standard coffee with cold resistance -->
+        <recipe name="drinkHotCupOfJoe" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="60">
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+            <ingredient name="resourceCropCoffeeBeans" count="1"/>
+        </recipe>
+
+        <!-- Iced Coffee - Standard coffee with heat resistance -->
+        <recipe name="drinkIcedCoffee" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="90">
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+            <ingredient name="resourceCropCoffeeBeans" count="1"/>
+            <ingredient name="resourceSnowBall" count="1"/>
+        </recipe>
+
+        <!-- Wasteland Wheatgrass - Health drink with disease resistance -->
+        <recipe name="drinkWastelandWheatgrass" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="120">
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+            <ingredient name="resourceYuccaFibers" count="5"/>
+            <ingredient name="resourcePaper" count="5"/>
+        </recipe>
+
+        <!-- Cold Brew Coffee - Long brew time, long duration, high stamina regen, heat resistance -->
+        <recipe name="drinkColdBrewCoffee" count="5" craft_area="campfire" craft_tool="toolBeaker" craft_time="1800">
+            <ingredient name="drinkJarBoiledWater" count="5"/>
+            <ingredient name="resourceCropCoffeeBeans" count="5"/>
+            <ingredient name="resourceSnowBall" count="5"/>
+            <ingredient name="resourceCloth" count="5"/>
+        </recipe>
+
+
+        <!-- ========================================================== -->
+        <!-- ==================== Level 2 Drinks ====================== -->
+        <!-- ========================================================== -->
+
+        <!-- Purified Water - Base water for Level 2 drinks, improved health and efficiency -->
+        <recipe name="drinkJarPurifiedWater" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="60">
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+            <ingredient name="resourceCoal" count="1"/>
+        </recipe>
+
+        <!-- Shot of Espresso - Concentrated coffee with high initial burst -->
+        <recipe name="drinkShotOfEspresso" count="2" craft_area="hgBarista_EspressoMachine" craft_tool="meleeToolRepairT1ClawHammer,toolBeaker" craft_time="90">
+            <ingredient name="drinkJarPurifiedWater" count="1"/>
+            <ingredient name="resourceCropCoffeeBeans" count="2"/>
+        </recipe>
+
+        <!-- Americano - Extended espresso with better hydration -->
+        <recipe name="drinkAmericano" count="1" craft_area="hgBarista_EspressoMachine" craft_tool="resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" craft_time="120">
+            <ingredient name="drinkShotOfEspresso" count="2"/>
+            <ingredient name="drinkJarPurifiedWater" count="1"/>
+        </recipe>
+
+        <!-- Black Strap Coffee - Miners' special with gunpowder boost -->
+        <recipe name="drinkBlackStrapCoffee" count="1" craft_area="hgBarista_EspressoMachine" craft_tool="resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" craft_time="180">
+            <ingredient name="drinkJarBoiledWater" count="1"/>
+            <ingredient name="resourceCropCoffeeBeans" count="1"/>
+            <ingredient name="resourceGunPowder" count="5"/>
+        </recipe>
+
+        <!-- Premium Cold Brew - Luxury version with purified water -->
+        <recipe name="drinkPremiumColdBrew" count="5" craft_area="hgBarista_EspressoMachine" craft_tool="resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" craft_time="1800">
+            <ingredient name="drinkJarPurifiedWater" count="5"/>
+            <ingredient name="resourceCropCoffeeBeans" count="5"/>
+            <ingredient name="resourceSnowBall" count="5"/>
+        </recipe>
+
+
+        <!-- ========================================================== -->
+        <!-- ==================== Level 3 Drinks ====================== -->
+        <!-- ========================================================== -->
+
+        <!-- Double Tap - Enhanced espresso with stacking capability -->
+        <recipe name="drinkDoubleTap" count="1" craft_area="hgBarista_EspressoMachine" craft_tool="meleeToolRepairT1ClawHammer,toolBeaker" craft_time="84">
+            <ingredient name="drinkShotOfEspresso" count="2"/>
+        </recipe>
+
+        <!-- Cappuccino - 1 - Classic espresso with canned milk -->
+        <recipe name="drinkCappuccino" count="1" craft_area="hgBarista_EspressoMachine" craft_tool="resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" craft_time="84">
+            <ingredient name="drinkDoubleTap" count="1"/>
+            <ingredient name="foodCanMilk" count="1"/>
+        </recipe>
+
+        <!-- Cappuccino - 2 - Classic espresso with jarred milk -->
+        <recipe name="drinkCappuccino" count="1" craft_area="hgBarista_EspressoMachine" craft_tool="resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" craft_time="84">
+            <ingredient name="drinkDoubleTap" count="1"/>
+            <ingredient name="drinkJarMilk" count="1"/>
+        </recipe>
+
+        <!-- Café Latte - Double espresso with steamed milk (canned) -->
+        <recipe name="drinkCafeLatte" count="1" craft_area="hgBarista_EspressoMachine" craft_tool="resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" craft_time="84">
+            <ingredient name="drinkDoubleTap" count="1"/>
+            <ingredient name="foodCanMilk" count="2"/>
+        </recipe>
+
+        <!-- Café Latte - Double espresso with steamed milk (jarred) -->
+        <recipe name="drinkCafeLatte" count="1" craft_area="hgBarista_EspressoMachine" craft_tool="resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" craft_time="84">
+            <ingredient name="drinkDoubleTap" count="1"/>
+            <ingredient name="drinkJarMilk" count="2"/>
+        </recipe>
+
+        <!-- Café Crème - Espresso with creamer for richness -->
+        <recipe name="drinkCafeCreme" count="1" craft_area="hgBarista_EspressoMachine" craft_tool="resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" craft_time="84">
+            <ingredient name="drinkDoubleTap" count="1"/>
+            <ingredient name="drinkJarCreamer" count="1"/>
+        </recipe>
+
+        <!-- Affogato - Dessert coffee assembled anywhere -->
+        <recipe name="drinkAffogato" count="1" craft_tool="toolBeaker" craft_time="84">
+            <ingredient name="drinkDoubleTap" count="1"/>
+            <ingredient name="drinkJarCreamer" count="2"/>
+            <ingredient name="resourceSnowBall" count="2"/>
+            <ingredient name="foodHoney" count="1"/>
+        </recipe>
+
+
+        <!-- ========================================================== -->
+        <!-- ==================== Level 4 Drinks ====================== -->
+        <!-- ========================================================== -->
+
+        <!-- The Tripwire - Triple shot for maximum effectiveness -->
+        <recipe name="drinkTripwire" count="3" craft_area="hgBarista_EspressoMachine" craft_tool="resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" craft_time="84">
+            <ingredient name="drinkShotOfEspresso" count="3"/>
+        </recipe>
+
+        <!-- Cuppa Spring-Heeled Joe - Combat coffee with enhanced mobility -->
+        <recipe name="drinkSpringHeeledJoe" count="1" craft_area="hgBarista_EspressoMachine" craft_tool="resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" craft_time="84">
+            <ingredient name="drinkTripwire" count="1"/>
+            <ingredient name="drugOhShitzDrops" count="1"/>
+            <ingredient name="resourceSpring" count="1"/>
+        </recipe>
+
+        <!-- Pumpkin-Spiked Latte - Combat coffee for club specialists -->
+        <recipe name="drinkPumpkinSpikeLatte" count="1" craft_area="hgBarista_EspressoMachine" craft_tool="meleeToolRepairT1ClawHammer,toolBeaker" craft_time="84">
+            <ingredient name="drinkTripwire" count="1"/>
+            <ingredient name="drugSkullCrushers" count="1"/>
+            <ingredient name="foodCropPumpkin" count="1"/>
+            <ingredient name="foodCanMilk" count="1"/>
+            <ingredient name="foodHoney" count="1"/>
+        </recipe>
+    </append>
+
+</hurgleburgler>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="Hurgleburgler's Battlefield Barista Mod" />
+		<Description value="The end of the world with caffeine." />
+		<Author value="hurgleburgler"/>
+		<Version value="A20" />
+		<Website value="https://www.none.com/" />
+	</ModInfo>
+</xml>

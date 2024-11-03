@@ -1,0 +1,63 @@
+Key,Source,Context,English
+hgBarista_EspressoMachine,blocks,Container,A Fancy Espresso Machine
+perkBattlefieldBaristaRank1Desc,progression,perk,Coffee Addict
+perkBattlefieldBaristaRank1LongDesc,progression,perk,"The battlefield runs on caffeine, and you can brew a mean cup of joe. Unlock basic coffee recipes to keep you alert in the apocalypse. Craft Coffee and Cold Brew. Brew 10% faster."
+perkBattlefieldBaristaRank2Desc,progression,perk,Espresso Enthusiast
+perkBattlefieldBaristaRank2LongDesc,progression,perk,"You've moved past the basics and into the realm of a quick energy boost. Craft energizing drinks that give you a temporary boost in speed and stamina. Brew 20% faster."
+perkBattlefieldBaristaRank3Desc,progression,perk,Latte Specialist
+perkBattlefieldBaristaRank3LongDesc,progression,perk,"A latte a day keeps the zombie fatigue away. Craft gourmet drinks that provide temporary buffs to stamina regeneration and hunger reduction. Brew 30% faster."
+perkBattlefieldBaristaRank4Desc,progression,perk,Combat Barista
+perkBattlefieldBaristaRank4LongDesc,progression,perk,"You’re serving up powerful brews that not only energize but also fortify. Your drinks now give boosts to combat stats, and you brew 40% faster. Use 20% less of a recipe's main ingredients."
+perkBattlefieldBaristaRank5Desc,progression,perk,Battle Brew Master
+perkBattlefieldBaristaRank5LongDesc,progression,perk,"Your battlefield brews are legendary. Your secret recipes provide powerful buffs that can turn the tide of any battle. Brew 50% faster and extend the duration of your buffs."
+buffParkourBoost,buffs,Buff,"Parkour Boost"
+buffParkourBoostDesc,buffs,Buff,"Parkour ability enhanced by 10%."
+buffStrengthBoost,buffs,Buff,"Strength Boost"
+buffStrengthBoostDesc,buffs,Buff,"Temporary increase to strength attribute."
+drinkFilthyJoe,items,Item,"Filthy Joe"
+drinkFilthyJoeDesc,items,Item,"It's about as close to sludge as you can get while still calling it coffee. It won't win any taste tests, but it's kind of warm and strong enough to keep you awake when even the zombies are calling it a night."
+drinkWastelandWheatgrass,items,Item,"Wasteland Wheatgrass"
+drinkWastelandWheatgrassDesc,items,Item,"A questionable concoction of wasteland flora. Claims to be healthy, but the taste makes you question everything you know about nutrition."
+drinkHotCupOfJoe,items,Item,"Hot Cup of Joe"
+drinkHotCupOfJoeDesc,items,Item,"This cup of coffee reminds you of the stuff served in roadside diners—barely strong enough to wake you up but just enough to keep you moving. It’s hot, and it tastes like someone’s been reusing the same old grinds for days. But hey, it’s coffee?"
+drinkIcedCoffee,items,Item,"Iced Coffee"
+drinkIcedCoffeeDesc,items,Item,"More of a watery, cold jolt than a real pick-me-up, but when you're roasting under the wasteland sun, it's just the thing to keep you going. This slightly bitter brew cools you down and gives you a bit of energy to push through the heat."
+drinkColdBrewCoffee,items,Item,"Cold Brew Coffee"
+drinkColdBrewCoffeeDesc,items,Item,"Chilled and smooth, this brew is the perfect balance of refreshing and energizing. It's the kind of drink that goes down easy, even when the world's falling apart around you."
+drinkJarPurifiedWater,items,Item,"Purified Water"
+drinkJarPurifiedWaterDesc,items,Item,"Crystal clear and wonderfully pure, this filtered water is the foundation of premium beverages. The coal filtration removes impurities, making it both refreshing and healthier than standard boiled water."
+drinkAmericano,items,Item,"Americano"
+drinkAmericanoDesc,items,Item,"A no-nonsense brew for survivors who need their caffeine fix but prefer it not as dehydrating. Smooth, bold, and with just enough water to stretch out that precious espresso, it's perfect for the wasteland grind."
+drinkBlackStrapCoffee,items,Item,"Black Strap Coffee"
+drinkBlackStrapCoffeeDesc,items,Item,"This two-century old favorite coffee was a staple among miners in the 1800's. Otherwise known as 'Muckmen Blackstrap', this strong blended roast will give you long-lasting energy and keep you warm for hours."
+drinkPremiumColdBrew,items,Item,"Premium Cold Brew"
+drinkPremiumColdBrewDesc,items,Item,"Pure refreshment, bottled for those who know the value of quality. Made with fresh, bottled mineral water, it's a luxury in the apocalypse—hydrating, refreshing, and a true energy boost for when you need it most."
+drinkDoubleTap,items,Item,"Double Tap"
+drinkDoubleTapDesc,items,Item,"Twice the punch in a single drink. This potent double shot of espresso delivers a strong, bold flavor to fuel your toughest moments. Perfect for when one shot just isn't enough. Plus, you can stack twice as much."
+drinkCafeLatte,items,Item,"Café Latte"
+drinkCafeLatteDesc,items,Item,"A comforting blend of espresso and warm milk, this drink offers a smooth and creamy texture that's perfect for relaxing after a long day of survival. Ideal for those seeking a moment of normalcy amidst the chaos, it's both nourishing and energizing, providing just the right boost for your next adventure."
+drinkCafeBreve,items,Item,"Café Brève"
+drinkCafeBreveDesc,items,Item,"This indulgent coffee blend uses rich cream instead of milk, making it thicker and more satisfying. With two shots of espresso and double the cream, it offers an energy boost and keeps you full for longer—perfect for long nights in the wasteland when food is scarce and strength is needed."
+drinkAffogato,items,Item,"Affogato"
+drinkAffogatoDesc,items,Item,"This delightful treat combines a shot of rich espresso poured over two scoops of creamy ice cream. It's the ultimate dessert for a weary traveler, offering a sweet kick of energy and a creamy, satisfying texture. Plus, it provides a refreshing heat resistance, making it perfect for those scorching wasteland days!"
+drinkTripwire,items,Item,"The Tripwire"
+drinkTripwireDesc,items,Item,"A triple shot of espresso that'll have you seeing through time. Perfect for those nights when sleep isn't just optional, it's impossible. Warning: May cause extreme alertness and temporary immunity to boredom."
+drinkSpringHeeledJoe,items,Item,"Cuppa Spring-Heeled Joe"
+drinkSpringHeeledJoeDesc,items,Item,"This revolutionary blend combines the kick of a triple espresso with cutting-edge movement enhancement. Perfect for parkour enthusiasts and anyone who needs to defy gravity at a moment's notice. Warning: May cause spontaneous wall-running."
+drinkPumpkinSpikeLatte,items,Item,"Pumpkin-Spiked Latte"
+drinkPumpkinSpikeLatteDesc,items,Item,"A seasonal favorite with a brutal twist. This creamy pumpkin latte packs enough punch to crush skulls. The perfect drink for when you need both comfort and combat effectiveness."
+buffColdResist,buffs,Buff,Cold Resistance
+buffColdResistDesc,buffs,Buff,Increased resistance to cold temperatures.
+buffDiseaseResist,buffs,Buff,Disease Resistance
+buffDiseaseResistDesc,buffs,Buff,Increased resistance to diseases and infections.
+statDiseaseResist,stats,Stat,Disease Resistance
+statStaminaEfficiency,stats,Stat,Stamina Efficiency
+statDehydrationRate,stats,Stat,Extra Water Loss per Stamina Point
+buffHeatResist,buffs,Buff,Heat Resistance
+buffHeatResistDesc,buffs,Buff,Increased resistance to hot temperatures.
+statColdResistance,stats,Stat,Cold Resistance
+statHeatResistance,stats,Stat,Heat Resistance
+buffStaminaEfficiency,buffs,Buff,Stamina Efficiency
+buffStaminaEfficiencyDesc,buffs,Buff,Reduced food and water consumption when using stamina.
+buffStimulantBoost,buffs,Buff,Gunpowder Boost
+buffStimulantBoostDesc,buffs,Buff,"A dangerous mixture of coffee and gunpowder provides extra stimulation at the cost of increased dehydration."

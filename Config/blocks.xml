@@ -1,0 +1,18 @@
+<hurgleburgler>
+
+	<append xpath="/blocks">
+
+		<block name="hgBarista_EspressoMachine">
+			<property name="Extends" value="coffeeMakerCommercialJT"/>
+			<property name="Model" value="#@modfolder:Resources/hgBarista.unity3d?EspressoMachinePrefab"/>
+			<property name="CustomIcon" value="EspressoMachine"/>
+			<property name="DescriptionKey" value="hgBarista_EspressoMachine"/>
+			<property class="Workstation">
+				<property name="Modules" value="output"/>
+				<property name="CraftingAreaRecipes" value="coffeemakerJT,hgCoffeeDrinks"/>
+			</property>
+		</block>
+
+	</append>
+
+</hurgleburgler>

@@ -1,0 +1,236 @@
+<hurgleburgler>
+    <append xpath="/buffs">
+
+        <!-- Standard Cold Resistance Buff -->
+        <buff name="buffColdResist" name_key="buffColdResist" description_key="buffColdResistDesc" icon="ui_game_symbol_cold">
+            <stack_type value="replace"/>
+            <duration value="0"/>
+            <display_value value=".buffColdResistDisplay"/>
+            <display_value_format value="time"/>
+
+            <effect_group>
+                <!-- Update and display timer -->
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffColdResistDuration" operation="subtract" value="@$MetabolismDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffColdResistDisplay" operation="set" value="@$buffColdResistDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffColdResistDisplay" operation="divide" value="@$MetabolismDuration"/>
+            </effect_group>
+
+            <effect_group>
+                <!-- Remove buff when duration expires -->
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffColdResist">
+                    <requirement name="CVarCompare" cvar="$buffColdResistDuration" operation="LTE" value="0"/>
+                </triggered_effect>
+
+                <!-- Clean up variables -->
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffColdResistDisplay" operation="set" value="0"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffColdResistDuration" operation="set" value="0"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="0"/>
+            </effect_group>
+
+            <effect_group>
+                <!-- Apply the cold resistance effect -->
+                <passive_effect name="HypothermalResist" operation="base_add" value="@$buffColdResistValue"/>
+            </effect_group>
+        </buff>
+
+        <!-- Heat Resistance Buff -->
+        <buff name="buffHeatResist" name_key="buffHeatResist" description_key="buffHeatResistDesc" icon="ui_game_symbol_hot">
+            <stack_type value="replace"/>
+            <duration value="0"/>
+            <display_value value=".buffHeatResistDisplay"/>
+            <display_value_format value="time"/>
+
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="subtract" value="@$MetabolismDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffHeatResistDisplay" operation="set" value="@$buffHeatResistDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffHeatResistDisplay" operation="divide" value="@$MetabolismDuration"/>
+            </effect_group>
+
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffHeatResist">
+                    <requirement name="CVarCompare" cvar="$buffHeatResistDuration" operation="LTE" value="0"/>
+                </triggered_effect>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffHeatResistDisplay" operation="set" value="0"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="set" value="0"/>
+            </effect_group>
+
+            <effect_group>
+                <passive_effect name="HyperthermalResist" operation="base_add" value="@$buffHeatResistValue"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffDiseaseResist" name_key="buffDiseaseResist" description_key="buffDiseaseResistDesc" icon="ui_game_symbol_defense">
+            <stack_type value="replace"/>
+            <duration value="0"/>
+            <display_value value=".buffDiseaseResistDisplay"/>
+            <display_value_format value="time"/>
+
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffDiseaseResistDuration" operation="subtract" value="@$MetabolismDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffDiseaseResistDisplay" operation="set" value="@$buffDiseaseResistDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffDiseaseResistDisplay" operation="divide" value="@$MetabolismDuration"/>
+            </effect_group>
+
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffDiseaseResistDuration" operation="set" value="@$buffDiseaseResistDurationMax">
+                    <requirement name="CVarCompare" cvar="$buffDiseaseResistDuration" operation="GT" value="@$buffDiseaseResistDurationMax"/>
+                </triggered_effect>
+
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDiseaseResist">
+                    <requirement name="CVarCompare" cvar="$buffDiseaseResistDuration" operation="LTE" value="0"/>
+                </triggered_effect>
+
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffDiseaseResistDisplay" operation="set" value="0"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffDiseaseResistDuration" operation="set" value="0"/>
+            </effect_group>
+
+            <effect_group>
+                <passive_effect name="BuffResistance" operation="base_add" value="@$buffDiseaseResistValue" tags="buffInfectionCatch,buffDysenteryCatchFood,buffDysenteryCatchDrink"/>
+            </effect_group>
+        </buff>
+
+        <!-- Standard Stamina Efficiency Buff -->
+        <buff name="buffStaminaEfficiency" name_key="buffStaminaEfficiency" description_key="buffStaminaEfficiencyDesc" icon="ui_game_symbol_stamina">
+            <stack_type value="replace"/>
+            <duration value="0"/>
+            <display_value value=".buffStaminaEfficiencyDisplay"/>
+            <display_value_format value="time"/>
+
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffStaminaEfficiencyDuration" operation="subtract" value="@$MetabolismDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffStaminaEfficiencyDisplay" operation="set" value="@$buffStaminaEfficiencyDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffStaminaEfficiencyDisplay" operation="divide" value="@$MetabolismDuration"/>
+            </effect_group>
+
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffStaminaEfficiency">
+                    <requirement name="CVarCompare" cvar="$buffStaminaEfficiencyDuration" operation="LTE" value="0"/>
+                </triggered_effect>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffStaminaEfficiencyDisplay" operation="set" value="0"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffStaminaEfficiencyDuration" operation="set" value="0"/>
+            </effect_group>
+
+            <effect_group>
+                <passive_effect name="FoodLossPerStaminaPointGained" operation="perc_add" value="@$buffStaminaEfficiencyValue"/>
+                <passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" value="@$buffStaminaEfficiencyValue"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffStimulantBoost" name_key="buffStimulantBoost" description_key="buffStimulantBoostDesc" icon="ui_game_symbol_explosion">
+            <stack_type value="replace"/>
+            <duration value="0"/>
+            <display_value value=".buffStimulantDisplay"/>
+            <display_value_format value="time"/>
+
+            <effect_group>
+                <!-- Timer management -->
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffStimulantDuration" operation="subtract" value="@$MetabolismDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffStimulantDisplay" operation="set" value="@$buffStimulantDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffStimulantDisplay" operation="divide" value="@$MetabolismDuration"/>
+            </effect_group>
+
+            <effect_group>
+                <!-- Buff removal and cleanup -->
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffStimulantBoost">
+                    <requirement name="CVarCompare" cvar="$buffStimulantDuration" operation="LTE" value="0"/>
+                </triggered_effect>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffStimulantDisplay" operation="set" value="0"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffStimulantDuration" operation="set" value="0"/>
+            </effect_group>
+
+            <effect_group>
+                <!-- Additional stamina regen from gunpowder -->
+                <passive_effect name="StaminaChangeOT" operation="perc_add" value="@$buffStimulantStaminaBoost"/>
+                <!-- Extra dehydration from the stimulant -->
+                <passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" value="@$buffStimulantDehydration"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffParkourBoost" name_key="buffParkourBoost" description_key="buffParkourBoostDesc" icon="ui_game_symbol_parkour">
+            <stack_type value="replace"/>
+            <duration value="0"/>
+            <display_value value=".buffParkourBoostDisplay"/>
+            <display_value_format value="time"/>
+
+            <!-- Store original value and apply boost when buff starts -->
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$originalParkourBonus" operation="set" value="@$parkourBonus"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$parkourBonus" operation="multiply" value="1.1"/>
+            </effect_group>
+
+            <!-- Standard buff duration management -->
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffParkourBoostDuration" operation="subtract" value="@$MetabolismDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffParkourBoostDisplay" operation="set" value="@$buffParkourBoostDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffParkourBoostDisplay" operation="divide" value="@$MetabolismDuration"/>
+            </effect_group>
+
+            <!-- Reset parkour bonus to original value when buff expires -->
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffParkourBoost">
+                    <requirement name="CVarCompare" cvar="$buffParkourBoostDuration" operation="LTE" value="0"/>
+                </triggered_effect>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$parkourBonus" operation="set" value="@$originalParkourBonus"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffParkourBoostDisplay" operation="set" value="0"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffParkourBoostDuration" operation="set" value="0"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffStrengthBoost" name_key="buffStrengthBoost" description_key="buffStrengthBoostDesc" icon="ui_game_symbol_muscle">
+            <stack_type value="replace"/>
+            <duration value="0"/>
+            <display_value value=".buffStrengthBoostDisplay"/>
+            <display_value_format value="time"/>
+
+            <!-- Apply strength boost -->
+            <effect_group>
+                <passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="1"/>
+            </effect_group>
+
+            <!-- Standard buff duration management -->
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffStrengthBoostDuration" operation="subtract" value="@$MetabolismDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffStrengthBoostDisplay" operation="set" value="@$buffStrengthBoostDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffStrengthBoostDisplay" operation="divide" value="@$MetabolismDuration"/>
+            </effect_group>
+
+            <!-- Remove buff when duration expires -->
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffStrengthBoost">
+                    <requirement name="CVarCompare" cvar="$buffStrengthBoostDuration" operation="LTE" value="0"/>
+                </triggered_effect>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffStrengthBoostDisplay" operation="set" value="0"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffStrengthBoostDuration" operation="set" value="0"/>
+            </effect_group>
+        </buff>
+
+        <buff name="buffPumpkinClubBonus" name_key="buffPumpkinClubBonus" description_key="buffPumpkinClubBonusDesc" icon="ui_game_symbol_stunned" icon_color="0,255,0">
+            <stack_type value="replace"/>
+            <duration value="0"/>
+            <display_value value=".buffPumpkinClubBonusDisplay"/>
+            <display_value_format value="time"/>
+
+            <!-- Club damage boost -->
+            <effect_group>
+                <passive_effect name="EntityDamage" operation="perc_add" value="1" tags="perkPummelPete"/>
+            </effect_group>
+
+            <!-- Standard buff duration management -->
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPumpkinClubBonusDuration" operation="subtract" value="@$MetabolismDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffPumpkinClubBonusDisplay" operation="set" value="@$buffPumpkinClubBonusDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffPumpkinClubBonusDisplay" operation="divide" value="@$MetabolismDuration"/>
+            </effect_group>
+
+            <!-- Remove buff when duration expires -->
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPumpkinClubBonus">
+                    <requirement name="CVarCompare" cvar="$buffPumpkinClubBonusDuration" operation="LTE" value="0"/>
+                </triggered_effect>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffPumpkinClubBonusDisplay" operation="set" value="0"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPumpkinClubBonusDuration" operation="set" value="0"/>
+            </effect_group>
+        </buff>
+
+    </append>
+</hurgleburgler>

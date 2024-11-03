@@ -1,0 +1,77 @@
+<hurgleburgler>
+
+	<append xpath="/ui_display_info/crafting_category_display">
+
+		<crafting_category_list display_type="hgBarista_EspressoMachine">
+			<crafting_category name="CFDrink/Cooking" icon="ui_game_symbol_thirst" display_name="lblCategoryDrink"/>
+		</crafting_category_list>
+
+	</append>
+
+	<append xpath="/ui_display_info/item_display">
+		<!-- Filthy Joe -->
+		<item_display_info display_type="drinkFilthyJoe" display_group="groupConsumables">
+			<display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
+			<display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+			<display_entry name="dDehydrationRate" title_key="statDehydrationRate"/>
+			<display_entry name="dColdResist" title_key="statColdResistance"/>
+			<display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+			<display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
+		</item_display_info>
+
+		<!-- Hot Cup of Joe -->
+		<item_display_info display_type="drinkHotCupOfJoe" display_group="groupConsumables">
+			<display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
+			<display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+			<display_entry name="dDehydrationRate" title_key="statDehydrationRate"/>
+			<display_entry name="dColdResist" title_key="statColdResistance"/>
+			<display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+			<display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
+		</item_display_info>
+
+		<!-- Iced Coffee -->
+		<item_display_info display_type="drinkIcedCoffee" display_group="groupConsumables">
+			<display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
+			<display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+			<display_entry name="dDehydrationRate" title_key="statDehydrationRate"/>
+			<display_entry name="dHeatResist" title_key="statHeatResistance"/>
+			<display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+			<display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
+		</item_display_info>
+
+		<!-- Cold Brew Coffee -->
+		<item_display_info display_type="drinkColdBrewCoffee" display_group="groupConsumables">
+			<display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
+			<display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+			<display_entry name="dDehydrationRate" title_key="statDehydrationRate"/>
+			<display_entry name="dHeatResist" title_key="statHeatResistance"/>
+			<display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+			<display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
+		</item_display_info>
+
+		<!-- Instant Coffee -->
+		<item_display_info display_type="hgDR_instantCoffee" display_group="groupConsumables">
+			<display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+			<display_entry name="dDehydrationRate" title_key="statDehydrationRate"/>
+			<display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+			<display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
+		</item_display_info>
+
+		<item_display_info display_type="drinkJarPurifiedWater" display_group="groupConsumables">
+			<display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
+			<display_entry name="dHealth" title_key="statHealthAmount"/>
+			<display_entry name="dStaminaEfficiency" title_key="statStaminaEfficiency" display_type="Percent"/>
+		</item_display_info>
+
+		<item_display_info display_type="drinkBlackStrapCoffee" display_group="groupConsumables">
+			<display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
+			<display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+			<display_entry name="dDehydrationRate" title_key="statDehydrationRate"/>
+			<display_entry name="dColdResist" title_key="statColdResistance"/>
+			<display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+			<display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
+		</item_display_info>
+
+	</append>
+
+</hurgleburgler>
