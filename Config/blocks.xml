@@ -2,15 +2,51 @@
 
 	<append xpath="/blocks">
 
-		<block name="hgBarista_EspressoMachine">
-			<property name="Extends" value="coffeeMakerCommercialJT"/>
+		<block name="espressoMachine_hgBB">
+			<!--<property name="Extends" value="coffeeMakerCommercialJT"/>-->
+			<property name="Material" value="Mmetal_weak"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="Class" value="Workstation"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="StabilitySupport" value="false"/>
+
+			<!--  build restriction  -->
+			<property name="Path" value="solid"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="OpenSound" value="chem_station_open"/>
+			<property name="CloseSound" value="chem_station_close"/>
+			<property name="CraftSound" value="chem_station_mix_click"/>
+			<property name="CraftCompleteSound" value="chem_station_complete_item"/>
+			<property class="RepairItems">
+				<property name="resourceForgedIron" value="2"/>
+				<property name="resourceElectricParts" value="4"/>
+			</property>
+			<property name="Texture" value="282"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<drop event="Harvest" name="resourceElectricParts" count="0" tag="salvageHarvest"/>
+			<drop event="Destroy" name="coffeeMakerCommercialJT" count="1" prob="0.7"/>
+			<drop event="Destroy" name="resourceScrapIron" count="0"/>
+			<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+			<property name="EconomicValue" value="244"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="Group" value="Decor/Miscellaneous"/>
+			<property name="FilterTags" value="MC_building,SC_loot,SC_electrical"/>
+			<property name="TakeDelay" value="5"/>
+
 			<property name="Model" value="#@modfolder:Resources/hgBarista.unity3d?EspressoMachinePrefab"/>
-			<property name="CustomIcon" value="EspressoMachine"/>
-			<property name="DescriptionKey" value="hgBarista_EspressoMachine"/>
+			<property name="CustomIcon" value="espressoMachine_hgBB"/>
+			<property name="DescriptionKey" value="espressoMachine_hgBB"/>
+
 			<property class="Workstation">
 				<property name="Modules" value="output"/>
-				<property name="CraftingAreaRecipes" value="coffeemakerJT,hgCoffeeDrinks"/>
+				<property name="CraftingAreaRecipes" value="coffeemakerJT,espressoDrinks_hgBB"/>
 			</property>
+
+			<property name="CraftActionName" value="lblContextActionMix"/>
+			<property name="CraftIcon" value="ui_game_symbol_chemistry"/>
+			<property name="WorkstationIcon" value="ui_game_symbol_cement"/>
 		</block>
 
 	</append>

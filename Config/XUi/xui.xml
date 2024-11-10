@@ -1,10 +1,11 @@
 <hurgleburgler>
 	<append xpath="/xui/ruleset">
-		<window_group name="workstation_hgBarista_EspressoMachine" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
+		<window_group name="workstation_espressoMachine_hgBB" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowCraftingList"/>
 			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
-			<window name="windowToolsEspresso"/>
+			<window name="windowToolsEspressoMachine_hgBB"/>
+			<!--<window name="windowFuel"/>-->
 			<window name="windowOutput"/>
 			<window name="windowNonPagingHeader"/>
 		</window_group>
