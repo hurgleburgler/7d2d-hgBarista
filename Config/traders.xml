@@ -1,0 +1,32 @@
+<hurgleburgler>
+
+    <!-- Add items to existing food groups -->
+    <append xpath="/traders/trader_item_groups/trader_item_group[@name='foodSupplies']">
+        <item name="resourcePowderedMilk" count="2,8"/>
+        <item name="resourcePowderedCreamer" count="2,8"/>
+    </append>
+
+    <append xpath="/traders/trader_item_groups/trader_item_group[@name='preparedDrink']">
+        <item name="drinkJarMilk" count="1,2"/>
+        <item name="drinkJarCreamer" count="1,2"/>
+    </append>
+
+    <append xpath="/traders/trader_item_groups/trader_item_group[@name='cannedfood']">
+        <item name="drinkJarMilk"/>
+        <item name="foodCanMilk"/>
+        <item name="drinkJarCreamer"/>
+        <item name="resourcePowderedMilk"/>
+        <item name="resourcePowderedCreamer"/>
+        <item name="resourceInstantCoffee"/>
+    </append>
+
+    <!-- Create specialized preserved food group -->
+    <append xpath="/traders/trader_item_groups">
+        <trader_item_group name="hgDR_preservedFood">
+            <item name="resourceInstantCoffee" count="2,8"/>
+            <item name="resourcePowderedMilk" count="2,8"/>
+            <item name="resourcePowderedCreamer" count="2,8"/>
+        </trader_item_group>
+    </append>
+
+</hurgleburgler>

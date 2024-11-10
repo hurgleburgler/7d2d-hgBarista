@@ -1,5 +1,18 @@
 Key,Source,Context,English
 espressoMachine_hgBB,blocks,Container,A Fancy Espresso Machine
+hgDR_milkBase,items,Item,"This is a base item for development only"
+foodCanMilk,items,Food,"A Can of Evaporated Milk"
+foodCanMilkDesc,items,Food,"A thick, creamy milk that’s had most of the water removed. Perfect for cooking or drinking—just add water!"
+drinkJarMilk,items,Food,"A Jar of Milk"
+drinkJarMilkDesc,items,Food,"Fresh and refreshing. Simple, straightforward, and exactly what you need to keep your bones strong."
+drinkJarCreamer,items,Food,"A Jar of Creamer"
+drinkJarCreamerDesc,items,Food,"A smooth addition to your coffee or tea, adding just the right amount of richness to your brew."
+resourceInstantCoffee,items,Item,"Instant Coffee"
+resourceInstantCoffeeDesc,items,Item,"Quick, bitter, and harsh on your body. You'll lose health and feel dehydrated, but at least it'll wake you up."
+resourcePowderedMilk,items,Item,"A Tub of Powdered Milk"
+resourcePowderedMilkDesc,items,Item,"Just add water for a nutritious milk substitute. Perfect for the long haul but tastes a bit like chalk."
+resourcePowderedCreamer,items,Item,"Powdered Creamer"
+resourcePowderedCreamerDesc,items,Item,"Add a little richness to your drinks without the hassle of refrigeration. Just don’t expect the flavor of real cream."
 perkBattlefieldBaristaRank1Desc,progression,perk,Coffee Addict
 perkBattlefieldBaristaRank1LongDesc,progression,perk,"The battlefield runs on caffeine, and you can brew a mean cup of joe. Unlock basic coffee recipes to keep you alert in the apocalypse. Craft Coffee and Cold Brew. Brew 10% faster."
 perkBattlefieldBaristaRank2Desc,progression,perk,Espresso Enthusiast
