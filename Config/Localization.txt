@@ -1,8 +1,9 @@
 Key,Source,Context,English
 espressoMachine_hgBB,blocks,Container,A Fancy Espresso Machine
 hgDR_milkBase,items,Item,"This is a base item for development only"
+eatDryCoffeeTooltip,items,Admin,"You've suddenly realized that was a bad idea..."
 foodCanMilk,items,Food,"A Can of Evaporated Milk"
-foodCanMilkDesc,items,Food,"A thick, creamy milk that’s had most of the water removed. Perfect for cooking or drinking—just add water!"
+foodCanMilkDesc,items,Food,"A thick, creamy milk that’s had most of the water removed. Perfect for cooking or drinking."
 drinkJarMilk,items,Food,"A Jar of Milk"
 drinkJarMilkDesc,items,Food,"Fresh and refreshing. Simple, straightforward, and exactly what you need to keep your bones strong."
 drinkJarCreamer,items,Food,"A Jar of Creamer"
@@ -120,6 +121,7 @@ statDiseaseResist,stats,Stat,Disease Resistance
 statExpBonus,stats,Stat,Experience Bonus
 statFireDamage,stats,Stat,Fire Aura Damage
 statHeatResistance,stats,Stat,Heat Resistance
+statMaxDuration,stats,Stat,Max Duration
 statMeleeDamage,stats,Stat,Melee Damage
 statMobilityBoost,stats,Stat,Overall Mobility
 statMovementSpeed,stats,Stat,Movement Speed

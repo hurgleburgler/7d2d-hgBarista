@@ -15,21 +15,27 @@
     <!-- ================ -->
 
     <!-- Basic milk: 5 water → 10 items (1:2 ratio) -->
-    <recipe name="drinkJarMilk" count="10" craft_area="campfire" craft_tool="toolCookingPot">
+    <recipe name="drinkJarMilk" count="5">
         <ingredient name="resourcePowderedMilk" count="1" />
         <ingredient name="drinkJarBoiledWater" count="5" />
     </recipe>
 
     <!-- Canned milk: 5 water → 10 items (1:2 ratio) -->
-    <recipe name="foodCanMilk" count="10" craft_area="campfire" craft_tool="toolCookingPot">
+    <recipe name="foodCanMilk" count="5">
         <ingredient name="resourcePowderedCreamer" count="1"/>
         <ingredient name="drinkJarBoiledWater" count="5"/>
+        <ingredient name="drinkCanEmpty" count="5"/>
     </recipe>
 
     <!-- Creamer special case: 1 water → 1 item (1:1 ratio for concentrate) -->
-    <recipe name="drinkJarCreamer" count="1" craft_area="campfire" craft_tool="toolCookingPot">
+    <recipe name="drinkJarCreamer" count="1">
         <ingredient name="drinkJarMilk" count="2"/>
         <ingredient name="drinkJarBoiledWater" count="1"/>
+    </recipe>
+
+    <recipe name="drinkJarCreamer" count="5">
+        <ingredient name="resourcePowderedCreamer" count="1"/>
+        <ingredient name="drinkJarBoiledWater" count="5"/>
     </recipe>
 
     <!-- ================ -->

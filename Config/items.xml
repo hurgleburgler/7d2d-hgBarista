@@ -21,6 +21,12 @@
       <property name="DisplayType" value="hgDR_milkBase"/>
       <property name="Material" value="Mglass"/>
       <property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+      <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+      <property name="EconomicValue" value="100"/>
+      <property name="Stacknumber" value="25"/>
+
+      <property name="CraftingIngredientTime" value="15"/>
+      <property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
       <property class="Action0">
         <property name="Class" value="Eat"/>
@@ -50,10 +56,10 @@
         <property name="Create_item" value="drinkJarEmpty"/>
       </property>
 
-      <effect_group tiered="false" name="Drink Tier Found">
+      <effect_group tiered="false">
+        <display_value name="dWaterAmountAdd" value="9"/>
         <display_value name="dFoodAmountAdd" value="9"/>
         <display_value name="dFoodHealthAmount" value="9"/>
-        <display_value name="dWaterAmountAdd" value="9"/>
 
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="9"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="9"/>
@@ -75,10 +81,10 @@
         <property name="Create_item" value="drinkJarEmpty"/>
       </property>
 
-      <effect_group tiered="false" name="Drink Tier Found">
+      <effect_group tiered="false">
+        <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dFoodAmountAdd" value="10"/>
         <display_value name="dFoodHealthAmount" value="5"/>
-        <display_value name="dWaterAmountAdd" value="5"/>
 
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="5"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
@@ -113,10 +119,10 @@
         <property name="Create_item" value="drinkCanEmpty"/>
       </property>
 
-      <effect_group tiered="false" name="Drink Tier Found">
+      <effect_group tiered="false">
+        <display_value name="dWaterAmountAdd" value="10"/>
         <display_value name="dFoodAmountAdd" value="10"/>
         <display_value name="dFoodHealthAmount" value="10"/>
-        <display_value name="dWaterAmountAdd" value="10"/>
 
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="10"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
@@ -139,9 +145,9 @@
       </property>
 
       <effect_group tiered="false">
+        <display_value name="dWaterAmountAdd" value="-20"/>
         <display_value name="dFoodAmountAdd" value="20"/>
         <display_value name="dFoodHealthAmount" value="10"/>
-        <display_value name="dWaterAmountAdd" value="-20"/>
 
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-20"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
@@ -153,16 +159,17 @@
     <!-- Powdered creamer in plastic container - no container return -->
     <item name="resourcePowderedCreamer">
       <property name="Extends" value="hgDR_rationBase"/>
-      <property name="CustomIcon" value="resourcePowderedCreamer_159"/>
+      <property name="CustomIcon" value="resourcePowderedCreamer_160"/>
 
       <effect_group tiered="false">
-        <display_value name="dFoodAmountAdd" value="39"/>
-        <display_value name="dFoodHealthAmount" value="4"/>
-        <display_value name="dWaterAmountAdd" value="-41"/>
+        <display_value name="dWaterAmountAdd" value="-40"/>
+        <display_value name="dFoodAmountAdd" value="40"/>
+        <display_value name="dFoodHealthAmount" value="5"/>
 
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-41"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="39"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="4"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="eatDryRationsTooltip"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-40"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="40"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
       </effect_group>
     </item>
@@ -181,11 +188,13 @@
         <property name="Create_item" value="drinkCanEmpty"/>
       </property>
 
-      <effect_group tiered="false" name="Drink Tier 1">
+      <effect_group tiered="false">
         <display_value name="dStaminaRegen" value="0.50"/>
         <display_value name="dDehydrationRate" value="0.03"/>
         <display_value name="dDuration" value="180"/>
         <display_value name="dDurationMax" value="540"/>
+
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="eatDryCoffeeTooltip"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="543"/>
