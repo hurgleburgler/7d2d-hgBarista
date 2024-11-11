@@ -2,11 +2,19 @@
 
   <append xpath="/items">
 
-    <!-- =============== -->
-    <!-- Base Items      -->
-    <!-- =============== -->
+    <!-- ============================================================= -->
+    <!-- ==================== BASE ITEMS GROUP ======================= -->
+    <!-- ============================================================= -->
+    <!-- Core item definitions and shared properties                   -->
+    <!-- Base Classes:                                                 -->
+    <!--   hgDR_milkBase: Glass jar dairy products                     -->
+    <!--   hgDR_rationBase: Dry/powdered food items                    -->
+    <!-- Common Properties:                                            -->
+    <!--   Material: Glass or appropriate container                    -->
+    <!--   HoldType: Standard consumable hold type                     -->
+    <!--   Action0: Default consumption parameters                     -->
+    <!-- ============================================================= -->
 
-    <!-- Base class for milk products - inherits glass jar properties -->
     <item name="hgDR_milkBase">
       <property name="Tags" value="food"/>
       <property name="HoldType" value="3"/>
@@ -22,13 +30,20 @@
       </property>
     </item>
 
-    <!-- ==================== -->
-    <!-- Jarred Milk Products -->
-    <!-- ==================== -->
-
-    <!-- Milk in glass jar - returns drinkJarEmpty -->
+    <!-- ============================================================= -->
+    <!-- ================== JARRED MILK PRODUCTS ===================== -->
+    <!-- ============================================================= -->
+    <!-- Glass jar based dairy items                                   -->
+    <!-- Common Features:                                              -->
+    <!--   Container: Returns drinkJarEmpty                            -->
+    <!--   Material: Glass jar                                         -->
+    <!--   Effects: Food, Water, Health restoration                    -->
+    <!-- Products:                                                     -->
+    <!--   Milk: Balanced nutrition (9/9/9)                            -->
+    <!--   Creamer: Higher food, lower health/water (10/5/5)           -->
+    <!-- ============================================================= -->
     <item name="drinkJarMilk">
-      <property name="CustomIcon" value="drinkJarMilk_159"/>
+      <property name="CustomIcon" value="drinkJarMilk_160"/>
       <property name="Extends" value="hgDR_milkBase"/>
 
       <property class="Action-1">
@@ -52,7 +67,6 @@
       </effect_group>
     </item>
 
-    <!-- Creamer in glass jar - returns drinkJarEmpty -->
     <item name="drinkJarCreamer">
       <property name="CustomIcon" value="drinkJarCreamer_160"/>
       <property name="Extends" value="hgDR_milkBase"/>
@@ -73,11 +87,24 @@
       </effect_group>
     </item>
 
-    <!-- ==================== -->
-    <!-- Canned Milk Products -->
-    <!-- ==================== -->
-
-    <!-- Evaporated milk in can - returns drinkCanEmpty -->
+    <!-- ============================================================= -->
+    <!-- ================== CANNED MILK PRODUCTS ===================== -->
+    <!-- ============================================================= -->
+    <!-- Metal can based dairy items                                   -->
+    <!-- Common Features:                                              -->
+    <!--   Container: Returns drinkCanEmpty                            -->
+    <!--   Material: Metal can                                         -->
+    <!--   Effects: Food, Water, Health restoration                    -->
+    <!-- Products:                                                     -->
+    <!--   Evaporated Milk: Balanced nutrition (10/10/10)              -->
+    <!--   Powdered Milk: High food, water loss (20/10/-20)            -->
+    <!--   Powdered Creamer: Extreme values (39/4/-41)                 -->
+    <!-- Special Items:                                                -->
+    <!--   Instant Coffee: Unique caffeine buff effects                -->
+    <!--     Duration: 180s base, 540s max                             -->
+    <!--     Stamina: 0.50 regeneration                                -->
+    <!--     Dehydration: 0.03 rate                                    -->
+    <!-- ============================================================= -->
     <item name="foodCanMilk">
       <property name="CustomIcon" value="foodCanMilk_160"/>
       <property name="Extends" value="hgDR_milkBase"/>
@@ -103,7 +130,6 @@
       </effect_group>
     </item>
 
-    <!-- Powdered milk in can - returns drinkCanEmpty -->
     <item name="resourcePowderedMilk">
       <property name="Extends" value="hgDR_rationBase"/>
       <property name="CustomIcon" value="resourcePowderedMilk_160"/>
@@ -188,13 +214,19 @@
     <!-- =========================================================== -->
 
 
-    <!-- ========================================================== -->
-    <!-- ==================== LEVEL 1 DRINKS ====================== -->
-    <!-- ========================================================== -->
-    <!-- Basic Tier Drinks - All extend from drinkJarCoffee         -->
-    <!-- Common effects: Water, Stamina Regen, Temperature Resist   -->
-    <!-- All use basic beaker and campfire crafting.                -->
-    <!-- ========================================================== -->
+    <!-- ============================================================= -->
+    <!-- ==================== LEVEL 1 DRINKS ========================= -->
+    <!-- ============================================================= -->
+    <!-- Basic Tier Drinks - All extend from drinkJarCoffee            -->
+    <!-- Common effects: Water, Stamina Regen, Temperature Resist      -->
+    <!-- All use basic beaker and campfire crafting                    -->
+    <!-- Products:                                                     -->
+    <!--   Filthy Joe: Basic coffee (0.4 beans)                        -->
+    <!--   Wasteland Wheatgrass: Health focus                          -->
+    <!--   Hot Cup of Joe: Standard brew (1 bean)                      -->
+    <!--   Iced Coffee: Cooling variant                                -->
+    <!--   Cold Brew: Extended duration                                -->
+    <!-- ============================================================= -->
 
 
     <!-- ========================================================== -->
@@ -237,10 +269,28 @@
       </effect_group>
     </item>
 
-    <!-- Wasteland Wheatgrass -->
-    <!-- Health-focused drink with disease protection -->
-    <!-- Duration: 180s, Stamina: 2%, Disease Resist: 10 -->
-    <!-- Unique: Stamina Efficiency -5% (food/water loss) -->
+    <!-- ========================================================== -->
+    <!-- ================== WASTELAND WHEATGRASS ================== -->
+    <!-- ========================================================== -->
+    <!-- Health-focused herbal drink with disease protection        -->
+    <!-- Calculations:                                              -->
+    <!--   Base Duration: 180s                                      -->
+    <!--   Max Duration: 540s                                       -->
+    <!--   Stamina: 2% regeneration                                 -->
+    <!--   Disease Resistance: 50 points                            -->
+    <!-- Special Effects:                                           -->
+    <!--   Stamina Efficiency: -5% food/water loss                  -->
+    <!--   Very minor stamina regeneration                          -->
+    <!--   Disease resistance buff                                  -->
+    <!-- Benefits:                                                  -->
+    <!--   Water: +5                                                -->
+    <!--   Disease Protection: High                                 -->
+    <!--   Balanced Stats: No major penalties                       -->
+    <!-- Notes:                                                     -->
+    <!--   Focuses on survival rather than performance              -->
+    <!--   Good for exploring contaminated areas                    -->
+    <!--   Pairs well with other disease resistance items           -->
+    <!-- ========================================================== -->
     <item name="drinkWastelandWheatgrass">
       <property name="Extends" value="drinkJarCoffee"/>
       <property name="CustomIcon" value="drinkWastelandWheatgrass_160"/>

@@ -23,6 +23,10 @@ perkBattlefieldBaristaRank4Desc,progression,perk,Combat Barista
 perkBattlefieldBaristaRank4LongDesc,progression,perk,"You're serving up powerful brews that not only energize but also fortify. Your drinks now give boosts to combat stats, and you brew 40% faster. Use 20% less of a recipe's main ingredients."
 perkBattlefieldBaristaRank5Desc,progression,perk,Battle Brew Master
 perkBattlefieldBaristaRank5LongDesc,progression,perk,"Your battlefield brews are legendary. Your secret recipes provide powerful buffs that can turn the tide of any battle. Brew 50% faster and extend the duration of your buffs."
+buffTooMuchCaffeine,buffs,Buff,"Too Much Caffeine"
+buffTooMuchCaffeineDesc,buffs,Buff,"Your hands are shaking and your heart is racing. Increased dehydration and disorientation."
+buffCaffeine,buffs,Buff,"Caffeinated"
+buffCaffeineDesc,buffs,Buff,"Increased stamina regeneration at the cost of increased dehydration."
 buffColdResist,buffs,Buff,Cold Resistance
 buffColdResistDesc,buffs,Buff,Increased resistance to cold temperatures.
 buffDiseaseResist,buffs,Buff,Disease Resistance

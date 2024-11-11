@@ -36,11 +36,11 @@
     <!-- Special Cases   -->
     <!-- ================ -->
 
-    <!-- Coffee: 10 water → 10 coffee (1:1 ratio preserved for balance) -->
+<!--    &lt;!&ndash; Coffee: 10 water → 10 coffee (1:1 ratio preserved for balance) &ndash;&gt;
     <recipe name="drinkJarCoffee" count="10" craft_area="campfire" craft_tool="toolCookingPot">
       <ingredient name="resourceInstantCoffee" count="1"/>
       <ingredient name="drinkJarBoiledWater" count="10"/>
-    </recipe>
+    </recipe>-->
 
     <!-- ========================================================== -->
     <!-- ==================== Level 1 Drinks ====================== -->
@@ -105,13 +105,13 @@
     </recipe>
 
     <!-- Shot of Espresso - Concentrated coffee with high initial burst -->
-    <recipe name="drinkShotOfEspresso" count="2" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe, meleeToolRepairT1ClawHammer,toolBeaker" craft_time="60">
+    <recipe name="drinkShotOfEspresso" count="2" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="60">
       <ingredient name="drinkJarPurifiedWater" count="1"/>
       <ingredient name="resourceCropCoffeeBeans" count="2"/>
     </recipe>
 
     <!-- Americano - Extended espresso with better hydration -->
-    <recipe name="drinkAmericano" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" craft_time="5">
+    <recipe name="drinkAmericano" count="1" craft_time="5">
       <ingredient name="drinkShotOfEspresso" count="2"/>
       <ingredient name="drinkJarPurifiedWater" count="1"/>
     </recipe>
