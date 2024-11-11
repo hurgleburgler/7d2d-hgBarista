@@ -1,7 +1,11 @@
 <hurgleburgler>
 
   <append xpath="/buffs/buff[@name='god']/effect_group">
+    <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffCursed"/>
+    <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffTooMuchCaffeine"/>
     <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="set" value="0"/>
+    <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffColdResistDuration" operation="set" value="0"/>
+    <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="set" value="0"/>
   </append>
 
   <insertAfter xpath="/buffs/buff[@name='buffBlackStrapCoffee']/effect_group/triggered_effect[@action='RemoveBuff' and @buff='buffCoffee']">
@@ -13,6 +17,22 @@
   </insertAfter>
 
   <append xpath="/buffs">
+
+    <buff name="buffCursed" name_key="buffCursedCoffee" description_key="buffCursedCoffeeDesc" icon="ui_game_symbol_skull" icon_color="0,255,0" icon_blink="true">
+      <stack_type value="ignore"/>
+      <display_value_key value="Cursed"/>
+      <display_value value="xxx"/>
+
+      <effect_group tiered="false">
+
+<!--        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-60"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-60"/>-->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="stamina" operation="set" value="0"/>
+<!--        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="food" operation="add" value="-60"/>-->
+        <passive_effect name="StaminaChangeOT" operation="base_set" value=".1"/>
+
+      </effect_group>
+    </buff>
 
     <buff name="buffTooMuchCaffeine">
       <damage_type value="Dehydration"/>

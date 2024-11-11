@@ -2,6 +2,17 @@
 
   <append xpath="/items">
 
+<item name="drinkCursedCoffee">
+    <property name="Extends" value="drinkJarCoffee"/>
+    <property name="CustomIcon" value="drinkCursedCoffee_160"/>
+    <property name="DisplayType" value="drinkCursedCoffee"/>
+
+    <effect_group tiered="false">
+        <display_value name="dStatsPenalty" value=".6"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCursed"/>
+    </effect_group>
+</item>
+
     <!-- ============================================================= -->
     <!-- ==================== BASE ITEMS GROUP ======================= -->
     <!-- ============================================================= -->
@@ -194,7 +205,7 @@
         <display_value name="dDuration" value="180"/>
         <display_value name="dDurationMax" value="540"/>
 
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="eatDryCoffeeTooltip"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="eatDryTooltip"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="543"/>
@@ -699,21 +710,20 @@
     <!-- ========================================================== -->
     <!-- ==================== LEVEL 3 DRINKS ====================== -->
     <!-- ========================================================== -->
-    <!--
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; ===================== DOUBLE TAP ======================== &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; Level 3 base drink - Double shot of espresso              &ndash;&gt;
-    &lt;!&ndash; Calculations:                                             &ndash;&gt;
-    &lt;!&ndash;   Beans per drink: 2 beans (2 espresso shots)             &ndash;&gt;
-    &lt;!&ndash;   Duration: 2 × 180 = 360s                                &ndash;&gt;
-    &lt;!&ndash;   Stamina: 2 × 5% = 10%                                   &ndash;&gt;
-    &lt;!&ndash;   Dehydration: 2.0 (double espresso's 1.0)                &ndash;&gt;
-    &lt;!&ndash;   Cold Resist: 7 (Level 2 hot drink)                      &ndash;&gt;
-    &lt;!&ndash; Notes:                                                    &ndash;&gt;
-    &lt;!&ndash;   Base for all Level 3 milk-based drinks                  &ndash;&gt;
-    &lt;!&ndash;   Maintains espresso concentration ratio                  &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
+    <!-- ========================================================= -->
+    <!-- ===================== DOUBLE TAP ======================== -->
+    <!-- ========================================================= -->
+    <!-- Level 3 base drink - Double shot of espresso              -->
+    <!-- Calculations:                                             -->
+    <!--   Beans per drink: 2 beans (2 espresso shots)             -->
+    <!--   Duration: 2 × 180 = 360s                                -->
+    <!--   Stamina: 2 × 5% = 10%                                   -->
+    <!--   Dehydration: 2.0 (double espresso's 1.0)                -->
+    <!--   Cold Resist: 7 (Level 2 hot drink)                      -->
+    <!-- Notes:                                                    -->
+    <!--   Base for all Level 3 milk-based drinks                  -->
+    <!--   Maintains espresso concentration ratio                  -->
+    <!-- ========================================================= -->
     <item name="drinkDoubleTap">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkDoubleTap_160"/>
@@ -727,36 +737,36 @@
         <display_value name="dDuration" value="360"/>
         <display_value name="dDurationMax" value="1080"/>
 
-        &lt;!&ndash; Caffeine buff setup &ndash;&gt;
+        <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="1080"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.10"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="2.0"/>
 
-        &lt;!&ndash; Cold resistance setup &ndash;&gt;
+        <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="1080"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="7"/>
 
-        &lt;!&ndash; Add buffs &ndash;&gt;
+        <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
       </effect_group>
     </item>
 
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; ===================== CAPPUCCINO ======================== &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; Classic espresso with milk mixture                        &ndash;&gt;
-    &lt;!&ndash; Base (Double Tap):                                        &ndash;&gt;
-    &lt;!&ndash;   Duration: 360s                                          &ndash;&gt;
-    &lt;!&ndash;   Stamina: 10%                                            &ndash;&gt;
-    &lt;!&ndash;   Dehydration: 2.0                                        &ndash;&gt;
-    &lt;!&ndash;   Cold Resist: 7                                          &ndash;&gt;
-    &lt;!&ndash; Added (Milk):                                             &ndash;&gt;
-    &lt;!&ndash;   Food: 10                                                &ndash;&gt;
-    &lt;!&ndash;   Health: 10                                              &ndash;&gt;
-    &lt;!&ndash;   Water: 10                                               &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
+    <!-- ========================================================= -->
+    <!-- ===================== CAPPUCCINO ======================== -->
+    <!-- ========================================================= -->
+    <!-- Classic espresso with milk mixture                        -->
+    <!-- Base (Double Tap):                                        -->
+    <!--   Duration: 360s                                          -->
+    <!--   Stamina: 10%                                            -->
+    <!--   Dehydration: 2.0                                        -->
+    <!--   Cold Resist: 7                                          -->
+    <!-- Added (Milk):                                             -->
+    <!--   Food: 10                                                -->
+    <!--   Health: 10                                              -->
+    <!--   Water: 10                                               -->
+    <!-- ========================================================= -->
     <item name="drinkCappuccino">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkCappuccino_160"/>
@@ -772,40 +782,40 @@
         <display_value name="dFoodAmountAdd" value="10"/>
         <display_value name="dFoodHealthAmount" value="10"/>
 
-        &lt;!&ndash; Caffeine buff setup &ndash;&gt;
+        <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="1080"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.10"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="2.0"/>
 
-        &lt;!&ndash; Food and Health &ndash;&gt;
+        <!-- Food and Health -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
 
-        &lt;!&ndash; Cold resistance setup &ndash;&gt;
+        <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="1080"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="7"/>
 
-        &lt;!&ndash; Add buffs &ndash;&gt;
+        <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffProcessConsumables"/>
       </effect_group>
     </item>
 
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; ===================== CAFÉ LATTE ======================== &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; Double espresso with double steamed milk                  &ndash;&gt;
-    &lt;!&ndash; Base (Double Tap):                                        &ndash;&gt;
-    &lt;!&ndash;   Duration: 360s                                          &ndash;&gt;
-    &lt;!&ndash;   Stamina: 10%                                            &ndash;&gt;
-    &lt;!&ndash;   Dehydration: 2.0                                        &ndash;&gt;
-    &lt;!&ndash;   Cold Resist: 7                                          &ndash;&gt;
-    &lt;!&ndash; Added (Double Milk):                                      &ndash;&gt;
-    &lt;!&ndash;   Food: 20 (2 × 10)                                       &ndash;&gt;
-    &lt;!&ndash;   Health: 20 (2 × 10)                                     &ndash;&gt;
-    &lt;!&ndash;   Water: 20 (2 × 10)                                      &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
+    <!-- ========================================================= -->
+    <!-- ===================== CAFÉ LATTE ======================== -->
+    <!-- ========================================================= -->
+    <!-- Double espresso with double steamed milk                  -->
+    <!-- Base (Double Tap):                                        -->
+    <!--   Duration: 360s                                          -->
+    <!--   Stamina: 10%                                            -->
+    <!--   Dehydration: 2.0                                        -->
+    <!--   Cold Resist: 7                                          -->
+    <!-- Added (Double Milk):                                      -->
+    <!--   Food: 20 (2 × 10)                                       -->
+    <!--   Health: 20 (2 × 10)                                     -->
+    <!--   Water: 20 (2 × 10)                                      -->
+    <!-- ========================================================= -->
     <item name="drinkCafeLatte">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkCafeLatte_160"/>
@@ -821,40 +831,40 @@
         <display_value name="dDuration" value="360"/>
         <display_value name="dDurationMax" value="1080"/>
 
-        &lt;!&ndash; Caffeine buff setup &ndash;&gt;
+        <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="1080"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.10"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="2.0"/>
 
-        &lt;!&ndash; Food and Health &ndash;&gt;
+        <!-- Food and Health -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="20"/>
 
-        &lt;!&ndash; Cold resistance setup &ndash;&gt;
+        <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="1080"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="7"/>
 
-        &lt;!&ndash; Add buffs &ndash;&gt;
+        <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffProcessConsumables"/>
       </effect_group>
     </item>
 
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; ===================== CAFÉ CRÈME ======================== &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; Double espresso enriched with creamer                     &ndash;&gt;
-    &lt;!&ndash; Base (Double Tap):                                        &ndash;&gt;
-    &lt;!&ndash;   Duration: 360s                                          &ndash;&gt;
-    &lt;!&ndash;   Stamina: 10%                                            &ndash;&gt;
-    &lt;!&ndash;   Dehydration: 2.0                                        &ndash;&gt;
-    &lt;!&ndash;   Cold Resist: 7                                          &ndash;&gt;
-    &lt;!&ndash; Added (Creamer):                                          &ndash;&gt;
-    &lt;!&ndash;   Food: 10                                                &ndash;&gt;
-    &lt;!&ndash;   Health: 5                                               &ndash;&gt;
-    &lt;!&ndash;   Water: 5                                                &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
+    <!-- ========================================================= -->
+    <!-- ===================== CAFÉ CRÈME ======================== -->
+    <!-- ========================================================= -->
+    <!-- Double espresso enriched with creamer                     -->
+    <!-- Base (Double Tap):                                        -->
+    <!--   Duration: 360s                                          -->
+    <!--   Stamina: 10%                                            -->
+    <!--   Dehydration: 2.0                                        -->
+    <!--   Cold Resist: 7                                          -->
+    <!-- Added (Creamer):                                          -->
+    <!--   Food: 10                                                -->
+    <!--   Health: 5                                               -->
+    <!--   Water: 5                                                -->
+    <!-- ========================================================= -->
     <item name="drinkCafeCreme">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkCafeCreme_160"/>
@@ -870,40 +880,40 @@
         <display_value name="dDuration" value="360"/>
         <display_value name="dDurationMax" value="1080"/>
 
-        &lt;!&ndash; Caffeine buff setup &ndash;&gt;
+        <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="1080"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.10"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="2.0"/>
 
-        &lt;!&ndash; Food and Health &ndash;&gt;
+        <!-- Food and Health -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
 
-        &lt;!&ndash; Cold resistance setup &ndash;&gt;
+        <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="1080"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="7"/>
 
-        &lt;!&ndash; Add buffs &ndash;&gt;
+        <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffProcessConsumables"/>
       </effect_group>
     </item>
 
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; ===================== CAFÉ BREVE ======================== &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; Double espresso with double creamer for extra richness    &ndash;&gt;
-    &lt;!&ndash; Base (Double Tap):                                        &ndash;&gt;
-    &lt;!&ndash;   Duration: 360s                                          &ndash;&gt;
-    &lt;!&ndash;   Stamina: 10%                                            &ndash;&gt;
-    &lt;!&ndash;   Dehydration: 2.0                                        &ndash;&gt;
-    &lt;!&ndash;   Cold Resist: 7                                          &ndash;&gt;
-    &lt;!&ndash; Added (Double Creamer):                                   &ndash;&gt;
-    &lt;!&ndash;   Food: 20 (2 × 10)                                       &ndash;&gt;
-    &lt;!&ndash;   Health: 10 (2 × 5)                                      &ndash;&gt;
-    &lt;!&ndash;   Water: 10 (2 × 5)                                       &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
+    <!-- ========================================================= -->
+    <!-- ===================== CAFÉ BREVE ======================== -->
+    <!-- ========================================================= -->
+    <!-- Double espresso with double creamer for extra richness    -->
+    <!-- Base (Double Tap):                                        -->
+    <!--   Duration: 360s                                          -->
+    <!--   Stamina: 10%                                            -->
+    <!--   Dehydration: 2.0                                        -->
+    <!--   Cold Resist: 7                                          -->
+    <!-- Added (Double Creamer):                                   -->
+    <!--   Food: 20 (2 × 10)                                       -->
+    <!--   Health: 10 (2 × 5)                                      -->
+    <!--   Water: 10 (2 × 5)                                       -->
+    <!-- ========================================================= -->
     <item name="drinkCafeBreve">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkCafeBreve_160"/>
@@ -919,45 +929,45 @@
         <display_value name="dDuration" value="360"/>
         <display_value name="dDurationMax" value="1080"/>
 
-        &lt;!&ndash; Caffeine buff setup &ndash;&gt;
+        <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="1080"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.10"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="2.0"/>
 
-        &lt;!&ndash; Food and Health &ndash;&gt;
+        <!-- Food and Health -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
 
-        &lt;!&ndash; Cold resistance setup &ndash;&gt;
+        <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="1080"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="7"/>
 
-        &lt;!&ndash; Add buffs &ndash;&gt;
+        <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffProcessConsumables"/>
       </effect_group>
     </item>
 
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; ====================== AFFOGATO ========================= &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; Luxury dessert coffee with honey and "ice cream"          &ndash;&gt;
-    &lt;!&ndash; Base (Double Tap):                                        &ndash;&gt;
-    &lt;!&ndash;   Duration: 360s                                          &ndash;&gt;
-    &lt;!&ndash;   Stamina: 10%                                            &ndash;&gt;
-    &lt;!&ndash;   Dehydration: 2.0                                        &ndash;&gt;
-    &lt;!&ndash; Cold Components:                                          &ndash;&gt;
-    &lt;!&ndash;   Heat Resist: 14 (doubled from snow)                     &ndash;&gt;
-    &lt;!&ndash; Added (Double Creamer):                                   &ndash;&gt;
-    &lt;!&ndash;   Food: 20 (2 × 10)                                       &ndash;&gt;
-    &lt;!&ndash;   Health: 10 (2 × 5)                                      &ndash;&gt;
-    &lt;!&ndash;   Water: 10 (2 × 5)                                       &ndash;&gt;
-    &lt;!&ndash; Honey Benefits:                                           &ndash;&gt;
-    &lt;!&ndash;   Food: 8                                                 &ndash;&gt;
-    &lt;!&ndash;   Health: 2                                               &ndash;&gt;
-    &lt;!&ndash;   Disease Cure: 5%                                        &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
+    <!-- ========================================================= -->
+    <!-- ====================== AFFOGATO ========================= -->
+    <!-- ========================================================= -->
+    <!-- Luxury dessert coffee with honey and "ice cream"          -->
+    <!-- Base (Double Tap):                                        -->
+    <!--   Duration: 360s                                          -->
+    <!--   Stamina: 10%                                            -->
+    <!--   Dehydration: 2.0                                        -->
+    <!-- Cold Components:                                          -->
+    <!--   Heat Resist: 14 (doubled from snow)                     -->
+    <!-- Added (Double Creamer):                                   -->
+    <!--   Food: 20 (2 × 10)                                       -->
+    <!--   Health: 10 (2 × 5)                                      -->
+    <!--   Water: 10 (2 × 5)                                       -->
+    <!-- Honey Benefits:                                           -->
+    <!--   Food: 8                                                 -->
+    <!--   Health: 2                                               -->
+    <!--   Disease Cure: 5%                                        -->
+    <!-- ========================================================= -->
     <item name="drinkAffogato">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkAffogato_160"/>
@@ -974,31 +984,31 @@
         <display_value name="dDuration" value="360"/>
         <display_value name="dDurationMax" value="1080"/>
 
-        &lt;!&ndash; Caffeine buff setup &ndash;&gt;
+        <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="1080"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.10"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="2.0"/>
 
-        &lt;!&ndash; Food and Health &ndash;&gt;
+        <!-- Food and Health -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="28"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="12"/>
 
-        &lt;!&ndash; Disease cure from honey &ndash;&gt;
+        <!-- Disease cure from honey -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffInfectionAddCurePerc" operation="add" value="5"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInfectionAddCure"/>
 
-        &lt;!&ndash; Heat resistance setup (doubled due to snow) &ndash;&gt;
+        <!-- Heat resistance setup (doubled due to snow) -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDurationMax" operation="set" value="1080"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="add" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistValue" operation="set" value="14"/>
 
-        &lt;!&ndash; Add buffs &ndash;&gt;
+        <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffHeatResist,buffProcessConsumables,buffInfectionAddCure"/>
       </effect_group>
     </item>
 
-
+<!--
     &lt;!&ndash; =========================================================== &ndash;&gt;
     &lt;!&ndash; ==================== LEVEL 4 DRINKS ======================= &ndash;&gt;
     &lt;!&ndash; =========================================================== &ndash;&gt;
@@ -1625,7 +1635,7 @@
         &lt;!&ndash; Add the power buff &ndash;&gt;
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffGrandpasPower"/>
       </effect_group>
-    </item>-->
+    </item-->>
 
   </append>
 </hurgleburgler>

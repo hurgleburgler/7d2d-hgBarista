@@ -1,4 +1,8 @@
 Key,Source,Context,English
+drinkCursedCoffee,items,Food,"Cursed Coffee"
+drinkCursedCoffeeDesc,items,Food,"A mysterious dark brew that saps your vitality. Reduces health, food, water, and stamina by 25%."
+buffCursedCoffee,buffs,Buff,"Cursed"
+buffCursedCoffeeDesc,buffs,Buff,"Your vitality is being drained by dark forces."
 espressoMachine_hgBB,blocks,Container,A Fancy Espresso Machine
 hgDR_milkBase,items,Item,"This is a base item for development only"
 eatDryCoffeeTooltip,items,Admin,"You've suddenly realized that was a bad idea..."
@@ -72,6 +76,8 @@ drinkColdBrewCoffee,items,Item,Cold Brew Coffee
 drinkColdBrewCoffeeDesc,items,Item,"Chilled and smooth, this brew is the perfect balance of refreshing and energizing. It's the kind of drink that goes down easy, even when the world's falling apart around you."
 drinkJarPurifiedWater,items,Item,Purified Water
 drinkJarPurifiedWaterDesc,items,Item,"Crystal clear and wonderfully pure, this filtered water is the foundation of premium beverages. The coal filtration removes impurities, making it both refreshing and healthier than standard boiled water."
+drinkShotOfEspresso,item,Item,A Shot of Espresso
+drinkShotOfEspressoDesc,item,Item,"Small but amazingly mighty, this concentrated burst of caffeine is a jolt straight to the zombie-fighting system. It's the fuel you need when every second counts because the apocalypse won't wait for you to wake up."
 drinkAmericano,items,Item,Americano
 drinkAmericanoDesc,items,Item,"A no-nonsense brew for survivors who need their caffeine fix but prefer it not as dehydrating. Smooth, bold, and with just enough water to stretch out that precious espresso, it's perfect for the wasteland grind."
 drinkBlackStrapCoffee,items,Item,Black Strap Coffee
