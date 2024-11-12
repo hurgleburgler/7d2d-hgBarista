@@ -669,16 +669,16 @@
     </item>
 
     <!-- ========================================================= -->
-    <!-- =================== PREMIUM COLD BREW ==================== -->
+    <!-- =================== PREMIUM COLD BREW =================== -->
     <!-- ========================================================= -->
     <!-- Luxury cold brew using purified water                     -->
     <!-- Calculations:                                             -->
-    <!--   Beans per drink: 1 bean × 1.5 (long-brew) = 1.5 beans  -->
-    <!--   Duration: 1.5 × 180 = 270s                             -->
-    <!--   Stamina: 1.5 × 5% = 7.5%                               -->
-    <!--   Dehydration: 0.6 (20% less than regular cold brew)     -->
-    <!--   Heat Resist: 7 (Level 2 cold drink)                    -->
-    <!--   Unique: Stamina efficiency -5% from purified water     -->
+    <!--   Beans per drink: 1 bean × 1.5 (long-brew) = 1.5 beans   -->
+    <!--   Duration: 1.5 × 180 = 270s                              -->
+    <!--   Stamina: 1.5 × 5% = 7.5%                                -->
+    <!--   Dehydration: 0.6 (20% less than regular cold brew)      -->
+    <!--   Heat Resist: 7 (Level 2 cold drink)                     -->
+    <!--   Unique: Stamina efficiency -5% from purified water      -->
     <!-- ========================================================= -->
     <item name="drinkPremiumColdBrew">
       <property name="Extends" value="drinkJarBoiledWater"/>
@@ -715,9 +715,8 @@
     </item>
 
 
-    <!-- ========================================================== -->
-    <!-- ==================== LEVEL 3 DRINKS ====================== -->
-    <!-- ========================================================== -->
+    <!-- ========================================================= -->
+    <!-- ==================== LEVEL 3 DRINKS ===================== -->
     <!-- ========================================================= -->
     <!-- ===================== DOUBLE TAP ======================== -->
     <!-- ========================================================= -->
