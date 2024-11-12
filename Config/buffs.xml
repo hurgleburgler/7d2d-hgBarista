@@ -28,6 +28,7 @@
         <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Water" operation="subtract" value="@$buffCursedWaterPenalty"/>
         <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="@$buffCursedStaminaPenalty"/>
         <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Food" operation="subtract" value="@$buffCursedFoodPenalty"/>
+        <passive_effect name="StaminaChangeOT" operation="base_set" value=".1"/>
       </effect_group>
 
       <effect_group>
@@ -39,7 +40,7 @@
       </effect_group>
     </buff>
 
-    <buff name="buffTooMuchCaffeine">
+    <buff name="debuffTooMuchCaffeine">
       <damage_type value="Dehydration"/>
       <stack_type value="duration"/>
       <duration value="30"/>
@@ -61,8 +62,16 @@
       <display_value_format value="time"/>
 
       <effect_group>
+        <!-- Increment counter on new stack -->
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$coffeeConsumedCount" operation="add" value="1"/>
+
+        <!-- Check for too much coffee -->
+        <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffTooMuchCaffeine">
+          <requirement name="CVarCompare" cvar="$coffeeConsumedCount" operation="GTE" value="10"/>
+        </triggered_effect>
+
         <!-- Duration cap check -->
-        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="set" value="@$buffCaffeineDurationMax">
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="set" value="@$buffCaffeineDurationMax">
           <requirement name="CVarCompare" cvar="$buffCaffeineDuration" operation="GT" value="@$buffCaffeineDurationMax"/>
         </triggered_effect>
 
@@ -78,6 +87,8 @@
           <requirement name="CVarCompare" cvar="$buffCaffeineDuration" operation="LTE" value="0"/>
         </triggered_effect>
 
+        <!-- Reset counter when buff expires -->
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$coffeeConsumedCount" operation="set" value="0"/>
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffCaffeineDisplay" operation="set" value="0"/>
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="set" value="0"/>
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0"/>

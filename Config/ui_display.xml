@@ -124,70 +124,70 @@
       <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
     </item_display_info>
 
-        <item_display_info display_type="drinkDoubleTap" display_group="groupConsumables">
-          <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
-          <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
-          <display_entry name="dDehydrationRate" title_key="statDehydrationRate" display_type="Decimal1"/>
-          <display_entry name="dColdResist" title_key="statColdResistance"/>
-          <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
-          <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
-        </item_display_info>
+    <item_display_info display_type="drinkDoubleTap" display_group="groupConsumables">
+      <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
+      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+      <display_entry name="dDehydrationRate" title_key="statDehydrationRate" display_type="Decimal1"/>
+      <display_entry name="dColdResist" title_key="statColdResistance"/>
+      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+      <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
+    </item_display_info>
 
-        <item_display_info display_type="drinkCappuccino" display_group="groupConsumables">
-          <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
-          <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
-          <display_entry name="dDehydrationRate" title_key="statDehydrationRate" display_type="Decimal1"/>
-          <display_entry name="dColdResist" title_key="statColdResistance"/>
-          <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
-          <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
-          <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
-          <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
-        </item_display_info>
+    <item_display_info display_type="drinkCappuccino" display_group="groupConsumables">
+      <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
+      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+      <display_entry name="dDehydrationRate" title_key="statDehydrationRate" display_type="Decimal1"/>
+      <display_entry name="dColdResist" title_key="statColdResistance"/>
+      <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
+      <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
+      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+      <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
+    </item_display_info>
 
-        <item_display_info display_type="drinkCafeLatte" display_group="groupConsumables">
-          <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
-          <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
-          <display_entry name="dDehydrationRate" title_key="statDehydrationRate" display_type="Decimal1"/>
-          <display_entry name="dColdResist" title_key="statColdResistance"/>
-          <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
-          <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
-          <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
-          <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
-        </item_display_info>
+    <item_display_info display_type="drinkCafeLatte" display_group="groupConsumables">
+      <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
+      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+      <display_entry name="dDehydrationRate" title_key="statDehydrationRate" display_type="Decimal1"/>
+      <display_entry name="dColdResist" title_key="statColdResistance"/>
+      <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
+      <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
+      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+      <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
+    </item_display_info>
 
-        <item_display_info display_type="drinkCafeCreme" display_group="groupConsumables">
-          <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
-          <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
-          <display_entry name="dDehydrationRate" title_key="statDehydrationRate" display_type="Decimal1"/>
-          <display_entry name="dColdResist" title_key="statColdResistance"/>
-          <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
-          <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
-          <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
-          <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
-        </item_display_info>
+    <item_display_info display_type="drinkCafeCreme" display_group="groupConsumables">
+      <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
+      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+      <display_entry name="dDehydrationRate" title_key="statDehydrationRate" display_type="Decimal1"/>
+      <display_entry name="dColdResist" title_key="statColdResistance"/>
+      <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
+      <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
+      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+      <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
+    </item_display_info>
 
-        <item_display_info display_type="drinkCafeBreve" display_group="groupConsumables">
-          <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
-          <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
-          <display_entry name="dDehydrationRate" title_key="statDehydrationRate" display_type="Decimal1"/>
-          <display_entry name="dColdResist" title_key="statColdResistance"/>
-          <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
-          <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
-          <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
-          <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
-        </item_display_info>
+    <item_display_info display_type="drinkCafeBreve" display_group="groupConsumables">
+      <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
+      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+      <display_entry name="dDehydrationRate" title_key="statDehydrationRate" display_type="Decimal1"/>
+      <display_entry name="dColdResist" title_key="statColdResistance"/>
+      <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
+      <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
+      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+      <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
+    </item_display_info>
 
-        <item_display_info display_type="drinkAffogato" display_group="groupConsumables">
-          <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
-          <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
-          <display_entry name="dDehydrationRate" title_key="statDehydrationRate" display_type="Decimal1"/>
-          <display_entry name="dHeatResist" title_key="statHeatResistance"/>
-          <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
-          <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
-          <display_entry name="dCureInfection" title_key="statDiseaseResist" display_type="Percent"/>
-          <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
-          <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
-        </item_display_info>
+    <item_display_info display_type="drinkAffogato" display_group="groupConsumables">
+      <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
+      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+      <display_entry name="dDehydrationRate" title_key="statDehydrationRate" display_type="Decimal1"/>
+      <display_entry name="dHeatResist" title_key="statHeatResistance"/>
+      <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
+      <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
+      <display_entry name="dCureInfection" title_key="statDiseaseResist" display_type="Percent"/>
+      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+      <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
+    </item_display_info>
 
 <!--
         <item_display_info display_type="drinkTripwire" display_group="groupConsumables">

@@ -6,6 +6,7 @@
       <property name="Extends" value="drinkJarCoffee"/>
       <property name="CustomIcon" value="drinkCursedCoffee_160"/>
       <property name="DisplayType" value="drinkCursedCoffee"/>
+      <property name="Stacknumber" value="500"/>
 
       <effect_group tiered="false">
         <!-- Display the debuff values -->
@@ -230,7 +231,7 @@
         </triggered_effect>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffTooMuchCaffeine"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,debuffTooMuchCaffeine"/>
       </effect_group>
     </item>
 
