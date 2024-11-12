@@ -11,7 +11,10 @@
   <append xpath="/ui_display_info/item_display">
 
     <item_display_info display_type="drinkCursedCoffee" display_group="groupConsumables">
-      <display_entry name="dStatsPenalty" title_key="statVitalityPenalty" display_type="Percent"/>
+      <display_entry name="dHealthPenalty" title_key="statHealthPenalty"/>
+      <display_entry name="dWaterPenalty" title_key="statWaterPenalty"/>
+      <display_entry name="dStaminaPenalty" title_key="statStaminaPenalty"/>
+      <display_entry name="dFoodPenalty" title_key="statFoodPenalty"/>
     </item_display_info>
 
     <item_display_info display_type="hgDR_milkBase" display_group="groupConsumables">
@@ -178,7 +181,7 @@
           <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
           <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
           <display_entry name="dDehydrationRate" title_key="statDehydrationRate" display_type="Decimal1"/>
-          <display_entry name="dColdResist" title_key="statColdResistance"/>
+          <display_entry name="dHeatResist" title_key="statHeatResistance"/>
           <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
           <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
           <display_entry name="dCureInfection" title_key="statDiseaseResist" display_type="Percent"/>

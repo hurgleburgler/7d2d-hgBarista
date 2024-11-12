@@ -2,16 +2,28 @@
 
   <append xpath="/items">
 
-<item name="drinkCursedCoffee">
-    <property name="Extends" value="drinkJarCoffee"/>
-    <property name="CustomIcon" value="drinkCursedCoffee_160"/>
-    <property name="DisplayType" value="drinkCursedCoffee"/>
+    <item name="drinkCursedCoffee">
+      <property name="Extends" value="drinkJarCoffee"/>
+      <property name="CustomIcon" value="drinkCursedCoffee_160"/>
+      <property name="DisplayType" value="drinkCursedCoffee"/>
 
-    <effect_group tiered="false">
-        <display_value name="dStatsPenalty" value=".6"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCursed"/>
-    </effect_group>
-</item>
+      <effect_group tiered="false">
+        <!-- Display the debuff values -->
+        <display_value name="dHealthPenalty" value="50"/>
+        <display_value name="dWaterPenalty" value="50"/>
+        <display_value name="dStaminaPenalty" value="100"/>
+        <display_value name="dFoodPenalty" value="50"/>
+
+        <!-- Set the debuff values before applying buff -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCursedHealthPenalty" operation="set" value="50"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCursedWaterPenalty" operation="set" value="50"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCursedStaminaPenalty" operation="set" value="100"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCursedFoodPenalty" operation="set" value="50"/>
+
+        <!-- Apply the buff -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="debuffCursed"/>
+      </effect_group>
+    </item>
 
     <!-- ============================================================= -->
     <!-- ==================== BASE ITEMS GROUP ======================= -->
@@ -294,8 +306,8 @@
     <!-- ========================================================== -->
     <!-- Health-focused herbal drink with disease protection        -->
     <!-- Calculations:                                              -->
-    <!--   Base Duration: 180s                                      -->
-    <!--   Max Duration: 540s                                       -->
+    <!--   Base Duration: 30s                                       -->
+    <!--   Max Duration: 90s                                        -->
     <!--   Stamina: 2% regeneration                                 -->
     <!--   Disease Resistance: 50 points                            -->
     <!-- Special Effects:                                           -->
@@ -304,12 +316,8 @@
     <!--   Disease resistance buff                                  -->
     <!-- Benefits:                                                  -->
     <!--   Water: +5                                                -->
-    <!--   Disease Protection: High                                 -->
+    <!--   Disease Protection: Low                                  -->
     <!--   Balanced Stats: No major penalties                       -->
-    <!-- Notes:                                                     -->
-    <!--   Focuses on survival rather than performance              -->
-    <!--   Good for exploring contaminated areas                    -->
-    <!--   Pairs well with other disease resistance items           -->
     <!-- ========================================================== -->
     <item name="drinkWastelandWheatgrass">
       <property name="Extends" value="drinkJarCoffee"/>
@@ -325,8 +333,8 @@
         <display_value name="dStaminaEfficiency" value="5"/>
 
         <!-- Disease resistance buff setup -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDiseaseResistDurationMax" operation="set" value="540"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDiseaseResistDuration" operation="add" value="180"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDiseaseResistDurationMax" operation="set" value="90"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDiseaseResistDuration" operation="add" value="30"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDiseaseResistValue" operation="set" value="0.5"/>
 
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDiseaseResistDuration" operation="set" value="@$buffDiseaseResistDurationMax">
@@ -373,15 +381,15 @@
         <display_value name="dDurationMax" value="540"/>
 
         <!-- Caffeine buff setup -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="540"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="180"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.05"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="0.60"/>
+        <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="540"/>
+        <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="180"/>
+        <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.05"/>
+        <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="0.60"/>
 
         <!-- Cold resistance setup -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="540"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="180"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="5"/>
+        <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="540"/>
+        <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="180"/>
+        <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="5"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>

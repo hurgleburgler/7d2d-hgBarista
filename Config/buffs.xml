@@ -18,19 +18,24 @@
 
   <append xpath="/buffs">
 
-    <buff name="buffCursed" name_key="buffCursedCoffee" description_key="buffCursedCoffeeDesc" icon="ui_game_symbol_skull" icon_color="0,255,0" icon_blink="true">
+    <buff name="debuffCursed" name_key="buffCursedCoffee" description_key="buffCursedCoffeeDesc" icon="ui_game_symbol_skull" icon_color="0,255,0" icon_blink="true">
       <stack_type value="ignore"/>
-      <display_value_key value="Cursed"/>
-      <display_value value="xxx"/>
+      <duration value="1"/> <!-- Just long enough to apply effects and clean up -->
 
-      <effect_group tiered="false">
+      <effect_group>
+        <!-- Apply the configurable penalties -->
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="@$buffCursedHealthPenalty"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Water" operation="subtract" value="@$buffCursedWaterPenalty"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="@$buffCursedStaminaPenalty"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Food" operation="subtract" value="@$buffCursedFoodPenalty"/>
+      </effect_group>
 
-<!--        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-60"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-60"/>-->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="stamina" operation="set" value="0"/>
-<!--        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="food" operation="add" value="-60"/>-->
-        <passive_effect name="StaminaChangeOT" operation="base_set" value=".1"/>
-
+      <effect_group>
+        <!-- Clean up -->
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffCursedHealthPenalty" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffCursedWaterPenalty" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffCursedStaminaPenalty" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffCursedFoodPenalty" operation="set" value="0"/>
       </effect_group>
     </buff>
 
@@ -56,14 +61,8 @@
       <display_value_format value="time"/>
 
       <effect_group>
-        <!-- Handle stacking with other coffee buffs -->
-        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="@$buffCoffeeBSDuration"/>
-        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="@$buffCoffeeDuration"/>
-        <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffBlackStrapCoffee"/>
-        <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffCoffee"/>
-
         <!-- Duration cap check -->
-        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="set" value="@$buffCaffeineDurationMax">
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="set" value="@$buffCaffeineDurationMax">
           <requirement name="CVarCompare" cvar="$buffCaffeineDuration" operation="GT" value="@$buffCaffeineDurationMax"/>
         </triggered_effect>
 
@@ -108,7 +107,12 @@
       <display_value_format value="time"/>
 
       <effect_group>
-        <!-- Update and display timer -->
+        <!-- Duration cap check -->
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffColdResistDuration" operation="set" value="@$buffColdResistDurationMax">
+          <requirement name="CVarCompare" cvar="$buffColdResistDuration" operation="GT" value="@$buffColdResistDurationMax"/>
+        </triggered_effect>
+
+        <!-- Timer management -->
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffColdResistDuration" operation="subtract" value="@$MetabolismDuration"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffColdResistDisplay" operation="set" value="@$buffColdResistDuration"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffColdResistDisplay" operation="divide" value="@$MetabolismDuration"/>
@@ -140,20 +144,31 @@
       <display_value_format value="time"/>
 
       <effect_group>
+        <!-- Duration cap check -->
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="set" value="@$buffHeatResistDurationMax">
+          <requirement name="CVarCompare" cvar="$buffHeatResistDuration" operation="GT" value="@$buffHeatResistDurationMax"/>
+        </triggered_effect>
+
+        <!-- Timer management -->
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="subtract" value="@$MetabolismDuration"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffHeatResistDisplay" operation="set" value="@$buffHeatResistDuration"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffHeatResistDisplay" operation="divide" value="@$MetabolismDuration"/>
       </effect_group>
 
       <effect_group>
+        <!-- Remove buff when duration expires -->
         <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffHeatResist">
           <requirement name="CVarCompare" cvar="$buffHeatResistDuration" operation="LTE" value="0"/>
         </triggered_effect>
+
+        <!-- Clean up variables -->
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffHeatResistDisplay" operation="set" value="0"/>
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffHeatResistValue" operation="set" value="0"/>
       </effect_group>
 
       <effect_group>
+        <!-- Apply the heat resistance effect -->
         <passive_effect name="HyperthermalResist" operation="base_add" value="@$buffHeatResistValue"/>
       </effect_group>
     </buff>
@@ -171,7 +186,7 @@
       </effect_group>
 
       <effect_group>
-        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffDiseaseResistDuration" operation="set" value="@$buffDiseaseResistDurationMax">
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffDiseaseResistDuration" operation="set" value="@$buffDiseaseResistDurationMax">
           <requirement name="CVarCompare" cvar="$buffDiseaseResistDuration" operation="GT" value="@$buffDiseaseResistDurationMax"/>
         </triggered_effect>
 
@@ -196,20 +211,31 @@
       <display_value_format value="time"/>
 
       <effect_group>
+        <!-- Duration cap check -->
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffStaminaEfficiencyDuration" operation="set" value="@$buffStaminaEfficiencyDurationMax">
+          <requirement name="CVarCompare" cvar="$buffStaminaEfficiencyDuration" operation="GT" value="@$buffStaminaEfficiencyDurationMax"/>
+        </triggered_effect>
+
+        <!-- Timer management -->
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffStaminaEfficiencyDuration" operation="subtract" value="@$MetabolismDuration"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffStaminaEfficiencyDisplay" operation="set" value="@$buffStaminaEfficiencyDuration"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffStaminaEfficiencyDisplay" operation="divide" value="@$MetabolismDuration"/>
       </effect_group>
 
       <effect_group>
+        <!-- Remove buff when duration expires -->
         <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffStaminaEfficiency">
           <requirement name="CVarCompare" cvar="$buffStaminaEfficiencyDuration" operation="LTE" value="0"/>
         </triggered_effect>
+
+        <!-- Clean up variables -->
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffStaminaEfficiencyDisplay" operation="set" value="0"/>
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffStaminaEfficiencyDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffStaminaEfficiencyValue" operation="set" value="0"/>
       </effect_group>
 
       <effect_group>
+        <!-- Apply stamina efficiency effects -->
         <passive_effect name="FoodLossPerStaminaPointGained" operation="perc_add" value="@$buffStaminaEfficiencyValue"/>
         <passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" value="@$buffStaminaEfficiencyValue"/>
       </effect_group>
