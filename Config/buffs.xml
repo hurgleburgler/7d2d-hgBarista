@@ -18,25 +18,24 @@
 
   <append xpath="/buffs">
 
-    <buff name="debuffCursed" name_key="buffCursedCoffee" description_key="buffCursedCoffeeDesc" icon="ui_game_symbol_skull" icon_color="0,255,0" icon_blink="true">
+    <buff name="buffCursed" name_key="buffCursedCoffee" description_key="buffCursedCoffeeDesc" icon="ui_game_symbol_skull" icon_color="0,255,0" icon_blink="true">
       <stack_type value="ignore"/>
-      <duration value="1"/> <!-- Just long enough to apply effects and clean up -->
 
-      <effect_group>
-        <!-- Apply the configurable penalties -->
-        <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="@$buffCursedHealthPenalty"/>
-        <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Water" operation="subtract" value="@$buffCursedWaterPenalty"/>
-        <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="@$buffCursedStaminaPenalty"/>
-        <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Food" operation="subtract" value="@$buffCursedFoodPenalty"/>
-        <passive_effect name="StaminaChangeOT" operation="base_set" value=".1"/>
+      <effect_group tiered="false">
+        <!-- Apply stat penalties -->
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="@$buffCursedHealthPenalty"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="water" operation="add" value="@$buffCursedWaterPenalty"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="stamina" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="food" operation="add" value="@$buffCursedFoodPenalty"/>
+        <passive_effect name="StaminaChangeOT" operation="base_set" value="@$buffCursedStaminaRegen"/>
       </effect_group>
 
       <effect_group>
         <!-- Clean up -->
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffCursedHealthPenalty" operation="set" value="0"/>
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffCursedWaterPenalty" operation="set" value="0"/>
-        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffCursedStaminaPenalty" operation="set" value="0"/>
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffCursedFoodPenalty" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffCursedStaminaRegen" operation="set" value="0"/>
       </effect_group>
     </buff>
 

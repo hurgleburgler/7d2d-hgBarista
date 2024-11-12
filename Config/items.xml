@@ -6,23 +6,22 @@
       <property name="Extends" value="drinkJarCoffee"/>
       <property name="CustomIcon" value="drinkCursedCoffee_160"/>
       <property name="DisplayType" value="drinkCursedCoffee"/>
-      <property name="Stacknumber" value="500"/>
 
       <effect_group tiered="false">
-        <!-- Display the debuff values -->
-        <display_value name="dHealthPenalty" value="50"/>
-        <display_value name="dWaterPenalty" value="50"/>
-        <display_value name="dStaminaPenalty" value="100"/>
-        <display_value name="dFoodPenalty" value="50"/>
+        <!-- Display values -->
+        <display_value name="dHealthPenalty" value="-50"/>
+        <display_value name="dWaterPenalty" value="-50"/>
+        <display_value name="dFoodPenalty" value="-50"/>
+        <display_value name="dStaminaRegen" value=".2"/>
 
-        <!-- Set the debuff values before applying buff -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCursedHealthPenalty" operation="set" value="50"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCursedWaterPenalty" operation="set" value="50"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCursedStaminaPenalty" operation="set" value="100"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCursedFoodPenalty" operation="set" value="50"/>
+        <!-- Set the debuff values -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCursedHealthPenalty" operation="set" value="-50"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCursedWaterPenalty" operation="set" value="-50"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCursedFoodPenalty" operation="set" value="-50"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCursedStaminaRegen" operation="set" value=".1"/>
 
         <!-- Apply the buff -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="debuffCursed"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCursed"/>
       </effect_group>
     </item>
 
