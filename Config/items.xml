@@ -261,17 +261,16 @@
     <!-- ============================================================= -->
 
 
-    <!-- ========================================================== -->
-    <!-- ====================== FILTHY JOE ======================== -->
-    <!-- ========================================================== -->
-    <!-- Quick, basic coffee with minimal effects                   -->
-    <!-- Calculations:                                              -->
-    <!--   Beans per drink: 2 beans / 5 drinks = 0.4 beans          -->
-    <!--   Duration: 0.4 × 180 = 72s                                -->
-    <!--   Stamina: 0.4 × 5% = 2%                                   -->
-    <!--   Dehydration: 0.25 (baseline)                             -->
-    <!--   Cold Resist: 5 (Level 1 hot drink)                       -->
-    <!-- ========================================================== -->
+    <!-- ============================================================= -->
+    <!-- ======================== FILTHY JOE ========================= -->
+    <!-- ============================================================= -->
+    <!-- Quick, basic coffee with minimal effects                      -->
+    <!-- Calculations:                                                 -->
+    <!--   Beans per drink: 2 beans / 5 drinks = 0.4 beans             -->
+    <!--   Regen: 0.4 × 20% = 8%                                       -->
+    <!--   Duration: 120s (reduced due to quick brewing)               -->
+    <!--   Dehydration: 0.25 (minimal due to weak brew)                -->
+    <!-- ============================================================= -->
     <item name="drinkFilthyJoe">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkFilthyJoe_160"/>
@@ -279,21 +278,21 @@
 
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
-        <display_value name="dStaminaRegen" value="0.02"/>
+        <display_value name="dStaminaRegen" value="0.08"/>
         <display_value name="dDehydrationRate" value="0.25"/>
         <display_value name="dColdResist" value="5"/>
-        <display_value name="dDuration" value="72"/>
-        <display_value name="dDurationMax" value="216"/>
+        <display_value name="dDuration" value="120"/>
+        <display_value name="dDurationMax" value="360"/>
 
         <!-- Caffeine buff setup -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="216"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="72"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.02"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="360"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="120"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.08"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="0.25"/>
 
         <!-- Cold resistance setup -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="216"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="72"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="360"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="120"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="5"/>
 
         <!-- Add buffs -->
@@ -308,7 +307,7 @@
     <!-- Calculations:                                              -->
     <!--   Base Duration: 30s                                       -->
     <!--   Max Duration: 90s                                        -->
-    <!--   Stamina: 2% regeneration                                 -->
+    <!--   Stamina: 5% regeneration                                 -->
     <!--   Disease Resistance: 50 points                            -->
     <!-- Special Effects:                                           -->
     <!--   Stamina Efficiency: -5% food/water loss                  -->
@@ -326,10 +325,10 @@
 
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
-        <display_value name="dStaminaRegen" value="0.02"/>
+        <display_value name="dStaminaRegen" value="0.05"/>
         <display_value name="dDiseaseResist" value="50"/>
-        <display_value name="dDuration" value="180"/>
-        <display_value name="dDurationMax" value="540"/>
+        <display_value name="dDuration" value="30"/>
+        <display_value name="dDurationMax" value="90"/>
         <display_value name="dStaminaEfficiency" value="5"/>
 
         <!-- Disease resistance buff setup -->
@@ -363,7 +362,7 @@
     <!-- Calculations:                                              -->
     <!--   Beans per drink: 1 bean                                  -->
     <!--   Duration: 1 × 180 = 180s                                 -->
-    <!--   Stamina: 1 × 5% = 5%                                     -->
+    <!--   Stamina: 1 × 20% = 20%                                   -->
     <!--   Dehydration: 0.6 (2.5× Filthy Joe due to concentration)  -->
     <!--   Cold Resist: 5 (Level 1 hot drink)                       -->
     <!-- ========================================================== -->
@@ -374,7 +373,7 @@
 
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
-        <display_value name="dStaminaRegen" value="0.05"/>
+        <display_value name="dStaminaRegen" value="0.2"/>
         <display_value name="dDehydrationRate" value="0.60"/>
         <display_value name="dColdResist" value="5"/>
         <display_value name="dDuration" value="180"/>
@@ -403,7 +402,7 @@
     <!-- Calculations:                                              -->
     <!--   Beans per drink: 1 bean                                  -->
     <!--   Duration: 1 × 180 = 180s                                 -->
-    <!--   Stamina: 1 × 5% = 5%                                     -->
+    <!--   Stamina: 1 × 20% = 20%                                   -->
     <!--   Dehydration: 0.6 (2.5× Filthy Joe due to concentration)  -->
     <!--   Heat Resist: 5 (Level 1 cold drink)                      -->
     <!-- ========================================================== -->
@@ -414,7 +413,7 @@
 
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
-        <display_value name="dStaminaRegen" value="0.05"/>
+        <display_value name="dStaminaRegen" value="0.2"/>
         <display_value name="dDehydrationRate" value="0.60"/>
         <display_value name="dHeatResist" value="5"/>
         <display_value name="dDuration" value="180"/>
@@ -443,7 +442,7 @@
     <!--   Beans per drink: 5 beans / 5 drinks = 1 bean × 1.5       -->
     <!--                    (long-brew bonus) = 1.5 effective beans -->
     <!--   Duration: 1.5 × 180 = 270s                               -->
-    <!--   Stamina: 1.5 × 5% = 7.5%                                 -->
+    <!--   Stamina: 1.5 × 20% = 30%                                 -->
     <!--   Dehydration: 0.75 (smooth process despite concentration) -->
     <!--   Heat Resist: 5 (Level 1 cold drink)                      -->
     <!-- ========================================================== -->
@@ -454,7 +453,7 @@
 
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
-        <display_value name="dStaminaRegen" value="0.075"/>
+        <display_value name="dStaminaRegen" value="0.3"/>
         <display_value name="dDehydrationRate" value="0.75"/>
         <display_value name="dHeatResist" value="5"/>
         <display_value name="dDuration" value="270"/>
@@ -532,17 +531,17 @@
       </effect_group>
     </item>
 
-    <!-- ========================================================== -->
-    <!-- ===================== SHOT OF ESPRESSO =================== -->
-    <!-- ========================================================== -->
-    <!-- Concentrated coffee with high initial burst                -->
-    <!-- Calculations:                                              -->
-    <!--   Beans per shot: 2 beans / 2 shots = 1 bean in half water -->
-    <!--   Duration: 1 × 180 = 180s                                 -->
-    <!--   Stamina: 1 × 5% = 5%                                     -->
-    <!--   Dehydration: 1.0 (4× Filthy Joe due to concentration)    -->
-    <!--   Cold Resist: 7 (Level 2 hot drink)                       -->
-    <!-- ========================================================== -->
+    <!-- ========================================================= -->
+    <!-- ===================== SHOT OF ESPRESSO ================== -->
+    <!-- ========================================================= -->
+    <!-- Concentrated coffee with high initial burst               -->
+    <!-- Calculations:                                             -->
+    <!--   Beans / shot: 2 beans / 2 shots = 1 bean in half water  -->
+    <!--   Duration: 1 × 180 = 180s                                -->
+    <!--   Stamina: 1 bean × 20% × 1.25 = 25% regen                -->
+    <!--   Dehydration: 1.0 (4× Filthy Joe due to concentration)   -->
+    <!--   Cold Resist: 7 (Level 2 hot drink)                      -->
+    <!-- ========================================================= -->
     <item name="drinkShotOfEspresso">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkShotOfEspresso_160"/>
@@ -550,7 +549,7 @@
 
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="5"/>
-        <display_value name="dStaminaRegen" value="0.05"/>
+        <display_value name="dStaminaRegen" value="0.25"/>
         <display_value name="dDehydrationRate" value="1.0"/>
         <display_value name="dColdResist" value="7"/>
         <display_value name="dDuration" value="180"/>
@@ -567,6 +566,9 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="180"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="7"/>
 
+        <!-- Water restoration -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="5"/>
+
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
       </effect_group>
@@ -579,7 +581,7 @@
     <!-- Calculations:                                             -->
     <!--   Uses same beans as espresso but diluted                 -->
     <!--   Duration: 1 × 180 = 180s                                -->
-    <!--   Stamina: 1 × 5% = 5% (same caffeine content)            -->
+    <!--   Stamina: 25% regen (same as espresso)                   -->
     <!--   Dehydration: 0.5 (half of espresso due to dilution)     -->
     <!--   Cold Resist: 7 (Level 2 hot drink)                      -->
     <!--   Plus better hydration from extra water                  -->
@@ -591,7 +593,7 @@
 
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="15"/>
-        <display_value name="dStaminaRegen" value="0.05"/>
+        <display_value name="dStaminaRegen" value="0.25"/>
         <display_value name="dDehydrationRate" value="0.5"/>
         <display_value name="dColdResist" value="7"/>
         <display_value name="dDuration" value="180"/>
@@ -625,12 +627,12 @@
     <!--   Duration: 1 × 180 = 180s                                -->
     <!--   Base Stamina: 1 × 5% = 5%                               -->
     <!--   Base Dehydration: 0.6 (standard for 1 bean)             -->
-    <!-- Stimulant Boost:                                          -->
-    <!--   Additional Stamina: +10%                                -->
-    <!--   Additional Dehydration: +0.5                            -->
+    <!-- Gunpowder Stimulant Boost:                                -->
+    <!--   Additional Stamina: +15%                                -->
+    <!--   Additional Dehydration: +0.6                            -->
     <!-- Final Effects:                                            -->
-    <!--   Total Stamina: 15% (5% base + 10% boost)                -->
-    <!--   Total Dehydration: 1.1 (0.6 base + 0.5 stimulant)       -->
+    <!--   Total Stamina: 35% (20% base + 15% boost)               -->
+    <!--   Total Dehydration: 1.2 (0.6 base + 0.6 stimulant)       -->
     <!--   Cold Resist: 14 (Level 2 × 2 from stimulant)            -->
     <!-- ========================================================= -->
     <item name="drinkBlackStrapCoffee">
@@ -640,8 +642,8 @@
 
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="5"/>
-        <display_value name="dStaminaRegen" value="0.15"/>
-        <display_value name="dDehydrationRate" value="1.1"/>
+        <display_value name="dStaminaRegen" value="0.35"/>
+        <display_value name="dDehydrationRate" value="1.2"/>
         <display_value name="dColdResist" value="14"/>
         <display_value name="dDuration" value="180"/>
         <display_value name="dDurationMax" value="540"/>
@@ -675,7 +677,7 @@
     <!-- Calculations:                                             -->
     <!--   Beans per drink: 1 bean × 1.5 (long-brew) = 1.5 beans   -->
     <!--   Duration: 1.5 × 180 = 270s                              -->
-    <!--   Stamina: 1.5 × 5% = 7.5%                                -->
+    <!--   Stamina: 1 bean × 20% × 1.5 × 1.1 = 33% regen           -->
     <!--   Dehydration: 0.6 (20% less than regular cold brew)      -->
     <!--   Heat Resist: 7 (Level 2 cold drink)                     -->
     <!--   Unique: Stamina efficiency -5% from purified water      -->
@@ -687,7 +689,7 @@
 
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="5"/>
-        <display_value name="dStaminaRegen" value="0.075"/>
+        <display_value name="dStaminaRegen" value="0.33"/>
         <display_value name="dDehydrationRate" value="0.6"/>
         <display_value name="dStaminaEfficiency" value="5"/>
         <display_value name="dHeatResist" value="7"/>
@@ -780,7 +782,7 @@
       <property name="DisplayType" value="drinkCappuccino"/>
 
       <effect_group tiered="false" name="Drink Tier 3">
-        <display_value name="dWaterAmountAdd" value="10"/>
+        <display_value name="dWaterAmountAdd" value="foobar"/>
         <display_value name="dStaminaRegen" value="0.10"/>
         <display_value name="dDehydrationRate" value="2.0"/>
         <display_value name="dColdResist" value="7"/>
@@ -1015,41 +1017,40 @@
       </effect_group>
     </item>
 
-<!--
-    &lt;!&ndash; =========================================================== &ndash;&gt;
-    &lt;!&ndash; ==================== LEVEL 4 DRINKS ======================= &ndash;&gt;
-    &lt;!&ndash; =========================================================== &ndash;&gt;
-    &lt;!&ndash; Combat-focused drinks - All extend from drinkJarBoiledWater &ndash;&gt;
-    &lt;!&ndash; Requires Military Beaker and Chemical Station               &ndash;&gt;
-    &lt;!&ndash; Base Formula Calculations:                                  &ndash;&gt;
-    &lt;!&ndash;   Duration = (effective_beans × 180) seconds                &ndash;&gt;
-    &lt;!&ndash;   Stamina = (effective_beans × 5%) regen                    &ndash;&gt;
-    &lt;!&ndash;   Dehydration scales with concentration                     &ndash;&gt;
-    &lt;!&ndash; Special Combat Effects:                                     &ndash;&gt;
-    &lt;!&ndash;   Each drink provides unique combat buffs                   &ndash;&gt;
-    &lt;!&ndash;   Enhanced resistances and attribute boosts                 &ndash;&gt;
-    &lt;!&ndash;   Higher crafting requirements                              &ndash;&gt;
-    &lt;!&ndash; Base Drink (Tripwire):                                      &ndash;&gt;
-    &lt;!&ndash;   Triple espresso concentration                             &ndash;&gt;
-    &lt;!&ndash;   Maximum caffeine boost                                    &ndash;&gt;
-    &lt;!&ndash;   Used as foundation for combat variants                    &ndash;&gt;
-    &lt;!&ndash; =========================================================== &ndash;&gt;
+    <!-- ========================================================= -->
+    <!-- ==================== LEVEL 4 DRINKS ===================== -->
+    <!-- ========================================================= -->
+    <!-- Combat-focused drinks - All extend drinkJarBoiledWater    -->
+    <!-- Requires Military Beaker and Chemical Station             -->
+    <!-- Base Formula Calculations:                                -->
+    <!--   Duration = (effective_beans × 180) seconds              -->
+    <!--   Stamina = (effective_beans × 5%) regen                  -->
+    <!--   Dehydration scales with concentration                   -->
+    <!-- Special Combat Effects:                                   -->
+    <!--   Each drink provides unique combat buffs                 -->
+    <!--   Enhanced resistances and attribute boosts               -->
+    <!--   Higher crafting requirements                            -->
+    <!-- Base Drink (Tripwire):                                    -->
+    <!--   Triple espresso concentration                           -->
+    <!--   Maximum caffeine boost                                  -->
+    <!--   Used as foundation for combat variants                  -->
+    <!-- ========================================================= -->
 
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; ====================== TRIPWIRE ========================= &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; Triple shot espresso - Foundation for combat drinks       &ndash;&gt;
-    &lt;!&ndash; Calculations:                                             &ndash;&gt;
-    &lt;!&ndash;   Beans: 3 espresso shots                                 &ndash;&gt;
-    &lt;!&ndash;   Duration: 3 × 180 = 540s                                &ndash;&gt;
-    &lt;!&ndash;   Stamina: 3 × 5% = 15%                                   &ndash;&gt;
-    &lt;!&ndash;   Dehydration: 3.0 (triple espresso concentration)        &ndash;&gt;
-    &lt;!&ndash;   Cold Resist: 10 (Level 4 hot drink)                     &ndash;&gt;
-    &lt;!&ndash; Notes:                                                    &ndash;&gt;
-    &lt;!&ndash;   Highest base caffeine content                           &ndash;&gt;
-    &lt;!&ndash;   Maximum dehydration rate                                &ndash;&gt;
-    &lt;!&ndash;   Used as base for all Level 4 combat drinks              &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
+    <!-- ========================================================= -->
+    <!-- ====================== TRIPWIRE ========================= -->
+    <!-- ========================================================= -->
+    <!-- Triple shot espresso - Foundation for combat drinks       -->
+    <!-- Calculations:                                             -->
+    <!--   Beans: 3 espresso shots                                 -->
+    <!--   Duration: 3 × 180 = 540s                                -->
+    <!--   Stamina: 3 × 5% = 15%                                   -->
+    <!--   Dehydration: 3.0 (triple espresso concentration)        -->
+    <!--   Cold Resist: 10 (Level 4 hot drink)                     -->
+    <!-- Notes:                                                    -->
+    <!--   Highest base caffeine content                           -->
+    <!--   Maximum dehydration rate                                -->
+    <!--   Used as base for all Level 4 combat drinks              -->
+    <!-- ========================================================= -->
     <item name="drinkTripwire">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkTripwire_160"/>
@@ -1063,38 +1064,38 @@
         <display_value name="dDuration" value="540"/>
         <display_value name="dDurationMax" value="1620"/>
 
-        &lt;!&ndash; Caffeine buff setup &ndash;&gt;
+        <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="1620"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.15"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="3.0"/>
 
-        &lt;!&ndash; Cold resistance setup &ndash;&gt;
+        <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="1620"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="10"/>
 
-        &lt;!&ndash; Add buffs &ndash;&gt;
+        <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
       </effect_group>
     </item>
 
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; ================== SPRING-HEELED JOE ==================== &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; Combat coffee focused on mobility and parkour             &ndash;&gt;
-    &lt;!&ndash; Base Coffee Effects:                                      &ndash;&gt;
-    &lt;!&ndash;   Duration: 540s                                          &ndash;&gt;
-    &lt;!&ndash;   Stamina: 15% (full caffeine)                            &ndash;&gt;
-    &lt;!&ndash;   Dehydration: 3.0 (full strength)                        &ndash;&gt;
-    &lt;!&ndash;   Heat Resist: 10 (Level 4)                               &ndash;&gt;
-    &lt;!&ndash; Mobility Benefits:                                        &ndash;&gt;
-    &lt;!&ndash;   Mobility: 15% base increase                             &ndash;&gt;
-    &lt;!&ndash;   Movement Speed: 15% all types                           &ndash;&gt;
-    &lt;!&ndash;   Stamina Efficiency: 15% for movement                    &ndash;&gt;
-    &lt;!&ndash;   Fall Resistance: 25%                                    &ndash;&gt;
-    &lt;!&ndash;   OhShitzDrops: Additional fall protection                &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
+    <!-- ========================================================= -->
+    <!-- ================== SPRING-HEELED JOE ==================== -->
+    <!-- ========================================================= -->
+    <!-- Combat coffee focused on mobility and parkour             -->
+    <!-- Base Coffee Effects:                                      -->
+    <!--   Duration: 540s                                          -->
+    <!--   Stamina: 15% (full caffeine)                            -->
+    <!--   Dehydration: 3.0 (full strength)                        -->
+    <!--   Heat Resist: 10 (Level 4)                               -->
+    <!-- Mobility Benefits:                                        -->
+    <!--   Mobility: 15% base increase                             -->
+    <!--   Movement Speed: 15% all types                           -->
+    <!--   Stamina Efficiency: 15% for movement                    -->
+    <!--   Fall Resistance: 25%                                    -->
+    <!--   OhShitzDrops: Additional fall protection                -->
+    <!-- ========================================================= -->
     <item name="drinkSpringHeeledJoe">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkSpringHeeledJoe_160"/>
@@ -1104,49 +1105,49 @@
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.15"/>
         <display_value name="dDehydrationRate" value="3.0"/>
-        <display_value name="dMobilityBoost" value="15"/>
-        <display_value name="dMovementSpeed" value="15"/>
-        <display_value name="dStaminaEfficiency" value="15"/>
-        <display_value name="dFallResist" value="25"/>
+        <display_value name="dMobilityBoost" value=".15"/>
+        <display_value name="dMovementSpeed" value=".15"/>
+        <display_value name="dStaminaEfficiency" value=".15"/>
+        <display_value name="dFallResist" value=".25"/>
         <display_value name="dDuration" value="540"/>
         <display_value name="dDurationMax" value="1620"/>
 
-        &lt;!&ndash; Caffeine buff setup (full strength) &ndash;&gt;
+        <!-- Caffeine buff setup (full strength) -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="1620"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.15"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="3.0"/>
 
-        &lt;!&ndash; Parkour buff setup &ndash;&gt;
+        <!-- Parkour buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffParkourDuration" operation="add" value="540"/>
 
-        &lt;!&ndash; OhShitzDrops buff setup &ndash;&gt;
+        <!-- OhShitzDrops buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrugOhShitzDropsDuration" operation="add" value="540"/>
 
-        &lt;!&ndash; Add buffs &ndash;&gt;
+        <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffParkourBoost,buffDrugOhShitzDrops,buffTooMuchCaffeine"/>
       </effect_group>
     </item>
 
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; ================= PUMPKIN-SPIKED LATTE ================== &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; Combat coffee specialized for club-based combat           &ndash;&gt;
-    &lt;!&ndash; Base Coffee Effects:                                      &ndash;&gt;
-    &lt;!&ndash;   Duration: 540s                                          &ndash;&gt;
-    &lt;!&ndash;   Stamina: 15% (full caffeine)                            &ndash;&gt;
-    &lt;!&ndash;   Dehydration: 3.0 (full strength)                        &ndash;&gt;
-    &lt;!&ndash;   Cold Resist: 10                                         &ndash;&gt;
-    &lt;!&ndash; Combat Effects:                                           &ndash;&gt;
-    &lt;!&ndash;   Skull Crushers: 50% melee damage                        &ndash;&gt;
-    &lt;!&ndash;   Club Damage: 100% additional                            &ndash;&gt;
-    &lt;!&ndash;   Club Speed: 10% faster attacks                          &ndash;&gt;
-    &lt;!&ndash;   Club Efficiency: 15% less stamina                       &ndash;&gt;
-    &lt;!&ndash; Food Benefits (Milk/Honey/Pumpkin):                       &ndash;&gt;
-    &lt;!&ndash;   Food: 7                                                 &ndash;&gt;
-    &lt;!&ndash;   Health: 7.5                                             &ndash;&gt;
-    &lt;!&ndash;   Water: 65                                               &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
+    <!-- ========================================================= -->
+    <!-- ================= PUMPKIN-SPIKED LATTE ================== -->
+    <!-- ========================================================= -->
+    <!-- Combat coffee specialized for club-based combat           -->
+    <!-- Base Coffee Effects:                                      -->
+    <!--   Duration: 540s                                          -->
+    <!--   Stamina: 15% (full caffeine)                            -->
+    <!--   Dehydration: 3.0 (full strength)                        -->
+    <!--   Cold Resist: 10                                         -->
+    <!-- Combat Effects:                                           -->
+    <!--   Skull Crushers: 50% melee damage                        -->
+    <!--   Club Damage: 100% additional                            -->
+    <!--   Club Speed: 10% faster attacks                          -->
+    <!--   Club Efficiency: 15% less stamina                       -->
+    <!-- Food Benefits (Milk/Honey/Pumpkin):                       -->
+    <!--   Food: 7                                                 -->
+    <!--   Health: 7.5                                             -->
+    <!--   Water: 65                                               -->
+    <!-- ========================================================= -->
     <item name="drinkPumpkinSpikeLatte">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkPumpkinSpikeLatte_160"/>
@@ -1159,54 +1160,54 @@
         <display_value name="dStaminaRegen" value="0.15"/>
         <display_value name="dDehydrationRate" value="3.0"/>
         <display_value name="dColdResist" value="10"/>
-        <display_value name="dClubDamage" value="100"/>
-        <display_value name="dMeleeDamage" value="50"/>
-        <display_value name="dClubSpeed" value="10"/>
-        <display_value name="dClubStamina" value="15"/>
+        <display_value name="dClubDamage" value="1"/>
+        <display_value name="dMeleeDamage" value=".5"/>
+        <display_value name="dClubSpeed" value=".1"/>
+        <display_value name="dClubStamina" value=".15"/>
         <display_value name="dDuration" value="540"/>
         <display_value name="dDurationMax" value="1620"/>
 
-        &lt;!&ndash; Caffeine buff setup (full strength) &ndash;&gt;
+        <!-- Caffeine buff setup (full strength) -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="1620"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.15"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="3.0"/>
 
-        &lt;!&ndash; Skull Crushers buff setup &ndash;&gt;
+        <!-- Skull Crushers buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrugSkullCrushersDuration" operation="add" value="540"/>
 
-        &lt;!&ndash; Pumpkin Club buff setup &ndash;&gt;
+        <!-- Pumpkin Club buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffPumpkinClubBonusDuration" operation="add" value="540"/>
 
-        &lt;!&ndash; Food and Health &ndash;&gt;
+        <!-- Food and Health -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="7"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7.5"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="65"/>
 
-        &lt;!&ndash; Add buffs &ndash;&gt;
+        <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffDrugSkullCrushers,buffPumpkinClubBonus,buffPerkPummelPeteBonus,buffProcessConsumables,buffTooMuchCaffeine"/>
       </effect_group>
     </item>
 
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; ===================== BEAR BREW ========================= &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; Combat coffee focused on raw strength and endurance       &ndash;&gt;
-    &lt;!&ndash; Base Coffee Effects:                                      &ndash;&gt;
-    &lt;!&ndash;   Duration: 540s                                          &ndash;&gt;
-    &lt;!&ndash;   Stamina: 15% (full caffeine)                            &ndash;&gt;
-    &lt;!&ndash;   Dehydration: 3.0 (full strength)                        &ndash;&gt;
-    &lt;!&ndash;   Cold Resist: 10                                         &ndash;&gt;
-    &lt;!&ndash; Strength Effects:                                         &ndash;&gt;
-    &lt;!&ndash;   Steroids: +50 carry capacity, 10% run speed             &ndash;&gt;
-    &lt;!&ndash;   Strength: +2 to strength attribute                      &ndash;&gt;
-    &lt;!&ndash;   Melee: 25% increased damage with brawling               &ndash;&gt;
-    &lt;!&ndash;   Resistance: Stun immunity                               &ndash;&gt;
-    &lt;!&ndash; Food Benefits (Milk/Honey):                               &ndash;&gt;
-    &lt;!&ndash;   Food: 10                                                &ndash;&gt;
-    &lt;!&ndash;   Health: 12                                              &ndash;&gt;
-    &lt;!&ndash;   Water: 10                                               &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
+    <!-- ========================================================= -->
+    <!-- ===================== BEAR BREW ========================= -->
+    <!-- ========================================================= -->
+    <!-- Combat coffee focused on raw strength and endurance       -->
+    <!-- Base Coffee Effects:                                      -->
+    <!--   Duration: 540s                                          -->
+    <!--   Stamina: 15% (full caffeine)                            -->
+    <!--   Dehydration: 3.0 (full strength)                        -->
+    <!--   Cold Resist: 10                                         -->
+    <!-- Strength Effects:                                         -->
+    <!--   Steroids: +50 carry capacity, 10% run speed             -->
+    <!--   Strength: +2 to strength attribute                      -->
+    <!--   Melee: 25% increased damage with brawling               -->
+    <!--   Resistance: Stun immunity                               -->
+    <!-- Food Benefits (Milk/Honey):                               -->
+    <!--   Food: 10                                                -->
+    <!--   Health: 12                                              -->
+    <!--   Water: 10                                               -->
+    <!-- ========================================================= -->
     <item name="drinkBearBrew">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkBearBrew_160"/>
@@ -1220,50 +1221,50 @@
         <display_value name="dDehydrationRate" value="3.0"/>
         <display_value name="dStrengthBoost" value="2"/>
         <display_value name="dCarryBonus" value="50"/>
-        <display_value name="dMeleeDamage" value="25"/>
-        <display_value name="dRunSpeed" value="10"/>
+        <display_value name="dMeleeDamage" value=".25"/>
+        <display_value name="dRunSpeed" value=".1"/>
         <display_value name="dDuration" value="540"/>
         <display_value name="dDurationMax" value="1620"/>
 
-        &lt;!&ndash; Caffeine buff setup (full strength) &ndash;&gt;
+        <!-- Caffeine buff setup (full strength) -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="1620"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.15"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="3.0"/>
 
-        &lt;!&ndash; Steroids buff setup &ndash;&gt;
+        <!-- Steroids buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrugSteroidsDuration" operation="add" value="540"/>
 
-        &lt;!&ndash; Food and Health &ndash;&gt;
+        <!-- Food and Health -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="12"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="10"/>
 
-        &lt;!&ndash; Add all buffs &ndash;&gt;
+        <!-- Add all buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffDrugSteroids,buffBearStrength,buffProcessConsumables,buffTooMuchCaffeine"/>
       </effect_group>
     </item>
 
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; ================== BULLETPROOF COFFEE =================== &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; Combat coffee focused on damage resistance and endurance  &ndash;&gt;
-    &lt;!&ndash; Base Coffee Effects:                                      &ndash;&gt;
-    &lt;!&ndash;   Duration: 540s                                          &ndash;&gt;
-    &lt;!&ndash;   Stamina: 15% (full caffeine)                            &ndash;&gt;
-    &lt;!&ndash;   Dehydration: 3.0 (full strength)                        &ndash;&gt;
-    &lt;!&ndash;   Cold Resist: 10                                         &ndash;&gt;
-    &lt;!&ndash; Defense Benefits:                                         &ndash;&gt;
-    &lt;!&ndash;   FortBites: 50% damage resistance                        &ndash;&gt;
-    &lt;!&ndash;   Animal Fat: Extended duration, better satiation         &ndash;&gt;
-    &lt;!&ndash; Food Benefits (Milk/Honey/Fat):                           &ndash;&gt;
-    &lt;!&ndash;   Food: 15 (enhanced by animal fat)                       &ndash;&gt;
-    &lt;!&ndash;   Health: 15                                              &ndash;&gt;
-    &lt;!&ndash;   Water: 10                                               &ndash;&gt;
-    &lt;!&ndash; Notes:                                                    &ndash;&gt;
-    &lt;!&ndash;   Focused on survival and damage mitigation               &ndash;&gt;
-    &lt;!&ndash;   High nutritional value from fats                        &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
+    <!-- ========================================================= -->
+    <!-- ================== BULLETPROOF COFFEE =================== -->
+    <!-- ========================================================= -->
+    <!-- Combat coffee focused on damage resistance and endurance  -->
+    <!-- Base Coffee Effects:                                      -->
+    <!--   Duration: 540s                                          -->
+    <!--   Stamina: 15% (full caffeine)                            -->
+    <!--   Dehydration: 3.0 (full strength)                        -->
+    <!--   Cold Resist: 10                                         -->
+    <!-- Defense Benefits:                                         -->
+    <!--   FortBites: 50% damage resistance                        -->
+    <!--   Animal Fat: Extended duration, better satiation         -->
+    <!-- Food Benefits (Milk/Honey/Fat):                           -->
+    <!--   Food: 15 (enhanced by animal fat)                       -->
+    <!--   Health: 15                                              -->
+    <!--   Water: 10                                               -->
+    <!-- Notes:                                                    -->
+    <!--   Focused on survival and damage mitigation               -->
+    <!--   High nutritional value from fats                        -->
+    <!-- ========================================================= -->
     <item name="drinkBulletproofCoffee">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkBulletproofCoffee_160"/>
@@ -1275,113 +1276,114 @@
         <display_value name="dFoodHealthAmount" value="15"/>
         <display_value name="dStaminaRegen" value="0.15"/>
         <display_value name="dDehydrationRate" value="3.0"/>
-        <display_value name="dDamageResist" value="50"/>
+        <display_value name="dDamageResist" value=".5"/>
         <display_value name="dDuration" value="540"/>
         <display_value name="dDurationMax" value="1620"/>
 
-        &lt;!&ndash; Caffeine buff setup (full strength) &ndash;&gt;
+        <!-- Caffeine buff setup (full strength) -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="1620"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.15"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="3.0"/>
 
-        &lt;!&ndash; FortBites buff setup &ndash;&gt;
+        <!-- FortBites buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrugFortBitesDuration" operation="add" value="540"/>
 
-        &lt;!&ndash; Food and Health &ndash;&gt;
+        <!-- Food and Health -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="15"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="10"/>
 
-        &lt;!&ndash; Add all buffs &ndash;&gt;
+        <!-- Add all buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffDrugFortBites,buffProcessConsumables,buffTooMuchCaffeine"/>
       </effect_group>
     </item>
 
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; =================== LONDON FOG LATTE ==================== &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; Stealth-focused tea latte with multiple buffs              &ndash;&gt;
-    &lt;!&ndash; Tea Effects:                                              &ndash;&gt;
-    &lt;!&ndash;   Red Tea: Efficient digestion (-15% food/water)          &ndash;&gt;
-    &lt;!&ndash;   Golden Tea: 20% dysentery cure                          &ndash;&gt;
-    &lt;!&ndash;   Cold Resist: 5 (warm tea)                               &ndash;&gt;
-    &lt;!&ndash; Combat Effects:                                           &ndash;&gt;
-    &lt;!&ndash;   Enhanced Stealth: 100% sneak damage                    &ndash;&gt;
-    &lt;!&ndash; Food Benefits (Milk/Honey):                              &ndash;&gt;
-    &lt;!&ndash;   Food: 10                                               &ndash;&gt;
-    &lt;!&ndash;   Health: 10                                             &ndash;&gt;
-    &lt;!&ndash;   Water: 10                                              &ndash;&gt;
-    &lt;!&ndash;   Disease Cure: 5%                                       &ndash;&gt;
-    &lt;!&ndash; ========================================================= &ndash;&gt;
+    <!-- ========================================================= -->
+    <!-- =================== LONDON FOG LATTE ==================== -->
+    <!-- ========================================================= -->
+    <!-- Stealth-focused tea latte with multiple buffs             -->
+    <!-- Tea Effects:                                              -->
+    <!--   Red Tea: Efficient digestion (-15% food/water)          -->
+    <!--   Golden Tea: 20% dysentery cure                          -->
+    <!--   Cold Resist: 5 (warm tea)                               -->
+    <!-- Combat Effects:                                           -->
+    <!--   Enhanced Stealth: 100% sneak damage                     -->
+    <!-- Food Benefits (Milk/Honey):                               -->
+    <!--   Food: 10                                                -->
+    <!--   Health: 10                                              -->
+    <!--   Water: 10                                               -->
+    <!--   Disease Cure: 5%                                        -->
+    <!-- ========================================================= -->
     <item name="drinkLondonFogLatte">
-      [Previous properties remain the same...]
+      <property name="Extends" value="drinkJarBoiledWater"/>
+      <property name="CustomIcon" value="drinkLondonFogLatte_160"/>
+      <property name="DisplayType" value="drinkLondonFogLatte"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
         <display_value name="dWaterAmountAdd" value="10"/>
         <display_value name="dFoodAmountAdd" value="10"/>
         <display_value name="dFoodHealthAmount" value="10"/>
-        <display_value name="dSneakDamage" value="100"/>
-        <display_value name="dEfficientDigestion" value="15"/>
-        <display_value name="dCureDysentery" value="20"/>
+        <display_value name="dSneakDamage" value="1"/>
+        <display_value name="dEfficientDigestion" value=".15"/>
         <display_value name="dCureInfection" value="5"/>
         <display_value name="dColdResist" value="5"/>
         <display_value name="dDuration" value="540"/>
         <display_value name="dDurationMax" value="1620"/>
 
-        &lt;!&ndash; Red Tea buff setup &ndash;&gt;
+        <!-- Red Tea buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffRedTeaDuration" operation="add" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffRedTeaDuration" operation="set" value="1620">
           <requirement name="CVarCompare" cvar="$buffRedTeaDuration" operation="GT" value="1620"/>
         </triggered_effect>
 
-        &lt;!&ndash; Stealth buff setup &ndash;&gt;
+        <!-- Stealth buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffLondonFogStealthDuration" operation="add" value="540"/>
 
-        &lt;!&ndash; Dysentery cure from Golden Tea &ndash;&gt;
+        <!-- Dysentery cure from Golden Tea -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDysenteryAddCurePerc" operation="add" value="20"/>
 
-        &lt;!&ndash; Disease cure from honey &ndash;&gt;
+        <!-- Disease cure from honey -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffInfectionAddCurePerc" operation="add" value="5"/>
 
-        &lt;!&ndash; Food and Health &ndash;&gt;
+        <!-- Food and Health -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="10"/>
 
-        &lt;!&ndash; Cold resistance setup &ndash;&gt;
+        <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="1620"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="5"/>
 
-        &lt;!&ndash; Add all buffs &ndash;&gt;
+        <!-- Add all buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRedTea,buffLondonFogStealth,buffInfectionAddCure,buffDysenteryAddCure,buffProcessConsumables,buffColdResist"/>
       </effect_group>
     </item>
 
-    &lt;!&ndash; ======================================================== &ndash;&gt;
-    &lt;!&ndash; ================ NIGHTMARE NITRO COLD BREW ============= &ndash;&gt;
-    &lt;!&ndash; ======================================================== &ndash;&gt;
-    &lt;!&ndash; Ultra-powerful pressurized cold brew with nitrogen       &ndash;&gt;
-    &lt;!&ndash; Base Effects (Enhanced Cold Brew):                       &ndash;&gt;
-    &lt;!&ndash;   Duration: 540s                                         &ndash;&gt;
-    &lt;!&ndash;   Stamina: 30% (extreme caffeine)                        &ndash;&gt;
-    &lt;!&ndash;   Dehydration: 5.0 (harshest dehydration)                &ndash;&gt;
-    &lt;!&ndash; Nitrogen Effects:                                        &ndash;&gt;
-    &lt;!&ndash;   Heat Resist: 15                                        &ndash;&gt;
-    &lt;!&ndash;   Cold Vulnerability: -5                                 &ndash;&gt;
-    &lt;!&ndash;   Attack Speed: +30%                                     &ndash;&gt;
-    &lt;!&ndash;   Movement Speed: +20% all types                         &ndash;&gt;
-    &lt;!&ndash; Combat Effects:                                          &ndash;&gt;
-    &lt;!&ndash;   Damage Bonus: 100% (pressurized power)                 &ndash;&gt;
-    &lt;!&ndash; Notes:                                                   &ndash;&gt;
-    &lt;!&ndash;   Most powerful coffee variant                           &ndash;&gt;
-    &lt;!&ndash;   High risk/reward balance                               &ndash;&gt;
-    &lt;!&ndash; ======================================================== &ndash;&gt;
+    <!-- ======================================================== -->
+    <!-- ================ NIGHTMARE NITRO COLD BREW ============= -->
+    <!-- ======================================================== -->
+    <!-- Ultra-powerful pressurized cold brew with nitrogen       -->
+    <!-- Base Effects (Enhanced Cold Brew):                       -->
+    <!--   Duration: 540s                                         -->
+    <!--   Stamina: 30% (extreme caffeine)                        -->
+    <!--   Dehydration: 5.0 (harshest dehydration)                -->
+    <!-- Nitrogen Effects:                                        -->
+    <!--   Heat Resist: 15                                        -->
+    <!--   Cold Vulnerability: -5                                 -->
+    <!--   Attack Speed: +30%                                     -->
+    <!--   Movement Speed: +20% all types                         -->
+    <!-- Combat Effects:                                          -->
+    <!--   Damage Bonus: 100% (pressurized power)                 -->
+    <!-- Notes:                                                   -->
+    <!--   Most powerful coffee variant                           -->
+    <!--   High risk/reward balance                               -->
+    <!-- ======================================================== -->
     <item name="drinkNightmareNitroColdBrew">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkNightmareNitroColdBrew_160"/>
-      <property name="DisplayType" value="drinkNightmareNitroColdBrew"/>
+      <property name="CustomIcon" value="drinkNightmareNitro_160"/>
+      <property name="DisplayType" value="drinkNightmareNitro"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -1389,26 +1391,27 @@
         <display_value name="dDehydrationRate" value="5.0"/>
         <display_value name="dHeatResist" value="15"/>
         <display_value name="dColdVulnerability" value="5"/>
-        <display_value name="dAttackSpeed" value="30"/>
-        <display_value name="dMovementSpeed" value="20"/>
-        <display_value name="dDamageBonus" value="100"/>
+        <display_value name="dAttackSpeed" value=".3"/>
+        <display_value name="dMovementSpeed" value=".2"/>
+        <display_value name="dDamageBonus" value="1"/>
         <display_value name="dDuration" value="540"/>
         <display_value name="dDurationMax" value="1620"/>
 
-        &lt;!&ndash; Caffeine buff setup (extreme) &ndash;&gt;
+        <!-- Caffeine buff setup (extreme) -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="1620"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.30"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="5.0"/>
 
-        &lt;!&ndash; Nitrogen cooling buff setup &ndash;&gt;
+        <!-- Nitrogen cooling buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffNitrogenCoolingDuration" operation="add" value="540"/>
 
-        &lt;!&ndash; Add all buffs &ndash;&gt;
+        <!-- Add all buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffNitrogenCooling"/>
       </effect_group>
     </item>
 
+<!--
     &lt;!&ndash; ========================================================= &ndash;&gt;
     &lt;!&ndash; ======================= THE QUAD ======================== &ndash;&gt;
     &lt;!&ndash; ========================================================= &ndash;&gt;
@@ -1642,7 +1645,8 @@
         &lt;!&ndash; Add the power buff &ndash;&gt;
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffGrandpasPower"/>
       </effect_group>
-    </item-->>
+    </item>
+-->
 
   </append>
 </hurgleburgler>

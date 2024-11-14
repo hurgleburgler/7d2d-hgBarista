@@ -102,6 +102,12 @@ drinkSpringHeeledJoe,items,Item,Cuppa Spring-Heeled Joe
 drinkSpringHeeledJoeDesc,items,Item,"This revolutionary blend combines the kick of a triple espresso with cutting-edge movement enhancement. Perfect for parkour enthusiasts and anyone who needs to defy gravity at a moment's notice. Warning: May cause spontaneous wall-running."
 drinkPumpkinSpikeLatte,items,Item,Pumpkin-Spiked Latte
 drinkPumpkinSpikeLatteDesc,items,Item,"A seasonal favorite with a brutal twist. This creamy pumpkin latte packs enough punch to crush skulls. The perfect drink for when you need both comfort and combat effectiveness."
+drinkBearBrew,items,Item,Bear Brew
+drinkBearBrewDesc,items,Item, "This powerful concoction is designed to unleash your inner beast, providing a remarkable boost to your strength and stamina. Crafted with potent ingredients, it fuels your body for intense battles, giving you the edge you need to dominate the competition."
+drinkBulletproofCoffee,items,Item,Bullet-proof Coffee
+drinkBulletproofCoffeeDesc,items,Item,"A powerful blend reminiscent of blackstrap, this robust coffee merges the richness of brewed beans with nutrient-dense animal fat. It’s designed to sustain you through grueling challenges, boosting both your health and stamina when the world feels bleak. This brew is your ally, fortifying you for whatever dangers lie ahead."
+drinkLondonFogLatte,items,Item,London Fog Latte
+drinkLondonFogLatteDesc,items,Item,"This cozy blend of tea, milk, and honey wraps you in warmth while sharpening your senses. Perfect for quiet moments, it enhances your stealth and vision, keeping you alert amidst the chaos. Sip this comforting brew and feel ready to navigate the dangers of the wasteland with newfound awareness."
 drinkNightmareNitroColdBrew,items,Item,Nightmare Nitro Cold Brew
 drinkNightmareNitroColdBrewDesc,items,Item,"A terrifying concoction of pressurized cold brew infused with pure nitrogen. The extreme cold and pressure create unnatural effects, dramatically enhancing speed and power while chilling you to the bone. Warning: May cause extreme jitters, heart palpitations, and an overwhelming urge to fight everything that moves."
 drinkQuad,items,Item,The Quad
