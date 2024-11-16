@@ -145,3 +145,4 @@ statRestoration,stats,Stat,Full Restoration
 statRunSpeed,stats,Stat,Run Speed Boost
 statStaminaEfficiency,stats,Stat,Stamina Efficiency
 statStrengthBoost,stats,Stat,Strength Increase
+buffDehydrateName,state,Stat,Dehydration Effect
