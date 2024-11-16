@@ -97,56 +97,92 @@
         <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="Player$Thirsty" play_in_head="true"/>
 
         <!-- Apply dehydration debuff -->
-        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="dehydrateAmount" operation="set" value="25"/>
-        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="dehydrateOverTime" operation="set" value="120"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="dehydrateAmount" operation="set" value="50"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="dehydrateOverTime" operation="set" value="10"/>
         <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="debuffDehydrate"/>
 
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="dehydrateAmount" operation="set" value="50"/>
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="dehydrateOverTime" operation="set" value="10"/>
+        <triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="debuffDehydrate"/>
+
         <!-- Fatigue after effect -->
-        <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffFatiguedTriggered"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffCaffeineFatigue"/>
+
       </effect_group>
     </buff>
 
+    <buff name="buffCaffeineFatigue" name_key="buffFatiguedName" description_key="buffFatiguedDesc" icon="ui_game_symbol_fatigued" icon_color="255,128,0">
+      <damage_type value="Disease"/>
+      <stack_type value="replace"/>
+      <duration value="0"/>
+      <display_value value=".fatiguedDurationDisplay"/>
+      <display_value_format value="time"/>
 
-<buff name="debuffDehydrate" name_key="buffDehydrateName" description_key="buffDehydrateDesc" icon="ui_game_symbol_thirst" icon_color="255,0,0" icon_blink="true">
-  <damage_type value="Dehydration"/>
-  <stack_type value="replace"/>
-  <duration value="0"/>
-  <display_value value=".dehydrateDisplay"/>
-  <display_value_format value="time"/>
+      <effect_group>
+        <!-- Duration setup -->
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$fatiguedCounter" operation="set" value="7208"/>
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$fatiguedCounter" operation="set" value="7208"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$fatiguedCounter" operation="subtract" value="@$critHitNaturalHealingRate"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".fatiguedDurationDisplay" operation="set" value="@$fatiguedCounter"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".fatiguedDurationDisplay" operation="divide" value="@$critHitNaturalHealingRate"/>
 
-  <effect_group>
-    <!-- Initial setup -->
-    <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dehydratePointsRemaining" operation="set" value="@dehydrateAmount"/>
-    <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dehydrateTimeRemaining" operation="set" value="@dehydrateDuration"/>
-    <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dehydratePerSecond" operation="set" value="@dehydrateAmount"/>
-    <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dehydratePerSecond" operation="divide" value="@dehydrateDuration"/>
+        <!-- Remove when done -->
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffCaffeineFatigue">
+          <requirement name="CVarCompare" cvar="$fatiguedCounter" operation="LTE" value="0"/>
+        </triggered_effect>
 
-    <!-- Stack handling -->
-    <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$dehydratePointsRemaining" operation="add" value="@dehydrateAmount"/>
-    <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$dehydrateTimeRemaining" operation="add" value="@dehydrateDuration"/>
-    <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$dehydratePerSecond" operation="set" value="@$dehydratePointsRemaining"/>
-    <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$dehydratePerSecond" operation="divide" value="@$dehydrateTimeRemaining"/>
+        <!-- Cleanup -->
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$fatiguedCounter" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".fatiguedDurationDisplay" operation="set" value="0"/>
+      </effect_group>
 
-    <!-- Per tick updates -->
-    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="water" operation="subtract" value="@$dehydratePerSecond"/>
-    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$dehydratePointsRemaining" operation="subtract" value="@$dehydratePerSecond"/>
-    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$dehydrateTimeRemaining" operation="subtract" value="1"/>
-    <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".dehydrateDisplay" operation="set" value="@$dehydrateTimeRemaining"/>
-  </effect_group>
+      <!-- Core fatigue effects without infection vector -->
+      <effect_group>
+        <passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffCaffeineFatigue"/>
+        <passive_effect name="HealthLoss" operation="perc_add" value=".1"/>
+      </effect_group>
+    </buff>
 
-  <effect_group>
-    <!-- End buff when duration expires -->
-    <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="debuffDehydrate">
-      <requirement name="CVarCompare" cvar="$dehydrateTimeRemaining" operation="LTE" value="0"/>
-    </triggered_effect>
+    <buff name="debuffDehydrate" name_key="buffDehydrateName" description_key="buffDehydrateDesc" icon="ui_game_symbol_thirst" icon_color="255,0,0" icon_blink="true">
+      <damage_type value="Dehydration"/>
+      <stack_type value="replace"/>
+      <duration value="0"/>
+      <display_value value=".dehydrateDisplay"/>
+      <display_value_format value="time"/>
 
-    <!-- Cleanup -->
-    <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$dehydrateTimeRemaining" operation="set" value="0"/>
-    <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$dehydratePointsRemaining" operation="set" value="0"/>
-    <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$dehydratePerSecond" operation="set" value="0"/>
-    <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".dehydrateDisplay" operation="set" value="0"/>
-  </effect_group>
-</buff>
+      <effect_group>
+        <!-- Initial setup -->
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dehydratePointsRemaining" operation="set" value="@dehydrateAmount"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dehydrateTimeRemaining" operation="set" value="@dehydrateDuration"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dehydratePerSecond" operation="set" value="@dehydrateAmount"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dehydratePerSecond" operation="divide" value="@dehydrateDuration"/>
+
+        <!-- Stack handling -->
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$dehydratePointsRemaining" operation="add" value="@dehydrateAmount"/>
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$dehydrateTimeRemaining" operation="add" value="@dehydrateDuration"/>
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$dehydratePerSecond" operation="set" value="@$dehydratePointsRemaining"/>
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$dehydratePerSecond" operation="divide" value="@$dehydrateTimeRemaining"/>
+
+        <!-- Per tick updates -->
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="water" operation="subtract" value="@$dehydratePerSecond"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$dehydratePointsRemaining" operation="subtract" value="@$dehydratePerSecond"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$dehydrateTimeRemaining" operation="subtract" value="1"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".dehydrateDisplay" operation="set" value="@$dehydrateTimeRemaining"/>
+      </effect_group>
+
+      <effect_group>
+        <!-- End buff when duration expires -->
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="debuffDehydrate">
+          <requirement name="CVarCompare" cvar="$dehydrateTimeRemaining" operation="LTE" value="0"/>
+        </triggered_effect>
+
+        <!-- Cleanup -->
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$dehydrateTimeRemaining" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$dehydratePointsRemaining" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$dehydratePerSecond" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".dehydrateDisplay" operation="set" value="0"/>
+      </effect_group>
+    </buff>
 
 
     <buff name="buffCaffeine" name_key="drinkJarCoffee" description_key="drinkJarCoffeeDesc" icon="ui_game_symbol_coffee">

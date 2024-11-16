@@ -6,6 +6,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkDehydratingSeawater_160"/>
       <property name="DisplayType" value="drinkDehydratingSeawater"/>
+      <property name="CustomIcon" value="drinkJarRiverWater"/>
 
       <effect_group tiered="false">
         <!-- Display values -->
