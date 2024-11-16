@@ -143,6 +143,7 @@
       </effect_group>
     </buff>
 
+    <!-- THIS IS WORKING - DO NOT TOUCH -->
     <buff name="debuffDehydrate" name_key="buffDehydrateName" description_key="buffDehydrateDesc" icon="ui_game_symbol_thirst" icon_color="255,0,0" icon_blink="true">
       <damage_type value="Dehydration"/>
       <stack_type value="replace"/>
@@ -184,7 +185,7 @@
       </effect_group>
     </buff>
 
-
+    <!-- THIS IS WORKING - DO NOT TOUCH -->
     <buff name="buffCaffeine" name_key="drinkJarCoffee" description_key="drinkJarCoffeeDesc" icon="ui_game_symbol_coffee">
       <stack_type value="replace"/>
       <duration value="0"/>
@@ -211,10 +212,14 @@
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffCaffeineDisplay" operation="divide" value="@$MetabolismDuration"/>
 
         <!-- Apply dehydration on start -->
-        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="dehydrateAmount" operation="set" value="@$buffCaffeineDuration"/>
-        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="dehydrateAmount" operation="multiply" value="@$buffCaffeineDehydration"/>
-        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="dehydrateOverTime" operation="set" value="@$buffCaffeineDuration"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="dehydrateAmount" operation="set" value="@$buffCaffeineDehydration"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="dehydrateDuration" operation="set" value="@$buffCaffeineDuration"/>
         <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="debuffDehydrate"/>
+
+        <!-- Apply dehydration on stack -->
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="dehydrateAmount" operation="set" value="@$buffCaffeineDehydration"/>
+         <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="dehydrateDuration" operation="set" value="@$buffCaffeineDuration"/>
+        <triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="debuffDehydrate"/>
       </effect_group>
 
       <effect_group>
@@ -247,7 +252,7 @@
     </buff>
 
     <!-- Standard Cold Resistance Buff -->
-    <buff name="buffColdResist" name_key="buffColdResist" description_key="buffColdResistDesc" icon="ui_game_symbol_cold">
+    <buff name="buffColdResist" name_key="buffColdResist" description_key="buffColdResistDesc" icon="ui_game_symbol_cold" icon_color="0,102,204">
       <stack_type value="replace"/>
       <duration value="0"/>
       <display_value value=".buffColdResistDisplay"/>
@@ -280,11 +285,12 @@
       <effect_group>
         <!-- Apply the cold resistance effect -->
         <passive_effect name="HypothermalResist" operation="base_add" value="@$buffColdResistValue"/>
+        <passive_effect name="HyperthermalResist" operation="base_subtract" value="10"/>
       </effect_group>
     </buff>
 
     <!-- Heat Resistance Buff -->
-    <buff name="buffHeatResist" name_key="buffHeatResist" description_key="buffHeatResistDesc" icon="ui_game_symbol_hot">
+    <buff name="buffHeatResist" name_key="buffHeatResist" description_key="buffHeatResistDesc" icon="ui_game_symbol_hot" icon_color="204,102,0">
       <stack_type value="replace"/>
       <duration value="0"/>
       <display_value value=".buffHeatResistDisplay"/>
@@ -317,10 +323,11 @@
       <effect_group>
         <!-- Apply the heat resistance effect -->
         <passive_effect name="HyperthermalResist" operation="base_add" value="@$buffHeatResistValue"/>
+        <passive_effect name="HypothermalResist" operation="base_subtract" value="10"/>
       </effect_group>
     </buff>
 
-    <buff name="buffDiseaseResist" name_key="buffDiseaseResist" description_key="buffDiseaseResistDesc" icon="ui_game_symbol_defense">
+    <buff name="buffDiseaseResist" name_key="buffDiseaseResist" description_key="buffDiseaseResistDesc" icon="ui_game_symbol_natural_healing" icon_color="0,153,76">
       <stack_type value="replace"/>
       <duration value="0"/>
       <display_value value=".buffDiseaseResistDisplay"/>
@@ -351,7 +358,7 @@
     </buff>
 
     <!-- Standard Stamina Efficiency Buff -->
-    <buff name="buffStaminaEfficiency" name_key="buffStaminaEfficiency" description_key="buffStaminaEfficiencyDesc" icon="ui_game_symbol_stamina">
+    <buff name="buffStaminaEfficiency" name_key="buffStaminaEfficiency" description_key="buffStaminaEfficiencyDesc" icon="ui_game_symbol_stamina" icon_color="0,153,153">
       <stack_type value="replace"/>
       <duration value="0"/>
       <display_value value=".buffStaminaEfficiencyDisplay"/>
@@ -600,42 +607,6 @@
         <requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
         <passive_effect name="DamageBonus" operation="base_add" value="1.0"/> &lt;!&ndash;For UI&ndash;&gt;
         <passive_effect name="EntityDamage" operation="perc_add" value="1.0"/>
-      </effect_group>
-    </buff>
-
-    <buff name="buffNitrogenCooling" name_key="buffNitrogenCooling" description_key="buffNitrogenCoolingDesc" icon="ui_game_symbol_cold">
-      <stack_type value="replace"/>
-      <duration value="0"/>
-      <display_value value=".buffNitrogenCoolingDisplay"/>
-      <display_value_format value="time"/>
-
-      <effect_group>
-        &lt;!&ndash; Timer management &ndash;&gt;
-        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffNitrogenCoolingDuration" operation="subtract" value="@$MetabolismDuration"/>
-        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffNitrogenCoolingDisplay" operation="set" value="@$buffNitrogenCoolingDuration"/>
-        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffNitrogenCoolingDisplay" operation="divide" value="@$MetabolismDuration"/>
-      </effect_group>
-
-      <effect_group>
-        &lt;!&ndash; Buff removal &ndash;&gt;
-        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNitrogenCooling">
-          <requirement name="CVarCompare" cvar="$buffNitrogenCoolingDuration" operation="LTE" value="0"/>
-        </triggered_effect>
-        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffNitrogenCoolingDisplay" operation="set" value="0"/>
-        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffNitrogenCoolingDuration" operation="set" value="0"/>
-      </effect_group>
-
-      <effect_group>
-        &lt;!&ndash; Temperature effects &ndash;&gt;
-        <passive_effect name="HyperthermalResist" operation="base_add" value="15"/> &lt;!&ndash; Strong heat resistance &ndash;&gt;
-        <passive_effect name="HypothermalResist" operation="base_add" value="-5"/> &lt;!&ndash; Cold vulnerability &ndash;&gt;
-
-        &lt;!&ndash; Speed/combat effects from pressurization &ndash;&gt;
-        <passive_effect name="AttacksPerMinute" operation="perc_add" value="0.3"/> &lt;!&ndash; 30% faster attacks &ndash;&gt;
-        <passive_effect name="RunSpeed" operation="perc_add" value="0.2"/> &lt;!&ndash; 20% faster running &ndash;&gt;
-        <passive_effect name="WalkSpeed" operation="perc_add" value="0.2"/> &lt;!&ndash; 20% faster walking &ndash;&gt;
-        <passive_effect name="CrouchSpeed" operation="perc_add" value="0.2"/> &lt;!&ndash; 20% faster crouching &ndash;&gt;
-        &lt;!&ndash;<passive_effect name="SwimSpeed" operation="perc_add" value="0.2"/> &lt;!&ndash; 20% faster swimming &ndash;&gt;&ndash;&gt;
       </effect_group>
     </buff>
 

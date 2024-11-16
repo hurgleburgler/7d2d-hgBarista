@@ -9,10 +9,6 @@
       <property name="CustomIcon" value="drinkJarRiverWater"/>
 
       <effect_group tiered="false">
-        <!-- Display values -->
-<!--        <display_value name="dWaterAmount" value="-50"/>
-        <display_value name="dDehydrationTime" value="60"/>-->
-
         <!-- Set the debuff values -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="dehydrateAmount" operation="set" value="30"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="dehydrateDuration" operation="set" value="60"/>
@@ -267,8 +263,11 @@
     <!-- Base Dehydration = 0.25 (Filthy Joe baseline)               -->
     <!-- Dehydration scales with concentration ratio                 -->
     <!-- Temperature Resistance:                                     -->
-    <!--   Level 1: 5 resistance                                     -->
-    <!--   Level 2: 7 resistance                                     -->
+    <!--   Level 1: 10 resistance                                    -->
+    <!--   Level 2: 15 resistance                                    -->
+    <!--   Level 3: 20 resistance                                    -->
+    <!--   Level 4: 25 resistance                                    -->
+    <!--   Level 5: 30 resistance                                    -->
     <!-- =========================================================== -->
 
 
@@ -295,7 +294,8 @@
     <!--   Beans per drink: 2 beans / 5 drinks = 0.4 beans             -->
     <!--   Regen: 0.4 × 20% = 8%                                       -->
     <!--   Duration: 120s (reduced due to quick brewing)               -->
-    <!--   Dehydration: 0.25 (minimal due to weak brew)                -->
+    <!--   Dehydration: 2 (minimal due to weak brew)                   -->
+    <!--   Cold Resist: 10                                             -->
     <!-- ============================================================= -->
     <item name="drinkFilthyJoe">
       <property name="Extends" value="drinkJarBoiledWater"/>
@@ -314,12 +314,12 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="120"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.08"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="0.25"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="2"/>
 
         <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="120"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="5"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="10"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
@@ -389,8 +389,8 @@
     <!--   Beans per drink: 1 bean                                  -->
     <!--   Duration: 1 × 180 = 180s                                 -->
     <!--   Stamina: 1 × 20% = 20%                                   -->
-    <!--   Dehydration: 0.6 (2.5× Filthy Joe due to concentration)  -->
-    <!--   Cold Resist: 5 (Level 1 hot drink)                       -->
+    <!--   Dehydration: 5                                           -->
+    <!--   Cold Resist: 10 (Level 1 hot drink)                      -->
     <!-- ========================================================== -->
     <item name="drinkHotCupOfJoe">
       <property name="Extends" value="drinkJarBoiledWater"/>
@@ -409,12 +409,12 @@
         <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="180"/>
         <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.05"/>
-        <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="0.60"/>
+        <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="5"/>
 
         <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="180"/>
-        <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="5"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="10"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
@@ -429,8 +429,8 @@
     <!--   Beans per drink: 1 bean                                  -->
     <!--   Duration: 1 × 180 = 180s                                 -->
     <!--   Stamina: 1 × 20% = 20%                                   -->
-    <!--   Dehydration: 0.6 (2.5× Filthy Joe due to concentration)  -->
-    <!--   Heat Resist: 5 (Level 1 cold drink)                      -->
+    <!--   Dehydration: 5                                           -->
+    <!--   Heat Resist: 10 (Level 1 cold drink)                     -->
     <!-- ========================================================== -->
     <item name="drinkIcedCoffee">
       <property name="Extends" value="drinkJarBoiledWater"/>
@@ -449,12 +449,12 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="180"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.05"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="0.60"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="5"/>
 
         <!-- Heat resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDurationMax" operation="set" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="add" value="180"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistValue" operation="set" value="5"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistValue" operation="set" value="10"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffHeatResist"/>
@@ -469,8 +469,8 @@
     <!--                    (long-brew bonus) = 1.5 effective beans -->
     <!--   Duration: 1.5 × 180 = 270s                               -->
     <!--   Stamina: 1.5 × 20% = 30%                                 -->
-    <!--   Dehydration: 0.75 (smooth process despite concentration) -->
-    <!--   Heat Resist: 5 (Level 1 cold drink)                      -->
+    <!--   Dehydration: 7.5, minus 10% for smooth process = 6.8)    -->
+    <!--   Heat Resist: 10 (Level 1 cold drink)                     -->
     <!-- ========================================================== -->
     <item name="drinkColdBrewCoffee">
       <property name="Extends" value="drinkJarBoiledWater"/>
@@ -489,12 +489,12 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="810"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="270"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.075"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="0.75"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="6.8"/>
 
         <!-- Heat resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDurationMax" operation="set" value="810"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="add" value="270"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistValue" operation="set" value="5"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistValue" operation="set" value="10"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffHeatResist"/>
@@ -510,7 +510,7 @@
     <!-- Base Formula Calculations:                                 -->
     <!--   Duration = (effective_beans × 180) seconds               -->
     <!--   Stamina = (effective_beans × 5%) regen                   -->
-    <!--   Cold/Heat Resist = 7 (Level 2 baseline)                  -->
+    <!--   Cold/Heat Resist = 15 (Level 2 baseline)                 -->
     <!--   Dehydration scales with concentration                    -->
     <!-- Special Effects:                                           -->
     <!--   Purified Water (Base):                                   -->
@@ -576,7 +576,7 @@
     <!--   Beans per shot: 1 bean                                  -->
     <!--   Regen: 15% (75% of coffee strength)                     -->
     <!--   Duration: 60s (1/3 of coffee duration)                  -->
-    <!--   Dehydration: 1.0 (higher due to concentration)          -->
+    <!--   Dehydration: 5.0 (higher due to concentration)          -->
     <!--   Cold Resist: 7 (Level 2 hot drink)                      -->
     <!-- Notes:                                                    -->
     <!--   Tactical advantage: Shorter duration, faster onset      -->
@@ -600,12 +600,12 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="180"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="60"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.15"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="1.0"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="5"/>
 
         <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="180"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="60"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="7"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="15"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
@@ -617,26 +617,26 @@
     <!-- ========================================================= -->
     <!-- Level 2 diluted espresso                                  -->
     <!-- Base Mathematics:                                         -->
-    <!--   If: Cup of Joe (80mg caffeine) = 20% regen             -->
-    <!--   Then: Espresso (60mg caffeine) = 15% regen             -->
-    <!--   Americano = 2 shots + water                            -->
+    <!--   If: Cup of Joe (80mg caffeine) = 20% regen              -->
+    <!--   Then: Espresso (60mg caffeine) = 15% regen              -->
+    <!--   Americano = 2 shots + water                             -->
     <!-- Calculations:                                             -->
     <!--   Base: 2 shots × 15% = 30% potential                     -->
     <!--   Dilution factor: 0.833 (less concentrated)              -->
-    <!--   Final Regen: 30% × 0.833 = 25%                         -->
+    <!--   Final Regen: 30% × 0.833 = 25%                          -->
     <!-- Duration Logic:                                           -->
-    <!--   Espresso: 60s base duration                            -->
-    <!--   Dilution adds duration                                 -->
-    <!--   Final: 120s (between espresso and coffee)              -->
-    <!-- Final Values:                                            -->
-    <!--   Regen: 25% (diluted double shot)                       -->
-    <!--   Duration: 120s (extended by dilution)                  -->
-    <!--   Dehydration: 0.5 (reduced by water content)            -->
-    <!--   Cold Resist: 7 (Level 2 hot drink)                     -->
+    <!--   Espresso: 60s base duration                             -->
+    <!--   Dilution adds duration                                  -->
+    <!--   Final: 120s (between espresso and coffee)               -->
+    <!-- Final Values:                                             -->
+    <!--   Regen: 25% (diluted double shot)                        -->
+    <!--   Duration: 120s (extended by dilution)                   -->
+    <!--   Dehydration: 7.5 (-25% from water)                      -->
+    <!--   Cold Resist: 15 (Level 2 hot drink)                      -->
     <!-- Notes:                                                    -->
-    <!--   More balanced than pure espresso                       -->
-    <!--   Better hydration from added water                      -->
-    <!--   Middle ground between coffee and espresso              -->
+    <!--   More balanced than pure espresso                        -->
+    <!--   Better hydration from added water                       -->
+    <!--   Middle ground between coffee and espresso               -->
     <!-- ========================================================= -->
     <item name="drinkAmericano">
       <property name="Extends" value="drinkJarBoiledWater"/>
@@ -655,12 +655,12 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="120"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.25"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="0.5"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="7.5"/>
 
         <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="120"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="7"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="15"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
@@ -689,8 +689,8 @@
     <!-- Final Values:                                             -->
     <!--   Regen: 35% (coffee + gunpowder boost)                   -->
     <!--   Duration: 150s (slightly reduced)                       -->
-    <!--   Dehydration: 1.1 (dangerous substance)                  -->
-    <!--   Cold Resist: 14 (doubled due to gunpowder)              -->
+    <!--   Dehydration: 1.0 beans + gunpowder → 6.5 dehydration    -->
+    <!--   Cold Resist: 30 (doubled due to gunpowder)              -->
     <!--   Additional: Chance for minor damage on consumption      -->
     <!-- Notes:                                                    -->
     <!--   High risk/reward ratio                                  -->
@@ -714,12 +714,12 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="450"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="150"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.35"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="1.1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="6.5"/>
 
         <!-- Cold resistance setup (doubled) -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="450"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="150"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="14"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="30"/>
 
         <!-- Random minor damage from gunpowder -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInjuryStomachMinor"/>
@@ -748,14 +748,17 @@
     <!-- Final Values:                                             -->
     <!--   Regen: 33% (enhanced cold extraction)                   -->
     <!--   Duration: 270s (extended by process)                    -->
-    <!--   Dehydration: 0.6 (reduced by purified water)            -->
-    <!--   Heat Resist: 7 (Level 2 cold drink)                     -->
+    <!--   Dehydration:                                            -->
+    <!--     1.5 beans × 5 points = 7.5 base dehydration           -->
+    <!--     Minus 10% for smooth process = 6.75                   -->
+    <!--     Minus 25% for purified water = ~5.1 dehydration       -->
+    <!--   Heat Resist: 15 (Level 2 cold drink)                    -->
     <!--   Stamina Efficiency: -5% (purified water benefit)        -->
     <!-- Notes:                                                    -->
     <!--   Premium version of regular cold brew                    -->
     <!--   Smoother taste = better efficiency                      -->
     <!--   Purified water reduces negative effects                 -->
-    <!--   Long brew time (1800s) justifies bonuses              -->
+    <!--   Long brew time (1800s) justifies bonuses                -->
     <!-- ========================================================= -->
     <item name="drinkPremiumColdBrew">
       <property name="Extends" value="drinkJarBoiledWater"/>
@@ -775,12 +778,12 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="810"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="270"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.33"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="0.6"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="5.1"/>
 
         <!-- Heat resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDurationMax" operation="set" value="810"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="add" value="270"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistValue" operation="set" value="7"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistValue" operation="set" value="15"/>
 
         <!-- Stamina efficiency setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffStaminaEfficiencyDuration" operation="add" value="270"/>
@@ -815,8 +818,8 @@
     <!-- Final Values:                                             -->
     <!--   Regen: 34% (stacked shots + concentration)              -->
     <!--   Duration: 150s (extended but still shorter than coffee) -->
-    <!--   Dehydration: 2.0 (doubled concentration)                -->
-    <!--   Cold Resist: 7 (Level 3 hot drink)                      -->
+    <!--   Dehydration: 2.0 beans → 10.0 dehydration               -->
+    <!--   Cold Resist: 20 (Level 3 hot drink)                     -->
     <!-- Notes:                                                    -->
     <!--   Foundation for all Level 3 milk drinks                  -->
     <!--   High power but shorter duration than coffee             -->
@@ -840,12 +843,12 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="450"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="150"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.34"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="2.0"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="10"/>
 
         <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="450"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="150"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="7"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="20"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
@@ -876,8 +879,8 @@
     <!-- Final Values:                                             -->
     <!--   Regen: 29% (reduced but smoother delivery)              -->
     <!--   Duration: 210s (extended by milk)                       -->
-    <!--   Dehydration: 1.5 (reduced from 2.0 by milk)             -->
-    <!--   Cold Resist: 7 (Level 3 hot drink)                      -->
+    <!--   Dehydration: 2.0 beans - milk → 7.5 dehydration (-25%)  -->
+    <!--   Cold Resist: 20 (Level 3 hot drink)                     -->
     <!--   Food/Health: 10 each from milk                          -->
     <!-- Notes:                                                    -->
     <!--   Classic balance of stimulant and nutrition              -->
@@ -904,12 +907,12 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="630"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="210"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.29"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="1.5"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="7.5"/>
 
         <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="630"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="210"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="7"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="20"/>
 
         <!-- Food and health setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
@@ -944,8 +947,8 @@
     <!-- Final Values:                                             -->
     <!--   Regen: 25.5% (significantly smoothed delivery)          -->
     <!--   Duration: 270s (longest of milk drinks)                 -->
-    <!--   Dehydration: 1.2 (greatly reduced by milk volume)       -->
-    <!--   Cold Resist: 7 (Level 3 hot drink)                      -->
+    <!--   Dehydration: 2.0 beans - double milk → 5.0 (-50%)       -->
+    <!--   Cold Resist: 20 (Level 3 hot drink)                     -->
     <!--   Food/Health: 20 each from double milk                   -->
     <!-- Notes:                                                    -->
     <!--   Traditional 2:1 milk to espresso ratio                  -->
@@ -972,12 +975,12 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="810"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="270"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.255"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="1.2"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="5"/>
 
         <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="810"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="270"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="7"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="20"/>
 
         <!-- Food and health setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
@@ -1012,8 +1015,8 @@
     <!-- Final Values:                                             -->
     <!--   Regen: 30.5% (less reduction than milk)                 -->
     <!--   Duration: 180s (shorter extension than milk)            -->
-    <!--   Dehydration: 1.9 (minimal reduction)                    -->
-    <!--   Cold Resist: 7 (Level 3 hot drink)                      -->
+    <!--   Dehydration: 2.0 beans - creamer → 9.0 (-10%)           -->
+    <!--   Cold Resist: 20 (Level 3 hot drink)                     -->
     <!--   Food: 10 (high calories)                                -->
     <!--   Health: 5 (lower nutrients)                             -->
     <!-- Notes:                                                    -->
@@ -1040,12 +1043,12 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="180"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.305"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="1.9"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="9"/>
 
         <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="180"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="7"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="20"/>
 
         <!-- Food and health setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
@@ -1080,8 +1083,8 @@
     <!-- Final Values:                                             -->
     <!--   Regen: 29% (between milk and single creamer)            -->
     <!--   Duration: 210s (longer than crème, shorter than latte)  -->
-    <!--   Dehydration: 1.8 (slight reduction from double tap)     -->
-    <!--   Cold Resist: 7 (Level 3 hot drink)                      -->
+    <!--   Dehydration:  (double creamer): 8.0 dehydration)        -->
+    <!--   Cold Resist: 20 (Level 3 hot drink)                     -->
     <!--   Food: 20 (double calories)                              -->
     <!--   Health: 10 (double reduced nutrients)                   -->
     <!-- Notes:                                                    -->
@@ -1109,12 +1112,12 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="630"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="210"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.29"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="1.8"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="8.0"/>
 
         <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="630"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="210"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="7"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="20"/>
 
         <!-- Food and health setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
@@ -1152,8 +1155,8 @@
     <!-- Final Values:                                             -->
     <!--   Regen: 37% (highest Level 3 regen)                      -->
     <!--   Duration: 240s (premium duration)                       -->
-    <!--   Dehydration: 1.6 (reduced by snow)                      -->
-    <!--   Heat Resist: 7 (snow changes to heat resist)            -->
+    <!--   Dehydration: 2.0 beans - snow → 8.5 dehydration (-15%)  -->
+    <!--   Heat Resist: 20 (snow changes to heat resist)           -->
     <!--   Food: 28 (premium nutrition)                            -->
     <!--   Health: 12 (enhanced healing)                           -->
     <!-- Notes:                                                    -->
@@ -1182,12 +1185,12 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="720"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="240"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.37"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="1.6"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="8.5"/>
 
         <!-- Heat resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDurationMax" operation="set" value="720"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="add" value="240"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistValue" operation="set" value="7"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistValue" operation="set" value="20"/>
 
         <!-- Disease cure from honey -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffInfectionAddCurePerc" operation="add" value="5"/>
@@ -1244,8 +1247,8 @@
     <!-- Final Values:                                              -->
     <!--   Regen: 52% (highest pure coffee regen)                   -->
     <!--   Duration: 210s (longer than double, shorter than milk)   -->
-    <!--   Dehydration: 3.0 (extreme concentration)                 -->
-    <!--   Cold Resist: 10 (Level 4 hot drink)                      -->
+    <!--   Dehydration: 3.0 beans → 15.0 dehydration                -->
+    <!--   Cold Resist: 25 (Level 4 hot drink)                      -->
     <!-- Notes:                                                     -->
     <!--   Foundation for Level 4 combat drinks                     -->
     <!--   Extreme power at cost of heavy dehydration               -->
@@ -1269,12 +1272,12 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="630"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="210"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.52"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="3.0"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="15"/>
 
         <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="630"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="210"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="10"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="25"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
@@ -1307,7 +1310,7 @@
     <!-- Final Values:                                            -->
     <!--   Regen: 44% (reduced for mobility bonus)                -->
     <!--   Duration: 240s (extended for combat)                   -->
-    <!--   Dehydration: 3.0 (keeps Tripwire dehydration)          -->
+    <!--   Dehydration: 15 (Tripwire dehydration + 50% reduction  -->
     <!--   Movement Effects: Multiple mobility buffs              -->
     <!-- Notes:                                                   -->
     <!--   Parkour specialist's choice                            -->
@@ -1335,7 +1338,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="720"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="240"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.44"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="3.0"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="7.5"/>
 
         <!-- Parkour buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffParkourDuration" operation="add" value="240"/>
@@ -1380,8 +1383,8 @@
     <!-- Final Values:                                             -->
     <!--   Regen: 46% (balanced for combat)                        -->
     <!--   Duration: 300s (extended by ingredients)                -->
-    <!--   Dehydration: 2.5 (reduced by milk)                      -->
-    <!--   Cold Resist: 10 (Level 4 hot drink)                     -->
+    <!--   Dehydration: 5.6 dehydration (7.5 - 25% milk reduction) -->
+    <!--   Cold Resist: 25 (Level 4 hot drink)                     -->
     <!-- Notes:                                                    -->
     <!--   Club specialist's choice                                -->
     <!--   Significant offensive capabilities                      -->
@@ -1411,7 +1414,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="900"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="300"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.46"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="2.5"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="5.6"/>
 
         <!-- Skull Crushers buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrugSkullCrushersDuration" operation="add" value="300"/>
@@ -1462,8 +1465,8 @@
     <!-- Final Values:                                             -->
     <!--   Regen: 48% (enhanced raw power)                         -->
     <!--   Duration: 300s (extended by ingredients)                -->
-    <!--   Dehydration: 2.5 (reduced by milk)                      -->
-    <!--   Cold Resist: 10 (Level 4 hot drink)                     -->
+    <!--   Dehydration: 5.6 dehydration (7.5 - 25% milk reduction) -->
+    <!--   Cold Resist: 25 (Level 4 hot drink)                     -->
     <!-- Notes:                                                    -->
     <!--   Pure strength specialist drink                          -->
     <!--   Raw power over finesse                                  -->
@@ -1492,7 +1495,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="900"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="300"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.48"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="2.5"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="5.6"/>
 
         <!-- Steroids buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrugSteroidsDuration" operation="add" value="300"/>
@@ -1538,8 +1541,8 @@
     <!-- Final Values:                                             -->
     <!--   Regen: 43% (reduced for defensive power)                -->
     <!--   Duration: 360s (enhanced by fat content)                -->
-    <!--   Dehydration: 2.0 (reduced by fat content)               -->
-    <!--   Cold Resist: 10 (Level 4 hot drink)                     -->
+    <!--   Dehydration: 3.75 dehydration (7.5 - 50% fat reduction) -->
+    <!--   Cold Resist: 25 (Level 4 hot drink)                     -->
     <!-- Notes:                                                    -->
     <!--   Defensive specialist's choice                           -->
     <!--   Longest duration of Level 4 drinks                      -->
@@ -1565,7 +1568,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="1080"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.43"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="2.0"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="3.75"/>
 
         <!-- FortBites buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrugFortBitesDuration" operation="add" value="360"/>
@@ -1610,7 +1613,7 @@
     <!--   Sneak Damage: +100%                                     -->
     <!--   Duration: 420s (extended tea blend)                     -->
     <!--   Efficient Digestion: -15%                               -->
-    <!--   Cold Resist: 5 (warm tea base)                          -->
+    <!--   Cold Resist: 10 (warm tea base)                         -->
     <!-- Notes:                                                    -->
     <!--   Stealth specialist's alternative                        -->
     <!--   No caffeine jitters for steady aim                      -->
@@ -1656,7 +1659,7 @@
         <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="1260"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="420"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="5"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="10"/>
 
         <!-- Add all buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRedTea,buffLondonFogStealth,buffInfectionAddCure,buffDysenteryAddCure,buffProcessConsumables,buffColdResist"/>
@@ -1692,8 +1695,8 @@
     <!-- Final Values:                                             -->
     <!--   Regen: 78% (highest non-Quad regen)                     -->
     <!--   Duration: 150s (shortest Level 4)                       -->
-    <!--   Dehydration: 5.0 (most severe)                          -->
-    <!--   Heat Resist: 15 (extreme cooling)                       -->
+    <!--   Dehydration: 7.5 dehydration                            -->
+    <!--   Heat Resist: 25 (extreme cooling)                       -->
     <!-- Notes:                                                    -->
     <!--   Most powerful Level 4 drink                             -->
     <!--   High risk/high reward design                            -->
@@ -1720,15 +1723,12 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="450"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="150"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.78"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="5.0"/>
-
-        <!-- Nitrogen cooling buff setup -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffNitrogenCoolingDuration" operation="add" value="150"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="7.5"/>
 
         <!-- Heat/Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDurationMax" operation="set" value="450"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="add" value="150"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistValue" operation="set" value="15"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistValue" operation="set" value="25"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffNitrogenCooling"/>
@@ -1764,8 +1764,8 @@
     <!-- Final Values:                                             -->
     <!--   Regen: 92% (highest possible)                           -->
     <!--   Duration: 180s (shortened by concentration)             -->
-    <!--   Dehydration: 6.0 (dangerous level)                      -->
-    <!--   Cold Resist: 15 (Level 5 hot drink)                     -->
+    <!--   Dehydration: 10.0 (reduced from 20 for crafting cost)   -->
+    <!--   Cold Resist: 30 (Level 5 hot drink)                     -->
     <!-- Notes:                                                    -->
     <!--   Most powerful base stimulant                            -->
     <!--   Significant risks from overconsumption                  -->
@@ -1791,12 +1791,12 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="180"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.92"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="6.0"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="10.0"/>
 
         <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="180"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="15"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="30"/>
 
         <!-- Max stamina penalty -->
         <!--<passive_effect name="MaxStamina" operation="perc_subtract" value="20"/>-->

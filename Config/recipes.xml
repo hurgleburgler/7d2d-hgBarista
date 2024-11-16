@@ -268,16 +268,32 @@
     </recipe>
 
 
-<!--    &lt;!&ndash; ========================================================== &ndash;&gt;
-    &lt;!&ndash; ==================== Level 5 Drinks ====================== &ndash;&gt;
-    &lt;!&ndash; ========================================================== &ndash;&gt;
+    <!-- ========================================================== -->
+    <!-- ==================== Level 5 Drinks ====================== -->
+    <!-- ========================================================== -->
 
-    &lt;!&ndash; The Quad - Four shots of espresso base &ndash;&gt;
-    <recipe name="drinkQuad" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" craft_time="240">
+    <!-- The Quad - Four shots of espresso base -->
+    <recipe name="drinkQuad" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="240">
       <ingredient name="drinkShotOfEspresso" count="4"/>
     </recipe>
 
-    &lt;!&ndash; Dragon's Breath Espresso - Explosive power &ndash;&gt;
+       <!-- The Quad - Four shots of espresso base -->
+    <recipe name="drinkQuad" count="1" craft_time="5">
+      <ingredient name="drinkShotOfEspresso" count="4"/>
+    </recipe>
+
+    <!-- Upgrading from Double Tap -->
+    <recipe name="drinkQuad" count="1" craft_time="5">
+      <ingredient name="drinkDoubleTap" count="2"/>
+    </recipe>
+
+    <!-- Upgrading from Tripwire -->
+    <recipe name="drinkQuad" count="1" craft_time="5">
+      <ingredient name="drinkTripwire" count="1"/>
+      <ingredient name="drinkShotOfEspresso" count="1"/>
+    </recipe>
+
+    <!-- Dragon's Breath Espresso - Explosive power -->
     <recipe name="drinkDragonsBreathEspresso" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" craft_time="120">
       <ingredient name="drinkQuad" count="1"/>
       <ingredient name="foodCream" count="1"/>
@@ -287,7 +303,7 @@
       <ingredient name="casinoCoin" count="5000"/>
     </recipe>
 
-    &lt;!&ndash; The Apex Brew - Ultimate strength brew &ndash;&gt;
+    <!-- The Apex Brew - Ultimate strength brew -->
     <recipe name="drinkApexBrew" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" craft_time="120">
       <ingredient name="drinkQuad" count="1"/>
       <ingredient name="foodCream" count="1"/>
@@ -297,7 +313,7 @@
       <ingredient name="resourceSilverNugget" count="5"/>
     </recipe>
 
-    &lt;!&ndash; Phoenix's Fire Latte - Resurrective brew &ndash;&gt;
+    <!-- Phoenix's Fire Latte - Resurrective brew -->
     <recipe name="drinkPhoenixFireLatte" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" craft_time="120">
       <ingredient name="drinkQuad" count="1"/>
       <ingredient name="foodCream" count="1"/>
@@ -308,7 +324,7 @@
       <ingredient name="resourceGoldNugget" count="5"/>
     </recipe>
 
-    &lt;!&ndash; Grandpa's Last Stand - Ultimate Widow Maker brew &ndash;&gt;
+    <!-- Grandpa's Last Stand - Ultimate Widow Maker brew -->
     <recipe name="drinkGrandpasLastStand" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" craft_time="120">
       <ingredient name="drinkQuad" count="1"/>
       <ingredient name="foodCream" count="1"/>
@@ -317,7 +333,7 @@
       <ingredient name="drinkJarGrandpasMoonshine" count="1"/>
       <ingredient name="drinkJarGrandpasLearningElixir" count="1"/>
       <ingredient name="resourceRawDiamond" count="5"/>
-    </recipe>-->
+    </recipe>
 
   </append>
 
