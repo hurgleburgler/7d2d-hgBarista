@@ -55,6 +55,7 @@
     </buff>-->
 
 
+    <!-- THIS IS WORKING - DO NOT TOUCH -->
     <buff name="debuffTooMuchCaffeine" name_key="buffTooMuchCaffeineName" description_key="debuffTooMuchCaffeineDesc" icon="ui_game_symbol_food_poisoning" icon_color="255,0,0" icon_blink="true">
       <damage_type value="Dehydration"/>
       <stack_type value="replace"/>
@@ -65,18 +66,26 @@
       <!-- Duration Setup -->
       <effect_group>
 
+        <!-- Initial setup only -->
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$tooMuchCaffeineStackDuration" operation="set" value="@$debuffTooMuchCaffeineDuration"/>
+
+        <!-- Will be called for subsequent stacks -->
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$tooMuchCaffeineStackDuration" operation="add" value="@$debuffTooMuchCaffeineDuration"/>
+
+
         <!-- Timer management -->
-        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$debuffTooMuchCaffeineDuration" operation="subtract" value="1"/>
-        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".debuffTooMuchCaffeineDisplay" operation="set" value="@$debuffTooMuchCaffeineDuration"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$tooMuchCaffeineStackDuration" operation="subtract" value="1"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".debuffTooMuchCaffeineDisplay" operation="set" value="@$tooMuchCaffeineStackDuration"/>
 
         <!-- Remove buff when duration expires -->
         <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="debuffTooMuchCaffeine">
-          <requirement name="CVarCompare" cvar="$debuffTooMuchCaffeineDuration" operation="LTE" value="0"/>
+          <requirement name="CVarCompare" cvar="$tooMuchCaffeineStackDuration" operation="LTE" value="0"/>
         </triggered_effect>
 
         <!-- Clean up variables -->
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".debuffTooMuchCaffeineDisplay" operation="set" value="0"/>
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$debuffTooMuchCaffeineDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$tooMuchCaffeineStackDuration" operation="set" value="0"/>
       </effect_group>
 
       <effect_group>
