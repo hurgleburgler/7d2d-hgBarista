@@ -129,14 +129,14 @@ statColdVulnerability,stats,Stat,Cold Vulnerability
 statDamageBonus,stats,Stat,Damage Bonus
 statDamageMitigation,stats,Stat,Damage Mitigation
 statDehydrationRate,stats,Stat,Extra Water Loss per Stamina Point
-statDehydration,stats,Stat,Total Water Loss Over Duration
+statDehydration,stats,Stat,Dehydration over Duration
 statDiseaseResist,stats,Stat,Disease Resistance
 statExpBonus,stats,Stat,Experience Bonus
 statFireDamage,stats,Stat,Fire Aura Damage
 statHeatResistance,stats,Stat,Heat Resistance
 statMaxDuration,stats,Stat,Max Duration
 statMeleeDamage,stats,Stat,Melee Damage
-statMobilityBoost,stats,Stat,Overall Mobility
+statMobilityBoost,stats,Stat,Mobility and Speed Boost
 statMovementSpeed,stats,Stat,Movement Speed
 statPeakDuration,stats,Stat,Peak Duration
 statPowerDuration,stats,Stat,Power Duration
@@ -146,4 +146,6 @@ statRestoration,stats,Stat,Full Restoration
 statRunSpeed,stats,Stat,Run Speed Boost
 statStaminaEfficiency,stats,Stat,Stamina Efficiency
 statStrengthBoost,stats,Stat,Strength Increase
-buffDehydrateName,state,Stat,Dehydration Effect
+statFallResist,stats,Stat,Fall Resistance
+buffDehydrateName,stats,Stat,Dehydration Effect
+dMobilitySpeedBoost,stat

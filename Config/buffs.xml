@@ -404,10 +404,10 @@
       <display_value_format value="time"/>
 
       <effect_group tiered="false">
-        <passive_effect name="RunSpeed" operation="perc_add" value=".2"/>
-        <passive_effect name="WalkSpeed" operation="perc_add" value=".2"/>
-        <passive_effect name="CrouchSpeed" operation="perc_add" value=".2"/>
-        <passive_effect name="AttacksPerMinute" operation="perc_add" value=".2"/>
+        <passive_effect name="RunSpeed" operation="perc_add" value=".5"/>
+        <passive_effect name="WalkSpeed" operation="perc_add" value=".5"/>
+        <passive_effect name="CrouchSpeed" operation="perc_add" value=".5"/>
+        <passive_effect name="AttacksPerMinute" operation="perc_add" value=".5"/>
 
         <passive_effect name="JumpStrength" operation="perc_add" value="1"/>
         <passive_effect name="StaminaLoss" operation="perc_add" value="-.75" tags="jumping"/>

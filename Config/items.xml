@@ -231,6 +231,7 @@
       </property>
 
       <effect_group tiered="false">
+        <display_value name="dWaterAmountAdd" value="-10"/>
         <display_value name="dStaminaRegen" value="0.50"/>
         <display_value name="dDehydration" value="50"/>
         <display_value name="dDuration" value="180"/>
@@ -248,11 +249,14 @@
           <requirement name="CVarCompare" cvar="$buffCaffeineDuration" operation="GT" value="@$buffCaffeineDurationMax"/>
         </triggered_effect>
 
-        <!-- Too Much Caffeine Debuff setup -->
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="-10"/>
+
+        <!-- Too Much Caffeine De-buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$debuffTooMuchCaffeineDuration" operation="set" value="15"/>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,debuffTooMuchCaffeine"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,debuffTooMuchCaffeine,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -325,7 +329,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -373,9 +377,6 @@
         <passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" value="-.05"/>
         <passive_effect name="FoodLossPerStaminaPointGained" operation="perc_add" value="-.05"/>
 
-        <!-- Water restoration -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="5"/>
-
         <!-- Very minor stamina regeneration -->
         <passive_effect name="StaminaChangeOT" operation="perc_add" value="0.02"/>
 
@@ -383,7 +384,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add the disease resistance buff -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDiseaseResist"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDiseaseResist,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -426,7 +427,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -469,7 +470,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffHeatResist"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffHeatResist,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -512,7 +513,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffHeatResist"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffHeatResist,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -568,7 +569,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffStaminaEfficiencyValue" operation="set" value="-0.05"/>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffStaminaEfficiency"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffStaminaEfficiency,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -626,7 +627,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -684,7 +685,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -749,7 +750,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -817,7 +818,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffHeatResist,buffStaminaEfficiency"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffHeatResist,buffStaminaEfficiency,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -881,7 +882,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -1324,7 +1325,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -1370,19 +1371,22 @@
       <effect_group tiered="false" name="Drink Tier 4">
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.44"/>
+        <display_value name="dColdResist" value="25"/>
         <display_value name="dDehydration" value="3.0"/>
-        <display_value name="dMobilityBoost" value=".15"/>
-        <display_value name="dMovementSpeed" value=".15"/>
-        <display_value name="dStaminaEfficiency" value=".15"/>
-        <display_value name="dFallResist" value=".25"/>
+        <display_value name="dMobilitySpeedBoost" value=".2"/>
+        <display_value name="dFallResist" value="1"/>
         <display_value name="dDuration" value="240"/>
-        <display_value name="dDurationMax" value="720"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="720"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="240"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.44"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="3.0"/>
+
+        <!-- Cold resistance setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="630"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="210"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="25"/>
 
         <!-- Parkour buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffParkourBoostDurationMax" operation="set" value="720"/>
@@ -1395,7 +1399,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffParkourBoost,buffDrugOhShitzDrops"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffParkourBoost,buffDrugOhShitzDrops,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -1785,6 +1789,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffNitrogenCooling"/>
       </effect_group>
     </item>
+
 <!--
 
     &lt;!&ndash; ========================================================= &ndash;&gt;
