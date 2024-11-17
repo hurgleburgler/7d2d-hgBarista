@@ -432,25 +432,39 @@
       <display_value value=".buffPumpkinClubBonusDisplay"/>
       <display_value_format value="time"/>
 
-      <!-- Club damage boost -->
-      <effect_group>
-        <passive_effect name="EntityDamage" operation="perc_add" value="1" tags="perkPummelPete"/>
-      </effect_group>
-
-      <!-- Standard buff duration management -->
+      <!-- Duration management -->
       <effect_group>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPumpkinClubBonusDuration" operation="subtract" value="@$MetabolismDuration"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffPumpkinClubBonusDisplay" operation="set" value="@$buffPumpkinClubBonusDuration"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffPumpkinClubBonusDisplay" operation="divide" value="@$MetabolismDuration"/>
       </effect_group>
 
-      <!-- Remove buff when duration expires -->
+      <!-- Cleanup -->
       <effect_group>
         <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPumpkinClubBonus">
           <requirement name="CVarCompare" cvar="$buffPumpkinClubBonusDuration" operation="LTE" value="0"/>
         </triggered_effect>
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffPumpkinClubBonusDisplay" operation="set" value="0"/>
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPumpkinClubBonusDuration" operation="set" value="0"/>
+      </effect_group>
+
+      <!-- Club damage effects -->
+      <effect_group>
+        <!-- Base club damage boost -->
+        <passive_effect name="EntityDamage" operation="perc_add" value="0.5" tags="perkBrawler"/>
+
+        <!-- Club attack speed boost -->
+        <passive_effect name="AttacksPerMinute" operation="perc_add" value="0.2" tags="perkBrawler"/>
+
+        <!-- Stun chance on hits -->
+        <passive_effect name="BuffProcChance" operation="base_add" value="0.2" tags="buffInjuryStunned01CHTrigger"/>
+      </effect_group>
+
+      <!-- Bonus effect when hitting stunned enemies -->
+      <effect_group>
+        <requirement name="HoldingItemHasTags" tags="perkBrawler"/>
+        <requirement name="HasBuff" target="other" buff="buffInjuryStunned01CHTrigger"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value="0.5"/>
       </effect_group>
     </buff>
 
