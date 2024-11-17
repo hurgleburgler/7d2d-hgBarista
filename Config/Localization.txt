@@ -155,3 +155,10 @@ statSneakDamage,stats,Stat,Sneak Attack Damage
 statStaminaEfficiency,stats,Stat,Stamina Efficiency
 statStealthBonus,stats,Stat,Stealth Bonus
 statStrengthBoost,stats,Stat,Strength Attribute Boost
+drinkTripwireTooltip,items,Admin,"Your hands start to shake as time itself seems to slow down..."
+drinkSpringHeeledJoeTooltip,items,Admin,"Gravity suddenly feels more like a suggestion than a law..."
+drinkPumpkinSpikeLatteTooltip,items,Admin,"Your club feels like it's humming with barely contained energy..."
+drinkBearBrewTooltip,items,Admin,"A primal roar builds in your chest as raw strength flows through your veins..."
+drinkBulletproofCoffeeTooltip,items,Admin,"Your skin tingles as an invisible armor settles over you..."
+drinkLondonFogLatteTooltip,items,Admin,"The shadows seem to beckon as your movements become whisper-quiet..."
+drinkNightmareNitroTooltip,items,Admin,"Time fractures as impossible speed courses through your body..."
