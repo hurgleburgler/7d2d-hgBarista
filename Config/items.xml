@@ -1683,12 +1683,12 @@
       <property name="DisplayType" value="drinkLondonFogLatte"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
-        <display_value name="dFoodAmountAdd" value="10"/>
-        <display_value name="dFoodHealthAmount" value="10"/>
-        <display_value name="dSneakDamage" value="1"/>
+        <display_value name="dFoodAmountAdd" value="15"/>
+        <display_value name="dFoodHealthAmount" value="15"/>
+        <display_value name="dSneakDamage" value="1.5"/>
         <display_value name="dEfficientDigestion" value=".15"/>
         <display_value name="dCureInfection" value="5"/>
-        <display_value name="dColdResist" value="5"/>
+        <display_value name="dColdResist" value="15"/>
         <display_value name="dDuration" value="420"/>
         <display_value name="dDurationMax" value="1260"/>
 
@@ -1708,16 +1708,16 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffInfectionAddCurePerc" operation="add" value="5"/>
 
         <!-- Food and health setup -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="15"/>
 
         <!-- Water -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
 
         <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="1260"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="420"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="10"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="15"/>
 
         <!-- Add all buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRedTea,buffLondonFogStealth,buffInfectionAddCure,buffDysenteryAddCure,buffProcessConsumables,buffColdResist"/>
