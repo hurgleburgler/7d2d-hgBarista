@@ -494,7 +494,7 @@
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.3"/>
         <display_value name="dDehydration" value="6.8"/>
-        <display_value name="dHeatResist" value="5"/>
+        <display_value name="dHeatResist" value="10"/>
         <display_value name="dDuration" value="270"/>
         <display_value name="dDurationMax" value="810"/>
 
@@ -860,7 +860,6 @@
       <property name="DisplayType" value="drinkDoubleTap"/>
 
       <effect_group tiered="false" name="Drink Tier 3">
-        <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.34"/>
         <display_value name="dDehydration" value="10"/>
         <display_value name="dColdResist" value="20"/>
@@ -928,11 +927,9 @@
         <display_value name="dWaterAmountAdd" value="10"/>
         <display_value name="dStaminaRegen" value="0.29"/>
         <display_value name="dDehydration" value="7.5"/>
-        <display_value name="dColdResist" value="7"/>
-        <display_value name="dFoodAmountAdd" value="10"/>
-        <display_value name="dFoodHealthAmount" value="10"/>
+        <display_value name="dColdResist" value="20"/>
+        <display_value name="dNutrition" value="10"/>
         <display_value name="dDuration" value="210"/>
-        <display_value name="dDurationMax" value="630"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="630"/>
@@ -999,11 +996,9 @@
         <display_value name="dWaterAmountAdd" value="20"/>
         <display_value name="dStaminaRegen" value="0.255"/>
         <display_value name="dDehydration" value="5"/>
-        <display_value name="dColdResist" value="7"/>
-        <display_value name="dFoodAmountAdd" value="20"/>
-        <display_value name="dFoodHealthAmount" value="20"/>
+        <display_value name="dColdResist" value="20"/>
+        <display_value name="dNutrition" value="20"/>      <!-- Consolidated from matching food/health -->
         <display_value name="dDuration" value="270"/>
-        <display_value name="dDurationMax" value="810"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="810"/>
@@ -1070,11 +1065,10 @@
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.305"/>
         <display_value name="dDehydration" value="9"/>
-        <display_value name="dColdResist" value="7"/>
-        <display_value name="dFoodAmountAdd" value="10"/>
+        <display_value name="dColdResist" value="20"/>
+        <display_value name="dFoodAmountAdd" value="10"/>  <!-- Kept separate since health is different -->
         <display_value name="dFoodHealthAmount" value="5"/>
         <display_value name="dDuration" value="180"/>
-        <display_value name="dDurationMax" value="540"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="540"/>
@@ -1142,11 +1136,10 @@
         <display_value name="dWaterAmountAdd" value="10"/>
         <display_value name="dStaminaRegen" value="0.29"/>
         <display_value name="dDehydration" value="8"/>
-        <display_value name="dColdResist" value="7"/>
+        <display_value name="dColdResist" value="20"/>
         <display_value name="dFoodAmountAdd" value="20"/>
         <display_value name="dFoodHealthAmount" value="10"/>
         <display_value name="dDuration" value="210"/>
-        <display_value name="dDurationMax" value="630"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="630"/>
@@ -1215,13 +1208,12 @@
 
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dStaminaRegen" value="0.37"/>
-        <display_value name="dDehydration" value="1.6"/>
-        <display_value name="dHeatResist" value="7"/>
+        <display_value name="dDehydration" value="8.5"/>
+        <display_value name="dHeatResist" value="20"/>
         <display_value name="dFoodAmountAdd" value="28"/>
         <display_value name="dFoodHealthAmount" value="12"/>
-        <display_value name="dCureInfection" value="5"/>
+        <display_value name="dDiseaseResist" value="5"/>
         <display_value name="dDuration" value="240"/>
-        <display_value name="dDurationMax" value="720"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="720"/>
@@ -1332,32 +1324,34 @@
     <!-- Base Mathematics:                                        -->
     <!--   Starting from Tripwire: 52% regen, 210s duration       -->
     <!-- Combat Additions:                                        -->
-    <!--   OhShitzDrops: Fall damage protection                   -->
-    <!--   Parkour: Enhanced mobility                             -->
-    <!--   Spring: Additional jump effects                        -->
+    <!--   OhShitzDrops: Complete fall damage immunity            -->
+    <!--   Parkour: Enhanced mobility with stacking jump          -->
+    <!--   Cold Resistance: 25 points of cold protection          -->
     <!-- Spring-Heeled Calculation:                               -->
     <!--   Base Tripwire: 52% regen                               -->
     <!--   Combat Reduction: -15% (mobility trade-off)            -->
-    <!--   Final Regen: 52% × 0.85 = ~44%                         -->
+    <!--   Final Regen: 52% × 0.85 = 44%                          -->
     <!-- Mobility Bonuses:                                        -->
-    <!--   Movement Speed: +15% all types                         -->
-    <!--   Jump Height: +15%                                      -->
-    <!--   Stamina Efficiency: +15% for movement                  -->
-    <!--   Fall Resistance: 25%                                   -->
+    <!--   Movement Speed: +50% all types                         -->
+    <!--   Jump Height: Stacks 2/4/6x with consecutive uses       -->
+    <!--   Stamina Cost: -75% for jumping                         -->
+    <!--   Fall Immunity: 100% via OhShitzDrops                   -->
     <!-- Duration Logic:                                          -->
-    <!--   Tripwire Base: 210s                                    -->
-    <!--   Combat Extension: +30s                                 -->
-    <!--   Final: 240s duration                                   -->
+    <!--   Base Duration: 240s                                    -->
+    <!--   Max Duration: 720s (12 minutes)                        -->
+    <!--   Cold Resist: 210s with 630s max                        -->
     <!-- Final Values:                                            -->
-    <!--   Regen: 44% (reduced for mobility bonus)                -->
-    <!--   Duration: 240s (extended for combat)                   -->
-    <!--   Dehydration: 15 (Tripwire dehydration + 50% reduction) -->
-    <!--   Movement Effects: Multiple mobility buffs              -->
+    <!--   Stamina Regen: 44%                                     -->
+    <!--   Movement Speed: 50% faster                             -->
+    <!--   Jump Strength: 2x/4x/6x (stacking)                     -->
+    <!--   Dehydration: 15 points                                 -->
+    <!--   Cold Resist: 25 points                                 -->
     <!-- Notes:                                                   -->
-    <!--   Parkour specialist's choice                            -->
-    <!--   Trades raw power for mobility                          -->
-    <!--   Excellent for urban exploration                        -->
-    <!--   Synergizes with agility builds                         -->
+    <!--   Perfect for parkour and urban exploration              -->
+    <!--   Stacking jump height rewards consecutive usage         -->
+    <!--   Complete fall damage immunity                          -->
+    <!--   Significant movement speed boost                       -->
+    <!--   Balanced with moderate dehydration                     -->
     <!-- ======================================================== -->
     <item name="drinkSpringHeeledJoe">
       <property name="Extends" value="drinkJarBoiledWater"/>
@@ -1366,7 +1360,8 @@
 
       <effect_group tiered="false" name="Drink Tier 4">
         <display_value name="dMobilityBoost" value=".5"/>
-        <display_value name="dJumpBoost" value="4"/>
+        <display_value name="dJumpBoost" value="2"/>
+        <display_value name="dJumpBoostMax" value="4"/>
         <display_value name="dFallResist" value="1"/>
         <display_value name="dStaminaRegen" value="0.44"/>
         <display_value name="dColdResist" value="25"/>
@@ -1394,7 +1389,7 @@
         </triggered_effect>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffParkourBoost2,buffDrugOhShitzDrops,buffProcessConsumables"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffParkourBoost,buffDrugOhShitzDrops,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -1406,37 +1401,44 @@
     <!--   Starting from Tripwire: 52% regen, 210s duration        -->
     <!-- Combat Additions:                                         -->
     <!--   Skull Crushers: +50% melee damage                       -->
-    <!--   Pumpkin: Club specialization                            -->
+    <!--   Pumpkin Club: Enhanced club specialization              -->
     <!--   Milk & Honey: Nutritional benefits                      -->
     <!-- Calculations:                                             -->
     <!--   Base Tripwire: 52% regen                                -->
     <!--   Milk Reduction: -20% (protein binding)                  -->
     <!--   Combat Bonus: +10% (pumpkin spice stimulant)            -->
-    <!--   Final Regen: 52% × 0.8 × 1.1 = ~46%                     -->
+    <!--   Final Regen: 52% × 0.8 × 1.1 = 46%                      -->
     <!-- Combat Bonuses:                                           -->
-    <!--   Club Damage: +100%                                      -->
-    <!--   Melee Damage: +50%                                      -->
-    <!--   Club Speed: +10%                                        -->
-    <!--   Club Stamina Cost: -15%                                 -->
+    <!--   Primary Damage:                                         -->
+    <!--     - Base Club Damage: +50%                              -->
+    <!--     - Additional vs Stunned: +50%                         -->
+    <!--     - Club Attack Speed: +20%                             -->
+    <!--   Secondary Effects:                                      -->
+    <!--     - 20% Chance to Stun                                  -->
+    <!--     - Enhanced Stun Duration                              -->
+    <!--     - Skull Crushers Melee Bonus: +50%                    -->
     <!-- Duration Logic:                                           -->
-    <!--   Tripwire Base: 210s                                     -->
-    <!--   Milk Extension: +60s                                    -->
-    <!--   Honey Extension: +30s                                   -->
-    <!--   Final: 300s duration                                    -->
-    <!-- Nutrition Addition:                                       -->
+    <!--   Base Duration: 300s (5 minutes)                         -->
+    <!--   Maximum Stack: 900s (15 minutes)                        -->
+    <!--   All buffs aligned to same duration                      -->
+    <!-- Nutrition Values:                                         -->
     <!--   Food: 7 (milk + pumpkin)                                -->
     <!--   Health: 7.5 (milk + honey)                              -->
-    <!--   Water: 65 (milk content)                                -->
+    <!--   Dehydration: 5.6 (reduced by milk)                      -->
     <!-- Final Values:                                             -->
-    <!--   Regen: 46% (balanced for combat)                        -->
-    <!--   Duration: 300s (extended by ingredients)                -->
-    <!--   Dehydration: 5.6 dehydration (7.5 - 25% milk reduction) -->
-    <!--   Cold Resist: 25 (Level 4 hot drink)                     -->
+    <!--   Stamina Regen: 46%                                      -->
+    <!--   Duration: 300s base, 900s max                           -->
+    <!--   Complete Combat Package:                                -->
+    <!--     - Enhanced Club Damage                                -->
+    <!--     - Stun Mechanics                                      -->
+    <!--     - Attack Speed                                        -->
+    <!--     - Skull Crushers Integration                          -->
     <!-- Notes:                                                    -->
-    <!--   Club specialist's choice                                -->
-    <!--   Significant offensive capabilities                      -->
-    <!--   Better sustain than pure Tripwire                       -->
-    <!--   Synergizes with strength builds                         -->
+    <!--   Specialized for club combat                             -->
+    <!--   Strong stun-lock potential                              -->
+    <!--   Excellent sustain with milk benefits                    -->
+    <!--   Synergizes with strength/club builds                    -->
+    <!--   Balanced dehydration penalty                            -->
     <!-- ========================================================= -->
     <item name="drinkPumpkinSpikeLatte">
       <property name="Extends" value="drinkJarBoiledWater"/>
@@ -1444,17 +1446,14 @@
       <property name="DisplayType" value="drinkPumpkinSpikeLatte"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
+        <!-- Consolidated to 7 key display values -->
         <display_value name="dStaminaRegen" value="0.46"/>
         <display_value name="dDehydration" value="5.6"/>
         <display_value name="dColdResist" value="10"/>
-        <display_value name="dClubDamage" value="1"/>
-        <display_value name="dMeleeDamage" value="1"/>
-        <display_value name="dClubSpeed" value=".1"/>
-        <display_value name="dClubStamina" value=".15"/>
-        <display_value name="dFoodAmountAdd" value="7"/>
-        <display_value name="dFoodHealthAmount" value="7.5"/>
+        <display_value name="dClubPackage" value="1"/>          <!-- Represents both club damage bonuses -->
+        <display_value name="dCombatSpeed" value=".2"/>         <!-- Combined club speed and stamina efficiency -->
+        <display_value name="dNutrition" value="7.5"/>          <!-- Combined food/health value -->
         <display_value name="dDuration" value="300"/>
-        <display_value name="dDurationMax" value="900"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="900"/>
@@ -1491,38 +1490,49 @@
     <!--   Starting from Tripwire: 52% regen, 210s duration        -->
     <!-- Combat Additions:                                         -->
     <!--   Steroids: Strength and carry bonus                      -->
-    <!--   Milk & Honey: Sustained energy                          -->
-    <!--   Bear Strength: Raw power boost                          -->
+    <!--   Bear Strength: Enhanced combat package                  -->
+    <!--   Animal Tracking: Enhanced detection                     -->
     <!-- Calculations:                                             -->
     <!--   Base Tripwire: 52% regen                                -->
     <!--   Milk Reduction: -20% (protein binding)                  -->
     <!--   Bear Bonus: +15% (raw strength boost)                   -->
-    <!--   Final Regen: 52% × 0.8 × 1.15 = ~48%                    -->
-    <!-- Combat Bonuses:                                           -->
-    <!--   Strength: +2 to attribute                               -->
-    <!--   Carry Capacity: +50                                     -->
-    <!--   Run Speed: +10%                                         -->
-    <!--   Melee Damage: +25%                                      -->
-    <!--   Stun Immunity                                           -->
+    <!--   Final Regen: 52% × 0.8 × 1.15 = 48%                     -->
+    <!-- Combat Package:                                           -->
+    <!--   Primary Effects:                                        -->
+    <!--     - Strength: +2 attribute levels                       -->
+    <!--     - Fortitude: +1 attribute level                       -->
+    <!--     - Melee Damage: +75% with brawling                    -->
+    <!--     - Block Damage: +50%                                  -->
+    <!--   Combat Mechanics:                                       -->
+    <!--     - 30% Resistance to stun/fatigue                      -->
+    <!--     - 15% Chance to stun attackers                        -->
+    <!--     - 25% Extra damage when below 30% health              -->
+    <!--     - 50 stamina recovery on kills                        -->
+    <!--   Utility Bonuses:                                        -->
+    <!--     - Enhanced animal tracking                            -->
+    <!--     - Carry capacity +20                                  -->
+    <!--     - Improved digestion efficiency                       -->
     <!-- Duration Logic:                                           -->
-    <!--   Tripwire Base: 210s                                     -->
-    <!--   Milk Extension: +60s                                    -->
-    <!--   Honey Extension: +30s                                   -->
-    <!--   Final: 300s duration                                    -->
-    <!-- Nutrition Addition:                                       -->
-    <!--   Food: 10 (milk and honey)                               -->
-    <!--   Health: 12 (enhanced by bear strength)                  -->
-    <!--   Water: 10 (milk content)                                -->
+    <!--   Base Duration: 300s (5 minutes)                         -->
+    <!--   Maximum Stack: 900s (15 minutes)                        -->
+    <!--   Post-Effect: Fatigue debuff                             -->
+    <!-- Nutrition Values:                                         -->
+    <!--   Food: 12                                                -->
+    <!--   Health: 12                                              -->
+    <!--   Dehydration: 14 (steroid enhanced)                      -->
+    <!--   Cold Resist: 100 (bear-like tolerance)                  -->
     <!-- Final Values:                                             -->
-    <!--   Regen: 48% (enhanced raw power)                         -->
-    <!--   Duration: 300s (extended by ingredients)                -->
-    <!--   Dehydration: 7.5 * 2 steroids = 14                      -->
-    <!--   Cold Resist: 100 (You're a damn bear)                   -->
+    <!--   Complete Combat Package:                                -->
+    <!--     - Enhanced Attributes                                 -->
+    <!--     - Significant Damage Bonuses                          -->
+    <!--     - Combat Survivability                                -->
+    <!--     - Tracking Capabilities                               -->
     <!-- Notes:                                                    -->
-    <!--   Pure strength specialist drink                          -->
-    <!--   Raw power over finesse                                  -->
-    <!--   Significant carry capacity boost                        -->
-    <!--   Enhanced brawling capabilities                          -->
+    <!--   True berserker-style combat drink                       -->
+    <!--   Excellent defensive and offensive capabilities          -->
+    <!--   Enhanced survival abilities                             -->
+    <!--   Significant dehydration drawback                        -->
+    <!--   Fatigue penalty after effects wear off                  -->
     <!-- ========================================================= -->
     <item name="drinkBearBrew">
       <property name="Extends" value="drinkJarBoiledWater"/>
@@ -1530,13 +1540,14 @@
       <property name="DisplayType" value="drinkBearBrew"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
-        <display_value name="dFoodHealthAmount" value="12"/>
+        <!-- Consolidated to 7 key display values -->
+        <display_value name="dNutrition" value="12"/>            <!-- Combined food/health -->
         <display_value name="dStaminaRegen" value="0.48"/>
         <display_value name="dDehydration" value="14"/>
-        <display_value name="dStrengthBoost" value="2"/>
-        <display_value name="dSteroids" value="1"/>
-        <display_value name="dAnimalTracking" value="1"/>
-        <display_value name="dBrawler" value="1.75"/>
+        <display_value name="dBearPower" value="2"/>             <!-- Combined strength and steroids -->
+        <display_value name="dCombatPackage" value="1.75"/>      <!-- Combined brawler/combat effects -->
+        <display_value name="dColdResist" value="100"/>          <!-- Important bear-like resistance -->
+        <display_value name="dDuration" value="300"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="900"/>
@@ -1577,37 +1588,50 @@
     <!-- Base Mathematics:                                         -->
     <!--   Starting from Tripwire: 52% regen, 210s duration        -->
     <!-- Combat Additions:                                         -->
-    <!--   FortBites: 50% damage resistance                        -->
-    <!--   Animal Fat: Enhanced duration and satiation             -->
-    <!--   Milk & Honey: Additional sustenance                     -->
+    <!--   Core Resistance: 40% physical damage reduction          -->
+    <!--   General Defense: 30% all damage reduction               -->
+    <!--   Temperature Resistance: 75 points both hot and cold     -->
     <!-- Calculations:                                             -->
     <!--   Base Tripwire: 52% regen                                -->
     <!--   Fat Reduction: -25% (heavy dilution)                    -->
     <!--   Fortitude Bonus: +10% (defensive boost)                 -->
-    <!--   Final Regen: 52% × 0.75 × 1.1 = ~43%                    -->
-    <!-- Combat Bonuses:                                           -->
-    <!--   Damage Resistance: 50%                                  -->
-    <!--   Extended Duration from Fat                              -->
-    <!--   Improved Satiation                                      -->
+    <!--   Final Regen: 52% × 0.75 × 1.1 = 43%                     -->
+    <!-- Combat Package:                                           -->
+    <!--   Primary Defenses:                                       -->
+    <!--     - 40% Core Physical Damage Resistance                 -->
+    <!--     - 30% General Damage Reduction                        -->
+    <!--     - 75 Points Temperature Resistance (Hot/Cold)         -->
+    <!--   Injury Protection:                                      -->
+    <!--     - 65% Resistance to all injuries                      -->
+    <!--     - Includes: Bleeding, Infection, Sprains              -->
+    <!--     - Covers: Stuns, Lacerations, Abrasions               -->
+    <!--   Movement Protection:                                    -->
+    <!--     - 40% Fall Damage Reduction                           -->
+    <!--     - 75% Resistance to leg injuries from falls           -->
+    <!--   Utility Benefits:                                       -->
+    <!--     - 20 Extra Carry Capacity                             -->
+    <!--     - Enhanced Nutritional Processing                     -->
     <!-- Duration Logic:                                           -->
-    <!--   Tripwire Base: 210s                                     -->
-    <!--   Fat Extension: +90s                                     -->
-    <!--   Milk/Honey Extension: +60s                              -->
-    <!--   Final: 360s duration (longest Level 4)                  -->
-    <!-- Nutrition Addition:                                       -->
-    <!--   Food: 15 (enhanced by fat)                              -->
-    <!--   Health: 15 (milk + honey + fat)                         -->
-    <!--   Water: 10 (milk content)                                -->
+    <!--   Base Duration: 360s (6 minutes)                         -->
+    <!--   Maximum Stack: 1080s (18 minutes)                       -->
+    <!--   Aligned with caffeine duration                          -->
+    <!-- Nutrition Values:                                         -->
+    <!--   Food: 20 (enhanced by fat)                              -->
+    <!--   Health: 20 (enhanced by fat blend)                      -->
+    <!--   Dehydration: 3.75 (reduced by fat content)              -->
     <!-- Final Values:                                             -->
-    <!--   Regen: 43% (reduced for defensive power)                -->
-    <!--   Duration: 360s (enhanced by fat content)                -->
-    <!--   Dehydration: 3.75 dehydration (7.5 - 50% fat reduction) -->
-    <!--   Cold Resist: 25 (Level 4 hot drink)                     -->
+    <!--   Complete Defense Package:                               -->
+    <!--     - Comprehensive Damage Reduction                      -->
+    <!--     - Full Temperature Protection                         -->
+    <!--     - Complete Injury Prevention System                   -->
+    <!--     - Enhanced Fall Protection                            -->
     <!-- Notes:                                                    -->
-    <!--   Defensive specialist's choice                           -->
-    <!--   Longest duration of Level 4 drinks                      -->
-    <!--   High survival value                                     -->
+    <!--   Ultimate defensive specialist's drink                   -->
+    <!--   Exceptional injury prevention                           -->
+    <!--   Superior temperature adaptation                         -->
+    <!--   Balanced with moderate dehydration                      -->
     <!--   Based on real "bulletproof coffee" concept              -->
+    <!--   Perfect for high-risk exploration                       -->
     <!-- ========================================================= -->
     <item name="drinkBulletproofCoffee">
       <property name="Extends" value="drinkJarBoiledWater"/>
@@ -1615,12 +1639,12 @@
       <property name="DisplayType" value="drinkBulletproofCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
-        <display_value name="dFoodHealthAmount" value="20"/>
+        <display_value name="dPhysicalResist" value=".6"/>
+        <display_value name="dGeneralResist" value=".4"/>
+        <display_value name="dNutrition" value="20"/>        <!-- Combined food and health -->
         <display_value name="dStaminaRegen" value="0.43"/>
         <display_value name="dDehydration" value="3.75"/>
-        <display_value name="dDamageResist" value=".5"/>
         <display_value name="dDuration" value="360"/>
-        <display_value name="dDurationMax" value="1080"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="1080"/>
@@ -1650,32 +1674,41 @@
     <!-- Tea Effects:                                              -->
     <!--   Red Tea: Efficient digestion (-15% food/water loss)     -->
     <!--   Golden Tea: 20% dysentery cure                          -->
-    <!--   Stealth Focus: 100% sneak damage                        -->
-    <!-- Calculations:                                             -->
-    <!--   No caffeine regen (tea based)                           -->
-    <!--   Stealth damage multiplier instead                       -->
-    <!--   -15% efficient digestion                                -->
+    <!--   Earl Grey: Enhanced stealth capabilities                -->
+    <!-- Stealth Package:                                          -->
+    <!--   Primary Effects:                                        -->
+    <!--     - 150% Sneak Attack Damage                            -->
+    <!--     - 50% Noise Reduction                                 -->
+    <!--     - 30% Light Level Reduction                           -->
+    <!--   Movement Enhancement:                                   -->
+    <!--     - 30% Faster Crouch Speed                             -->
+    <!--     - Silent Movement on Natural Surfaces                 -->
+    <!--     - Includes: Earth, Grass, Snow, Sand                  -->
+    <!-- Healing Package:                                          -->
+    <!--   Curative Effects:                                       -->
+    <!--     - 20% Dysentery Cure                                  -->
+    <!--     - 5% Infection Cure                                   -->
+    <!--   Sustenance:                                             -->
+    <!--     - 15 Food Points                                      -->
+    <!--     - 15 Health Points                                    -->
+    <!--     - 15 Water Points                                     -->
     <!-- Duration Logic:                                           -->
-    <!--   Base: 300s (tea duration)                               -->
-    <!--   Milk Extension: +60s                                    -->
-    <!--   Honey Extension: +60s                                   -->
-    <!--   Final: 420s duration                                    -->
-    <!-- Nutrition Addition:                                       -->
-    <!--   Food: 10 (milk content)                                 -->
-    <!--   Health: 10 (milk + honey)                               -->
-    <!--   Water: 10 (milk + tea)                                  -->
-    <!--   Disease Cure: 5% from honey                             -->
-    <!--   Dysentery Cure: 20% from golden rod                     -->
+    <!--   Base Duration: 420s (7 minutes)                         -->
+    <!--   Maximum Stack: 1260s (21 minutes)                       -->
+    <!--   Cold Resistance: 15 points                              -->
     <!-- Final Values:                                             -->
-    <!--   Sneak Damage: +100%                                     -->
-    <!--   Duration: 420s (extended tea blend)                     -->
-    <!--   Efficient Digestion: -15%                               -->
-    <!--   Cold Resist: 10 (warm tea base)                         -->
+    <!--   Complete Stealth Package:                               -->
+    <!--     - Enhanced Sneak Damage                               -->
+    <!--     - Comprehensive Stealth Bonuses                       -->
+    <!--     - Movement Improvements                               -->
+    <!--     - Multiple Healing Effects                            -->
     <!-- Notes:                                                    -->
-    <!--   Stealth specialist's alternative                        -->
-    <!--   No caffeine jitters for steady aim                      -->
-    <!--   Multiple healing effects                                -->
+    <!--   Ultimate stealth specialist's drink                     -->
+    <!--   Perfect for night operations                            -->
+    <!--   Excellent healing capabilities                          -->
     <!--   Based on Earl Grey tea with steamed milk                -->
+    <!--   Balanced healing and stealth effects                    -->
+    <!--   Ideal for stealth archer builds                         -->
     <!-- ========================================================= -->
     <item name="drinkLondonFogLatte">
       <property name="Extends" value="drinkJarBoiledWater"/>
@@ -1683,14 +1716,13 @@
       <property name="DisplayType" value="drinkLondonFogLatte"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
-        <display_value name="dFoodAmountAdd" value="15"/>
-        <display_value name="dFoodHealthAmount" value="15"/>
         <display_value name="dSneakDamage" value="1.5"/>
-        <display_value name="dEfficientDigestion" value=".15"/>
-        <display_value name="dCureInfection" value="5"/>
+        <display_value name="dStealthBonus" value=".5"/>  <!-- Combined noise/light reduction ~50% -->
+        <display_value name="dMovementBonus" value=".3"/>  <!-- Crouch speed -->
+        <display_value name="dNutrition" value="15"/>  <!-- Combined food/health/water -->
+        <display_value name="dDiseaseResist" value="5"/>
         <display_value name="dColdResist" value="15"/>
         <display_value name="dDuration" value="420"/>
-        <display_value name="dDurationMax" value="1260"/>
 
         <!-- Red Tea buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffRedTeaDuration" operation="add" value="420"/>
@@ -1727,39 +1759,54 @@
     <!-- ========================================================= -->
     <!-- ============= NIGHTMARE NITRO COLD BREW ================= -->
     <!-- ========================================================= -->
-    <!-- Level 4 ultimate pressurized coffee with nitrogen         -->
-    <!-- Base Mathematics:                                         -->
-    <!--   Starting from Tripwire: 52% regen, 210s duration        -->
-    <!-- Nitrogen Effects:                                         -->
-    <!--   Pressurization increases potency                        -->
-    <!--   Extreme concentration from cold brew process            -->
-    <!--   Added speed and attack bonuses                          -->
-    <!-- Calculations:                                             -->
-    <!--   Base Tripwire: 52% regen                                -->
-    <!--   Cold Brew Bonus: +20% (1.2×)                            -->
-    <!--   Nitrogen Boost: +25% (1.25×)                            -->
-    <!--   Final Regen: 52% × 1.2 × 1.25 = ~78%                    -->
-    <!-- Combat Bonuses:                                           -->
-    <!--   Attack Speed: +30%                                      -->
-    <!--   Movement Speed: +20%                                    -->
-    <!--   Damage Bonus: +100%                                     -->
-    <!-- Temperature Effects:                                      -->
-    <!--   Heat Resist: 15 (highest natural resistance)            -->
-    <!--   Cold Vulnerability: -5 (nitrogen cooling)               -->
-    <!-- Duration Logic:                                           -->
-    <!--   Base: 210s                                              -->
-    <!--   Reduced by concentration: -60s                          -->
-    <!--   Final: 150s (shortest Level 4 duration)                 -->
-    <!-- Final Values:                                             -->
-    <!--   Regen: 78% (highest non-Quad regen)                     -->
-    <!--   Duration: 150s (shortest Level 4)                       -->
-    <!--   Dehydration: 7.5 dehydration                            -->
-    <!--   Heat Resist: 25 (extreme cooling)                       -->
+    <!-- Level 4 ultimate pressurized combat coffee                -->
+    <!-- Base Concept:                                             -->
+    <!--   High-pressure nitrogen infused cold brew                -->
+    <!--   Maximum caffeine extraction process                     -->
+    <!--   Extreme but short-duration effects                      -->
+    <!-- Process Effects:                                          -->
+    <!--   Cold Brew: Maximum caffeine extraction                  -->
+    <!--   Nitrogen: Enhanced absorption and delivery              -->
+    <!--   Pressure: Increased potency but shorter duration        -->
+    <!-- Combat Package:                                           -->
+    <!--   Primary Effects:                                        -->
+    <!--     - 78% Stamina Regeneration (highest in class)         -->
+    <!--     - 30% Attack Speed Increase                           -->
+    <!--     - 20% Movement Speed Boost                            -->
+    <!--     - 100% Damage Bonus                                   -->
+    <!--   Temperature Control:                                    -->
+    <!--     - 25 Heat Resistance                                  -->
+    <!--     - Nitrogen-induced cooling effect                     -->
+    <!-- Duration Mechanics:                                       -->
+    <!--   Ultra-Concentrated:                                     -->
+    <!--     - Base Duration: 150s (2.5 minutes)                   -->
+    <!--     - Maximum Stack: 450s (7.5 minutes)                   -->
+    <!--     - Shortest Level 4 duration                           -->
+    <!--     - Rapid onset of effects                              -->
+    <!-- Drawbacks:                                                -->
+    <!--   Significant Dehydration:                                -->
+    <!--     - 7.5 Dehydration Rate                                -->
+    <!--     - Increased water consumption                         -->
+    <!--     - Risk of severe thirst                               -->
+    <!--   Short Duration:                                         -->
+    <!--     - Requires precise timing                             -->
+    <!--     - Need for frequent reapplication                     -->
+    <!-- Usage Profile:                                            -->
+    <!--   Ideal For:                                              -->
+    <!--     - Burst combat scenarios                              -->
+    <!--     - Speed-based strategies                              -->
+    <!--     - High-temperature environments                       -->
+    <!--     - Situations requiring maximum performance            -->
+    <!--   Requires:                                               -->
+    <!--     - Water source availability                           -->
+    <!--     - Strategic timing                                    -->
+    <!--     - Resource management                                 -->
     <!-- Notes:                                                    -->
-    <!--   Most powerful Level 4 drink                             -->
-    <!--   High risk/high reward design                            -->
-    <!--   Extreme dehydration drawback                            -->
+    <!--   Most powerful Level 4 stimulant                         -->
+    <!--   Extreme high risk/high reward profile                   -->
     <!--   Based on real nitro cold brew process                   -->
+    <!--   Perfect for speed-focused builds                        -->
+    <!--   Requires careful water management                       -->
     <!-- ========================================================= -->
     <item name="drinkNightmareNitroColdBrew">
       <property name="Extends" value="drinkJarBoiledWater"/>
@@ -1769,18 +1816,16 @@
       <effect_group tiered="false" name="Drink Tier 4">
         <display_value name="dStaminaRegen" value="0.78"/>
         <display_value name="dDehydration" value="7.5"/>
-        <display_value name="dHeatResist" value="15"/>
-        <display_value name="dAttackSpeed" value=".3"/>
-        <display_value name="dMovementSpeed" value=".2"/>
-        <display_value name="dDamageBonus" value="1"/>
+        <display_value name="dHeatResist" value="25"/>
+        <display_value name="dColdVulnerability" value="-50"/>
         <display_value name="dDuration" value="150"/>
-        <display_value name="dDurationMax" value="450"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="450"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="150"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.78"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="7.5"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdVulnerability" operation="set" value="50"/>
 
         <!-- Heat/Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDurationMax" operation="set" value="450"/>
@@ -1788,7 +1833,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistValue" operation="set" value="25"/>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffNitrogenCooling"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffHeatResist"/>
       </effect_group>
     </item>
 

@@ -105,7 +105,7 @@ drinkPumpkinSpikeLatteDesc,items,Item,"A seasonal favorite with a brutal twist. 
 drinkBearBrew,items,Item,Bear Brew
 drinkBearBrewDesc,items,Item, "This powerful concoction is designed to unleash your inner beast, providing a remarkable boost to your strength and stamina. Crafted with potent ingredients, it fuels your body for intense battles, giving you the edge you need to dominate the competition."
 drinkBulletproofCoffee,items,Item,Bullet-proof Coffee
-drinkBulletproofCoffeeDesc,items,Item,"A powerful blend reminiscent of blackstrap, this robust coffee merges the richness of brewed beans with nutrient-dense animal fat. It’s designed to sustain you through grueling challenges, boosting both your health and stamina when the world feels bleak. This brew is your ally, fortifying you for whatever dangers lie ahead."
+drinkBulletproofCoffeeDesc,items,Item,"A powerful blend reminiscent of black strap, this robust coffee merges the richness of brewed beans with nutrient-dense animal fat. It’s designed to sustain you through grueling challenges, boosting both your health and stamina when the world feels bleak. This brew is your ally, fortifying you for whatever dangers lie ahead."
 drinkLondonFogLatte,items,Item,London Fog Latte
 drinkLondonFogLatteDesc,items,Item,"This cozy blend of tea, milk, and honey wraps you in warmth while sharpening your senses. Perfect for quiet moments, it enhances your stealth and vision, keeping you alert amidst the chaos. Sip this comforting brew and feel ready to navigate the dangers of the wasteland with newfound awareness."
 drinkNightmareNitroColdBrew,items,Item,Nightmare Nitro Cold Brew
@@ -120,37 +120,38 @@ drinkPhoenixFireLatte,items,Item,Phoenix Fire Latte
 drinkPhoenixFireLatteDesc,items,Item,"A legendary brew that grants complete rebirth. Instantly restores all vital stats, cleanses wounds and ailments, then wraps you in protective flames for continued regeneration. The ultimate expression of revival through fire."
 drinkGrandpasLastStand,items,Item,Grandpa's Last Stand
 drinkGrandpasLastStandDesc,items,Item,"Grandpa's ultimate creation - a mixture that grants godlike power at the cost of your very life force. For five minutes, you'll become an unstoppable force of destruction, but the price is steep: permanent injuries, infection, and a body pushed to its absolute limits. Use only in the most desperate situations."statAttributeBoost,stats,Stat,Attribute Level Increase
+buffDehydrateName,stats,Stat,Dehydration
+statBearPower,stats,Stat,Bear Power
 statCarryCapacity,stats,Stat,Extra Carry Capacity
 statClubDamage,stats,Stat,Club Damage
+statClubDamagePackage,stats,Stat,Club Damage Package
 statClubSpeed,stats,Stat,Club Attack Speed
-statClubStamina,stats,Stat,Club Stamina Efficiency
 statColdResistance,stats,Stat,Cold Resistance
 statColdVulnerability,stats,Stat,Cold Vulnerability
+statCombatPackage,stats,Stat,Combat Package
+statCombatSpeed,stats,Stat,Combat Speed
 statDamageBonus,stats,Stat,Damage Bonus
 statDamageMitigation,stats,Stat,Damage Mitigation
-statDehydrationRate,stats,Stat,Extra Water Loss per Stamina Point
 statDehydration,stats,Stat,Total Water Cost
 statDiseaseResist,stats,Stat,Disease Resistance
 statExpBonus,stats,Stat,Experience Bonus
+statFallResist,stats,Stat,Fall Resistance
 statFireDamage,stats,Stat,Fire Aura Damage
+statGeneralResist,stats,Stat,General Resistance
 statHeatResistance,stats,Stat,Heat Resistance
-statMaxDuration,stats,Stat,Max Duration
+statJumpBoost,stats,Stat,Jump Bonus
+statJumpBoostMax,stats,Stat,Jump Bonus Max
 statMeleeDamage,stats,Stat,Melee Damage
 statMobilityBoost,stats,Stat,Mobility and Speed Boost
+statMovementBonus,stats,Stat,Movement Bonus
 statMovementSpeed,stats,Stat,Movement Speed
+statNutrition,stats,Stat,Food & Health
 statPeakDuration,stats,Stat,Peak Duration
-statPowerDuration,stats,Stat,Power Duration
+statPhysicalResist,stats,Stat,Physical Resistance
 statRangedDamage,stats,Stat,Ranged Damage Bonus
 statRegenDuration,stats,Stat,Rebirth Duration
 statRestoration,stats,Stat,Full Restoration
-statRunSpeed,stats,Stat,Run Speed Boost
+statSneakDamage,stats,Stat,Sneak Attack Damage
 statStaminaEfficiency,stats,Stat,Stamina Efficiency
+statStealthBonus,stats,Stat,Stealth Bonus
 statStrengthBoost,stats,Stat,Strength Attribute Boost
-statFallResist,stats,Stat,Fall Resistance
-buffDehydrateName,stats,Stat,Dehydration
-dMobilitySpeedBoost,stat,Stat,Mobility Speed Boost
-dAnimalTracking,stat,Stat,Animal Tracking
-statFoodHealthAmount,stat,Stat,Food & Health
-dSteroids,stat,Stat,Steroid Bonus
-dBrawler,stat,Stat,Brawler
-statJumpBoost,stat,Stat,Jump Bonus
