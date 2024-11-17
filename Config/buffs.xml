@@ -376,6 +376,70 @@
       </effect_group>
     </buff>
 
+    <buff name="buffParkourBoost2" name_key="buffParkourBoost" description_key="buffParkourBoostDesc" icon="ui_game_symbol_parkour" icon_color="102,0,204">
+      <stack_type value="replace"/>
+      <duration value="0"/>
+      <display_value value=".buffParkourBoostDisplay"/>
+      <display_value_format value="time"/>
+
+      <!-- Jump stack initialization -->
+      <effect_group>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$parkourJumpStacks" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$parkourJumpStacks" operation="add" value="1">
+          <requirement name="CVarCompare" cvar="$parkourJumpStacks" operation="LT" value="4"/>
+        </triggered_effect>
+      </effect_group>
+
+      <!-- Main effects -->
+      <effect_group tiered="false">
+        <passive_effect name="RunSpeed" operation="perc_add" value=".5"/>
+        <passive_effect name="WalkSpeed" operation="perc_add" value=".5"/>
+        <passive_effect name="CrouchSpeed" operation="perc_add" value=".5"/>
+        <passive_effect name="AttacksPerMinute" operation="perc_add" value=".5"/>
+
+        <!-- Dynamic jump strength based on stacks -->
+        <passive_effect name="JumpStrength" operation="perc_add" value="@$parkourJumpBonus"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$parkourJumpBonus" operation="set" value="@$parkourJumpStacks"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$parkourJumpBonus" operation="multiply" value="2"/>
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$parkourJumpBonus" operation="set" value="@$parkourJumpStacks"/>
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$parkourJumpBonus" operation="multiply" value="2"/>
+
+        <passive_effect name="StaminaLoss" operation="perc_add" value="-.75" tags="jumping"/>
+        <triggered_effect trigger="onSelfJump" action="PlaySound" sound="twitch_jump" play_in_head="false"/>
+      </effect_group>
+
+      <!-- Store original value and apply boost when buff starts -->
+      <effect_group>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$originalParkourBonus" operation="set" value="@$parkourBonus"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$parkourBonus" operation="multiply" value="1.5"/>
+      </effect_group>
+
+      <!-- Duration cap handling -->
+      <effect_group>
+        <!-- Check for duration cap on stack -->
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffParkourBoostDuration" operation="set" value="@$buffParkourBoostDurationMax">
+          <requirement name="CVarCompare" cvar="$buffParkourBoostDuration" operation="GT" value="@$buffParkourBoostDurationMax"/>
+        </triggered_effect>
+
+        <!-- Standard duration management -->
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffParkourBoostDuration" operation="subtract" value="@$MetabolismDuration"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffParkourBoostDisplay" operation="set" value="@$buffParkourBoostDuration"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffParkourBoostDisplay" operation="divide" value="@$MetabolismDuration"/>
+      </effect_group>
+
+      <!-- Reset all values when buff expires -->
+      <effect_group>
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffParkourBoost">
+          <requirement name="CVarCompare" cvar="$buffParkourBoostDuration" operation="LTE" value="0"/>
+        </triggered_effect>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$parkourBonus" operation="set" value="@$originalParkourBonus"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffParkourBoostDisplay" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffParkourBoostDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$parkourJumpStacks" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$parkourJumpBonus" operation="set" value="0"/>
+      </effect_group>
+    </buff>
+
     <buff name="buffParkourBoost" name_key="buffParkourBoost" description_key="buffParkourBoostDesc" icon="ui_game_symbol_parkour" icon_color="102,0,204">
       <stack_type value="replace"/>
       <duration value="0"/>
@@ -388,17 +452,17 @@
         <passive_effect name="CrouchSpeed" operation="perc_add" value=".5"/>
         <passive_effect name="AttacksPerMinute" operation="perc_add" value=".5"/>
 
-        <passive_effect name="JumpStrength" operation="perc_add" value="1"/>
+        <passive_effect name="JumpStrength" operation="perc_add" value="4"/>
         <passive_effect name="StaminaLoss" operation="perc_add" value="-.75" tags="jumping"/>
 
         <triggered_effect trigger="onSelfJump" action="PlaySound" sound="twitch_jump" play_in_head="false"/>
-        <triggered_effect trigger="onSelfJump" action="AddBuff" buff="buffRocketBootsAirborne"/>
+        <!--<triggered_effect trigger="onSelfJump" action="AddBuff" buff="buffRocketBootsAirborne"/>-->
       </effect_group>
 
       <!-- Store original value and apply boost when buff starts -->
       <effect_group>
         <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$originalParkourBonus" operation="set" value="@$parkourBonus"/>
-        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$parkourBonus" operation="multiply" value="1.1"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$parkourBonus" operation="multiply" value="1.5"/>
       </effect_group>
 
       <!-- Duration cap handling -->
@@ -468,47 +532,72 @@
       </effect_group>
     </buff>
 
-    <buff name="buffBearStrength" name_key="buffBearStrength" description_key="buffBearStrengthDesc" icon="ui_game_symbol_muscle"> <!-- icon_color="111,78,55">-->
+    <buff name="buffBearStrength" name_key="buffBearStrength" description_key="buffBearStrengthDesc" icon="ui_game_symbol_muscle">
       <stack_type value="replace"/>
       <duration value="0"/>
       <display_value value=".buffBearStrengthDisplay"/>
       <display_value_format value="time"/>
 
+      <!-- Sound effect -->
       <effect_group>
         <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="bearattack" play_in_head="false"/>
+        <triggered_effect trigger="onSelfKilledOther" action="PlaySound" sound="bearattack" play_in_head="false"/>
+      </effect_group>
 
-        <!-- Timer management -->
+      <!-- Timer management -->
+      <effect_group>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffBearStrengthDuration" operation="subtract" value="@$MetabolismDuration"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffBearStrengthDisplay" operation="set" value="@$buffBearStrengthDuration"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffBearStrengthDisplay" operation="divide" value="@$MetabolismDuration"/>
       </effect_group>
 
+      <!-- Cleanup and Fatigue Application -->
       <effect_group>
-        <!-- Buff removal -->
         <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBearStrength">
           <requirement name="CVarCompare" cvar="$buffBearStrengthDuration" operation="LTE" value="0"/>
         </triggered_effect>
+        <!-- Apply fatigue when buff ends -->
+        <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffFatigued"/>
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffBearStrengthDisplay" operation="set" value="0"/>
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffBearStrengthDuration" operation="set" value="0"/>
       </effect_group>
 
+      <!-- Bear-like effects -->
       <effect_group>
-        <!-- Strength effects -->
+        <!-- Enhanced strength -->
         <passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="2"/>
-        <passive_effect name="EntityDamage" operation="perc_add" value="0.5" tags="perkBrawler"/>
+        <passive_effect name="AttributeLevel" tags="attFortitude" operation="base_add" value="1"/>
 
-        <!-- Iron Gut -->
+        <!-- Enhanced melee damage -->
+        <passive_effect name="EntityDamage" operation="perc_add" value="0.75" tags="perkBrawler"/>
+
+        <!-- Increased block damage to represent bear strength -->
+        <passive_effect name="BlockDamage" operation="perc_add" value="0.5"/>
+
+        <!-- Enhanced metabolism (Iron Gut) -->
         <passive_effect name="WaterLossPerHealthPointGained" operation="perc_add" value="-.25"/>
         <passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" value="-.25"/>
         <passive_effect name="FoodLossPerStaminaPointGained" operation="perc_add" value="-.25"/>
 
-        <!-- buffAnimalTracker -->
+        <!-- Animal tracking -->
         <passive_effect name="TrackDistance" operation="base_set" level="0,1,5" value="0,100,100"/>
         <triggered_effect trigger="onSelfCrouch" action="AddBuff" buff="buffAnimalTracker"/>
 
-        <!-- Sexual Tyrannosaurus -->
-        <triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Stamina" operation="add" value="30"/>
+        <!-- Enhanced stamina recovery on kills -->
+        <triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Stamina" operation="add" value="50"/>
 
+        <!-- Bear-like rage when health is low -->
+        <passive_effect name="EntityDamage" operation="perc_add" value="0.25">
+          <requirement name="StatComparePercCurrentToMax" stat="health" operation="LTE" value="0.3"/>
+        </passive_effect>
+      </effect_group>
+
+      <!-- Intimidation effects -->
+      <effect_group>
+        <passive_effect name="BuffResistance" operation="base_add" value="0.3" tags="buffFatiguedTrigger,buffInjuryStunned01CHTrigger"/>
+        <triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffInjuryStunned01CHTrigger" target="other">
+          <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
+        </triggered_effect>
       </effect_group>
     </buff>
 

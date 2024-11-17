@@ -198,12 +198,12 @@
     </item_display_info>
 
     <item_display_info display_type="drinkSpringHeeledJoe" display_group="groupConsumables">
-      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
-      <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
-      <display_entry name="dColdResist" title_key="statColdResistance"/>
-      <display_entry name="dMobilitySpeedBoost" title_key="statMobilityBoost" display_type="Percent"/>
+      <display_entry name="dMobilityBoost" title_key="statMobilityBoost" display_type="Percent"/>
+      <display_entry name="dJumpBoost" title_key="statJumpBoost" display_type="Percent"/>
       <display_entry name="dFallResist" title_key="statFallResist" display_type="Percent"/>
-      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+      <display_entry name="dColdResist" title_key="statColdResistance"/>
+      <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
     </item_display_info>
 
     <item_display_info display_type="drinkPumpkinSpikeLatte" display_group="groupConsumables">

@@ -1365,12 +1365,12 @@
       <property name="DisplayType" value="drinkSpringHeeledJoe"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
+        <display_value name="dMobilityBoost" value=".5"/>
+        <display_value name="dJumpBoost" value="4"/>
+        <display_value name="dFallResist" value="1"/>
         <display_value name="dStaminaRegen" value="0.44"/>
         <display_value name="dColdResist" value="25"/>
         <display_value name="dDehydration" value="15"/>
-        <display_value name="dMobilitySpeedBoost" value=".2"/>
-        <display_value name="dFallResist" value="1"/>
-        <display_value name="dDuration" value="240"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="720"/>
@@ -1394,7 +1394,7 @@
         </triggered_effect>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffParkourBoost,buffDrugOhShitzDrops,buffProcessConsumables"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffParkourBoost2,buffDrugOhShitzDrops,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -1536,7 +1536,7 @@
         <display_value name="dStrengthBoost" value="2"/>
         <display_value name="dSteroids" value="1"/>
         <display_value name="dAnimalTracking" value="1"/>
-        <display_value name="dBrawler" value="1"/>
+        <display_value name="dBrawler" value="1.75"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="900"/>

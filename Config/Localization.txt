@@ -153,3 +153,4 @@ dAnimalTracking,stat,Stat,Animal Tracking
 statFoodHealthAmount,stat,Stat,Food & Health
 dSteroids,stat,Stat,Steroid Bonus
 dBrawler,stat,Stat,Brawler
+statJumpBoost,stat,Stat,Jump Bonus
