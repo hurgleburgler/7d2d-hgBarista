@@ -499,18 +499,20 @@
     </buff>
 
     <!-- Bulletproof Coffee Buff -->
-    <buff name="buffBulletproofCoffee" name_key="bulletproofCoffee" description_key="bulletproofCoffeeDesc" icon="ui_game_symbol_armor">
-      <stack_type value="replace"/>
+    <buff name="buffBulletproofCoffee" name_key="bulletproofCoffee" description_key="bulletproofCoffeeDesc" icon="ui_game_symbol_armor" icon_color="132,0,155">
+      <stack_type value="ignore"/>
       <duration value="0"/>
       <display_value value=".buffBulletproofCoffeeDisplay"/>
       <display_value_format value="time"/>
 
+      <!-- Duration management -->
       <effect_group>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffBulletproofCoffeeDuration" operation="subtract" value="@$MetabolismDuration"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffBulletproofCoffeeDisplay" operation="set" value="@$buffBulletproofCoffeeDuration"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffBulletproofCoffeeDisplay" operation="divide" value="@$MetabolismDuration"/>
       </effect_group>
 
+      <!-- Cleanup -->
       <effect_group>
         <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBulletproofCoffee">
           <requirement name="CVarCompare" cvar="$buffBulletproofCoffeeDuration" operation="LTE" value="0"/>
@@ -519,48 +521,65 @@
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffBulletproofCoffeeDuration" operation="set" value="0"/>
       </effect_group>
 
+      <!-- Main protective effects -->
       <effect_group>
+        <!-- Core damage resistance -->
+        <passive_effect name="PhysicalDamageResist" operation="base_add" value="0.6" tags="coredamageresist"/>
 
-        <!-- Fort Bites-style defense (doubled) -->
-        <passive_effect name="GeneralDamageResist" operation="base_add" value="1.0"/>
-        <passive_effect name="WaterChangeOT" operation="base_subtract" value=".5"/>
-        <passive_effect name="BuffResistance" operation="base_add" value="1"/>
+        <!-- Enhanced total damage resistance -->
+        <passive_effect name="GeneralDamageResist" operation="base_add" value="0.4"/>
 
+        <!-- Temperature resistance -->
+        <passive_effect name="HypothermalResist" operation="base_add" value="75"/>
+        <passive_effect name="HyperthermalResist" operation="base_add" value="75"/>
+
+        <!-- Fall damage reduction - direct reduction to fall damage -->
+        <passive_effect name="FallDamageReduction" operation="base_add" value="0.4"/>
+
+        <!-- Comprehensive injury and status effect resistance -->
+        <passive_effect name="BuffResistance" operation="base_add" value="0.65"
+                        tags="buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryStunned01CHTrigger,buffInjuryBleedingBarbedWire,buffLegBroken,buffLegSprained"/>
+
+        <!-- Additional fall trigger resistance -->
+        <passive_effect name="BuffResistance" operation="base_add" value="0.75" tags="triggerBrokenLeg,triggerSprainedLeg"/>
+
+        <!-- Carry bonus to represent MCT oil benefits -->
+        <passive_effect name="CarryCapacity" operation="base_add" value="20"/>
       </effect_group>
     </buff>
 
+
+    <buff name="buffLondonFogStealth" name_key="buffLondonFogStealth" description_key="buffLondonFogStealthDesc" icon="ui_game_symbol_stealth">
+      <stack_type value="replace"/>
+      <duration value="0"/>
+      <display_value value=".buffLondonFogStealthDisplay"/>
+      <display_value_format value="time"/>
+
+      <effect_group>
+        <!-- Timer management -->
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffLondonFogStealthDuration" operation="subtract" value="@$MetabolismDuration"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffLondonFogStealthDisplay" operation="set" value="@$buffLondonFogStealthDuration"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffLondonFogStealthDisplay" operation="divide" value="@$MetabolismDuration"/>
+      </effect_group>
+
+      <effect_group>
+        <!-- Buff removal -->
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffLondonFogStealth">
+          <requirement name="CVarCompare" cvar="$buffLondonFogStealthDuration" operation="LTE" value="0"/>
+        </triggered_effect>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffLondonFogStealthDisplay" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffLondonFogStealthDuration" operation="set" value="0"/>
+      </effect_group>
+
+      <effect_group>
+        <!-- Enhanced stealth effects -->
+        <requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+        <requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+        <passive_effect name="DamageBonus" operation="base_add" value="1.0"/> <!--For UI-->
+        <passive_effect name="EntityDamage" operation="perc_add" value="1.0"/>
+      </effect_group>
+    </buff>
     <!--
-
-        <buff name="buffLondonFogStealth" name_key="buffLondonFogStealth" description_key="buffLondonFogStealthDesc" icon="ui_game_symbol_stealth">
-          <stack_type value="replace"/>
-          <duration value="0"/>
-          <display_value value=".buffLondonFogStealthDisplay"/>
-          <display_value_format value="time"/>
-
-          <effect_group>
-            &lt;!&ndash; Timer management &ndash;&gt;
-            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffLondonFogStealthDuration" operation="subtract" value="@$MetabolismDuration"/>
-            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffLondonFogStealthDisplay" operation="set" value="@$buffLondonFogStealthDuration"/>
-            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffLondonFogStealthDisplay" operation="divide" value="@$MetabolismDuration"/>
-          </effect_group>
-
-          <effect_group>
-            &lt;!&ndash; Buff removal &ndash;&gt;
-            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffLondonFogStealth">
-              <requirement name="CVarCompare" cvar="$buffLondonFogStealthDuration" operation="LTE" value="0"/>
-            </triggered_effect>
-            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffLondonFogStealthDisplay" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffLondonFogStealthDuration" operation="set" value="0"/>
-          </effect_group>
-
-          <effect_group>
-            &lt;!&ndash; Enhanced stealth effects &ndash;&gt;
-            <requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
-            <requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
-            <passive_effect name="DamageBonus" operation="base_add" value="1.0"/> &lt;!&ndash;For UI&ndash;&gt;
-            <passive_effect name="EntityDamage" operation="perc_add" value="1.0"/>
-          </effect_group>
-        </buff>
 
         <buff name="buffFireBreathing" name_key="buffFireBreathing" description_key="buffFireBreathingDesc" icon="ui_game_symbol_fire" icon_color="255,128,0">
           <stack_type value="replace"/>

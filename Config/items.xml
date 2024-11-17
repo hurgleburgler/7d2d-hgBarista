@@ -1615,8 +1615,7 @@
       <property name="DisplayType" value="drinkBulletproofCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
-        <display_value name="dFoodAmountAdd" value="15"/>
-        <display_value name="dFoodHealthAmount" value="15"/>
+        <display_value name="dFoodHealthAmount" value="20"/>
         <display_value name="dStaminaRegen" value="0.43"/>
         <display_value name="dDehydration" value="3.75"/>
         <display_value name="dDamageResist" value=".5"/>
@@ -1629,15 +1628,15 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.43"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="3.75"/>
 
-        <!-- FortBites buff setup -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrugFortBitesDuration" operation="add" value="360"/>
+        <!-- Bulletproof Coffee buff setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBulletproofCoffeeDuration" operation="add" value="360"/>
 
-        <!-- Food and Health -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="15"/>
+        <!-- Food, Health and Max Health -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="20"/>
 
         <!-- Add all buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffDrugFortBites,buffProcessConsumables"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffDrugFortBites,buffBulletproofCoffee,buffProcessConsumables"/>
       </effect_group>
     </item>
 

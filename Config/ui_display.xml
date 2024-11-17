@@ -231,8 +231,7 @@
     </item_display_info>
 
     <item_display_info display_type="drinkBulletproofCoffee" display_group="groupConsumables">
-      <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
-      <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
+      <display_entry name="dFoodHealthAmount" title_key="statFoodHealthAmount"/>
       <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
       <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
       <display_entry name="dDamageResist" title_key="statDamageResist" display_type="Percent"/>
