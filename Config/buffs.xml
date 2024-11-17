@@ -605,7 +605,7 @@
         <passive_effect name="HyperthermalResist" operation="base_add" value="75"/>
 
         <!-- Fall damage reduction - direct reduction to fall damage -->
-        <passive_effect name="FallDamageReduction" operation="base_add" value="0.4"/>
+        <passive_effect name="FallDamageReduction" operation="perc_add" value="-.25"/>
 
         <!-- Comprehensive injury and status effect resistance -->
         <passive_effect name="BuffResistance" operation="base_add" value="0.65"
