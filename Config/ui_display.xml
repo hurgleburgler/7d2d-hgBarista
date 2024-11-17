@@ -190,7 +190,6 @@
     </item_display_info>
 
     <item_display_info display_type="drinkTripwire" display_group="groupConsumables">
-      <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
       <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
       <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
       <display_entry name="dColdResist" title_key="statColdResistance"/>
@@ -199,7 +198,6 @@
     </item_display_info>
 
     <item_display_info display_type="drinkSpringHeeledJoe" display_group="groupConsumables">
-      <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
       <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
       <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
       <display_entry name="dColdResist" title_key="statColdResistance"/>
@@ -209,7 +207,6 @@
     </item_display_info>
 
     <item_display_info display_type="drinkPumpkinSpikeLatte" display_group="groupConsumables">
-      <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
       <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
       <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
       <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
@@ -224,21 +221,16 @@
     </item_display_info>
 
     <item_display_info display_type="drinkBearBrew" display_group="groupConsumables">
-      <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
-      <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
-      <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
+      <display_entry name="dFoodHealthAmount" title_key="statFoodHealthAmount"/>
       <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
       <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
       <display_entry name="dStrengthBoost" title_key="statStrengthBoost"/>
-      <display_entry name="dCarryBonus" title_key="statCarryCapacity"/>
-      <display_entry name="dMeleeDamage" title_key="statMeleeDamage" display_type="Percent"/>
-      <display_entry name="dRunSpeed" title_key="statRunSpeed" display_type="Percent"/>
-      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
-      <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
+      <display_entry name="dSteroids" title_key="drugSteroids" display_type="Bool"/>
+      <display_entry name="dAnimalTracking" title_key="buffAnimalTrackerName" display_type="Bool"/>
+      <display_entry name="dBrawler" title_key="perkBrawlerName" display_type="Bool"/>
     </item_display_info>
 
     <item_display_info display_type="drinkBulletproofCoffee" display_group="groupConsumables">
-      <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
       <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
       <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
       <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
@@ -261,7 +253,6 @@
     </item_display_info>
 
     <item_display_info display_type="drinkNightmareNitro" display_group="groupConsumables">
-      <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
       <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
       <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
       <display_entry name="dHeatResist" title_key="statHeatResistance"/>

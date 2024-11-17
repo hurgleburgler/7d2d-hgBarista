@@ -129,7 +129,7 @@ statColdVulnerability,stats,Stat,Cold Vulnerability
 statDamageBonus,stats,Stat,Damage Bonus
 statDamageMitigation,stats,Stat,Damage Mitigation
 statDehydrationRate,stats,Stat,Extra Water Loss per Stamina Point
-statDehydration,stats,Stat,Dehydration over Duration
+statDehydration,stats,Stat,Total Water Cost
 statDiseaseResist,stats,Stat,Disease Resistance
 statExpBonus,stats,Stat,Experience Bonus
 statFireDamage,stats,Stat,Fire Aura Damage
@@ -145,7 +145,11 @@ statRegenDuration,stats,Stat,Rebirth Duration
 statRestoration,stats,Stat,Full Restoration
 statRunSpeed,stats,Stat,Run Speed Boost
 statStaminaEfficiency,stats,Stat,Stamina Efficiency
-statStrengthBoost,stats,Stat,Strength Increase
+statStrengthBoost,stats,Stat,Strength Attribute Boost
 statFallResist,stats,Stat,Fall Resistance
-buffDehydrateName,stats,Stat,Dehydration Effect
-dMobilitySpeedBoost,stat
+buffDehydrateName,stats,Stat,Dehydration
+dMobilitySpeedBoost,stat,Stat,Mobility Speed Boost
+dAnimalTracking,stat,Stat,Animal Tracking
+statFoodHealthAmount,stat,Stat,Food & Health
+dSteroids,stat,Stat,Steroid Bonus
+dBrawler,stat,Stat,Brawler
