@@ -4,8 +4,10 @@
     <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="debuffCursed"/>
     <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffTooMuchCaffeine"/>
     <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="set" value="0"/>
+    <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="set" value="0"/>
     <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffColdResistDuration" operation="set" value="0"/>
     <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="set" value="0"/>
+    <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffParkourBoostDuration" operation="set" value="0"/>
   </append>
 
   <insertAfter xpath="/buffs/buff[@name='buffBlackStrapCoffee']/effect_group/triggered_effect[@action='RemoveBuff' and @buff='buffCoffee']">
@@ -395,26 +397,46 @@
       </effect_group>
     </buff>
 
-<!--    <buff name="buffParkourBoost" name_key="buffParkourBoost" description_key="buffParkourBoostDesc" icon="ui_game_symbol_parkour">
+    <buff name="buffParkourBoost" name_key="buffParkourBoost" description_key="buffParkourBoostDesc" icon="ui_game_symbol_parkour" icon_color="102,0,204">
       <stack_type value="replace"/>
       <duration value="0"/>
       <display_value value=".buffParkourBoostDisplay"/>
       <display_value_format value="time"/>
 
-      &lt;!&ndash; Store original value and apply boost when buff starts &ndash;&gt;
+      <effect_group tiered="false">
+        <passive_effect name="RunSpeed" operation="perc_add" value=".2"/>
+        <passive_effect name="WalkSpeed" operation="perc_add" value=".2"/>
+        <passive_effect name="CrouchSpeed" operation="perc_add" value=".2"/>
+        <passive_effect name="AttacksPerMinute" operation="perc_add" value=".2"/>
+
+        <passive_effect name="JumpStrength" operation="perc_add" value="1"/>
+        <passive_effect name="StaminaLoss" operation="perc_add" value="-.75" tags="jumping"/>
+
+        <triggered_effect trigger="onSelfJump" action="PlaySound" sound="twitch_jump" play_in_head="false"/>
+        <triggered_effect trigger="onSelfJump" action="AddBuff" buff="buffRocketBootsAirborne"/>
+      </effect_group>
+
+      <!-- Store original value and apply boost when buff starts -->
       <effect_group>
         <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$originalParkourBonus" operation="set" value="@$parkourBonus"/>
         <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$parkourBonus" operation="multiply" value="1.1"/>
       </effect_group>
 
-      &lt;!&ndash; Standard buff duration management &ndash;&gt;
+      <!-- Duration cap handling -->
       <effect_group>
+
+        <!-- Check for duration cap on stack -->
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffParkourBoostDuration" operation="set" value="@$buffParkourBoostDurationMax">
+          <requirement name="CVarCompare" cvar="$buffParkourBoostDuration" operation="GT" value="@$buffParkourBoostDurationMax"/>
+        </triggered_effect>
+
+        <!-- Standard duration management -->
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffParkourBoostDuration" operation="subtract" value="@$MetabolismDuration"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffParkourBoostDisplay" operation="set" value="@$buffParkourBoostDuration"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffParkourBoostDisplay" operation="divide" value="@$MetabolismDuration"/>
       </effect_group>
 
-      &lt;!&ndash; Reset parkour bonus to original value when buff expires &ndash;&gt;
+      <!-- Reset parkour bonus to original value when buff expires -->
       <effect_group>
         <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffParkourBoost">
           <requirement name="CVarCompare" cvar="$buffParkourBoostDuration" operation="LTE" value="0"/>
@@ -425,6 +447,7 @@
       </effect_group>
     </buff>
 
+    <!--
     <buff name="buffStrengthBoost" name_key="buffStrengthBoost" description_key="buffStrengthBoostDesc" icon="ui_game_symbol_muscle">
       <stack_type value="replace"/>
       <duration value="0"/>

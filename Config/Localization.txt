@@ -129,6 +129,7 @@ statColdVulnerability,stats,Stat,Cold Vulnerability
 statDamageBonus,stats,Stat,Damage Bonus
 statDamageMitigation,stats,Stat,Damage Mitigation
 statDehydrationRate,stats,Stat,Extra Water Loss per Stamina Point
+statDehydration,stats,Stat,Total Water Loss Over Duration
 statDiseaseResist,stats,Stat,Disease Resistance
 statExpBonus,stats,Stat,Experience Bonus
 statFireDamage,stats,Stat,Fire Aura Damage

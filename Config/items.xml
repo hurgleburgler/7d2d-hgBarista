@@ -232,7 +232,7 @@
 
       <effect_group tiered="false">
         <display_value name="dStaminaRegen" value="0.50"/>
-        <display_value name="dDehydrationRate" value="0.03"/>
+        <display_value name="dDehydration" value="50"/>
         <display_value name="dDuration" value="180"/>
         <display_value name="dDurationMax" value="540"/>
 
@@ -242,7 +242,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="543"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="183"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.50"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="0.03"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="50"/>
 
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="set" value="@$buffCaffeineDurationMax">
           <requirement name="CVarCompare" cvar="$buffCaffeineDuration" operation="GT" value="@$buffCaffeineDurationMax"/>
@@ -305,8 +305,8 @@
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.08"/>
-        <display_value name="dDehydrationRate" value="0.25"/>
-        <display_value name="dColdResist" value="5"/>
+        <display_value name="dDehydration" value="2"/>
+        <display_value name="dColdResist" value="10"/>
         <display_value name="dDuration" value="120"/>
         <display_value name="dDurationMax" value="360"/>
 
@@ -320,6 +320,9 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="120"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="10"/>
+
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
@@ -376,6 +379,9 @@
         <!-- Very minor stamina regeneration -->
         <passive_effect name="StaminaChangeOT" operation="perc_add" value="0.02"/>
 
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
+
         <!-- Add the disease resistance buff -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDiseaseResist"/>
       </effect_group>
@@ -400,7 +406,7 @@
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.2"/>
-        <display_value name="dDehydrationRate" value="0.60"/>
+        <display_value name="dDehydration" value="0.60"/>
         <display_value name="dColdResist" value="5"/>
         <display_value name="dDuration" value="180"/>
         <display_value name="dDurationMax" value="540"/>
@@ -408,13 +414,16 @@
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="180"/>
-        <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.05"/>
+        <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.2"/>
         <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="5"/>
 
         <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="180"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="10"/>
+
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
@@ -440,21 +449,24 @@
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.2"/>
-        <display_value name="dDehydrationRate" value="0.60"/>
-        <display_value name="dHeatResist" value="5"/>
+        <display_value name="dDehydration" value="5"/>
+        <display_value name="dHeatResist" value="10"/>
         <display_value name="dDuration" value="180"/>
         <display_value name="dDurationMax" value="540"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="180"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.05"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.2"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="5"/>
 
         <!-- Heat resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDurationMax" operation="set" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="add" value="180"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistValue" operation="set" value="10"/>
+
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffHeatResist"/>
@@ -469,7 +481,7 @@
     <!--                    (long-brew bonus) = 1.5 effective beans -->
     <!--   Duration: 1.5 × 180 = 270s                               -->
     <!--   Stamina: 1.5 × 20% = 30%                                 -->
-    <!--   Dehydration: 7.5, minus 10% for smooth process = 6.8)    -->
+    <!--   Dehydration: 7.5, minus 10% for smooth process = 6.8     -->
     <!--   Heat Resist: 10 (Level 1 cold drink)                     -->
     <!-- ========================================================== -->
     <item name="drinkColdBrewCoffee">
@@ -480,7 +492,7 @@
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.3"/>
-        <display_value name="dDehydrationRate" value="0.75"/>
+        <display_value name="dDehydration" value="6.8"/>
         <display_value name="dHeatResist" value="5"/>
         <display_value name="dDuration" value="270"/>
         <display_value name="dDurationMax" value="810"/>
@@ -488,13 +500,16 @@
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="810"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="270"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.075"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.3"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="6.8"/>
 
         <!-- Heat resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDurationMax" operation="set" value="810"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="add" value="270"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistValue" operation="set" value="10"/>
+
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffHeatResist"/>
@@ -577,7 +592,7 @@
     <!--   Regen: 15% (75% of coffee strength)                     -->
     <!--   Duration: 60s (1/3 of coffee duration)                  -->
     <!--   Dehydration: 5.0 (higher due to concentration)          -->
-    <!--   Cold Resist: 7 (Level 2 hot drink)                      -->
+    <!--   Cold Resist: 15 (Level 2 hot drink)                     -->
     <!-- Notes:                                                    -->
     <!--   Tactical advantage: Shorter duration, faster onset      -->
     <!--   Trade duration for concentration                        -->
@@ -591,8 +606,8 @@
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.15"/>
-        <display_value name="dDehydrationRate" value="1.0"/>
-        <display_value name="dColdResist" value="7"/>
+        <display_value name="dDehydration" value="5"/>
+        <display_value name="dColdResist" value="15"/>
         <display_value name="dDuration" value="60"/>
         <display_value name="dDurationMax" value="180"/>
 
@@ -606,6 +621,9 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="180"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="60"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="15"/>
+
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
@@ -632,7 +650,7 @@
     <!--   Regen: 25% (diluted double shot)                        -->
     <!--   Duration: 120s (extended by dilution)                   -->
     <!--   Dehydration: 7.5 (-25% from water)                      -->
-    <!--   Cold Resist: 15 (Level 2 hot drink)                      -->
+    <!--   Cold Resist: 15 (Level 2 hot drink)                     -->
     <!-- Notes:                                                    -->
     <!--   More balanced than pure espresso                        -->
     <!--   Better hydration from added water                       -->
@@ -646,8 +664,8 @@
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="15"/>
         <display_value name="dStaminaRegen" value="0.25"/>
-        <display_value name="dDehydrationRate" value="0.5"/>
-        <display_value name="dColdResist" value="7"/>
+        <display_value name="dDehydration" value="0.5"/>
+        <display_value name="dColdResist" value="15"/>
         <display_value name="dDuration" value="120"/>
         <display_value name="dDurationMax" value="360"/>
 
@@ -661,6 +679,9 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="120"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="15"/>
+
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="15"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
@@ -705,8 +726,8 @@
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.35"/>
-        <display_value name="dDehydrationRate" value="1.1"/>
-        <display_value name="dColdResist" value="14"/>
+        <display_value name="dDehydration" value="6.5"/>
+        <display_value name="dColdResist" value="30"/>
         <display_value name="dDuration" value="150"/>
         <display_value name="dDurationMax" value="450"/>
 
@@ -722,7 +743,10 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="30"/>
 
         <!-- Random minor damage from gunpowder -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInjuryStomachMinor"/>
+       <!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInjuryStomachMinor"/>-->
+
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
@@ -768,9 +792,9 @@
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.33"/>
-        <display_value name="dDehydrationRate" value="0.6"/>
+        <display_value name="dDehydration" value="5.1"/>
         <display_value name="dStaminaEfficiency" value="5"/>
-        <display_value name="dHeatResist" value="7"/>
+        <display_value name="dHeatResist" value="20"/>
         <display_value name="dDuration" value="270"/>
         <display_value name="dDurationMax" value="810"/>
 
@@ -788,6 +812,9 @@
         <!-- Stamina efficiency setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffStaminaEfficiencyDuration" operation="add" value="270"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffStaminaEfficiencyValue" operation="set" value="-0.05"/>
+
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffHeatResist,buffStaminaEfficiency"/>
@@ -834,8 +861,8 @@
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.34"/>
-        <display_value name="dDehydrationRate" value="2.0"/>
-        <display_value name="dColdResist" value="7"/>
+        <display_value name="dDehydration" value="10"/>
+        <display_value name="dColdResist" value="20"/>
         <display_value name="dDuration" value="150"/>
         <display_value name="dDurationMax" value="450"/>
 
@@ -849,6 +876,9 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="450"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="150"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="20"/>
+
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
@@ -896,7 +926,7 @@
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dWaterAmountAdd" value="10"/>
         <display_value name="dStaminaRegen" value="0.29"/>
-        <display_value name="dDehydrationRate" value="1.5"/>
+        <display_value name="dDehydration" value="7.5"/>
         <display_value name="dColdResist" value="7"/>
         <display_value name="dFoodAmountAdd" value="10"/>
         <display_value name="dFoodHealthAmount" value="10"/>
@@ -917,6 +947,9 @@
         <!-- Food and health setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
+
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
 
         <!-- Add all buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffProcessConsumables"/>
@@ -964,7 +997,7 @@
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dWaterAmountAdd" value="20"/>
         <display_value name="dStaminaRegen" value="0.255"/>
-        <display_value name="dDehydrationRate" value="1.2"/>
+        <display_value name="dDehydration" value="5"/>
         <display_value name="dColdResist" value="7"/>
         <display_value name="dFoodAmountAdd" value="20"/>
         <display_value name="dFoodHealthAmount" value="20"/>
@@ -985,6 +1018,9 @@
         <!-- Food and health setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="20"/>
+
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="20"/>
 
         <!-- Add all buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffProcessConsumables"/>
@@ -1032,7 +1068,7 @@
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.305"/>
-        <display_value name="dDehydrationRate" value="1.9"/>
+        <display_value name="dDehydration" value="9"/>
         <display_value name="dColdResist" value="7"/>
         <display_value name="dFoodAmountAdd" value="10"/>
         <display_value name="dFoodHealthAmount" value="5"/>
@@ -1053,6 +1089,9 @@
         <!-- Food and health setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add all buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffProcessConsumables"/>
@@ -1101,7 +1140,7 @@
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dWaterAmountAdd" value="10"/>
         <display_value name="dStaminaRegen" value="0.29"/>
-        <display_value name="dDehydrationRate" value="1.8"/>
+        <display_value name="dDehydration" value="8"/>
         <display_value name="dColdResist" value="7"/>
         <display_value name="dFoodAmountAdd" value="20"/>
         <display_value name="dFoodHealthAmount" value="10"/>
@@ -1122,6 +1161,9 @@
         <!-- Food and health setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
+
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
 
         <!-- Add all buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffProcessConsumables"/>
@@ -1171,9 +1213,8 @@
       <property name="DisplayType" value="drinkAffogato"/>
 
       <effect_group tiered="false" name="Drink Tier 3">
-        <display_value name="dWaterAmountAdd" value="10"/>
         <display_value name="dStaminaRegen" value="0.37"/>
-        <display_value name="dDehydrationRate" value="1.6"/>
+        <display_value name="dDehydration" value="1.6"/>
         <display_value name="dHeatResist" value="7"/>
         <display_value name="dFoodAmountAdd" value="28"/>
         <display_value name="dFoodHealthAmount" value="12"/>
@@ -1263,7 +1304,7 @@
       <effect_group tiered="false" name="Drink Tier 4">
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.52"/>
-        <display_value name="dDehydrationRate" value="3.0"/>
+        <display_value name="dDehydration" value="15"/>
         <display_value name="dColdResist" value="10"/>
         <display_value name="dDuration" value="210"/>
         <display_value name="dDurationMax" value="630"/>
@@ -1278,6 +1319,9 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="630"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="210"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="25"/>
+
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist"/>
@@ -1326,7 +1370,7 @@
       <effect_group tiered="false" name="Drink Tier 4">
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.44"/>
-        <display_value name="dDehydrationRate" value="3.0"/>
+        <display_value name="dDehydration" value="3.0"/>
         <display_value name="dMobilityBoost" value=".15"/>
         <display_value name="dMovementSpeed" value=".15"/>
         <display_value name="dStaminaEfficiency" value=".15"/>
@@ -1338,13 +1382,17 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="720"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="240"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.44"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="7.5"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="3.0"/>
 
         <!-- Parkour buff setup -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffParkourDuration" operation="add" value="240"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffParkourBoostDurationMax" operation="set" value="720"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffParkourBoostDuration" operation="add" value="240"/>
 
         <!-- OhShitzDrops buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrugOhShitzDropsDuration" operation="add" value="240"/>
+
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffParkourBoost,buffDrugOhShitzDrops"/>
@@ -1399,7 +1447,7 @@
       <effect_group tiered="false" name="Drink Tier 4">
         <display_value name="dWaterAmountAdd" value="65"/>
         <display_value name="dStaminaRegen" value="0.46"/>
-        <display_value name="dDehydrationRate" value="2.5"/>
+        <display_value name="dDehydration" value="5.6"/>
         <display_value name="dColdResist" value="10"/>
         <display_value name="dClubDamage" value="1"/>
         <display_value name="dMeleeDamage" value=".5"/>
@@ -1483,7 +1531,7 @@
         <display_value name="dFoodAmountAdd" value="10"/>
         <display_value name="dFoodHealthAmount" value="12"/>
         <display_value name="dStaminaRegen" value="0.48"/>
-        <display_value name="dDehydrationRate" value="2.5"/>
+        <display_value name="dDehydration" value="5.6"/>
         <display_value name="dStrengthBoost" value="2"/>
         <display_value name="dCarryBonus" value="50"/>
         <display_value name="dMeleeDamage" value=".25"/>
@@ -1559,7 +1607,7 @@
         <display_value name="dFoodAmountAdd" value="15"/>
         <display_value name="dFoodHealthAmount" value="15"/>
         <display_value name="dStaminaRegen" value="0.43"/>
-        <display_value name="dDehydrationRate" value="2.0"/>
+        <display_value name="dDehydration" value="3.75"/>
         <display_value name="dDamageResist" value=".5"/>
         <display_value name="dDuration" value="360"/>
         <display_value name="dDurationMax" value="1080"/>
@@ -1711,7 +1759,7 @@
       <effect_group tiered="false" name="Drink Tier 4">
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.78"/>
-        <display_value name="dDehydrationRate" value="5.0"/>
+        <display_value name="dDehydration" value="7.5"/>
         <display_value name="dHeatResist" value="15"/>
         <display_value name="dAttackSpeed" value=".3"/>
         <display_value name="dMovementSpeed" value=".2"/>
@@ -1730,48 +1778,52 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="add" value="150"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHeatResistValue" operation="set" value="25"/>
 
+        <!-- Water -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
+
         <!-- Add buffs -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffNitrogenCooling"/>
       </effect_group>
     </item>
+<!--
 
-    <!-- ========================================================= -->
-    <!-- ======================= THE QUAD ======================== -->
-    <!-- ========================================================= -->
-    <!-- Level 5 base - Maximum safe coffee concentration          -->
-    <!-- Base Mathematics:                                         -->
-    <!--   Starting Point: 1 shot = 15% (based on 60mg caffeine)   -->
-    <!--   4 shots stacked with diminishing returns                -->
-    <!-- Quad Shot Calculation:                                    -->
-    <!--   Base: 4 shots × 15% = 60% potential                     -->
-    <!--   Stacking Penalties:                                     -->
-    <!--     Second shot: -10% (like Double Tap)                   -->
-    <!--     Third shot: -15% (like Tripwire)                      -->
-    <!--     Fourth shot: -20% (max penalty)                       -->
-    <!--   Math: 60% × 0.9 × 0.85 × 0.8 = ~37%                     -->
-    <!--   Concentration Bonus: ×2.5 (extreme pressure)            -->
-    <!--   Final Regen: 37% × 2.5 = ~92%                           -->
-    <!-- Duration Logic:                                           -->
-    <!--   Base Espresso: 60s per shot                             -->
-    <!--   Combined duration: 240s                                 -->
-    <!--   Penalty: -60s (concentration effect)                    -->
-    <!--   Final: 180s duration                                    -->
-    <!-- Risk Factors:                                             -->
-    <!--   Extreme dehydration (6.0)                               -->
-    <!--   Post-effect crash (buffTooMuchCaffeine)                 -->
-    <!--   Reduced max stamina during effect                       -->
-    <!--   Health drain over time                                  -->
-    <!-- Final Values:                                             -->
-    <!--   Regen: 92% (highest possible)                           -->
-    <!--   Duration: 180s (shortened by concentration)             -->
-    <!--   Dehydration: 10.0 (reduced from 20 for crafting cost)   -->
-    <!--   Cold Resist: 30 (Level 5 hot drink)                     -->
-    <!-- Notes:                                                    -->
-    <!--   Most powerful base stimulant                            -->
-    <!--   Significant risks from overconsumption                  -->
-    <!--   Foundation for legendary variants                       -->
-    <!--   Requires master brewing technique                       -->
-    <!-- ========================================================= -->
+    &lt;!&ndash; ========================================================= &ndash;&gt;
+    &lt;!&ndash; ======================= THE QUAD ======================== &ndash;&gt;
+    &lt;!&ndash; ========================================================= &ndash;&gt;
+    &lt;!&ndash; Level 5 base - Maximum safe coffee concentration          &ndash;&gt;
+    &lt;!&ndash; Base Mathematics:                                         &ndash;&gt;
+    &lt;!&ndash;   Starting Point: 1 shot = 15% (based on 60mg caffeine)   &ndash;&gt;
+    &lt;!&ndash;   4 shots stacked with diminishing returns                &ndash;&gt;
+    &lt;!&ndash; Quad Shot Calculation:                                    &ndash;&gt;
+    &lt;!&ndash;   Base: 4 shots × 15% = 60% potential                     &ndash;&gt;
+    &lt;!&ndash;   Stacking Penalties:                                     &ndash;&gt;
+    &lt;!&ndash;     Second shot: -10% (like Double Tap)                   &ndash;&gt;
+    &lt;!&ndash;     Third shot: -15% (like Tripwire)                      &ndash;&gt;
+    &lt;!&ndash;     Fourth shot: -20% (max penalty)                       &ndash;&gt;
+    &lt;!&ndash;   Math: 60% × 0.9 × 0.85 × 0.8 = ~37%                     &ndash;&gt;
+    &lt;!&ndash;   Concentration Bonus: ×2.5 (extreme pressure)            &ndash;&gt;
+    &lt;!&ndash;   Final Regen: 37% × 2.5 = ~92%                           &ndash;&gt;
+    &lt;!&ndash; Duration Logic:                                           &ndash;&gt;
+    &lt;!&ndash;   Base Espresso: 60s per shot                             &ndash;&gt;
+    &lt;!&ndash;   Combined duration: 240s                                 &ndash;&gt;
+    &lt;!&ndash;   Penalty: -60s (concentration effect)                    &ndash;&gt;
+    &lt;!&ndash;   Final: 180s duration                                    &ndash;&gt;
+    &lt;!&ndash; Risk Factors:                                             &ndash;&gt;
+    &lt;!&ndash;   Extreme dehydration (6.0)                               &ndash;&gt;
+    &lt;!&ndash;   Post-effect crash (buffTooMuchCaffeine)                 &ndash;&gt;
+    &lt;!&ndash;   Reduced max stamina during effect                       &ndash;&gt;
+    &lt;!&ndash;   Health drain over time                                  &ndash;&gt;
+    &lt;!&ndash; Final Values:                                             &ndash;&gt;
+    &lt;!&ndash;   Regen: 92% (highest possible)                           &ndash;&gt;
+    &lt;!&ndash;   Duration: 180s (shortened by concentration)             &ndash;&gt;
+    &lt;!&ndash;   Dehydration: 10.0 (reduced from 20 for crafting cost)   &ndash;&gt;
+    &lt;!&ndash;   Cold Resist: 30 (Level 5 hot drink)                     &ndash;&gt;
+    &lt;!&ndash; Notes:                                                    &ndash;&gt;
+    &lt;!&ndash;   Most powerful base stimulant                            &ndash;&gt;
+    &lt;!&ndash;   Significant risks from overconsumption                  &ndash;&gt;
+    &lt;!&ndash;   Foundation for legendary variants                       &ndash;&gt;
+    &lt;!&ndash;   Requires master brewing technique                       &ndash;&gt;
+    &lt;!&ndash; ========================================================= &ndash;&gt;
     <item name="drinkQuad">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkQuad_160"/>
@@ -1780,36 +1832,36 @@
       <effect_group tiered="false" name="Drink Tier 5">
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.92"/>
-        <display_value name="dDehydrationRate" value="6.0"/>
+        <display_value name="dDehydration" value="6.0"/>
         <display_value name="dColdResist" value="15"/>
         <display_value name="dDuration" value="180"/>
         <display_value name="dDurationMax" value="540"/>
         <display_value name="dMaxStaminaPenalty" value="-20"/>
         <display_value name="dHealthDrain" value="-0.5"/>
 
-        <!-- Caffeine buff setup -->
+        &lt;!&ndash; Caffeine buff setup &ndash;&gt;
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="180"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.92"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="10.0"/>
 
-        <!-- Cold resistance setup -->
+        &lt;!&ndash; Cold resistance setup &ndash;&gt;
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="540"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="180"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="30"/>
 
-        <!-- Max stamina penalty -->
-        <!--<passive_effect name="MaxStamina" operation="perc_subtract" value="20"/>-->
+        &lt;!&ndash; Max stamina penalty &ndash;&gt;
+        &lt;!&ndash;<passive_effect name="MaxStamina" operation="perc_subtract" value="20"/>&ndash;&gt;
 
-        <!-- Health drain -->
+        &lt;!&ndash; Health drain &ndash;&gt;
         <passive_effect name="HealthChangeOT" operation="perc_add" value="-0.5"/>
 
-        <!-- Add buffs including overcaffeine debuff -->
+        &lt;!&ndash; Add buffs including overcaffeine debuff &ndash;&gt;
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffTooMuchCaffeine"/>
       </effect_group>
     </item>
 
-<!--    &lt;!&ndash; ========================================================= &ndash;&gt;
+    &lt;!&ndash; ========================================================= &ndash;&gt;
     &lt;!&ndash; ================ DRAGON'S BREATH ESPRESSO =============== &ndash;&gt;
     &lt;!&ndash; ========================================================= &ndash;&gt;
     &lt;!&ndash; Legendary fire-based combat drink                         &ndash;&gt;
@@ -1862,27 +1914,27 @@
         &lt;!&ndash; Add all buffs &ndash;&gt;
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffDrugRecog,buffColdResist,buffRingOfFire,buffFireBreathing"/>
       </effect_group>
-    </item>-->
+    </item>
 
-<!--    &lt;!&ndash; ========================================================= &ndash;&gt;
+    &lt;!&ndash; ========================================================= &ndash;&gt;
     &lt;!&ndash; ==================== THE APEX BREW ====================== &ndash;&gt;
     &lt;!&ndash; ========================================================= &ndash;&gt;
-    &lt;!&ndash; Legendary strength-enhancing combat drink                  &ndash;&gt;
+    &lt;!&ndash; Legendary strength-enhancing combat drink                 &ndash;&gt;
     &lt;!&ndash; Base (Quad):                                              &ndash;&gt;
     &lt;!&ndash;   Stamina: 20%                                            &ndash;&gt;
-    &lt;!&ndash;   No dehydration (Legendary perk)                        &ndash;&gt;
-    &lt;!&ndash; Peak Phase (180s):                                       &ndash;&gt;
-    &lt;!&ndash;   All Attributes: Level 10                               &ndash;&gt;
-    &lt;!&ndash;   All Perks: Level 5                                     &ndash;&gt;
-    &lt;!&ndash;   Health Recovery: 50%                                   &ndash;&gt;
-    &lt;!&ndash;   Steroids: Carry/Speed boost                           &ndash;&gt;
-    &lt;!&ndash;   Vitamins: Disease resistance                          &ndash;&gt;
-    &lt;!&ndash; Crash Phase (1800s):                                     &ndash;&gt;
-    &lt;!&ndash;   All Attributes: Level 1                               &ndash;&gt;
-    &lt;!&ndash;   All Perks: Level 0                                    &ndash;&gt;
-    &lt;!&ndash; Notes:                                                   &ndash;&gt;
-    &lt;!&ndash;   Extreme power spike followed by weakness              &ndash;&gt;
-    &lt;!&ndash;   Use timing carefully                                  &ndash;&gt;
+    &lt;!&ndash;   No dehydration (Legendary perk)                         &ndash;&gt;
+    &lt;!&ndash; Peak Phase (180s):                                        &ndash;&gt;
+    &lt;!&ndash;   All Attributes: Level 10                                &ndash;&gt;
+    &lt;!&ndash;   All Perks: Level 5                                      &ndash;&gt;
+    &lt;!&ndash;   Health Recovery: 50%                                    &ndash;&gt;
+    &lt;!&ndash;   Steroids: Carry/Speed boost                             &ndash;&gt;
+    &lt;!&ndash;   Vitamins: Disease resistance                            &ndash;&gt;
+    &lt;!&ndash; Crash Phase (1800s):                                      &ndash;&gt;
+    &lt;!&ndash;   All Attributes: Level 1                                 &ndash;&gt;
+    &lt;!&ndash;   All Perks: Level 0                                      &ndash;&gt;
+    &lt;!&ndash; Notes:                                                    &ndash;&gt;
+    &lt;!&ndash;   Extreme power spike followed by weakness                &ndash;&gt;
+    &lt;!&ndash;   Use timing carefully                                    &ndash;&gt;
     &lt;!&ndash; ========================================================= &ndash;&gt;
     <item name="drinkApexBrew">
       <property name="Extends" value="drinkJarBoiledWater"/>
@@ -1915,9 +1967,9 @@
         &lt;!&ndash; Add all buffs &ndash;&gt;
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffApexPeak,buffDrugSteroids,buffProcessConsumables"/>
       </effect_group>
-    </item>-->
+    </item>
 
-<!--    &lt;!&ndash; ======================================================== &ndash;&gt;
+    &lt;!&ndash; ======================================================== &ndash;&gt;
     &lt;!&ndash; ================= PHOENIX FIRE LATTE =================== &ndash;&gt;
     &lt;!&ndash; ======================================================== &ndash;&gt;
     &lt;!&ndash; Legendary healing and restoration drink                  &ndash;&gt;
@@ -1967,9 +2019,9 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffPhoenixRebirthDuration" operation="add" value="300"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffPhoenixRebirth"/>
       </effect_group>
-    </item>-->
+    </item>
 
-<!--    &lt;!&ndash; ======================================================== &ndash;&gt;
+    &lt;!&ndash; ======================================================== &ndash;&gt;
     &lt;!&ndash; ================ GRANDPA'S LAST STAND ================== &ndash;&gt;
     &lt;!&ndash; ======================================================== &ndash;&gt;
     &lt;!&ndash; Ultimate sacrifice drink - power at devastating cost     &ndash;&gt;
@@ -1999,7 +2051,8 @@
         &lt;!&ndash; Add the power buff &ndash;&gt;
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffGrandpasPower"/>
       </effect_group>
-    </item>-->
+    </item>
+-->
 
   </append>
 </hurgleburgler>
