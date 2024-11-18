@@ -272,68 +272,66 @@
     <!-- ==================== Level 5 Drinks ====================== -->
     <!-- ========================================================== -->
 
-<!--    <recipe name="drinkQuad" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="240">
-       <ingredient name="drinkJarPurifiedWater" count="4"/>
+    <!-- The Quad - Base Level 5 drink -->
+    <recipe name="drinkQuad" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="240">
+      <ingredient name="drinkJarPurifiedWater" count="4"/>
       <ingredient name="resourceCropCoffeeBeans" count="8"/>
     </recipe>
 
-       &lt;!&ndash; The Quad - Four shots of espresso base &ndash;&gt;
+    <!-- Alternative recipes for The Quad -->
     <recipe name="drinkQuad" count="1" craft_time="5">
       <ingredient name="drinkShotOfEspresso" count="4"/>
     </recipe>
 
-    &lt;!&ndash; Upgrading from Double Tap &ndash;&gt;
     <recipe name="drinkQuad" count="1" craft_time="5">
       <ingredient name="drinkDoubleTap" count="2"/>
     </recipe>
 
-    &lt;!&ndash; Upgrading from Tripwire &ndash;&gt;
     <recipe name="drinkQuad" count="1" craft_time="5">
       <ingredient name="drinkTripwire" count="1"/>
       <ingredient name="drinkShotOfEspresso" count="1"/>
     </recipe>
-
-    &lt;!&ndash; Dragon's Breath Espresso - Explosive power &ndash;&gt;
+    <!-- Dragon's Breath Espresso -->
     <recipe name="drinkDragonsBreathEspresso" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120">
-      <ingredient name="drinkQuad" count="2"/>
-      <ingredient name="foodCream" count="1"/>
-      <ingredient name="foodHoney" count="2"/>
-      <ingredient name="drugRecog" count="1"/>
-      <ingredient name="resourceGunPowder" count="500"/>
-      <ingredient name="casinoCoin" count="5000"/>
+        <ingredient name="drinkQuad" count="2"/>
+        <ingredient name="drinkJarCreamer" count="1"/>
+        <ingredient name="foodHoney" count="2"/>
+        <ingredient name="drugRecog" count="1"/>
+        <ingredient name="resourceGunPowder" count="500"/>
+        <ingredient name="casinoCoin" count="5000"/>
     </recipe>
 
-    &lt;!&ndash; The Apex Brew - Ultimate strength brew &ndash;&gt;
+    <!-- The Apex Brew -->
     <recipe name="drinkApexBrew" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120">
-      <ingredient name="drinkQuad" count="2"/>
-      <ingredient name="foodCream" count="1"/>
-      <ingredient name="foodHoney" count="2"/>
-      <ingredient name="drugSteroids" count="1"/>
-      <ingredient name="drugVitamins" count="5"/>
-      <ingredient name="resourceSilverNugget" count="5"/>
+        <ingredient name="drinkQuad" count="2"/>
+        <ingredient name="drinkJarCreamer" count="1"/>
+        <ingredient name="foodHoney" count="2"/>
+        <ingredient name="drugSteroids" count="1"/>
+        <ingredient name="drugVitamins" count="5"/>
+        <ingredient name="resourceSilverNugget" count="5"/>
     </recipe>
 
-    &lt;!&ndash; Phoenix's Fire Latte - Resurrective brew &ndash;&gt;
+    <!-- Phoenix Fire Latte -->
     <recipe name="drinkPhoenixFireLatte" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120">
-      <ingredient name="drinkQuad" count="2"/>
-      <ingredient name="foodCream" count="1"/>
-      <ingredient name="foodHoney" count="2"/>
-      <ingredient name="resourceFeather" count="500"/>
-      <ingredient name="thrownAmmoMolotovCocktail" count="1"/>
-      <ingredient name="drugAntibiotics" count="5"/>
-      <ingredient name="resourceGoldNugget" count="5"/>
+        <ingredient name="drinkQuad" count="2"/>
+        <ingredient name="drinkJarCreamer" count="1"/>
+        <ingredient name="foodHoney" count="2"/>
+        <ingredient name="resourceFeather" count="500"/>
+        <ingredient name="thrownAmmoMolotovCocktail" count="1"/>
+        <ingredient name="drugAntibiotics" count="5"/>
+        <ingredient name="resourceGoldNugget" count="5"/>
     </recipe>
 
-    &lt;!&ndash; Grandpa's Last Stand - Ultimate Widow Maker brew &ndash;&gt;
+    <!-- Grandpa's Last Stand -->
     <recipe name="drinkGrandpasLastStand" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120">
-      <ingredient name="drinkQuad" count="2"/>
-      <ingredient name="foodCream" count="1"/>
-      <ingredient name="foodHoney" count="2"/>
-      <ingredient name="drinkJarGrandpasAwesomeSauce" count="1"/>
-      <ingredient name="drinkJarGrandpasMoonshine" count="1"/>
-      <ingredient name="drinkJarGrandpasLearningElixir" count="1"/>
-      <ingredient name="resourceRawDiamond" count="5"/>
-    </recipe>-->
+        <ingredient name="drinkQuad" count="2"/>
+        <ingredient name="drinkJarCreamer" count="1"/>
+        <ingredient name="foodHoney" count="2"/>
+        <ingredient name="drinkJarGrandpasAwesomeSauce" count="1"/>
+        <ingredient name="drinkJarGrandpasMoonshine" count="1"/>
+        <ingredient name="drinkJarGrandpasLearningElixir" count="1"/>
+        <ingredient name="resourceRawDiamond" count="5"/>
+    </recipe>
 
   </append>
 

@@ -1857,274 +1857,306 @@
       </effect_group>
     </item>
 
-    <!--
 
-        &lt;!&ndash; ========================================================= &ndash;&gt;
-        &lt;!&ndash; ======================= THE QUAD ======================== &ndash;&gt;
-        &lt;!&ndash; ========================================================= &ndash;&gt;
-        &lt;!&ndash; Level 5 base - Maximum safe coffee concentration          &ndash;&gt;
-        &lt;!&ndash; Base Mathematics:                                         &ndash;&gt;
-        &lt;!&ndash;   Starting Point: 1 shot = 15% (based on 60mg caffeine)   &ndash;&gt;
-        &lt;!&ndash;   4 shots stacked with diminishing returns                &ndash;&gt;
-        &lt;!&ndash; Quad Shot Calculation:                                    &ndash;&gt;
-        &lt;!&ndash;   Base: 4 shots × 15% = 60% potential                     &ndash;&gt;
-        &lt;!&ndash;   Stacking Penalties:                                     &ndash;&gt;
-        &lt;!&ndash;     Second shot: -10% (like Double Tap)                   &ndash;&gt;
-        &lt;!&ndash;     Third shot: -15% (like Tripwire)                      &ndash;&gt;
-        &lt;!&ndash;     Fourth shot: -20% (max penalty)                       &ndash;&gt;
-        &lt;!&ndash;   Math: 60% × 0.9 × 0.85 × 0.8 = ~37%                     &ndash;&gt;
-        &lt;!&ndash;   Concentration Bonus: ×2.5 (extreme pressure)            &ndash;&gt;
-        &lt;!&ndash;   Final Regen: 37% × 2.5 = ~92%                           &ndash;&gt;
-        &lt;!&ndash; Duration Logic:                                           &ndash;&gt;
-        &lt;!&ndash;   Base Espresso: 60s per shot                             &ndash;&gt;
-        &lt;!&ndash;   Combined duration: 240s                                 &ndash;&gt;
-        &lt;!&ndash;   Penalty: -60s (concentration effect)                    &ndash;&gt;
-        &lt;!&ndash;   Final: 180s duration                                    &ndash;&gt;
-        &lt;!&ndash; Risk Factors:                                             &ndash;&gt;
-        &lt;!&ndash;   Extreme dehydration (6.0)                               &ndash;&gt;
-        &lt;!&ndash;   Post-effect crash (buffTooMuchCaffeine)                 &ndash;&gt;
-        &lt;!&ndash;   Reduced max stamina during effect                       &ndash;&gt;
-        &lt;!&ndash;   Health drain over time                                  &ndash;&gt;
-        &lt;!&ndash; Final Values:                                             &ndash;&gt;
-        &lt;!&ndash;   Regen: 92% (highest possible)                           &ndash;&gt;
-        &lt;!&ndash;   Duration: 180s (shortened by concentration)             &ndash;&gt;
-        &lt;!&ndash;   Dehydration: 10.0 (reduced from 20 for crafting cost)   &ndash;&gt;
-        &lt;!&ndash;   Cold Resist: 30 (Level 5 hot drink)                     &ndash;&gt;
-        &lt;!&ndash; Notes:                                                    &ndash;&gt;
-        &lt;!&ndash;   Most powerful base stimulant                            &ndash;&gt;
-        &lt;!&ndash;   Significant risks from overconsumption                  &ndash;&gt;
-        &lt;!&ndash;   Foundation for legendary variants                       &ndash;&gt;
-        &lt;!&ndash;   Requires master brewing technique                       &ndash;&gt;
-        &lt;!&ndash; ========================================================= &ndash;&gt;
-        <item name="drinkQuad">
-          <property name="Extends" value="drinkJarBoiledWater"/>
-          <property name="CustomIcon" value="drinkQuad_160"/>
-          <property name="DisplayType" value="drinkQuad"/>
+    <!-- ========================================================= -->
+    <!-- ======================= THE QUAD ======================== -->
+    <!-- ========================================================= -->
+    <!-- Level 5 base - Maximum safe coffee concentration          -->
+    <!-- Base Mathematics:                                         -->
+    <!--   Starting Point: 1 shot = 15% (based on 60mg caffeine)   -->
+    <!--   4 shots stacked with diminishing returns                -->
+    <!-- Quad Shot Calculation:                                    -->
+    <!--   Base: 4 shots × 15% = 60% potential                     -->
+    <!--   Stacking Penalties:                                     -->
+    <!--     Second shot: -10% (like Double Tap)                   -->
+    <!--     Third shot: -15% (like Tripwire)                      -->
+    <!--     Fourth shot: -20% (max penalty)                       -->
+    <!--   Math: 60% × 0.9 × 0.85 × 0.8 = ~37%                     -->
+    <!--   Concentration Bonus: ×2.5 (extreme pressure)            -->
+    <!--   Final Regen: 37% × 2.5 = ~92%                           -->
+    <!-- Duration Logic:                                           -->
+    <!--   Base Espresso: 60s per shot                             -->
+    <!--   Combined duration: 240s                                 -->
+    <!--   Penalty: -30s (concentration effect)                    -->
+    <!--   Final: 210s duration                                    -->
+    <!-- Risk Factors:                                             -->
+    <!--   Extreme dehydration (30.0)                              -->
+    <!--   Post-effect crash (buffTooMuchCaffeine)                 -->
+    <!--   Reduced max stamina during effect (-20%)                -->
+    <!--   Health drain over time (-0.5% per second)               -->
+    <!-- Final Values:                                             -->
+    <!--   Regen: 92% (highest possible)                           -->
+    <!--   Duration: 210s (shortened by concentration)             -->
+    <!--   Dehydration: 30.0                                       -->
+    <!--   Cold Resist: 30 (Level 5 hot drink)                     -->
+    <!--   Maximum Duration: 630s (3× base duration)               -->
+    <!-- Notes:                                                    -->
+    <!--   Most powerful base stimulant                            -->
+    <!--   Significant risks from overconsumption                  -->
+    <!--   Foundation for legendary variants                       -->
+    <!--   Requires master brewing technique                       -->
+    <!-- ========================================================= -->
+    <item name="drinkQuad">
+      <property name="Extends" value="drinkJarBoiledWater"/>
+      <property name="CustomIcon" value="drinkTripwire_160"/>
+      <property name="DisplayType" value="drinkTripwire"/>
 
-          <effect_group tiered="false" name="Drink Tier 5">
-            <display_value name="dWaterAmountAdd" value="5"/>
-            <display_value name="dStaminaRegen" value="0.92"/>
-            <display_value name="dDehydration" value="6.0"/>
-            <display_value name="dColdResist" value="15"/>
-            <display_value name="dDuration" value="180"/>
-            <display_value name="dDurationMax" value="540"/>
-            <display_value name="dMaxStaminaPenalty" value="-20"/>
-            <display_value name="dHealthDrain" value="-0.5"/>
+      <effect_group tiered="false" name="Drink Tier 5">
+        <display_value name="dWaterAmountAdd" value="5"/>
+        <display_value name="dStaminaRegen" value="0.92"/>
+        <display_value name="dDehydration" value="6.0"/>
+        <display_value name="dColdResist" value="15"/>
+        <display_value name="dDuration" value="180"/>
+        <display_value name="dMaxStaminaPenalty" value="-20"/>
+        <display_value name="dHealthDrain" value="-0.5"/>
 
-            &lt;!&ndash; Caffeine buff setup &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="540"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="180"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.92"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="10.0"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkTripwireTooltip"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="generator_start" play_in_head="false"/>
 
-            &lt;!&ndash; Cold resistance setup &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="540"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="180"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="30"/>
+        <!-- Caffeine buff setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="630"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="210"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.92"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="30"/>
 
-            &lt;!&ndash; Max stamina penalty &ndash;&gt;
-            &lt;!&ndash;<passive_effect name="MaxStamina" operation="perc_subtract" value="20"/>&ndash;&gt;
+        <!-- Cold resistance setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="630"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="210"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="30"/>
 
-            &lt;!&ndash; Health drain &ndash;&gt;
-            <passive_effect name="HealthChangeOT" operation="perc_add" value="-0.5"/>
+        <!-- Health drain -->
+        <passive_effect name="HealthChangeOT" operation="perc_add" value="-0.5"/>
 
-            &lt;!&ndash; Add buffs including overcaffeine debuff &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffTooMuchCaffeine"/>
-          </effect_group>
-        </item>
+        <!-- Add buffs -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffTooMuchCaffeine"/>
+      </effect_group>
+    </item>
 
-        &lt;!&ndash; ========================================================= &ndash;&gt;
-        &lt;!&ndash; ================ DRAGON'S BREATH ESPRESSO =============== &ndash;&gt;
-        &lt;!&ndash; ========================================================= &ndash;&gt;
-        &lt;!&ndash; Legendary fire-based combat drink                         &ndash;&gt;
-        &lt;!&ndash; Base (Quad):                                              &ndash;&gt;
-        &lt;!&ndash;   Duration: 720s                                          &ndash;&gt;
-        &lt;!&ndash;   Stamina: 20%                                            &ndash;&gt;
-        &lt;!&ndash;   No dehydration (Legendary perk)                         &ndash;&gt;
-        &lt;!&ndash; Combat Effects:                                           &ndash;&gt;
-        &lt;!&ndash;   Ranged Damage: +50% (Recog)                             &ndash;&gt;
-        &lt;!&ndash;   Cold Resist: 30 (Ultimate)                              &ndash;&gt;
-        &lt;!&ndash;   Ring of Fire: 10m range, 500 damage                     &ndash;&gt;
-        &lt;!&ndash; Dragon Effects:                                           &ndash;&gt;
-        &lt;!&ndash;   Fire Breathing visual effects                           &ndash;&gt;
-        &lt;!&ndash;   Immunity to fire                                        &ndash;&gt;
-        &lt;!&ndash;   Auto-fire extinguish                                    &ndash;&gt;
-        &lt;!&ndash; Notes:                                                    &ndash;&gt;
-        &lt;!&ndash;   No negative effects due to cost                         &ndash;&gt;
-        &lt;!&ndash;   Combines with Ring of Fire for AOE                      &ndash;&gt;
-        &lt;!&ndash; ========================================================= &ndash;&gt;
-        <item name="drinkDragonsBreathEspresso">
-          <property name="Extends" value="drinkJarBoiledWater"/>
-          <property name="CustomIcon" value="drinkDragonsBreathEspresso_160"/>
-          <property name="DisplayType" value="drinkDragonsBreathEspresso"/>
+    <!-- ========================================================= -->
+    <!-- ================ DRAGON'S BREATH ESPRESSO =============== -->
+    <!-- ========================================================= -->
+    <!-- Legendary fire-based combat drink                         -->
+    <!-- Base (Quad):                                              -->
+    <!--   Duration: 720s                                          -->
+    <!--   Stamina: 20%                                            -->
+    <!--   No dehydration (Legendary perk)                         -->
+    <!-- Combat Effects:                                           -->
+    <!--   Ranged Damage: +50% (Recog)                             -->
+    <!--   Cold Resist: 30 (Ultimate)                              -->
+    <!--   Ring of Fire: 10m range, 500 damage                     -->
+    <!-- Dragon Effects:                                           -->
+    <!--   Fire Breathing visual effects                           -->
+    <!--   Immunity to fire                                        -->
+    <!--   Auto-fire extinguish                                    -->
+    <!-- Notes:                                                    -->
+    <!--   No negative effects due to cost                         -->
+    <!--   Combines with Ring of Fire for AOE                      -->
+    <!-- ========================================================= -->
+    <item name="drinkDragonsBreathEspresso">
+      <property name="Extends" value="drinkJarBoiledWater"/>
+      <property name="CustomIcon" value="drinkDragonsBreathEspresso_160"/>
+      <property name="DisplayType" value="drinkDragonsBreathEspresso"/>
 
-          <effect_group tiered="false" name="Drink Tier 5">
-            <display_value name="dWaterAmountAdd" value="5"/>
-            <display_value name="dStaminaRegen" value="0.20"/>
-            <display_value name="dRangedDamage" value="50"/>
-            <display_value name="dColdResist" value="30"/>
-            <display_value name="dFireAura" value="500"/>
-            <display_value name="dDuration" value="720"/>
-            <display_value name="dDurationMax" value="2160"/>
+      <effect_group tiered="false" name="Drink Tier 5">
+        <display_value name="dStaminaRegen" value="0.92"/>
+        <display_value name="dDehydration" value="6.0"/>
+        <display_value name="dColdResist" value="15"/>
+        <display_value name="dDuration" value="180"/>
 
-            &lt;!&ndash; Caffeine buff setup &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="2160"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="720"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.20"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkTripwireTooltip"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="generator_start" play_in_head="false"/>
 
-            &lt;!&ndash; Recog buff setup &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrugRecogDuration" operation="add" value="720"/>
+        <!-- Caffeine buff setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="630"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="210"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.92"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="30"/>
 
-            &lt;!&ndash; Cold resistance setup &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="2160"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="720"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="30"/>
+        <!-- Cold resistance setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="630"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="210"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="30"/>
 
-            &lt;!&ndash; Fire effects setup &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffFireBreathingDuration" operation="add" value="720"/>
+        <!-- Food and Health from honey and cream -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="18"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
 
-            &lt;!&ndash; Add all buffs &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffDrugRecog,buffColdResist,buffRingOfFire,buffFireBreathing"/>
-          </effect_group>
-        </item>
+        <!-- Infection cure from honey -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffInfectionAddCurePerc" operation="add" value="5"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInfectionAddCure"/>
 
-        &lt;!&ndash; ========================================================= &ndash;&gt;
-        &lt;!&ndash; ==================== THE APEX BREW ====================== &ndash;&gt;
-        &lt;!&ndash; ========================================================= &ndash;&gt;
-        &lt;!&ndash; Legendary strength-enhancing combat drink                 &ndash;&gt;
-        &lt;!&ndash; Base (Quad):                                              &ndash;&gt;
-        &lt;!&ndash;   Stamina: 20%                                            &ndash;&gt;
-        &lt;!&ndash;   No dehydration (Legendary perk)                         &ndash;&gt;
-        &lt;!&ndash; Peak Phase (180s):                                        &ndash;&gt;
-        &lt;!&ndash;   All Attributes: Level 10                                &ndash;&gt;
-        &lt;!&ndash;   All Perks: Level 5                                      &ndash;&gt;
-        &lt;!&ndash;   Health Recovery: 50%                                    &ndash;&gt;
-        &lt;!&ndash;   Steroids: Carry/Speed boost                             &ndash;&gt;
-        &lt;!&ndash;   Vitamins: Disease resistance                            &ndash;&gt;
-        &lt;!&ndash; Crash Phase (1800s):                                      &ndash;&gt;
-        &lt;!&ndash;   All Attributes: Level 1                                 &ndash;&gt;
-        &lt;!&ndash;   All Perks: Level 0                                      &ndash;&gt;
-        &lt;!&ndash; Notes:                                                    &ndash;&gt;
-        &lt;!&ndash;   Extreme power spike followed by weakness                &ndash;&gt;
-        &lt;!&ndash;   Use timing carefully                                    &ndash;&gt;
-        &lt;!&ndash; ========================================================= &ndash;&gt;
-        <item name="drinkApexBrew">
-          <property name="Extends" value="drinkJarBoiledWater"/>
-          <property name="CustomIcon" value="drinkApexBrew_160"/>
-          <property name="DisplayType" value="drinkApexBrew"/>
+        <!-- Update buffs line to include infection cure -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDragonsBreath,buffCaffeine,buffProcessConsumables,buffInfectionAddCure"/>
+      </effect_group>
+    </item>
 
-          <effect_group tiered="false" name="Drink Tier 5">
-            <display_value name="dWaterAmountAdd" value="5"/>
-            <display_value name="dStaminaRegen" value="0.20"/>
-            <display_value name="dAttributeBoost" value="10"/>
-            <display_value name="dHealthRecovery" value="50"/>
-            <display_value name="dPeakDuration" value="180"/>
-            <display_value name="dCrashDuration" value="1800"/>
+    <!-- ========================================================= -->
+    <!-- ==================== THE APEX BREW ====================== -->
+    <!-- ========================================================= -->
+    <!-- Legendary strength-enhancing combat drink                 -->
+    <!-- Base (Quad):                                              -->
+    <!--   Stamina: 20%                                            -->
+    <!--   No dehydration (Legendary perk)                         -->
+    <!-- Peak Phase (180s):                                        -->
+    <!--   All Attributes: Level 10                                -->
+    <!--   All Perks: Level 5                                      -->
+    <!--   Health Recovery: 50%                                    -->
+    <!--   Steroids: Carry/Speed boost                             -->
+    <!--   Vitamins: Disease resistance                            -->
+    <!-- Crash Phase (1800s):                                      -->
+    <!--   All Attributes: Level 1                                 -->
+    <!--   All Perks: Level 0                                      -->
+    <!-- Notes:                                                    -->
+    <!--   Extreme power spike followed by weakness                -->
+    <!--   Use timing carefully                                    -->
+    <!-- ========================================================= -->
+    <item name="drinkApexBrew">
+      <property name="Extends" value="drinkJarBoiledWater"/>
+      <property name="CustomIcon" value="drinkApexBrew_160"/>
+      <property name="DisplayType" value="drinkApexBrew"/>
 
-            &lt;!&ndash; Caffeine buff setup &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="2160"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="720"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.20"/>
+      <effect_group tiered="false" name="Drink Tier 5">
+        <display_value name="dStaminaRegen" value="0.92"/>
+        <display_value name="dDehydration" value="6.0"/>
+        <display_value name="dColdResist" value="15"/>
+        <display_value name="dDuration" value="180"/>
 
-            &lt;!&ndash; Apex buffs setup &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffApexPeakDuration" operation="add" value="180"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffApexCrashDuration" operation="add" value="1800"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkTripwireTooltip"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="generator_start" play_in_head="false"/>
 
-            &lt;!&ndash; Steroids buff setup &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrugSteroidsDuration" operation="add" value="180"/>
+        <!-- Caffeine buff setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="630"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="210"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.92"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="30"/>
 
-            &lt;!&ndash; Health recovery &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="medicalRegHealthAmount" operation="add" value="50"/>
+        <!-- Cold resistance setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="630"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="210"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="30"/>
 
-            &lt;!&ndash; Add all buffs &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffApexPeak,buffDrugSteroids,buffProcessConsumables"/>
-          </effect_group>
-        </item>
+        <!-- Food and Health from honey and cream -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="18"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
 
-        &lt;!&ndash; ======================================================== &ndash;&gt;
-        &lt;!&ndash; ================= PHOENIX FIRE LATTE =================== &ndash;&gt;
-        &lt;!&ndash; ======================================================== &ndash;&gt;
-        &lt;!&ndash; Legendary healing and restoration drink                  &ndash;&gt;
-        &lt;!&ndash; Instant Effects:                                         &ndash;&gt;
-        &lt;!&ndash;   All Stats restored to 100%                             &ndash;&gt;
-        &lt;!&ndash;   All injuries healed                                    &ndash;&gt;
-        &lt;!&ndash;   All negative buffs removed                             &ndash;&gt;
-        &lt;!&ndash;   All infections cured                                   &ndash;&gt;
-        &lt;!&ndash; Lingering Effects (300s):                                &ndash;&gt;
-        &lt;!&ndash;   Fire immunity                                          &ndash;&gt;
-        &lt;!&ndash;   Enhanced health regeneration                           &ndash;&gt;
-        &lt;!&ndash;   Disease immunity                                       &ndash;&gt;
-        &lt;!&ndash;   Phoenix flame visual effects                           &ndash;&gt;
-        &lt;!&ndash; Notes:                                                   &ndash;&gt;
-        &lt;!&ndash;   Complete restoration and rebirth                       &ndash;&gt;
-        &lt;!&ndash;   Followed by period of enhanced vitality                &ndash;&gt;
-        &lt;!&ndash; ======================================================== &ndash;&gt;
-        <item name="drinkPhoenixFireLatte">
-          <property name="Extends" value="drinkJarBoiledWater"/>
-          <property name="CustomIcon" value="drinkPhoenixFireLatte_160"/>
-          <property name="DisplayType" value="drinkPhoenixFireLatte"/>
+        <!-- Infection cure from honey -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffInfectionAddCurePerc" operation="add" value="5"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInfectionAddCure"/>
 
-          <effect_group tiered="false" name="Drink Tier 5">
-            &lt;!&ndash; Display values &ndash;&gt;
-            <display_value name="dRestoration" value="100"/>
-            <display_value name="dRegenDuration" value="300"/>
-            <display_value name="dFireResist" value="100"/>
+        <!-- Update buffs line to include infection cure -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffApexPeak,buffCaffeine,buffProcessConsumables,buffInfectionAddCure"/>
+      </effect_group>
+    </item>
 
-            &lt;!&ndash; Complete restoration &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="perc_set" value="100"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Food" operation="perc_set" value="100"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Water" operation="perc_set" value="100"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Stamina" operation="perc_set" value="100"/>
+    <!-- ======================================================== -->
+    <!-- ================= PHOENIX FIRE LATTE =================== -->
+    <!-- ======================================================== -->
+    <!-- Legendary healing and restoration drink                  -->
+    <!-- Instant Effects:                                         -->
+    <!--   All Stats restored to 100%                             -->
+    <!--   All injuries healed                                    -->
+    <!--   All negative buffs removed                             -->
+    <!--   All infections cured                                   -->
+    <!-- Lingering Effects (300s):                                -->
+    <!--   Fire immunity                                          -->
+    <!--   Enhanced health regeneration                           -->
+    <!--   Disease immunity                                       -->
+    <!--   Phoenix flame visual effects                           -->
+    <!-- Notes:                                                   -->
+    <!--   Complete restoration and rebirth                       -->
+    <!--   Followed by period of enhanced vitality                -->
+    <!-- ======================================================== -->
+    <item name="drinkPhoenixFireLatte">
+      <property name="Extends" value="drinkJarBoiledWater"/>
+      <property name="CustomIcon" value="drinkPhoenixFireLatte_160"/>
+      <property name="DisplayType" value="drinkPhoenixFireLatte"/>
 
-            &lt;!&ndash; Clear all injuries &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$armHurtCounter" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$legHurtCounter" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$abrasionCounter" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="healAbrasionMult" operation="set" value="0"/>
+      <effect_group tiered="false" name="Drink Tier 5">
+        <display_value name="dStaminaRegen" value="0.92"/>
+        <display_value name="dDehydration" value="6.0"/>
+        <display_value name="dColdResist" value="15"/>
+        <display_value name="dDuration" value="180"/>
 
-            &lt;!&ndash; Remove negative effects &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveAllNegativeBuffs"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$dysenteryCounter" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="infectionCounter" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkTripwireTooltip"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="generator_start" play_in_head="false"/>
 
-            &lt;!&ndash; Apply phoenix rebirth buff &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffPhoenixRebirthDuration" operation="add" value="300"/>
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffPhoenixRebirth"/>
-          </effect_group>
-        </item>
+        <!-- Caffeine buff setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="630"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="210"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.92"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="30"/>
 
-        &lt;!&ndash; ======================================================== &ndash;&gt;
-        &lt;!&ndash; ================ GRANDPA'S LAST STAND ================== &ndash;&gt;
-        &lt;!&ndash; ======================================================== &ndash;&gt;
-        &lt;!&ndash; Ultimate sacrifice drink - power at devastating cost     &ndash;&gt;
-        &lt;!&ndash; Active Effects (5 minutes):                              &ndash;&gt;
-        &lt;!&ndash;   Damage: +500%                                          &ndash;&gt;
-        &lt;!&ndash;   Damage Mitigation: 500%                                &ndash;&gt;
-        &lt;!&ndash;   XP Gain: +25%                                          &ndash;&gt;
-        &lt;!&ndash;   Radiation Effects                                      &ndash;&gt;
-        &lt;!&ndash;   Infection Aura: 25% chance in 5m range                 &ndash;&gt;
-        &lt;!&ndash; Permanent Effects After:                                 &ndash;&gt;
-        &lt;!&ndash;   Health/Food/Water reduced to 5%                        &ndash;&gt;
-        &lt;!&ndash;   Multiple broken bones                                  &ndash;&gt;
-        &lt;!&ndash;   Severe infection                                       &ndash;&gt;
-        &lt;!&ndash;   Permanent injuries                                     &ndash;&gt;
-        &lt;!&ndash; ======================================================== &ndash;&gt;
-        <item name="drinkGrandpasLastStand">
-          <property name="Extends" value="drinkJarBoiledWater"/>
-          <property name="CustomIcon" value="drinkGrandpasLastStand_160"/>
-          <property name="DisplayType" value="drinkGrandpasLastStand"/>
+        <!-- Cold resistance setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="630"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="210"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="30"/>
 
-          <effect_group tiered="false" name="Drink Tier 5">
-            <display_value name="dDamageBonus" value="500"/>
-            <display_value name="dDamageMitigation" value="500"/>
-            <display_value name="dExpBonus" value="25"/>
-            <display_value name="dPowerDuration" value="300"/>
+        <!-- Food and Health from honey and cream -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="18"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
 
-            &lt;!&ndash; Add the power buff &ndash;&gt;
-            <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffGrandpasPower"/>
-          </effect_group>
-        </item>
-    -->
+        <!-- Infection cure from honey -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffInfectionAddCurePerc" operation="add" value="5"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInfectionAddCure"/>
+
+        <!-- Update buffs line to include infection cure -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffPhoenixRebirth,buffCaffeine,buffProcessConsumables,buffInfectionAddCure"/>
+      </effect_group>
+    </item>
+
+    <!-- ======================================================== -->
+    <!-- ================ GRANDPA'S LAST STAND ================== -->
+    <!-- ======================================================== -->
+    <!-- Ultimate sacrifice drink - power at devastating cost     -->
+    <!-- Active Effects (5 minutes):                              -->
+    <!--   Damage: +500%                                          -->
+    <!--   Damage Mitigation: 500%                                -->
+    <!--   XP Gain: +25%                                          -->
+    <!--   Radiation Effects                                      -->
+    <!--   Infection Aura: 25% chance in 5m range                 -->
+    <!-- Permanent Effects After:                                 -->
+    <!--   Health/Food/Water reduced to 5%                        -->
+    <!--   Multiple broken bones                                  -->
+    <!--   Severe infection                                       -->
+    <!--   Permanent injuries                                     -->
+    <!-- ======================================================== -->
+    <item name="drinkGrandpasLastStand">
+      <property name="Extends" value="drinkJarBoiledWater"/>
+      <property name="CustomIcon" value="drinkGrandpasLastStand_160"/>
+      <property name="DisplayType" value="drinkGrandpasLastStand"/>
+
+      <effect_group tiered="false" name="Drink Tier 5">
+        <display_value name="dStaminaRegen" value="0.92"/>
+        <display_value name="dDehydration" value="6.0"/>
+        <display_value name="dColdResist" value="15"/>
+        <display_value name="dDuration" value="180"/>
+
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkTripwireTooltip"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="generator_start" play_in_head="false"/>
+
+        <!-- Caffeine buff setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="630"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="210"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.92"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="30"/>
+
+        <!-- Cold resistance setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="630"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="210"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="30"/>
+
+        <!-- Food and Health from honey and cream -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="18"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+
+        <!-- Infection cure from honey -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffInfectionAddCurePerc" operation="add" value="5"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInfectionAddCure"/>
+
+        <!-- Update buffs line to include infection cure -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffGrandpasPower,buffCaffeine,buffProcessConsumables,buffInfectionAddCure"/>
+      </effect_group>
+    </item>
 
   </append>
 </hurgleburgler>

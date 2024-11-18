@@ -240,29 +240,42 @@
       <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
     </item_display_info>
 
-    <!--
-            <item_display_info display_type="drinkQuad" display_group="groupConsumables">
-              <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
-              <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
-              <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
-              <display_entry name="dColdResist" title_key="statColdResistance"/>
-              <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
-              <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
-            </item_display_info>
+    <item_display_info display_type="drinkQuad" display_group="groupConsumables">
+        <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
+        <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+        <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
+        <display_entry name="dColdResist" title_key="statColdResistance"/>
+        <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+        <display_entry name="dHealthDrain" title_key="statHealthDrain" display_type="Percent"/>
+    </item_display_info>
 
-            <item_display_info display_type="drinkPhoenixFireLatte" display_group="groupConsumables">
-              <display_entry name="dRestoration" title_key="statRestoration" display_type="Percent"/>
-              <display_entry name="dRegenDuration" title_key="statRegenDuration" display_type="Time"/>
-              <display_entry name="dFireResist" title_key="statFireResistance" display_type="Percent"/>
-            </item_display_info>
+    <item_display_info display_type="drinkDragonsBreathEspresso" display_group="groupConsumables">
+      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+      <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
+      <display_entry name="dColdResist" title_key="statColdResistance"/>
+      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+    </item_display_info>
 
-          <item_display_info display_type="drinkGrandpasLastStand" display_group="groupConsumables">
-            <display_entry name="dDamageBonus" title_key="statDamageBonus" display_type="Percent"/>
-            <display_entry name="dDamageMitigation" title_key="statDamageMitigation" display_type="Percent"/>
-            <display_entry name="dExpBonus" title_key="statExpBonus" display_type="Percent"/>
-            <display_entry name="dPowerDuration" title_key="statPowerDuration" display_type="Time"/>
-          </item_display_info>
-    -->
+    <item_display_info display_type="drinkApexBrew" display_group="groupConsumables">
+      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+      <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
+      <display_entry name="dColdResist" title_key="statColdResistance"/>
+      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+    </item_display_info>
+
+    <item_display_info display_type="drinkPhoenixFireLatte" display_group="groupConsumables">
+      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+      <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
+      <display_entry name="dColdResist" title_key="statColdResistance"/>
+      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+    </item_display_info>
+
+    <item_display_info display_type="drinkGrandpasLastStand" display_group="groupConsumables">
+      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+      <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
+      <display_entry name="dColdResist" title_key="statColdResistance"/>
+      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+    </item_display_info>
   </append>
 
 </hurgleburgler>
