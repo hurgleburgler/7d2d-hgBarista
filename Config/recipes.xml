@@ -240,6 +240,14 @@
     </recipe>
 
     <!-- Recipe remains the same -->
+    <recipe name="drinkBearBrew" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120">
+      <ingredient name="drinkTripwire" count="1"/>
+      <ingredient name="resourceTestosteroneExtract" count="1"/>
+      <ingredient name="resourceAnimalFat" count="3"/>
+      <ingredient name="foodRawMeat" count="5"/>
+    </recipe>
+
+    <!-- Recipe remains the same -->
     <recipe name="drinkBulletproofCoffee" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120">
       <ingredient name="drinkTripwire" count="1"/>
       <ingredient name="foodCanMilk" count="1"/>

@@ -40,7 +40,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$debuffCursedStaminaRegen" operation="set" value=".1"/>
 
         <!-- Apply the buff -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="debuffCursed"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="debuffCursed,triggerInfection"/>
       </effect_group>
     </item>
 
@@ -1588,7 +1588,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="12"/>
 
         <!-- Add all buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffDrugSteroids,buffBearStrength,buffProcessConsumables"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffResistCold,buffDrugSteroids,buffBearStrength,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -1963,8 +1963,8 @@
         <display_value name="dColdResist" value="15"/>
         <display_value name="dDuration" value="180"/>
 
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkTripwireTooltip"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="generator_start" play_in_head="false"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="buffDragonsBreathDesc"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="FireMediumLoop" play_in_head="false"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="630"/>
@@ -1976,6 +1976,10 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="630"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="210"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="30"/>
+
+        <!-- Dragon's Breath setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$$buffDragonsBreathDurationMax" operation="set" value="630"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDragonsBreathDuration" operation="add" value="210"/>
 
         <!-- Food and Health from honey and cream -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="18"/>

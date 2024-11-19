@@ -46,8 +46,8 @@ buffStrengthBoost,buffs,Buff,Strength Boost
 buffStrengthBoostDesc,buffs,Buff,Temporary increase to strength attribute.
 buffBearStrength,buffs,Buff,Primal Strength
 buffBearStrengthDesc,buffs,Buff,Enhanced strength, melee damage, and stun resistance.
-buffFireBreathing,buffs,Buff,Dragon's Fire
-buffFireBreathingDesc,buffs,Buff,Your very presence ignites the air around you. Fire cannot harm you.
+buffDragonsBreath,buffs,Buff,Dragon's Fire
+buffDragonsBreathDesc,buffs,Buff,Your very presence ignites the air around you. Fire cannot harm you.
 buffPumpkinClubBonus,buffs,Buff,Club Master
 buffPumpkinClubBonusDesc,buffs,Buff,Enhanced club damage, attack speed, and stamina efficiency.
 buffStimulantBoost,buffs,Buff,Gunpowder Boost
@@ -114,6 +114,7 @@ drinkQuad,items,Item,The Quad
 drinkQuadDesc,items,Item,"Four shots of pure espresso combined into one devastating drink. This is either the pinnacle of coffee engineering or complete madness - probably both. The foundation of the most powerful drinks known to the wasteland. Handle with extreme caution."
 drinkDragonsBreathEspresso,items,Item,Dragon's Breath Espresso
 drinkDragonsBreathEspressoDesc,items,Item,"A legendary brew that transforms you into a living inferno. This explosive concoction enhances your ranged attacks with devastating power while surrounding you in a protective ring of fire. The extreme cost of crafting has refined away any negative effects, leaving pure draconic might. Warning: May cause everything around you to burst into flames."
+drinkDragonsBreathEffectNameShort,items,Item,Dragon's Breath
 drinkApexBrew,items,Item,The Apex Brew
 drinkApexBrewDesc,items,Item,"A legendary concoction that pushes you beyond mortal limits—for a price. For three minutes, experience godlike power as your attributes soar and wounds heal. But beware: thirty minutes of weakness follow as your body recovers from the strain. Time this power spike carefully."
 drinkPhoenixFireLatte,items,Item,Phoenix Fire Latte
