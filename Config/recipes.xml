@@ -316,7 +316,7 @@
         <ingredient name="foodHoney" count="2"/>
         <ingredient name="drugSteroids" count="1"/>
         <ingredient name="drugVitamins" count="5"/>
-        <ingredient name="resourceSilverNugget" count="5"/>
+        <ingredient name="resourceSilverNugget" count="2"/>
     </recipe>
 
     <!-- Phoenix Fire Latte -->
@@ -327,7 +327,7 @@
         <ingredient name="resourceFeather" count="500"/>
         <ingredient name="thrownAmmoMolotovCocktail" count="1"/>
         <ingredient name="drugAntibiotics" count="5"/>
-        <ingredient name="resourceGoldNugget" count="5"/>
+        <ingredient name="resourceGoldNugget" count="2"/>
     </recipe>
 
     <!-- Grandpa's Last Stand -->
@@ -338,7 +338,9 @@
         <ingredient name="drinkJarGrandpasAwesomeSauce" count="1"/>
         <ingredient name="drinkJarGrandpasMoonshine" count="1"/>
         <ingredient name="drinkJarGrandpasLearningElixir" count="1"/>
-        <ingredient name="resourceRawDiamond" count="5"/>
+        <ingredient name="resourceSilverNugget" count="1"/>
+        <ingredient name="resourceGoldNugget" count="1"/>
+        <ingredient name="resourceRawDiamond" count="1"/>
     </recipe>
 
   </append>
