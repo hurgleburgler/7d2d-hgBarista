@@ -13,11 +13,9 @@
     <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffBulletproofCoffeeDuration" operation="set" value="0"/>
     <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffLondonFogStealthDuration" operation="set" value="0"/>
     <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDragonsBreathDuration" operation="set" value="0"/>
-    <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffRingOfFire"/>
-    <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffOnFire1"/>
-    <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffOnFire2"/>
-    <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffOnFire3"/>
-    <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffOnFire4"/>
+    <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffApexPeakDuration" operation="set" value="0"/>
+    <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDragonsBreath"/>
+    <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffApexCrash"/>
   </append>
 
   <insertAfter xpath="/buffs/buff[@name='buffBlackStrapCoffee']/effect_group/triggered_effect[@action='RemoveBuff' and @buff='buffCoffee']">
@@ -728,62 +726,48 @@
         </triggered_effect>
         <passive_effect name="EntityDamage" operation="perc_add" value=".99" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkArchery,admin"/>
       </effect_group>
-
     </buff>
 
-    <!--
-        <buff name="buffApexPeak" name_key="buffApexPeak" description_key="buffApexPeakDesc" icon="ui_game_symbol_perk" icon_color="132,0,155">
-          <stack_type value="replace"/>
-          <duration value="0"/>
-          <display_value value=".buffApexPeakDisplay"/>
-          <display_value_format value="time"/>
+    <buff name="buffApexPeak" name_key="buffApexPeak" description_key="buffApexPeakDesc" icon="ui_game_symbol_perk" icon_color="132,0,155">
+      <stack_type value="replace"/>
+      <duration value="0"/>
+      <display_value value=".buffApexPeakDisplay"/>
+      <display_value_format value="time"/>
 
-          <effect_group>
-            &lt;!&ndash; Timer management &ndash;&gt;
-            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffApexPeakDuration" operation="subtract" value="@$MetabolismDuration"/>
-            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffApexPeakDisplay" operation="set" value="@$buffApexPeakDuration"/>
-            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffApexPeakDisplay" operation="divide" value="@$MetabolismDuration"/>
-          </effect_group>
+      <effect_group>
+        <!-- Timer management -->
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffApexPeakDuration" operation="subtract" value="@$MetabolismDuration"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffApexPeakDisplay" operation="set" value="@$buffApexPeakDuration"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffApexPeakDisplay" operation="divide" value="@$MetabolismDuration"/>
+      </effect_group>
 
-          <effect_group>
-            &lt;!&ndash; Max out attributes &ndash;&gt;
-            <passive_effect name="AttributeLevel" tags="attStrength,attFortitude,attAgility,attPerception,attIntelligence" operation="base_add" value="10"/>
-            <passive_effect name="PerkLevel" operation="base_set" value="5"/>
+      <effect_group>
+        <!-- Max out attributes -->
+        <passive_effect name="AttributeLevel" tags="attStrength,attFortitude,attAgility,attPerception,attIntellect" operation="base_add" value="3"/>
+        <passive_effect name="PerkLevel" operation="base_set" value="5"/>
 
-            &lt;!&ndash; Buff removal &ndash;&gt;
-            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffApexPeak">
-              <requirement name="CVarCompare" cvar="$buffApexPeakDuration" operation="LTE" value="0"/>
-            </triggered_effect>
-            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffApexCrash"/>
-          </effect_group>
-        </buff>
+        <!-- Buff removal -->
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffApexPeak">
+          <requirement name="CVarCompare" cvar="$buffApexPeakDuration" operation="LTE" value="0"/>
+        </triggered_effect>
+        <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffApexCrash"/>
+      </effect_group>
+    </buff>
 
-        <buff name="buffApexCrash" name_key="buffApexCrash" description_key="buffApexCrashDesc" icon="ui_game_symbol_perk" icon_color="255,0,0">
-          <stack_type value="replace"/>
-          <duration value="0"/>
-          <display_value value=".buffApexCrashDisplay"/>
-          <display_value_format value="time"/>
+    <buff name="buffApexCrash" name_key="buffApexCrash" description_key="buffApexCrashDesc" icon="ui_game_symbol_fatigued" icon_color="127,187,34">
+      <stack_type value="replace"/>
+      <duration value="3600"/>
+      <display_value value=".buffApexCrashDisplay"/>
+      <display_value_format value="time"/>
 
-          <effect_group>
-            &lt;!&ndash; Timer management &ndash;&gt;
-            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffApexCrashDuration" operation="subtract" value="@$MetabolismDuration"/>
-            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffApexCrashDisplay" operation="set" value="@$buffApexCrashDuration"/>
-            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffApexCrashDisplay" operation="divide" value="@$MetabolismDuration"/>
-          </effect_group>
+      <effect_group>
+        <!-- Minimum attributes during crash -->
+        <passive_effect name="AttributeLevel" tags="attStrength,attFortitude,attAgility,attPerception,attIntellect" operation="base_add" value="-1"/>
+        <passive_effect name="PerkLevel" operation="base_set" value="0"/>
+      </effect_group>
 
-          <effect_group>
-            &lt;!&ndash; Minimum attributes during crash &ndash;&gt;
-            <passive_effect name="AttributeLevel" tags="attStrength,attFortitude,attAgility,attPerception,attIntelligence" operation="base_add" value="-9"/>
-            <passive_effect name="PerkLevel" operation="base_set" value="0"/>
-
-            &lt;!&ndash; Buff removal and restoration &ndash;&gt;
-            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffApexCrash">
-              <requirement name="CVarCompare" cvar="$buffApexCrashDuration" operation="LTE" value="0"/>
-            </triggered_effect>
-          </effect_group>
-
-        </buff>
-
+    </buff>
+<!--
         <buff name="buffPhoenixRebirth" name_key="buffPhoenixRebirth" description_key="buffPhoenixRebirthDesc" icon="ui_game_symbol_fire" icon_color="255,165,0">
           <stack_type value="replace"/>
           <duration value="0"/>
