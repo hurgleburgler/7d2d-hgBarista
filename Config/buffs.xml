@@ -16,6 +16,8 @@
     <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffApexPeakDuration" operation="set" value="0"/>
     <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDragonsBreath"/>
     <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffApexCrash"/>
+    <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffPhoenixRebirth"/>
+    <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffPhoenixFire"/>
   </append>
 
   <insertAfter xpath="/buffs/buff[@name='buffBlackStrapCoffee']/effect_group/triggered_effect[@action='RemoveBuff' and @buff='buffCoffee']">
@@ -757,45 +759,121 @@
       </effect_group>
     </buff>
 
-    <buff name="buffPhoenixRebirth" name_key="buffPhoenixRebirth" description_key="buffPhoenixRebirthDesc" icon="ui_game_symbol_fire" icon_color="255,165,0">
+    <buff name="buffPhoenixFire" name_key="buffPhoenixFire" description_key="buffPhoenixFireDesc" icon="ui_game_symbol_fire" icon_color="255,165,0">
       <stack_type value="replace"/>
-      <duration value="0"/>
-      <display_value value=".buffPhoenixRebirthDisplay"/>
-      <display_value_format value="time"/>
+      <duration value="0"/> <!-- Total duration covering both burning and rebirth phases -->
 
-      <effect_group>
-        <!-- Timer management -->
-        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffPhoenixRebirthDuration" operation="subtract" value="@$MetabolismDuration"/>
-        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffPhoenixRebirthDisplay" operation="set" value="@$buffPhoenixRebirthDuration"/>
-        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffPhoenixRebirthDisplay" operation="divide" value="@$MetabolismDuration"/>
+      <effect_group name="Initial Fire Phase">
+        <!-- Start the burning effect -->
+        <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBurningElement"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".phoenixFirePhase" operation="set" value="0"/>
+
+        <!-- Track time for first phase -->
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".phoenixFirePhase" operation="add" value="1"/>
       </effect_group>
 
-      <effect_group>
-        <!-- Visual and sound effects -->
-        <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffOnFire"/>
-        <triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffOnFire"/>
+      <effect_group name="Transition to Rebirth">
+        <!-- After 10 seconds, remove burning and trigger rebirth -->
 
-        <!-- Auto extinguish -->
-        <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffExtinguishFire">
-          <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <!-- Clear ALL Effects -> you are starting out clean as a whistle again -->
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBurningElement">
+          <requirement name="CVarCompare" cvar=".phoenixFirePhase" operation="GTE" value="10"/>
+        </triggered_effect>
+
+        <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffPhoenixRebirth">
+          <requirement name="CVarCompare" cvar=".phoenixFirePhase" operation="GTE" value="10"/>
+        </triggered_effect>
+
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPhoenixFire">
+          <requirement name="CVarCompare" cvar=".phoenixFirePhase" operation="GTE" value="11"/>
         </triggered_effect>
       </effect_group>
 
+      <effect_group name="Cleanup">
+        <!-- Ensure everything is cleaned up when the buff ends -->
+        <triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffBurningElement"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".phoenixFirePhase" operation="set" value="0"/>
+      </effect_group>
+
+      <!-- Safety cleanup -->
       <effect_group>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="500"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="500"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="stamina" operation="add" value="500"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="food" operation="add" value="500"/>
+        <triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffPhoenixFire"/>
+        <triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffPhoenixFire"/>
 
-        <!-- Lingering benefits -->
-        <passive_effect name="HealthChangeOT" operation="perc_add" value="0.1"/> <!-- Enhanced health regen -->
-        <passive_effect name="ElementalDamageResist" operation="base_add" value="100" tags="heat"/> <!-- Fire immunity -->
-        <passive_effect name="BuffResistance" operation="base_add" value="10" tags="buffInfectionCatch"/> <!-- Disease immunity -->
+      </effect_group>
+    </buff>
 
-        <!-- Auto extinguish any fire -->
-        <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffExtinguishFire">
-          <requirement name="HasBuff" buff="buffIsOnFire"/>
-        </triggered_effect>
+    <buff name="buffPhoenixRebirth" name_key="buffPhoenixRebirth" description_key="buffPhoenixRebirthDesc" icon="ui_game_symbol_fire" icon_color="0,255,0">
+      <stack_type value="replace"/>
+      <duration value="1"/>
+
+      <effect_group>
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveAllNegativeBuffs"/>
+
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="set" value="25000"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Food" operation="set" value="25000"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Water" operation="set" value="25000"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="set" value="25000"/>
+
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$armHurtCounter" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$legHurtCounter" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="healAbrasionMult" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="medicalRegHealthAmount" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="foodHealthAmount" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$abrasionHealthMaxBlockage" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$abrasionCounter" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugPainkillersDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugVitaminsDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugVitaminsDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugPainkillersDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugSteroidsDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugRecogDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugFortBitesDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugAtomJunkiesDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugCovertCatsDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugEyeKandyDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugHackersDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugHealthBarDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugJailBreakersDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugNerdTatsDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugOhShitzDropsDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugRockBustersDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugSkullCrushersDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDrugSugarButtsDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffShamChowderDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPumpkinCheesecakeDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffRedTeaDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffRedTeaDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffYuccaJuiceSmoothieDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffMegaCrushDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffCoffeeDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffCoffeeBSDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffBeerDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffGrandpasMoonshineDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffGrandpasAwesomeSauceDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffGrandpasLearningElixirDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$foodAmountAdd" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$waterAmountAdd" operation="set" value="0"/>
+
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffColdResistDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffHeatResistDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffParkourBoostDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffBearStrengthDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPumpkinClubBonusDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffBulletproofCoffeeDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffLondonFogStealthDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDragonsBreathDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffApexPeakDuration" operation="set" value="0"/>
+
+        <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffFoodStaminaBonus"/>
+        <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="debuffCursed"/>
+        <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffTooMuchCaffeine"/>
+        <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDragonsBreath"/>
+        <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffApexCrash"/>
+        <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffPhoenixRebirth"/>
+        <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffPhoenixFire"/>
       </effect_group>
 
       <effect_group>
