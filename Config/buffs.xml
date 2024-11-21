@@ -759,7 +759,7 @@
       </effect_group>
     </buff>
 
-    <buff name="buffPhoenixFire" name_key="buffPhoenixFire" description_key="buffPhoenixFireDesc" icon="ui_game_symbol_fire" icon_color="255,165,0">
+    <buff name="buffPhoenixFire" name_key="buffPhoenixFire" tooltip_key="buffPhoenixFireTooltip" description_key="buffPhoenixFireDesc" icon="ui_game_symbol_fire" icon_color="255,165,0">
       <stack_type value="ignore"/>
       <display_value_key value="buffGodModeNameShort"/>
       <display_value value="xxx"/>
@@ -803,12 +803,13 @@
       </effect_group>
     </buff>
 
-    <buff name="buffPhoenixRebirth" name_key="buffPhoenixRebirth" description_key="buffPhoenixRebirthDesc" icon="ui_game_symbol_fire" icon_color="0,255,0">
-      <stack_type value="replace"/>
-      <duration value="1"/>
+    <buff name="buffPhoenixRebirth" name_key="buffPhoenixRebirth" tooltip_key="buffPhoenixRebirthTooltip" description_key="buffPhoenixRebirthDesc" icon="ui_game_symbol_fire" icon_color="0,255,0">
+      <stack_type value="ignore"/>
+      <display_value_key value="buffGodModeNameShort"/>
+      <display_value value="xxx"/>
 
       <effect_group>
-        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveAllNegativeBuffs"/>
+        <triggered_effect trigger="onSelfBuffStart" action="RemoveAllNegativeBuffs"/>
 
         <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="set" value="25000"/>
         <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Food" operation="set" value="25000"/>
@@ -874,13 +875,6 @@
         <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffApexCrash"/>
         <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffPhoenixRebirth"/>
         <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffPhoenixFire"/>
-      </effect_group>
-
-      <effect_group>
-        <!-- Buff removal -->
-        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPhoenixRebirth">
-          <requirement name="CVarCompare" cvar="$buffPhoenixRebirthDuration" operation="LTE" value="0"/>
-        </triggered_effect>
       </effect_group>
 
       <!-- Safety cleanup -->
