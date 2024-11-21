@@ -2083,7 +2083,7 @@
         <display_value name="dColdResist" value="15"/>
         <display_value name="dDuration" value="180"/>
 
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkTripwireTooltip"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkPhoenixFireTooltip"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffPhoenixFire"/>
       </effect_group>
     </item>

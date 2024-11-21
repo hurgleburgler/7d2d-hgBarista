@@ -760,8 +760,9 @@
     </buff>
 
     <buff name="buffPhoenixFire" name_key="buffPhoenixFire" description_key="buffPhoenixFireDesc" icon="ui_game_symbol_fire" icon_color="255,165,0">
-      <stack_type value="replace"/>
-      <duration value="0"/> <!-- Total duration covering both burning and rebirth phases -->
+      <stack_type value="ignore"/>
+      <display_value_key value="buffGodModeNameShort"/>
+      <display_value value="xxx"/>
 
       <effect_group name="Initial Fire Phase">
         <!-- Start the burning effect -->
@@ -782,6 +783,7 @@
 
         <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffPhoenixRebirth">
           <requirement name="CVarCompare" cvar=".phoenixFirePhase" operation="GTE" value="10"/>
+          <requirement name="HasBuff" buff="buffBurningElement"/>
         </triggered_effect>
 
         <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPhoenixFire">
@@ -791,7 +793,6 @@
 
       <effect_group name="Cleanup">
         <!-- Ensure everything is cleaned up when the buff ends -->
-        <triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffBurningElement"/>
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".phoenixFirePhase" operation="set" value="0"/>
       </effect_group>
 
@@ -799,7 +800,6 @@
       <effect_group>
         <triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffPhoenixFire"/>
         <triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffPhoenixFire"/>
-
       </effect_group>
     </buff>
 
@@ -890,64 +890,64 @@
       </effect_group>
     </buff>
 
-<!--        <buff name="buffGrandpasPower" name_key="buffGrandpasPower" description_key="buffGrandpasPowerDesc" icon="ui_game_symbol_radiation" icon_color="255,0,0">
-          <stack_type value="replace"/>
-          <duration value="300"/>
-          <effect_group>
-            &lt;!&ndash; Massive power boost &ndash;&gt;
-            <passive_effect name="EntityDamage" operation="perc_add" value="5.0"/>
-            <passive_effect name="GeneralDamageResist" operation="base_add" value="5.0"/>
-            <passive_effect name="PlayerExpGain" operation="perc_add" value="0.25"/>
-            <passive_effect name="StaminaChangeOT" operation="perc_add" value="1.0"/>
+<!--    <buff name="buffGrandpasPower" name_key="buffGrandpasPower" description_key="buffGrandpasPowerDesc" icon="ui_game_symbol_radiation" icon_color="255,0,0">
+      <stack_type value="replace"/>
+      <duration value="300"/>
+      <effect_group>
+        &lt;!&ndash; Massive power boost &ndash;&gt;
+        <passive_effect name="EntityDamage" operation="perc_add" value="5.0"/>
+        <passive_effect name="GeneralDamageResist" operation="base_add" value="5.0"/>
+        <passive_effect name="PlayerExpGain" operation="perc_add" value="0.25"/>
+        <passive_effect name="StaminaChangeOT" operation="perc_add" value="1.0"/>
 
-            &lt;!&ndash; Visual and particle effects &ndash;&gt;
-            <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="RadiatedParticlesOnMesh" local_offset="0,0.75,0"/>
-            <triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="RadiatedParticlesOnMesh"/>
-            <triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="RadiatedParticlesOnMesh"/>
+        &lt;!&ndash; Visual and particle effects &ndash;&gt;
+        <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="RadiatedParticlesOnMesh" local_offset="0,0.75,0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="RadiatedParticlesOnMesh"/>
+        <triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="RadiatedParticlesOnMesh"/>
 
-            &lt;!&ndash; Screen effects &ndash;&gt;
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="4" effect_name="Drunk"/>
+        &lt;!&ndash; Screen effects &ndash;&gt;
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="4" effect_name="Drunk"/>
 
-            &lt;!&ndash; Infection aura &ndash;&gt;
-            <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" buff="buffGrandpasInfection">
-              <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
-            </triggered_effect>
-          </effect_group>
+        &lt;!&ndash; Infection aura &ndash;&gt;
+        <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" buff="buffGrandpasInfection">
+          <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+        </triggered_effect>
+      </effect_group>
 
-          &lt;!&ndash; When power ends, apply permanent effects &ndash;&gt;
-          <effect_group>
-            <triggered_effect trigger="onSelfBuffRemove" action="ModifyStats" stat="Health" operation="perc_set" value="5"/>
-            <triggered_effect trigger="onSelfBuffRemove" action="ModifyStats" stat="Food" operation="perc_set" value="5"/>
-            <triggered_effect trigger="onSelfBuffRemove" action="ModifyStats" stat="Water" operation="perc_set" value="5"/>
+      &lt;!&ndash; When power ends, apply permanent effects &ndash;&gt;
+      <effect_group>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyStats" stat="Health" operation="perc_set" value="5"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyStats" stat="Food" operation="perc_set" value="5"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyStats" stat="Water" operation="perc_set" value="5"/>
 
-            &lt;!&ndash; Permanent injuries &ndash;&gt;
-            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffLegBroken"/>
-            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffArmBroken"/>
-            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffAbrasionCatch"/>
-            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffLacerationCatch"/>
-            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffInfectionCatch"/>
+        &lt;!&ndash; Permanent injuries &ndash;&gt;
+        <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffLegBroken"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffArmBroken"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffAbrasionCatch"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffLacerationCatch"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffInfectionCatch"/>
 
-            &lt;!&ndash; Permanent visual effect &ndash;&gt;
-            <triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0.5" effect_name="Distortion"/>
-          </effect_group>
+        &lt;!&ndash; Permanent visual effect &ndash;&gt;
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0.5" effect_name="Distortion"/>
+      </effect_group>
 
-          &lt;!&ndash; Safety cleanup &ndash;&gt;
-          <effect_group>
-            <triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffGrandpasPower"/>
-            <triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffGrandpasPower"/>
-          </effect_group>
-        </buff>
+      &lt;!&ndash; Safety cleanup &ndash;&gt;
+      <effect_group>
+        <triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffGrandpasPower"/>
+        <triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffGrandpasPower"/>
+      </effect_group>
+    </buff>
 
-        &lt;!&ndash; Infection Spread Effect &ndash;&gt;
-        <buff name="buffGrandpasInfection" name_key="buffGrandpasInfection" icon="ui_game_symbol_infection" icon_color="128,0,0">
-          <stack_type value="ignore"/>
-          <duration value="1"/>
-          <effect_group>
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInfectionCatch">
-              <requirement name="!HasBuff" target="other" buff="buffInfectionMain"/>
-            </triggered_effect>
-          </effect_group>
-        </buff>-->
+    &lt;!&ndash; Infection Spread Effect &ndash;&gt;
+    <buff name="buffGrandpasInfection" name_key="buffGrandpasInfection" icon="ui_game_symbol_infection" icon_color="128,0,0">
+      <stack_type value="ignore"/>
+      <duration value="1"/>
+      <effect_group>
+        <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInfectionCatch">
+          <requirement name="!HasBuff" target="other" buff="buffInfectionMain"/>
+        </triggered_effect>
+      </effect_group>
+    </buff>-->
 
   </append>
 

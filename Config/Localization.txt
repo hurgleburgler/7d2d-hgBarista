@@ -163,3 +163,5 @@ drinkBearBrewTooltip,items,Admin,"A primal roar builds in your chest as raw stre
 drinkBulletproofCoffeeTooltip,items,Admin,"Your skin tingles as an invisible armor settles over you..."
 drinkLondonFogLatteTooltip,items,Admin,"The shadows seem to beckon as your movements become whisper-quiet..."
 drinkNightmareNitroTooltip,items,Admin,"Time fractures as impossible speed courses through your body..."
+buffGodModeNameShort,buffs,Buff,The Phoenix Fire
+drinkPhoenixFireTooltip,item,Item,"The painful, cleansing flames of rebirth course through and over your wretched body..."
