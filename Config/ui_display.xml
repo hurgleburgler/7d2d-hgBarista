@@ -271,10 +271,7 @@
     </item_display_info>
 
     <item_display_info display_type="drinkGrandpasLastStand" display_group="groupConsumables">
-      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
-      <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
-      <display_entry name="dColdResist" title_key="statColdResistance"/>
-      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+      <display_entry name="dGrandpaLegacy" title_key="drinkGrandpasLastStand" display_type="Percent"/>
     </item_display_info>
   </append>
 

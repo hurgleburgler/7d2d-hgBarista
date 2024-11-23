@@ -2046,7 +2046,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffInfectionAddCurePerc" operation="add" value="5"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInfectionAddCure"/>
 
-        <!-- Dragon's Breath setup -->
+        <!-- Apex setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffApexPeakDuration" operation="add" value="210"/>
 
         <!-- Update buffs line to include infection cure -->
@@ -2110,35 +2110,17 @@
       <property name="DisplayType" value="drinkGrandpasLastStand"/>
 
       <effect_group tiered="false" name="Drink Tier 5">
-        <display_value name="dStaminaRegen" value="0.92"/>
-        <display_value name="dDehydration" value="6.0"/>
-        <display_value name="dColdResist" value="15"/>
-        <display_value name="dDuration" value="180"/>
+        <display_value name="dGrandpaLegacy" value="100"/>
 
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkTripwireTooltip"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="generator_start" play_in_head="false"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="grandpasLegacyTooltip"/>
 
-        <!-- Caffeine buff setup -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="630"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="210"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.92"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="30"/>
-
-        <!-- Cold resistance setup -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="630"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDuration" operation="add" value="210"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistValue" operation="set" value="30"/>
-
-        <!-- Food and Health from honey and cream -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="18"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
-
-        <!-- Infection cure from honey -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffInfectionAddCurePerc" operation="add" value="5"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInfectionAddCure"/>
+        <!-- Grandpa Last Stand setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffGrandpasLegacyDuration" operation="add" value="300"/>
 
         <!-- Update buffs line to include infection cure -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffGrandpasPower,buffCaffeine,buffProcessConsumables,buffInfectionAddCure"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffGrandpasLegacy"/>
+
+
       </effect_group>
     </item>
 
