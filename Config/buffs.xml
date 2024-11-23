@@ -932,10 +932,18 @@
 
       <effect_group name="other_effects">
         <!-- Infection aura -->
-        <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" buff="buffGrandpasInfection">
-          <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
-          <!--<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>-->
+        <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="1" buff="buffGrandpasInfection">
+          <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="100"/>
         </triggered_effect>
+
+        <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" buff="buffGrandpasInfection">
+          <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+        </triggered_effect>
+
+        <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="6" buff="buffGrandpasInfection">
+          <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+        </triggered_effect>
+
       </effect_group>
 
       <!-- When power ends, apply permanent effects -->
@@ -977,7 +985,7 @@
       <stack_type value="ignore"/>
       <duration value="1"/>
       <effect_group>
-        <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInfectionCatch">
+        <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInfectionMain">
           <requirement name="!HasBuff" target="other" buff="buffInfectionMain"/>
         </triggered_effect>
       </effect_group>
