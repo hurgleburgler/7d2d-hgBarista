@@ -121,6 +121,7 @@
     </item_display_info>
 
     <item_display_info display_type="drinkDoubleTap" display_group="groupConsumables">
+      <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
       <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
       <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
       <display_entry name="dColdResist" title_key="statColdResistance"/>
@@ -250,7 +251,7 @@
     </item_display_info>
 
     <item_display_info display_type="drinkDragonsBreathEspresso" display_group="groupConsumables">
-      <display_entry name="dDragonBreath" title_key="buffDragonBreathNameShort" display_type="Percent"/>
+      <display_entry name="dDragonBreath" title_key="buffDragonsBreathNameShort" display_type="Percent"/>
     </item_display_info>
 
     <item_display_info display_type="drinkApexBrew" display_group="groupConsumables">

@@ -93,14 +93,14 @@
         <!-- Sound effect -->
         <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="Player$Thirsty" play_in_head="true"/>
 
-        <!-- Apply dehydration debuff -->
+<!--        &lt;!&ndash; Apply dehydration debuff &ndash;&gt;
         <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="dehydrateAmount" operation="set" value="50"/>
         <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="dehydrateOverTime" operation="set" value="10"/>
         <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="debuffDehydrate"/>
 
         <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="dehydrateAmount" operation="set" value="50"/>
         <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="dehydrateOverTime" operation="set" value="10"/>
-        <triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="debuffDehydrate"/>
+        <triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="debuffDehydrate"/>-->
 
         <!-- Fatigue after effect -->
         <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffCaffeineFatigue"/>
@@ -930,7 +930,7 @@
 
       <effect_group name="effects">
         <!-- Visual and particle effects -->
-        <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="RadiatedParticlesOnMesh" local_offset="0,0,0" parent_transform="LOD0" shape_mesh="true"/>
+        <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="RadiatedParticlesOnMesh" local_offset="0,0,0" shape_mesh="true"/> <!--parent_transform="LOD0" shape_mesh="true"/>-->
         <triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="RadiatedParticlesOnMesh"/>
         <triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="RadiatedParticlesOnMesh"/>
 
