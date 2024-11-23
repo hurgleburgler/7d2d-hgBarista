@@ -680,6 +680,9 @@
       <display_value_format value="time"/>
 
       <effect_group>
+        <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="FireMediumLoop" play_in_head="false"/>
+        <triggered_effect trigger="onSelfBuffStack" action="PlaySound" sound="FireMediumLoop" play_in_head="false"/>
+
         <!-- Timer management -->
         <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDragonsBreathDuration" operation="subtract" value="@$MetabolismDuration"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffDragonsBreathDuration" operation="subtract" value="@$MetabolismDuration"/>
@@ -748,15 +751,21 @@
         </triggered_effect>
         <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffApexCrash"/>
       </effect_group>
+
+      <!-- Cleanup -->
+      <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffApexPeakDuration" operation="set" value="0"/>
     </buff>
 
     <buff name="buffApexCrash" name_key="buffApexCrash" description_key="buffApexCrashDesc" icon="ui_game_symbol_fatigued" icon_color="127,187,34">
       <stack_type value="replace"/>
-      <duration value="3600"/>
+      <duration value="300"/>
       <display_value value=".buffApexCrashDisplay"/>
       <display_value_format value="time"/>
 
       <effect_group>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".buffApexCrashDisplay" operation="set" value="300"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffApexCrashDisplay" operation="subtract" value="1"/>
+
         <!-- Minimum attributes during crash -->
         <passive_effect name="AttributeLevel" tags="attStrength,attFortitude,attAgility,attPerception,attIntellect" operation="base_add" value="-1"/>
         <passive_effect name="PerkLevel" operation="base_set" value="0"/>
@@ -765,7 +774,7 @@
 
     <buff name="buffPhoenixFire" name_key="buffPhoenixFire" tooltip_key="buffPhoenixFireTooltip" description_key="buffPhoenixFireDesc" icon="ui_game_symbol_fire" icon_color="255,165,0">
       <stack_type value="ignore"/>
-      <display_value_key value="buffPhoenixFireNameShort"/>
+      <display_value_key value="buffPhoenixFireNameShortSpace"/>
       <display_value value="xxx"/>
 
       <effect_group name="Initial Fire Phase">
@@ -809,7 +818,7 @@
 
     <buff name="buffPhoenixRebirth" name_key="buffPhoenixRebirth" tooltip_key="buffPhoenixRebirthTooltip" description_key="buffPhoenixRebirthDesc" icon="ui_game_symbol_fire" icon_color="0,255,0">
       <stack_type value="ignore"/>
-      <display_value_key value="buffGodModeNameShort"/>
+      <display_value_key value="buffPhoenixFireNameShortSpace"/>
       <display_value value="xxx"/>
 
       <effect_group>

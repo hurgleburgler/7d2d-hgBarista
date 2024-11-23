@@ -250,28 +250,19 @@
     </item_display_info>
 
     <item_display_info display_type="drinkDragonsBreathEspresso" display_group="groupConsumables">
-      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
-      <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
-      <display_entry name="dColdResist" title_key="statColdResistance"/>
-      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+      <display_entry name="dDragonBreath" title_key="buffDragonBreathNameShort" display_type="Percent"/>
     </item_display_info>
 
     <item_display_info display_type="drinkApexBrew" display_group="groupConsumables">
-      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
-      <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
-      <display_entry name="dColdResist" title_key="statColdResistance"/>
-      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+      <display_entry name="dApexPredator" title_key="buffApexBrewNameShort" display_type="Percent"/>
     </item_display_info>
 
     <item_display_info display_type="drinkPhoenixFireLatte" display_group="groupConsumables">
-      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
-      <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
-      <display_entry name="dColdResist" title_key="statColdResistance"/>
-      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+      <display_entry name="dPhoenixFire" title_key="buffPhoenixFireNameShort" display_type="Percent"/>
     </item_display_info>
 
     <item_display_info display_type="drinkGrandpasLastStand" display_group="groupConsumables">
-      <display_entry name="dGrandpaLegacy" title_key="drinkGrandpasLastStand" display_type="Percent"/>
+      <display_entry name="dGrandpaLegacy" title_key="buffGrandpasLegacyNameShort" display_type="Percent"/>
     </item_display_info>
   </append>
 

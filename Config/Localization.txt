@@ -3,6 +3,9 @@ drinkCursedCoffee,items,Food,"Cursed Coffee"
 drinkCursedCoffeeDesc,items,Food,"A mysterious dark brew that saps your vitality. Reduces health, food, water, and stamina by 25%."
 buffCursedCoffee,buffs,Buff,"Cursed"
 buffCursedCoffeeDesc,buffs,Buff,"Your vitality is being drained by dark forces."
+buffTooMuchCaffeineName,buffs,Buff,"Way too much caffeine."
+buffFatiguedName,buffs,Buff,"Fatigued"
+buffFatiguedDesc,buffs,Buff,"You're absolutely exhausted."
 espressoMachine_hgBB,blocks,Container,A Fancy Espresso Machine
 hgDR_milkBase,items,Item,"This is a base item for development only"
 eatDryCoffeeTooltip,items,Admin,"You've suddenly realized that was a bad idea..."
@@ -120,42 +123,31 @@ drinkApexBrewDesc,items,Item,"A legendary concoction that pushes you beyond mort
 drinkPhoenixFireLatte,items,Item,Phoenix Fire Latte
 drinkPhoenixFireLatteDesc,items,Item,"A legendary brew that grants complete rebirth. Instantly restores all vital stats, cleanses wounds and ailments, then wraps you in protective flames for continued regeneration. The ultimate expression of revival through fire."
 drinkGrandpasLastStand,items,Item,Grandpa's Last Stand
-drinkGrandpasLastStandDesc,items,Item,"Grandpa's ultimate creation - a mixture that grants godlike power at the cost of your very life force. For five minutes, you'll become an unstoppable force of destruction, but the price is steep: permanent injuries, infection, and a body pushed to its absolute limits. Use only in the most desperate situations."statAttributeBoost,stats,Stat,Attribute Level Increase
+drinkGrandpasLastStandDesc,items,Item,"Grandpa's ultimate creation - a mixture that grants godlike power at the cost of your very life force. For five minutes, you'll become an unstoppable force of destruction, but the price is steep: permanent injuries, infection, and a body pushed to its absolute limits. Use only in the most desperate situations, as you may not survive it."statAttributeBoost,stats,Stat,Attribute Level Increase
 buffDehydrateName,stats,Stat,Dehydration
 statBearPower,stats,Stat,Bear Power
-statCarryCapacity,stats,Stat,Extra Carry Capacity
-statClubDamage,stats,Stat,Club Damage
 statClubDamagePackage,stats,Stat,Club Damage Package
-statClubSpeed,stats,Stat,Club Attack Speed
 statColdResistance,stats,Stat,Cold Resistance
 statColdVulnerability,stats,Stat,Cold Vulnerability
 statCombatPackage,stats,Stat,Combat Package
 statCombatSpeed,stats,Stat,Combat Speed
 statDamageBonus,stats,Stat,Damage Bonus
-statDamageMitigation,stats,Stat,Damage Mitigation
 statDehydration,stats,Stat,Total Water Cost
 statDiseaseResist,stats,Stat,Disease Resistance
-statExpBonus,stats,Stat,Experience Bonus
 statFallResist,stats,Stat,Fall Resistance
-statFireDamage,stats,Stat,Fire Aura Damage
 statGeneralResist,stats,Stat,General Resistance
+statHealthDrain,stats,Stat,Health Drain
 statHeatResistance,stats,Stat,Heat Resistance
 statJumpBoost,stats,Stat,Jump Bonus
 statJumpBoostMax,stats,Stat,Jump Bonus Max
-statMeleeDamage,stats,Stat,Melee Damage
 statMobilityBoost,stats,Stat,Mobility and Speed Boost
 statMovementBonus,stats,Stat,Movement Bonus
 statMovementSpeed,stats,Stat,Movement Speed
 statNutrition,stats,Stat,Food & Health
-statPeakDuration,stats,Stat,Peak Duration
 statPhysicalResist,stats,Stat,Physical Resistance
-statRangedDamage,stats,Stat,Ranged Damage Bonus
-statRegenDuration,stats,Stat,Rebirth Duration
-statRestoration,stats,Stat,Full Restoration
 statSneakDamage,stats,Stat,Sneak Attack Damage
 statStaminaEfficiency,stats,Stat,Stamina Efficiency
 statStealthBonus,stats,Stat,Stealth Bonus
-statStrengthBoost,stats,Stat,Strength Attribute Boost
 drinkTripwireTooltip,items,Admin,"Your hands start to shake as time itself seems to slow down..."
 drinkSpringHeeledJoeTooltip,items,Admin,"Gravity suddenly feels more like a suggestion than a law..."
 drinkPumpkinSpikeLatteTooltip,items,Admin,"Your club feels like it's humming with barely contained energy..."
@@ -163,7 +155,19 @@ drinkBearBrewTooltip,items,Admin,"A primal roar builds in your chest as raw stre
 drinkBulletproofCoffeeTooltip,items,Admin,"Your skin tingles as an invisible armor settles over you..."
 drinkLondonFogLatteTooltip,items,Admin,"The shadows seem to beckon as your movements become whisper-quiet..."
 drinkNightmareNitroTooltip,items,Admin,"Time fractures as impossible speed courses through your body..."
-buffPhoenixFireNameShort,buffs,Buff,"      Phoenix Fire"
+drinkDragonsBreathTooltip,items,Admin,"Your throat burns as liquid fire courses through your veins..."
+drinkQuadTooltip,items,Admin,"The world becomes crystal clear as your heart threatens to explode..."
+drinkApexBrewTooltip,items,Admin,"Power surges through you as your very DNA seems to rewrite itself..."
 buffPhoenixFireTooltip,item,Item,"The painful, cleansing flames of rebirth course through and over your wretched body..."
 buffPhoenixRebirthTooltip,item,Item,"Reborn from the ashes, your vitality surges with renewed strength."
 grandpasLegacyTooltip,item,Item,"Everything starts to burn.  Maybe this wasn't such a good idea ..."
+drinkSaltwaterTooltip,itemItem,"Yikes, that was salty."
+buffPhoenixFireNameShortSpace,buffs,Buff,"       Phoenix Fire"
+buffGrandpasLegacyNameShortSpace,buffs,Buff,"       Grandpa Power"
+buffApexBrewNameShortSpace,buffs,Buff,"       Apex Predator"
+buffDragonsBreathNameShortSpace,buffs,Buff,"       Dragon Breath"
+buffPhoenixFireNameShort,buffs,Buff,"Phoenix Fire"
+buffGrandpasLegacyNameShort,buffs,Buff,"Grandpa Power"
+buffApexBrewNameShort,buffs,Buff,"Apex Predator"
+buffDragonsBreathNameShort,buffs,Buff,"Dragon Breath"
+
