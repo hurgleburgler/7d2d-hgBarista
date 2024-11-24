@@ -140,6 +140,7 @@ statHealthDrain,stats,Stat,Health Drain
 statHeatResistance,stats,Stat,Heat Resistance
 statJumpBoost,stats,Stat,Jump Bonus
 statJumpBoostMax,stats,Stat,Jump Bonus Max
+statMaxDuration,state,Stat,Max Duration
 statMobilityBoost,stats,Stat,Mobility and Speed Boost
 statMovementBonus,stats,Stat,Movement Bonus
 statMovementSpeed,stats,Stat,Movement Speed

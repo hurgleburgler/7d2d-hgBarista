@@ -1453,7 +1453,7 @@
       <effect_group tiered="false" name="Drink Tier 4">
         <!-- Consolidated to 7 key display values -->
         <display_value name="dStaminaRegen" value="0.46"/>
-        <display_value name="dDehydration" value="5.6"/>
+        <display_value name="dDehydration" value="15"/>
         <display_value name="dColdResist" value="10"/>
         <display_value name="dClubPackage" value="1"/>          <!-- Represents both club damage bonuses -->
         <display_value name="dCombatSpeed" value="0.2"/>         <!-- Combined club speed and stamina efficiency -->
@@ -1467,7 +1467,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="900"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="300"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.46"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="5.6"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="15"/>
 
         <!-- Skull Crushers buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrugSkullCrushersDuration" operation="add" value="300"/>
@@ -1551,8 +1551,8 @@
         <!-- Consolidated to 7 key display values -->
         <display_value name="dNutrition" value="12"/>            <!-- Combined food/health -->
         <display_value name="dStaminaRegen" value="0.48"/>
-        <display_value name="dDehydration" value="14"/>
-        <display_value name="dBearPower" value="2"/>             <!-- Combined strength and steroids -->
+        <display_value name="dDehydration" value="15"/>
+        <display_value name="dBearPower" value="1000"/>          <!-- Combined strength and steroids -->
         <display_value name="dCombatPackage" value="1.75"/>      <!-- Combined brawler/combat effects -->
         <display_value name="dColdResist" value="100"/>          <!-- Important bear-like resistance -->
         <display_value name="dDuration" value="300"/>
@@ -1564,7 +1564,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="900"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="300"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.48"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="14"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="15"/>
 
         <!-- Cold resistance setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffColdResistDurationMax" operation="set" value="900"/>
@@ -1654,7 +1654,7 @@
         <display_value name="dGeneralResist" value="0.4"/>
         <display_value name="dNutrition" value="20"/>        <!-- Combined food and health -->
         <display_value name="dStaminaRegen" value="0.43"/>
-        <display_value name="dDehydration" value="3.75"/>
+        <display_value name="dDehydration" value="15"/>
         <display_value name="dDuration" value="360"/>
 
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkBulletproofCoffeeTooltip"/>
@@ -1664,7 +1664,7 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="1080"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="360"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.43"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="3.75"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="15"/>
 
         <!-- Bulletproof Coffee buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBulletproofCoffeeDuration" operation="add" value="360"/>
@@ -1908,7 +1908,7 @@
         <display_value name="dColdResist" value="30"/>
         <display_value name="dDuration" value="210"/>
         <display_value name="dMaxStaminaPenalty" value="-20"/>
-        <display_value name="dHealthDrain" value="-0.5"/>
+        <display_value name="dHealthDrain" value="-0.005"/>
 
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkQuadTooltip"/>
 
