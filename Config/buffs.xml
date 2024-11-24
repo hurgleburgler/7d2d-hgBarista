@@ -680,6 +680,7 @@
       <display_value_format value="time"/>
 
       <effect_group>
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="debuffDehydrate"/>
         <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="FireMediumLoop" play_in_head="false"/>
         <triggered_effect trigger="onSelfBuffStack" action="PlaySound" sound="FireMediumLoop" play_in_head="false"/>
 
@@ -732,6 +733,7 @@
       <display_value_format value="time"/>
 
       <effect_group>
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="debuffDehydrate"/>
         <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="levelupplayer" play_in_head="false"/>
 
         <!-- Timer management -->
@@ -763,6 +765,7 @@
       <display_value_format value="time"/>
 
       <effect_group>
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="debuffDehydrate"/>
         <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".buffApexCrashDisplay" operation="set" value="300"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffApexCrashDisplay" operation="subtract" value="1"/>
 
@@ -798,6 +801,8 @@
           <requirement name="CVarCompare" cvar=".phoenixFirePhase" operation="GTE" value="10"/>
           <requirement name="HasBuff" buff="buffBurningElement"/>
         </triggered_effect>
+
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="debuffDehydrate"/>
 
         <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffPhoenixFire">
           <requirement name="CVarCompare" cvar=".phoenixFirePhase" operation="GTE" value="11"/>
@@ -888,6 +893,7 @@
         <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffApexCrash"/>
         <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffPhoenixRebirth"/>
         <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffPhoenixFire"/>
+        <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="debuffDehydrate"/>
       </effect_group>
 
       <!-- Safety cleanup -->
