@@ -4,7 +4,7 @@
 
     <item name="drinkDehydratingSeawater">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkDehydratingSeawater_160"/>
+      <property name="CustomIcon" value="drinkDehydratingSeawater"/>
       <property name="DisplayType" value="drinkDehydratingSeawater"/>
       <property name="CustomIcon" value="drinkJarRiverWater"/>
 
@@ -23,7 +23,7 @@
 
     <item name="drinkCursedCoffee">
       <property name="Extends" value="drinkJarCoffee"/>
-      <property name="CustomIcon" value="drinkCursedCoffee_160"/>
+      <property name="CustomIcon" value="drinkCursedCoffee"/>
       <property name="DisplayType" value="drinkCursedCoffee"/>
 
       <effect_group tiered="false">
@@ -91,7 +91,7 @@
     <!--   Creamer: Higher food, lower health/water (10/5/5)           -->
     <!-- ============================================================= -->
     <item name="drinkJarMilk">
-      <property name="CustomIcon" value="drinkJarMilk_160"/>
+      <property name="CustomIcon" value="drinkJarMilk"/>
       <property name="Extends" value="hgDR_milkBase"/>
 
       <property class="Action-1">
@@ -303,8 +303,8 @@
     <!-- ============================================================= -->
     <item name="drinkFilthyJoe">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkFilthyJoe_160"/>
-      <property name="DisplayType" value="drinkFilthyJoe"/>
+      <property name="CustomIcon" value="drinkFilthyJoe"/>
+      <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -353,7 +353,7 @@
     <!-- ========================================================== -->
     <item name="drinkWastelandWheatgrass">
       <property name="Extends" value="drinkJarCoffee"/>
-      <property name="CustomIcon" value="drinkWastelandWheatgrass_160"/>
+      <property name="CustomIcon" value="drinkWastelandWheatgrass"/>
       <property name="DisplayType" value="drinkWastelandWheatgrass"/>
 
       <effect_group tiered="false" name="Drink Tier 1">
@@ -401,8 +401,8 @@
     <!-- ========================================================== -->
     <item name="drinkHotCupOfJoe">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkHotCupOfJoe_160"/>
-      <property name="DisplayType" value="drinkHotCupOfJoe"/>
+      <property name="CustomIcon" value="drinkHotCupOfJoe"/>
+      <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -444,8 +444,8 @@
     <!-- ========================================================== -->
     <item name="drinkIcedCoffee">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkIcedCoffee_160"/>
-      <property name="DisplayType" value="drinkIcedCoffee"/>
+      <property name="CustomIcon" value="drinkIcedCoffee"/>
+      <property name="DisplayType" value="drinkBB_BasicColdCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -487,8 +487,8 @@
     <!-- ========================================================== -->
     <item name="drinkColdBrewCoffee">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkColdBrewCoffee_160"/>
-      <property name="DisplayType" value="drinkColdBrewCoffee"/>
+      <property name="CustomIcon" value="drinkColdBrewCoffee"/>
+      <property name="DisplayType" value="drinkBB_BasicColdCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -551,7 +551,7 @@
     <!-- ========================================================= -->
     <item name="drinkJarPurifiedWater">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkJarPurifiedWater_160"/>
+      <property name="CustomIcon" value="drinkJarPurifiedWater"/>
       <property name="DisplayType" value="drinkJarPurifiedWater"/>
 
       <effect_group tiered="false" name="Drink Tier 2">
@@ -601,8 +601,8 @@
     <!-- ========================================================= -->
     <item name="drinkShotOfEspresso">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkShotOfEspresso_160"/>
-      <property name="DisplayType" value="drinkShotOfEspresso"/>
+      <property name="CustomIcon" value="drinkShotOfEspresso"/>
+      <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -659,8 +659,8 @@
     <!-- ========================================================= -->
     <item name="drinkAmericano">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkAmericano_160"/>
-      <property name="DisplayType" value="drinkAmericano"/>
+      <property name="CustomIcon" value="drinkAmericano"/>
+      <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="15"/>
@@ -721,8 +721,8 @@
     <!-- ========================================================= -->
     <item name="drinkBlackStrapCoffee">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkBlackStrapCoffee_160"/>
-      <property name="DisplayType" value="drinkBlackStrapCoffee"/>
+      <property name="CustomIcon" value="drinkBlackStrapCoffee"/>
+      <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -787,7 +787,7 @@
     <!-- ========================================================= -->
     <item name="drinkPremiumColdBrew">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkPremiumColdBrew_160"/>
+      <property name="CustomIcon" value="drinkPremiumColdBrew"/>
       <property name="DisplayType" value="drinkPremiumColdBrew"/>
 
       <effect_group tiered="false" name="Drink Tier 2">
@@ -856,8 +856,8 @@
     <!-- ========================================================= -->
     <item name="drinkDoubleTap">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkDoubleTap_160"/>
-      <property name="DisplayType" value="drinkDoubleTap"/>
+      <property name="CustomIcon" value="drinkDoubleTap"/>
+      <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 3">
         <display_entry name="dWaterAmountAdd" value="5"/>
@@ -921,8 +921,8 @@
     <!-- ========================================================= -->
     <item name="drinkCappuccino">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkCappuccino_160"/>
-      <property name="DisplayType" value="drinkCappuccino"/>
+      <property name="CustomIcon" value="drinkCappuccino"/>
+      <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dWaterAmountAdd" value="10"/>
@@ -990,8 +990,8 @@
     <!-- ========================================================= -->
     <item name="drinkCafeLatte">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkCafeLatte_160"/>
-      <property name="DisplayType" value="drinkCafeLatte"/>
+      <property name="CustomIcon" value="drinkCafeLatte"/>
+      <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dWaterAmountAdd" value="20"/>
@@ -1059,8 +1059,8 @@
     <!-- ========================================================= -->
     <item name="drinkCafeCreme">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkCafeCreme_160"/>
-      <property name="DisplayType" value="drinkCafeCreme"/>
+      <property name="CustomIcon" value="drinkCafeCreme"/>
+      <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -1130,8 +1130,8 @@
     <!-- ========================================================= -->
     <item name="drinkCafeBreve">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkCafeBreve_160"/>
-      <property name="DisplayType" value="drinkCafeBreve"/>
+      <property name="CustomIcon" value="drinkCafeBreve"/>
+      <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dWaterAmountAdd" value="10"/>
@@ -1204,8 +1204,8 @@
     <!-- ========================================================= -->
     <item name="drinkAffogato">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkAffogato_160"/>
-      <property name="DisplayType" value="drinkAffogato"/>
+      <property name="CustomIcon" value="drinkAffogato"/>
+      <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dStaminaRegen" value="0.37"/>
@@ -1292,8 +1292,8 @@
     <!-- ========================================================== -->
     <item name="drinkTripwire">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkTripwire_160"/>
-      <property name="DisplayType" value="drinkTripwire"/>
+      <property name="CustomIcon" value="drinkTripwire"/>
+      <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
         <display_value name="dStaminaRegen" value="0.52"/>
@@ -1357,7 +1357,7 @@
     <!-- ======================================================== -->
     <item name="drinkSpringHeeledJoe">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkSpringHeeledJoe_160"/>
+      <property name="CustomIcon" value="drinkSpringHeeledJoe"/>
       <property name="DisplayType" value="drinkSpringHeeledJoe"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
@@ -1447,7 +1447,7 @@
     <!-- ========================================================= -->
     <item name="drinkPumpkinSpikeLatte">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkPumpkinSpikeLatte_160"/>
+      <property name="CustomIcon" value="drinkPumpkinSpikeLatte"/>
       <property name="DisplayType" value="drinkPumpkinSpikeLatte"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
@@ -1544,7 +1544,7 @@
     <!-- ========================================================= -->
     <item name="drinkBearBrew">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkBearBrew_160"/>
+      <property name="CustomIcon" value="drinkBearBrew"/>
       <property name="DisplayType" value="drinkBearBrew"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
@@ -1646,7 +1646,7 @@
     <!-- ========================================================= -->
     <item name="drinkBulletproofCoffee">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkBulletproofCoffee_160"/>
+      <property name="CustomIcon" value="drinkBulletproofCoffee"/>
       <property name="DisplayType" value="drinkBulletproofCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
@@ -1726,7 +1726,7 @@
     <!-- ========================================================= -->
     <item name="drinkLondonFogLatte">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkLondonFogLatte_160"/>
+      <property name="CustomIcon" value="drinkLondonFogLatte"/>
       <property name="DisplayType" value="drinkLondonFogLatte"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
@@ -1827,7 +1827,7 @@
     <!-- ========================================================= -->
     <item name="drinkNightmareNitroColdBrew">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkNightmareNitro_160"/>
+      <property name="CustomIcon" value="drinkNightmareNitro"/>
       <property name="DisplayType" value="drinkNightmareNitro"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
@@ -1898,7 +1898,7 @@
     <!-- ========================================================= -->
     <item name="drinkQuad">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkQuad_160"/>
+      <property name="CustomIcon" value="drinkQuad"/>
       <property name="DisplayType" value="drinkQuad"/>
 
       <effect_group tiered="false" name="Drink Tier 5">
@@ -1956,7 +1956,7 @@
     <!-- ========================================================= -->
     <item name="drinkDragonsBreathEspresso">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkDragonsBreathEspresso_160"/>
+      <property name="CustomIcon" value="drinkDragonsBreathEspresso"/>
       <property name="DisplayType" value="drinkDragonsBreathEspresso"/>
 
       <effect_group tiered="false" name="Drink Tier 5">
@@ -2000,7 +2000,7 @@
     <!-- ========================================================= -->
     <item name="drinkApexBrew">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkApexBrew_160"/>
+      <property name="CustomIcon" value="drinkApexBrew"/>
       <property name="DisplayType" value="drinkApexBrew"/>
 
       <effect_group tiered="false" name="Drink Tier 5">
@@ -2042,7 +2042,7 @@
     <!-- ======================================================== -->
     <item name="drinkPhoenixFireLatte">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkPhoenixFireLatte_160"/>
+      <property name="CustomIcon" value="drinkPhoenixFireLatte"/>
       <property name="DisplayType" value="drinkPhoenixFireLatte"/>
 
       <effect_group tiered="false" name="Drink Tier 5">
@@ -2077,7 +2077,7 @@
     <!-- ======================================================== -->
     <item name="drinkGrandpasLastStand">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkGrandpasLastStand_160"/>
+      <property name="CustomIcon" value="drinkGrandpasLastStand"/>
       <property name="DisplayType" value="drinkGrandpasLastStand"/>
 
       <effect_group tiered="false" name="Drink Tier 5">

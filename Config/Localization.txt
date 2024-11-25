@@ -21,6 +21,7 @@ resourcePowderedMilk,items,Item,"A Tub of Powdered Milk"
 resourcePowderedMilkDesc,items,Item,"Just add water for a nutritious milk substitute. Perfect for the long haul but tastes a bit like chalk."
 resourcePowderedCreamer,items,Item,"Powdered Creamer"
 resourcePowderedCreamerDesc,items,Item,"Add a little richness to your drinks without the hassle of refrigeration. Just don’t expect the flavor of real cream."
+perkBattlefieldBaristaName,progression,perk,Battlefield Barista
 perkBattlefieldBaristaRank1Desc,progression,perk,Coffee Addict
 perkBattlefieldBaristaRank1LongDesc,progression,perk,"The battlefield runs on caffeine, and you can brew a mean cup of joe. Unlock basic coffee recipes to keep you alert in the apocalypse. Craft Coffee and Cold Brew. Brew 10% faster."
 perkBattlefieldBaristaRank2Desc,progression,perk,Espresso Enthusiast
@@ -49,7 +50,11 @@ buffStrengthBoost,buffs,Buff,Strength Boost
 buffStrengthBoostDesc,buffs,Buff,Temporary increase to strength attribute.
 buffBearStrength,buffs,Buff,Primal Strength
 buffBearStrengthDesc,buffs,Buff,Enhanced strength, melee damage, and stun resistance.
-buffDragonsBreath,buffs,Buff,Dragon's Fire
+buffBulletproofCoffee,buffs,Buff,Pumpkin Spiked Latte
+buffBulletproofCoffeeDesc,buffs,Buff,Pumpkin Spiked Latte
+buffLondonFogStealth,buffs,Buff,London Fog Stealth
+buffLondonFogStealthDesc,buffs,Buff,London Fog Stealth
+buffDragonsBreath,buffs,Buff,Dragon's Breath
 buffDragonsBreathDesc,buffs,Buff,Your very presence ignites the air around you. Fire cannot harm you.
 buffPumpkinClubBonus,buffs,Buff,Club Master
 buffPumpkinClubBonusDesc,buffs,Buff,Enhanced club damage, attack speed, and stamina efficiency.

@@ -580,7 +580,7 @@
       </effect_group>
     </buff>
 
-    <buff name="buffBulletproofCoffee" name_key="bulletproofCoffee" description_key="bulletproofCoffeeDesc" icon="ui_game_symbol_defense" icon_color="102,178,255">
+    <buff name="buffBulletproofCoffee" name_key="buffBulletproofCoffee" description_key="buffBulletproofCoffeeDesc" icon="ui_game_symbol_defense" icon_color="102,178,255">
       <stack_type value="ignore"/>
       <duration value="0"/>
       <display_value value=".buffBulletproofCoffeeDisplay"/>
@@ -680,7 +680,10 @@
       <display_value_format value="time"/>
 
       <effect_group>
+        <!-- Hack until I can fix this fully -->
+        <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="debuffDehydrate"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="debuffDehydrate"/>
+
         <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="FireMediumLoop" play_in_head="false"/>
         <triggered_effect trigger="onSelfBuffStack" action="PlaySound" sound="FireMediumLoop" play_in_head="false"/>
 
@@ -775,7 +778,7 @@
       </effect_group>
     </buff>
 
-    <buff name="buffPhoenixFire" name_key="buffPhoenixFire" tooltip_key="buffPhoenixFireTooltip" description_key="buffPhoenixFireDesc" icon="ui_game_symbol_fire" icon_color="255,165,0">
+    <buff name="buffPhoenixFire" name_key="buffPhoenixFireNameShort" tooltip_key="buffPhoenixFireTooltip" description_key="drinkPhoenixFireLatteDesc" icon="ui_game_symbol_fire" icon_color="255,165,0">
       <stack_type value="ignore"/>
       <display_value_key value="buffPhoenixFireNameShortSpace"/>
       <display_value value="xxx"/>
@@ -823,6 +826,7 @@
 
     <buff name="buffPhoenixRebirth" name_key="buffPhoenixRebirth" tooltip_key="buffPhoenixRebirthTooltip" description_key="buffPhoenixRebirthDesc" icon="ui_game_symbol_fire" icon_color="0,255,0">
       <stack_type value="ignore"/>
+      <duration value="5"/>
       <display_value_key value="buffPhoenixFireNameShortSpace"/>
       <display_value value="xxx"/>
 
