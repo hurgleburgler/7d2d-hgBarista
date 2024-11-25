@@ -9,15 +9,15 @@
       <property name="CustomIcon" value="drinkJarRiverWater"/>
 
       <effect_group tiered="false">
-        <!-- Set the debuff values -->
+        <!-- Set the buff values -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="dehydrateAmount" operation="set" value="30"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="dehydrateDuration" operation="set" value="60"/>
 
         <!-- Warning message -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkSaltwaterTooltip"/>
 
-        <!-- Apply the dehydration debuff -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="debuffDehydrate"/>
+        <!-- Apply the dehydration buff -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDehydrate"/>
       </effect_group>
     </item>
 
@@ -33,14 +33,14 @@
         <display_value name="dFoodPenalty" value="-50"/>
         <display_value name="dStaminaRegen" value=".2"/>
 
-        <!-- Set the debuff values -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$debuffCursedHealthPenalty" operation="set" value="-50"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$debuffCursedWaterPenalty" operation="set" value="-50"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$debuffCursedFoodPenalty" operation="set" value="-50"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$debuffCursedStaminaRegen" operation="set" value=".1"/>
+        <!-- Set the buff values -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCursedHealthPenalty" operation="set" value="-50"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCursedWaterPenalty" operation="set" value="-50"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCursedFoodPenalty" operation="set" value="-50"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCursedStaminaRegen" operation="set" value=".1"/>
 
         <!-- Apply the buff -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="debuffCursed,triggerInfection"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCursed,triggerInfection"/>
       </effect_group>
     </item>
 
@@ -253,10 +253,10 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-10"/>
 
         <!-- Too Much Caffeine De-buff setup -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$debuffTooMuchCaffeineDuration" operation="set" value="150"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffTooMuchCaffeineDuration" operation="set" value="150"/>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,debuffTooMuchCaffeine,buffProcessConsumables"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffTooMuchCaffeine,buffProcessConsumables"/>
       </effect_group>
     </item>
 
@@ -1523,7 +1523,7 @@
     <!-- Duration Logic:                                           -->
     <!--   Base Duration: 300s (5 minutes)                         -->
     <!--   Maximum Stack: 900s (15 minutes)                        -->
-    <!--   Post-Effect: Fatigue debuff                             -->
+    <!--   Post-Effect: Fatigue buff                             -->
     <!-- Nutrition Values:                                         -->
     <!--   Food: 12                                                -->
     <!--   Health: 12                                              -->
@@ -1927,10 +1927,10 @@
         <passive_effect name="HealthChangeOT" operation="perc_add" value="-0.5"/>
 
         <!-- Too Much Caffeine De-buff setup -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$debuffTooMuchCaffeineDuration" operation="set" value="150"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffTooMuchCaffeineDuration" operation="set" value="150"/>
 
         <!-- Add buffs -->
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,debuffTooMuchCaffeine"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffColdResist,buffTooMuchCaffeine"/>
       </effect_group>
     </item>
 
