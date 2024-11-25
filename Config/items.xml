@@ -2079,6 +2079,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkGrandpasLastStand"/>
       <property name="DisplayType" value="drinkGrandpasLastStand"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkGrandpasLastStandSchematic"/>
 
       <effect_group tiered="false" name="Drink Tier 5">
         <display_value name="dGrandpaLegacy" value="1"/>
@@ -2098,6 +2099,30 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffGrandpasLegacy"/>
 
       </effect_group>
+    </item>
+
+    <item name="coffeePowderBundle">
+      <property name="Extends" value="noteTestersDelightAdmin"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="bundleCoffee"/>
+      <property name="CustomIconTint" value="FFFFFF"/>
+      <property name="ItemTypeIcon" value="bundle"/>
+      <property name="DescriptionKey" value="coffeePowderBundleDesc"/>
+      <property class="Action0">
+        <property name="Create_item" value="toolBeaker"/>
+        <property name="Create_item_count" value="1"/>
+        <property name="Random_item" value="resourcePowderedMilk,resourcePowderedCreamer,resourceInstantCoffee,drinkCanEmpty,drinkJarBoiledWater"/>
+        <property name="Random_item_count" value="5,5,10,5,5"/>
+        <property name="Random_count" value="5"/>
+        <property name="Unique_random_only" value="true"/>
+      </property>
+    </item>
+
+    <item name="drinkGrandpasLastStandSchematic">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkGrandpasLastStand"/>
+      <property name="Unlocks" value="drinkGrandpasLastStand"/>
     </item>
 
   </append>

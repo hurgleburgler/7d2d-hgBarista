@@ -5,7 +5,48 @@
       <item name="foodCanMilk" count="1" loot_prob_template="med"/>
       <item name="drinkJarCreamer" count="1" loot_prob_template="low"/>
     </lootgroup>
+
+    <lootgroup name="groupCoffeePowderBundle" count="all">
+      <item name="coffeePowderBundle" count="1"/>
+    </lootgroup>
   </insertAfter>
+
+  <!-- Add coffee bundle to various air drop tiers -->
+  <!-- T1 - Basic tier -->
+  <append xpath="/lootcontainers/lootgroup[@name='groupAirDropT1Bundles']">
+    <item group="groupCoffeePowderBundle" loot_prob_template="low"/>
+  </append>
+
+  <!-- T2 - Medium tier -->
+  <append xpath="/lootcontainers/lootgroup[@name='groupAirDropT2Bundles']">
+    <item group="groupCoffeePowderBundle" loot_prob_template="med"/>
+  </append>
+
+  <!-- T3 - Advanced tier -->
+  <append xpath="/lootcontainers/lootgroup[@name='groupAirDropT3Bundles']">
+    <item group="groupCoffeePowderBundle" loot_prob_template="medHigh"/>
+  </append>
+
+  <!-- T4 - High tier -->
+  <append xpath="/lootcontainers/lootgroup[@name='groupAirDropT4Bundles']">
+    <item group="groupCoffeePowderBundle" loot_prob_template="high"/>
+  </append>
+
+  <!-- T5 - Top tier -->
+  <append xpath="/lootcontainers/lootgroup[@name='groupAirDropT5Bundles']">
+    <item group="groupCoffeePowderBundle" loot_prob_template="high"/>
+  </append>
+
+  <append xpath="/lootcontainers">
+    <lootcontainer id="247" name="coffeePowderBundle" count="1" size="6,2"
+                   destroy_on_close="true"
+                   sound_open="SupplyDrops/open_supply_crate"
+                   sound_close="SupplyDrops/close_supply_crate"
+                   open_time="0.25"
+                   loot_quality_template="qualBaseTemplate">
+      <item group="groupCoffeePowderBundle"/>
+    </lootcontainer>
+  </append>
 
   <append xpath="/lootcontainers/lootgroup[@name='groupFoodDriedRations']">
     <item name="resourcePowderedMilk" count="1,2" loot_prob_template="med"/>
