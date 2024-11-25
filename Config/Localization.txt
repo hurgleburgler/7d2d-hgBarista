@@ -22,6 +22,7 @@ resourcePowderedMilkDesc,items,Item,"Just add water for a nutritious milk substi
 resourcePowderedCreamer,items,Item,"Powdered Creamer"
 resourcePowderedCreamerDesc,items,Item,"Add a little richness to your drinks without the hassle of refrigeration. Just don’t expect the flavor of real cream."
 perkBattlefieldBaristaName,progression,perk,Battlefield Barista
+perkBattlefieldBaristaDesc,progression,perk,"This perk tree transforms you into a master of combat-focused brewing, allowing you to craft increasingly potent coffee-based beverages that provide powerful buffs for survival and combat."
 perkBattlefieldBaristaRank1Desc,progression,perk,Coffee Addict
 perkBattlefieldBaristaRank1LongDesc,progression,perk,"The battlefield runs on caffeine, and you can brew a mean cup of joe. Unlock basic coffee recipes to keep you alert in the apocalypse. Craft Coffee and Cold Brew. Brew 10% faster."
 perkBattlefieldBaristaRank2Desc,progression,perk,Espresso Enthusiast

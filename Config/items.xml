@@ -721,7 +721,7 @@
     <!-- ========================================================= -->
     <item name="drinkBlackStrapCoffee">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkBlackStrapCoffee"/>
+      <property name="CustomIcon" value="drinkBlackStrap"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
 
       <effect_group tiered="false" name="Drink Tier 2">
@@ -1205,7 +1205,7 @@
     <item name="drinkAffogato">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkAffogato"/>
-      <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
+      <property name="DisplayType" value="drinkAffogato"/>
 
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dStaminaRegen" value="0.37"/>
