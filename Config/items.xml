@@ -58,6 +58,7 @@
     <!-- ============================================================= -->
 
     <item name="hgDR_milkBase">
+      <property name="CreativeMode" value="None"/>
       <property name="Tags" value="food"/>
       <property name="HoldType" value="3"/>
       <property name="DisplayType" value="hgDR_milkBase"/>
@@ -2149,7 +2150,7 @@
     <!-- Recipe items for Level 1 -->
     <item name="hgBB_RecipeMain">
       <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="CreativeMode" value="None"/>
       <property name="Meshfile" value="#Other/Items?Misc/bookPrefab.prefab"/>
       <property name="DropMeshfile" value="#Other/Items?Misc/bookPrefab.prefab"/>
     </item>
