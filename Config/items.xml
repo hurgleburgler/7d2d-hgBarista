@@ -729,7 +729,7 @@
     <!-- ========================================================= -->
     <item name="drinkBlackStrapCoffee">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkBlackStrap"/>
+      <property name="CustomIcon" value="drinkBlackStrapCoffee"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkBlackStrapCoffeeRecipe"/>
 
@@ -2071,6 +2071,7 @@
       <property name="CustomIcon" value="drinkPhoenixFireLatte"/>
       <property name="DisplayType" value="drinkPhoenixFireLatte"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkPhoenixFireLatteRecipe"/>
+      <property name="HoldType" value="4"/>
 
       <effect_group tiered="false" name="Drink Tier 5">
         <display_value name="dPhoenixFire" value="1"/>
@@ -2145,212 +2146,352 @@
       </property>
     </item>
 
-    <item name="drinkGrandpasLastStandSchematic">
+    <!-- Recipe items for Level 1 -->
+    <item name="hgBB_RecipeMain">
       <property name="Extends" value="schematicNoQualityRecipeMaster"/>
       <property name="CreativeMode" value="Player"/>
-      <property name="CustomIcon" value="drinkGrandpasLastStand"/>
-      <property name="Unlocks" value="drinkGrandpasLastStand"/>
+      <property name="Meshfile" value="#Other/Items?Misc/bookPrefab.prefab"/>
+      <property name="DropMeshfile" value="#Other/Items?Misc/bookPrefab.prefab"/>
     </item>
 
-    <!-- Recipe items for Level 1 -->
     <item name="drinkFilthyJoeRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkFilthyJoe"/>
       <property name="Unlocks" value="drinkFilthyJoe"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkFilthyJoe" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkWastelandWheatgrassRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkWastelandWheatgrass"/>
       <property name="Unlocks" value="drinkWastelandWheatgrass"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkWastelandWheatgrass" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkHotCupOfJoeRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkHotCupOfJoe"/>
       <property name="Unlocks" value="drinkHotCupOfJoe"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkHotCupOfJoe" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkIcedCoffeeRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkIcedCoffee"/>
       <property name="Unlocks" value="drinkIcedCoffee"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkIcedCoffee" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkColdBrewCoffeeRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkColdBrewCoffee"/>
       <property name="Unlocks" value="drinkColdBrewCoffee"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkColdBrewCoffee" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <!-- Recipe items for Level 2 -->
     <item name="drinkJarPurifiedWaterRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkJarPurifiedWater"/>
       <property name="Unlocks" value="drinkJarPurifiedWater"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkJarPurifiedWater" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkShotOfEspressoRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkShotOfEspresso"/>
       <property name="Unlocks" value="drinkShotOfEspresso"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkShotOfEspresso" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkAmericanoRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkAmericano"/>
       <property name="Unlocks" value="drinkAmericano"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkAmericano" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkBlackStrapCoffeeRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
-      <property name="CustomIcon" value="drinkBlackStrap"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
+      <property name="CustomIcon" value="drinkBlackStrapCoffee"/>
       <property name="Unlocks" value="drinkBlackStrapCoffee"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkBlackStrapCoffee" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkPremiumColdBrewRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkPremiumColdBrew"/>
       <property name="Unlocks" value="drinkPremiumColdBrew"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkPremiumColdBrew" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <!-- Recipe items for Level 3 -->
     <item name="drinkDoubleTapRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkDoubleTap"/>
       <property name="Unlocks" value="drinkDoubleTap"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkDoubleTap" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkCappuccinoRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkCappuccino"/>
       <property name="Unlocks" value="drinkCappuccino"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkCappuccino" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkCafeLatteRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkCafeLatte"/>
       <property name="Unlocks" value="drinkCafeLatte"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkCafeLatte" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkCafeCremeRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkCafeCreme"/>
       <property name="Unlocks" value="drinkCafeCreme"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkCafeCreme" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkCafeBreveRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkCafeBreve"/>
       <property name="Unlocks" value="drinkCafeBreve"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkCafeBreve" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkAffogatoRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkAffogato"/>
       <property name="Unlocks" value="drinkAffogato"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkAffogato" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <!-- Recipe items for Level 4 -->
     <item name="drinkTripwireRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkTripwire"/>
       <property name="Unlocks" value="drinkTripwire"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkTripwire" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkSpringHeeledJoeRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkSpringHeeledJoe"/>
       <property name="Unlocks" value="drinkSpringHeeledJoe"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkSpringHeeledJoe" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkPumpkinSpikeLatteRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkPumpkinSpikeLatte"/>
       <property name="Unlocks" value="drinkPumpkinSpikeLatte"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkPumpkinSpikeLatte" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkBearBrewRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkBearBrew"/>
       <property name="Unlocks" value="drinkBearBrew"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkBearBrew" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkBulletproofCoffeeRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkBulletproofCoffee"/>
       <property name="Unlocks" value="drinkBulletproofCoffee"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkBulletproofCoffee" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkLondonFogLatteRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkLondonFogLatte"/>
       <property name="Unlocks" value="drinkLondonFogLatte"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkLondonFogLatte" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkNightmareNitroColdBrewRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
-      <property name="CustomIcon" value="drinkNightmareNitro"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
+      <property name="CustomIcon" value="drinkNightmareNitroColdBrew"/>
       <property name="Unlocks" value="drinkNightmareNitroColdBrew"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkNightmareNitroColdBrew" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <!-- Recipe items for Level 5 -->
     <item name="drinkQuadRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkQuad"/>
       <property name="Unlocks" value="drinkQuad"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkQuad" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkDragonsBreathEspressoRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkDragonsBreathEspresso"/>
       <property name="Unlocks" value="drinkDragonsBreathEspresso"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkDragonsBreathEspresso" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkApexBrewRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkApexBrew"/>
       <property name="Unlocks" value="drinkApexBrew"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkApexBrew" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkPhoenixFireLatteRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkPhoenixFireLatte"/>
       <property name="Unlocks" value="drinkPhoenixFireLatte"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkPhoenixFireLatte" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
     <item name="drinkGrandpasLastStandRecipe">
-      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
-      <property name="CreativeMode" value="Player"/>
+      <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkGrandpasLastStand"/>
       <property name="Unlocks" value="drinkGrandpasLastStand"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkGrandpasLastStand" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+
     </item>
 
   </append>
