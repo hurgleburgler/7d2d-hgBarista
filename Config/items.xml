@@ -305,6 +305,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkFilthyJoe"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkFilthyJoeRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -355,6 +356,7 @@
       <property name="Extends" value="drinkJarCoffee"/>
       <property name="CustomIcon" value="drinkWastelandWheatgrass"/>
       <property name="DisplayType" value="drinkWastelandWheatgrass"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkWastelandWheatgrassRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -403,6 +405,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkHotCupOfJoe"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkHotCupOfJoeRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -446,6 +449,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkIcedCoffee"/>
       <property name="DisplayType" value="drinkBB_BasicColdCoffee"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkIcedCoffeeRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -489,6 +493,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkColdBrewCoffee"/>
       <property name="DisplayType" value="drinkBB_BasicColdCoffee"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkColdBrewCoffeeRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -553,6 +558,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkJarPurifiedWater"/>
       <property name="DisplayType" value="drinkJarPurifiedWater"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkJarPurifiedWaterRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="40"/>
@@ -603,6 +609,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkShotOfEspresso"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkShotOfEspressoRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -661,6 +668,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkAmericano"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkAmericanoRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="15"/>
@@ -723,6 +731,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkBlackStrap"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkBlackStrapCoffeeRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -789,6 +798,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkPremiumColdBrew"/>
       <property name="DisplayType" value="drinkPremiumColdBrew"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkPremiumColdBrewRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -858,6 +868,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkDoubleTap"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkDoubleTapRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 3">
         <display_entry name="dWaterAmountAdd" value="5"/>
@@ -923,6 +934,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkCappuccino"/>
       <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkCappuccinoRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dWaterAmountAdd" value="10"/>
@@ -992,6 +1004,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkCafeLatte"/>
       <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkCafeLatteRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dWaterAmountAdd" value="20"/>
@@ -1061,6 +1074,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkCafeCreme"/>
       <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkCafeCremeRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -1132,6 +1146,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkCafeBreve"/>
       <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkCafeBreveRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dWaterAmountAdd" value="10"/>
@@ -1206,6 +1221,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkAffogato"/>
       <property name="DisplayType" value="drinkAffogato"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkAffogatoRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 3">
         <display_value name="dStaminaRegen" value="0.37"/>
@@ -1294,6 +1310,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkTripwire"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkTripwireRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
         <display_value name="dStaminaRegen" value="0.52"/>
@@ -1359,6 +1376,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkSpringHeeledJoe"/>
       <property name="DisplayType" value="drinkSpringHeeledJoe"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkSpringHeeledJoeRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
         <display_value name="dMobilityBoost" value=".5"/>
@@ -1449,6 +1467,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkPumpkinSpikeLatte"/>
       <property name="DisplayType" value="drinkPumpkinSpikeLatte"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkPumpkinSpikeLatteRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
         <!-- Consolidated to 7 key display values -->
@@ -1546,6 +1565,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkBearBrew"/>
       <property name="DisplayType" value="drinkBearBrew"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkBearBrewRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
         <!-- Consolidated to 7 key display values -->
@@ -1648,6 +1668,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkBulletproofCoffee"/>
       <property name="DisplayType" value="drinkBulletproofCoffee"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkBulletproofCoffeeRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
         <display_value name="dPhysicalResist" value="0.6"/>
@@ -1728,6 +1749,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkLondonFogLatte"/>
       <property name="DisplayType" value="drinkLondonFogLatte"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkLondonFogLatteRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
         <display_value name="dSneakDamage" value="1.5"/>
@@ -1827,8 +1849,9 @@
     <!-- ========================================================= -->
     <item name="drinkNightmareNitroColdBrew">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkNightmareNitro"/>
-      <property name="DisplayType" value="drinkNightmareNitro"/>
+      <property name="CustomIcon" value="drinkNightmareNitroColdBrew"/>
+      <property name="DisplayType" value="drinkNightmareNitroColdBrew"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkNightmareNitroColdBrewRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 4">
         <display_value name="dStaminaRegen" value="0.78"/>
@@ -1900,6 +1923,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkQuad"/>
       <property name="DisplayType" value="drinkQuad"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkQuadRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 5">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -1958,6 +1982,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkDragonsBreathEspresso"/>
       <property name="DisplayType" value="drinkDragonsBreathEspresso"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkDragonsBreathEspressoRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 5">
         <display_value name="dDragonBreath" value="1"/>
@@ -2002,6 +2027,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkApexBrew"/>
       <property name="DisplayType" value="drinkApexBrew"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkApexBrewRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 5">
         <display_value name="dApexPredator" value="1"/>
@@ -2044,6 +2070,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkPhoenixFireLatte"/>
       <property name="DisplayType" value="drinkPhoenixFireLatte"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkPhoenixFireLatteRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 5">
         <display_value name="dPhoenixFire" value="1"/>
@@ -2079,7 +2106,7 @@
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="CustomIcon" value="drinkGrandpasLastStand"/>
       <property name="DisplayType" value="drinkGrandpasLastStand"/>
-      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkGrandpasLastStandSchematic"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkGrandpasLastStandRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 5">
         <display_value name="dGrandpaLegacy" value="1"/>
