@@ -9,6 +9,42 @@
     <append xpath="/traders/trader_item_groups/trader_item_group[@name='preparedDrink']">
         <item name="drinkJarMilk" count="1,2"/>
         <item name="drinkJarCreamer" count="1,2"/>
+        <item name="drinkFilthyJoe" count="2,3"/>
+        <item name="drinkWastelandWheatgrass" count="2,3"/>
+        <item name="drinkHotCupOfJoe" count="2,3"/>
+        <item name="drinkIcedCoffee" count="2,3"/>
+        <item name="drinkColdBrewCoffee" count="1,2"/>
+        <item name="drinkJarPurifiedWater" count="1,2"/>
+        <item name="drinkShotOfEspresso" count="1,2"/>
+        <item name="drinkAmericano" count="1,2"/>
+        <item name="drinkBlackStrapCoffee" count="1,2"/>
+        <item name="drinkPremiumColdBrew" count="1,2"/>
+        <item name="drinkDoubleTap" count="1,2"/>
+        <item name="drinkCappuccino" count="1,2"/>
+        <item name="drinkCafeLatte" count="1,2"/>
+        <item name="drinkCafeCreme" count="1,2"/>
+        <item name="drinkCafeBreve" count="1,2"/>
+        <item name="drinkAffogato" count="1,2"/>
+        <item name="drinkTripwire" count="1"/>
+        <item name="drinkSpringHeeledJoe" count="1"/>
+        <item name="drinkPumpkinSpikeLatte" count="1"/>
+        <item name="drinkBearBrew" count="1"/>
+        <item name="drinkBulletproofCoffee" count="1"/>
+        <item name="drinkLondonFogLatte" count="1"/>
+        <item name="drinkNightmareNitroColdBrew" count="1"/>
+        <item name="drinkQuad" count="1"/>
+        <item name="drinkDragonsBreathEspresso" count="1"/>
+        <item name="drinkApexBrew" count="1"/>
+        <item name="drinkPhoenixFireLatte" count="1"/>
+        <item name="drinkGrandpasLastStand" count="1"/>
+    </append>
+
+    <append xpath="/traders/trader_item_groups/trader_item_group[@name='farmingCookingRecipes']">
+        <item name="drinkJarMilk" count="1,2"/>
+        <item name="drinkJarCreamer" count="1,2"/>
+        <item name="drinkFilthyJoe" count="2,3"/>
+        <item name="drinkHotCupOfJoe" count="2,3"/>
+        <item name="drinkIcedCoffee" count="2,3"/>
     </append>
 
     <append xpath="/traders/trader_item_groups/trader_item_group[@name='cannedfood']">
@@ -26,5 +62,8 @@
         <item name="resourcePowderedMilk" count="2,8"/>
         <item name="resourcePowderedCreamer" count="2,8"/>
     </append>
+
+    <remove xpath="/traders/trader_item_groups/trader_item_group[@name='preparedDrink']/item[@name='drinkJarCoffee']"/>
+    <remove xpath="/traders/trader_item_groups/trader_item_group[@name='farmingCookingRecipes']/item[@name='drinkJarCoffeeSchematic']"/>
 
 </hurgleburgler>

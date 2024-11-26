@@ -302,9 +302,15 @@
     <!--   Dehydration: 2 (minimal due to weak brew)                   -->
     <!--   Cold Resist: 10                                             -->
     <!-- ============================================================= -->
-    <item name="drinkFilthyJoe">
+    <item name="hgBB_Level1">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkFilthyJoe"/>
+      <property name="Stacknumber" value="50"/>
+      <property name="EconomicBundleSize" value="50"/>
+    </item>
+
+    <item name="drinkFilthyJoe">
+      <property name="Extends" value="hgBB_Level1"/>
+      <property name="EconomicValue" value="40"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkFilthyJoeRecipe"/>
 
@@ -354,8 +360,8 @@
     <!--   Balanced Stats: No major penalties                       -->
     <!-- ========================================================== -->
     <item name="drinkWastelandWheatgrass">
-      <property name="Extends" value="drinkJarCoffee"/>
-      <property name="CustomIcon" value="drinkWastelandWheatgrass"/>
+      <property name="Extends" value="hgBB_Level1"/>
+      <property name="EconomicValue" value="65"/>
       <property name="DisplayType" value="drinkWastelandWheatgrass"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkWastelandWheatgrassRecipe"/>
 
@@ -403,8 +409,8 @@
     <!--   Cold Resist: 10 (Level 1 hot drink)                      -->
     <!-- ========================================================== -->
     <item name="drinkHotCupOfJoe">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkHotCupOfJoe"/>
+      <property name="Extends" value="hgBB_Level1"/>
+      <property name="EconomicValue" value="50"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkHotCupOfJoeRecipe"/>
 
@@ -447,8 +453,8 @@
     <!--   Heat Resist: 10 (Level 1 cold drink)                     -->
     <!-- ========================================================== -->
     <item name="drinkIcedCoffee">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkIcedCoffee"/>
+      <property name="Extends" value="hgBB_Level1"/>
+      <property name="EconomicValue" value="55"/>
       <property name="DisplayType" value="drinkBB_BasicColdCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkIcedCoffeeRecipe"/>
 
@@ -491,8 +497,8 @@
     <!--   Heat Resist: 10 (Level 1 cold drink)                     -->
     <!-- ========================================================== -->
     <item name="drinkColdBrewCoffee">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkColdBrewCoffee"/>
+      <property name="Extends" value="hgBB_Level1"/>
+      <property name="EconomicValue" value="120"/>
       <property name="DisplayType" value="drinkBB_BasicColdCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkColdBrewCoffeeRecipe"/>
 
@@ -555,9 +561,15 @@
     <!--   Used as ingredient in premium coffee variants           -->
     <!--   Requires charcoal filtration process                    -->
     <!-- ========================================================= -->
-    <item name="drinkJarPurifiedWater">
+    <item name="hgBB_Level2">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkJarPurifiedWater"/>
+      <property name="Stacknumber" value="25"/>
+      <property name="EconomicBundleSize" value="25"/>
+    </item>
+
+    <item name="drinkJarPurifiedWater">
+      <property name="Extends" value="hgBB_Level2"/>
+      <property name="EconomicValue" value="60"/>
       <property name="DisplayType" value="drinkJarPurifiedWater"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkJarPurifiedWaterRecipe"/>
 
@@ -607,8 +619,8 @@
     <!--   Foundation for all higher-tier espresso drinks          -->
     <!-- ========================================================= -->
     <item name="drinkShotOfEspresso">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkShotOfEspresso"/>
+      <property name="Extends" value="hgBB_Level2"/>
+      <property name="EconomicValue" value="100"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkShotOfEspressoRecipe"/>
 
@@ -666,8 +678,8 @@
     <!--   Middle ground between coffee and espresso               -->
     <!-- ========================================================= -->
     <item name="drinkAmericano">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkAmericano"/>
+      <property name="Extends" value="hgBB_Level2"/>
+      <property name="EconomicValue" value="120"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkAmericanoRecipe"/>
 
@@ -729,8 +741,8 @@
     <!--   Dangerous but effective boost                           -->
     <!-- ========================================================= -->
     <item name="drinkBlackStrapCoffee">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkBlackStrapCoffee"/>
+      <property name="Extends" value="hgBB_Level2"/>
+      <property name="EconomicValue" value="200"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkBlackStrapCoffeeRecipe"/>
 
@@ -796,8 +808,8 @@
     <!--   Long brew time (1800s) justifies bonuses                -->
     <!-- ========================================================= -->
     <item name="drinkPremiumColdBrew">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkPremiumColdBrew"/>
+      <property name="Extends" value="hgBB_Level2"/>
+      <property name="EconomicValue" value="180"/>
       <property name="DisplayType" value="drinkPremiumColdBrew"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkPremiumColdBrewRecipe"/>
 
@@ -865,9 +877,15 @@
     <!--   Significant dehydration risk                            -->
     <!--   Demonstrates diminishing returns on stacking            -->
     <!-- ========================================================= -->
-    <item name="drinkDoubleTap">
+    <item name="hgBB_Level3">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkDoubleTap"/>
+      <property name="Stacknumber" value="10"/>
+      <property name="EconomicBundleSize" value="10"/>
+    </item>
+
+    <item name="drinkDoubleTap">
+      <property name="Extends" value="hgBB_Level3"/>
+      <property name="EconomicValue" value="200"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkDoubleTapRecipe"/>
 
@@ -932,8 +950,8 @@
     <!--   Traditional 1:1:1 ratio of espresso:milk:foam           -->
     <!-- ========================================================= -->
     <item name="drinkCappuccino">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkCappuccino"/>
+      <property name="Extends" value="hgBB_Level3"/>
+      <property name="EconomicValue" value="250"/>
       <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkCappuccinoRecipe"/>
 
@@ -1002,8 +1020,8 @@
     <!--   Highest food/health benefit of coffee drinks            -->
     <!-- ========================================================= -->
     <item name="drinkCafeLatte">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkCafeLatte"/>
+      <property name="Extends" value="hgBB_Level3"/>
+      <property name="EconomicValue" value="280"/>
       <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkCafeLatteRecipe"/>
 
@@ -1072,8 +1090,8 @@
     <!--   Less nutritional benefit than fresh milk                -->
     <!-- ========================================================= -->
     <item name="drinkCafeCreme">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkCafeCreme"/>
+      <property name="Extends" value="hgBB_Level3"/>
+      <property name="EconomicValue" value="300"/>
       <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkCafeCremeRecipe"/>
 
@@ -1144,8 +1162,8 @@
     <!--   Traditional Italian-American rich preparation           -->
     <!-- ========================================================= -->
     <item name="drinkCafeBreve">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkCafeBreve"/>
+      <property name="Extends" value="hgBB_Level3"/>
+      <property name="EconomicValue" value="350"/>
       <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkCafeBreveRecipe"/>
 
@@ -1219,8 +1237,8 @@
     <!--   Balanced between power and sustenance                   -->
     <!-- ========================================================= -->
     <item name="drinkAffogato">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkAffogato"/>
+      <property name="Extends" value="hgBB_Level3"/>
+      <property name="EconomicValue" value="400"/>
       <property name="DisplayType" value="drinkAffogato"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkAffogatoRecipe"/>
 
@@ -1307,9 +1325,15 @@
     <!--   Demonstrates strong diminishing returns                  -->
     <!--   Risk/reward balanced for highest tier                    -->
     <!-- ========================================================== -->
-    <item name="drinkTripwire">
+    <item name="hgBB_Level4">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkTripwire"/>
+      <property name="Stacknumber" value="5"/>
+      <property name="EconomicBundleSize" value="5"/>
+    </item>
+
+    <item name="drinkTripwire">
+      <property name="Extends" value="hgBB_Level4"/>
+      <property name="EconomicValue" value="400"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkTripwireRecipe"/>
 
@@ -1374,8 +1398,8 @@
     <!--   Balanced with moderate dehydration                     -->
     <!-- ======================================================== -->
     <item name="drinkSpringHeeledJoe">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkSpringHeeledJoe"/>
+      <property name="Extends" value="hgBB_Level4"/>
+      <property name="EconomicValue" value="600"/>
       <property name="DisplayType" value="drinkSpringHeeledJoe"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkSpringHeeledJoeRecipe"/>
 
@@ -1465,8 +1489,8 @@
     <!--   Balanced dehydration penalty                            -->
     <!-- ========================================================= -->
     <item name="drinkPumpkinSpikeLatte">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkPumpkinSpikeLatte"/>
+      <property name="Extends" value="hgBB_Level4"/>
+      <property name="EconomicValue" value="650"/>
       <property name="DisplayType" value="drinkPumpkinSpikeLatte"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkPumpkinSpikeLatteRecipe"/>
 
@@ -1563,8 +1587,8 @@
     <!--   Fatigue penalty after effects wear off                  -->
     <!-- ========================================================= -->
     <item name="drinkBearBrew">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkBearBrew"/>
+      <property name="Extends" value="hgBB_Level4"/>
+      <property name="EconomicValue" value="700"/>
       <property name="DisplayType" value="drinkBearBrew"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkBearBrewRecipe"/>
 
@@ -1666,8 +1690,8 @@
     <!--   Perfect for high-risk exploration                       -->
     <!-- ========================================================= -->
     <item name="drinkBulletproofCoffee">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkBulletproofCoffee"/>
+      <property name="Extends" value="hgBB_Level4"/>
+      <property name="EconomicValue" value="750"/>
       <property name="DisplayType" value="drinkBulletproofCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkBulletproofCoffeeRecipe"/>
 
@@ -1747,8 +1771,8 @@
     <!--   Ideal for stealth archer builds                         -->
     <!-- ========================================================= -->
     <item name="drinkLondonFogLatte">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkLondonFogLatte"/>
+      <property name="Extends" value="hgBB_Level4"/>
+      <property name="EconomicValue" value="800"/>
       <property name="DisplayType" value="drinkLondonFogLatte"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkLondonFogLatteRecipe"/>
 
@@ -1849,8 +1873,8 @@
     <!--   Requires careful water management                       -->
     <!-- ========================================================= -->
     <item name="drinkNightmareNitroColdBrew">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkNightmareNitroColdBrew"/>
+      <property name="Extends" value="hgBB_Level4"/>
+      <property name="EconomicValue" value="1000"/>
       <property name="DisplayType" value="drinkNightmareNitroColdBrew"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkNightmareNitroColdBrewRecipe"/>
 
@@ -1920,9 +1944,15 @@
     <!--   Foundation for legendary variants                       -->
     <!--   Requires master brewing technique                       -->
     <!-- ========================================================= -->
-    <item name="drinkQuad">
+    <item name="hgBB_Level5">
       <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkQuad"/>
+      <property name="Stacknumber" value="1"/>
+      <property name="EconomicBundleSize" value="1"/>
+    </item>
+
+    <item name="drinkQuad">
+      <property name="Extends" value="hgBB_Level5"/>
+      <property name="EconomicValue" value="800"/>
       <property name="DisplayType" value="drinkQuad"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkQuadRecipe"/>
 
@@ -1980,8 +2010,8 @@
     <!--   Combines with Ring of Fire for AOE                      -->
     <!-- ========================================================= -->
     <item name="drinkDragonsBreathEspresso">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkDragonsBreathEspresso"/>
+      <property name="Extends" value="hgBB_Level5"/>
+      <property name="EconomicValue" value="12000"/>
       <property name="DisplayType" value="drinkDragonsBreathEspresso"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkDragonsBreathEspressoRecipe"/>
 
@@ -2025,8 +2055,8 @@
     <!--   Use timing carefully                                    -->
     <!-- ========================================================= -->
     <item name="drinkApexBrew">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkApexBrew"/>
+      <property name="Extends" value="hgBB_Level5"/>
+      <property name="EconomicValue" value="1250"/>
       <property name="DisplayType" value="drinkApexBrew"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkApexBrewRecipe"/>
 
@@ -2068,8 +2098,8 @@
     <!--   Followed by period of enhanced vitality                -->
     <!-- ======================================================== -->
     <item name="drinkPhoenixFireLatte">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkPhoenixFireLatte"/>
+      <property name="Extends" value="hgBB_Level5"/>
+      <property name="EconomicValue" value="25000"/>
       <property name="DisplayType" value="drinkPhoenixFireLatte"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkPhoenixFireLatteRecipe"/>
       <property name="HoldType" value="4"/>
@@ -2105,8 +2135,8 @@
     <!--   Permanent injuries                                     -->
     <!-- ======================================================== -->
     <item name="drinkGrandpasLastStand">
-      <property name="Extends" value="drinkJarBoiledWater"/>
-      <property name="CustomIcon" value="drinkGrandpasLastStand"/>
+      <property name="Extends" value="hgBB_Level5"/>
+      <property name="EconomicValue" value="50000"/>
       <property name="DisplayType" value="drinkGrandpasLastStand"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkGrandpasLastStandRecipe"/>
 
@@ -2256,6 +2286,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkBlackStrapCoffee"/>
       <property name="Unlocks" value="drinkBlackStrapCoffee"/>
+      <property name="EconomicValue" value="10000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkBlackStrapCoffee" operation="set" value="1"/>
@@ -2268,6 +2299,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkPremiumColdBrew"/>
       <property name="Unlocks" value="drinkPremiumColdBrew"/>
+      <property name="EconomicValue" value="10000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkPremiumColdBrew" operation="set" value="1"/>
@@ -2293,6 +2325,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkCappuccino"/>
       <property name="Unlocks" value="drinkCappuccino"/>
+      <property name="EconomicValue" value="10000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkCappuccino" operation="set" value="1"/>
@@ -2305,6 +2338,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkCafeLatte"/>
       <property name="Unlocks" value="drinkCafeLatte"/>
+      <property name="EconomicValue" value="10000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkCafeLatte" operation="set" value="1"/>
@@ -2317,6 +2351,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkCafeCreme"/>
       <property name="Unlocks" value="drinkCafeCreme"/>
+      <property name="EconomicValue" value="10000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkCafeCreme" operation="set" value="1"/>
@@ -2329,6 +2364,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkCafeBreve"/>
       <property name="Unlocks" value="drinkCafeBreve"/>
+      <property name="EconomicValue" value="10000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkCafeBreve" operation="set" value="1"/>
@@ -2341,6 +2377,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkAffogato"/>
       <property name="Unlocks" value="drinkAffogato"/>
+      <property name="EconomicValue" value="10000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkAffogato" operation="set" value="1"/>
@@ -2366,6 +2403,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkSpringHeeledJoe"/>
       <property name="Unlocks" value="drinkSpringHeeledJoe"/>
+      <property name="EconomicValue" value="25000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkSpringHeeledJoe" operation="set" value="1"/>
@@ -2378,6 +2416,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkPumpkinSpikeLatte"/>
       <property name="Unlocks" value="drinkPumpkinSpikeLatte"/>
+      <property name="EconomicValue" value="25000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkPumpkinSpikeLatte" operation="set" value="1"/>
@@ -2390,6 +2429,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkBearBrew"/>
       <property name="Unlocks" value="drinkBearBrew"/>
+      <property name="EconomicValue" value="25000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkBearBrew" operation="set" value="1"/>
@@ -2402,6 +2442,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkBulletproofCoffee"/>
       <property name="Unlocks" value="drinkBulletproofCoffee"/>
+      <property name="EconomicValue" value="25000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkBulletproofCoffee" operation="set" value="1"/>
@@ -2414,6 +2455,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkLondonFogLatte"/>
       <property name="Unlocks" value="drinkLondonFogLatte"/>
+      <property name="EconomicValue" value="25000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkLondonFogLatte" operation="set" value="1"/>
@@ -2426,6 +2468,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkNightmareNitroColdBrew"/>
       <property name="Unlocks" value="drinkNightmareNitroColdBrew"/>
+      <property name="EconomicValue" value="25000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkNightmareNitroColdBrew" operation="set" value="1"/>
@@ -2451,6 +2494,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkDragonsBreathEspresso"/>
       <property name="Unlocks" value="drinkDragonsBreathEspresso"/>
+      <property name="EconomicValue" value="50000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkDragonsBreathEspresso" operation="set" value="1"/>
@@ -2463,6 +2507,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkApexBrew"/>
       <property name="Unlocks" value="drinkApexBrew"/>
+      <property name="EconomicValue" value="50000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkApexBrew" operation="set" value="1"/>
@@ -2475,6 +2520,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkPhoenixFireLatte"/>
       <property name="Unlocks" value="drinkPhoenixFireLatte"/>
+      <property name="EconomicValue" value="50000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkPhoenixFireLatte" operation="set" value="1"/>
@@ -2487,6 +2533,7 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkGrandpasLastStand"/>
       <property name="Unlocks" value="drinkGrandpasLastStand"/>
+      <property name="EconomicValue" value="50000"/>
 
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkGrandpasLastStand" operation="set" value="1"/>

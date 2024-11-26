@@ -353,4 +353,8 @@
 
   </append>
 
+  <!-- Remove legacy recipes -->
+  <remove xpath="/recipes/recipe[@name='drinkJarCoffee']"/>
+  <remove xpath="/recipes/recipe[@name='drinkJarBlackStrapCoffee']"/>
+
 </hurgleburgler>

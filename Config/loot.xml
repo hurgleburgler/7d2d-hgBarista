@@ -259,4 +259,15 @@
     <item group="groupLegendaryCoffee" loot_prob_template="veryLow"/>
   </append>
 
+  <!-- Remove legacy coffee from loot -->
+  <remove xpath="/lootcontainers/lootgroup[@name='drinks']/item[@name='drinkJarCoffee']"/>
+  <remove xpath="/lootcontainers/lootgroup[@name='groupDrinksUncommon']/item[@name='drinkJarCoffee']"/>
+  <remove xpath="/lootcontainers/lootgroup[@name='groupCoffeeMaker01']/item[@name='drinkJarCoffee']"/>
+  <remove xpath="/lootcontainers/lootgroup[@name='twitch_drinkspecial1']/item[@name='drinkJarCoffee']"/>
+  <remove xpath="/lootcontainers/lootgroup[@name='farmingCookingRecipesT0']/item[@name='drinkJarCoffeeSchematic']"/>
+
+  <remove xpath="/lootcontainers/lootgroup[@name='rareFoodDrink']/item[@name='drinkJarBlackStrapCoffee']"/>
+  <remove xpath="/lootcontainers/lootgroup[@name='groupDrinksRare']/item[@name='drinkJarBlackStrapCoffee']"/>
+  <remove xpath="/lootcontainers/lootgroup[@name='twitch_drinkspecial2']/item[@name='drinkJarBlackStrapCoffee']"/>
+
 </configs>
