@@ -58,42 +58,42 @@
     <!-- ========================================================== -->
 
     <!-- Filthy Joe - Quick, basic coffee with minimal effects -->
-    <recipe name="drinkFilthyJoe" count="5" craft_area="campfire" craft_tool="toolBeaker" tags="perkBattlefieldBarista" craft_time="60">
+    <recipe name="drinkFilthyJoe" count="5" craft_area="campfire" craft_tool="toolBeaker" craft_time="60" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarRiverWater" count="5"/>
       <ingredient name="resourceCropCoffeeBeans" count="2"/>
     </recipe>
 
-    <recipe name="drinkFilthyJoe" count="5" craft_area="espressoDrinks_hgBB" craft_tool="toolBeaker" tags="perkBattlefieldBarista" craft_time="30">
+    <recipe name="drinkFilthyJoe" count="5" craft_area="espressoDrinks_hgBB" craft_tool="toolBeaker" craft_time="30" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarRiverWater" count="5"/>
       <ingredient name="resourceCropCoffeeBeans" count="2"/>
     </recipe>
 
     <!-- Hot Cup of Joe - Standard coffee with cold resistance -->
-    <recipe name="drinkHotCupOfJoe" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="20">
+    <recipe name="drinkHotCupOfJoe" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="20" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarBoiledWater" count="1"/>
       <ingredient name="resourceCropCoffeeBeans" count="1"/>
     </recipe>
 
-    <recipe name="drinkHotCupOfJoe" count="1" craft_area="espressoDrinks_hgBB" craft_tool="toolBeaker" craft_time="10">
+    <recipe name="drinkHotCupOfJoe" count="1" craft_area="espressoDrinks_hgBB" craft_tool="toolBeaker" craft_time="10" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarBoiledWater" count="1"/>
       <ingredient name="resourceCropCoffeeBeans" count="1"/>
     </recipe>
 
     <!-- Iced Coffee - Standard coffee with heat resistance -->
-    <recipe name="drinkIcedCoffee" count="1" craft_time="1">
+    <recipe name="drinkIcedCoffee" count="1" craft_time="1" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkHotCupOfJoe" count="1"/>
       <ingredient name="resourceSnowBall" count="1"/>
     </recipe>
 
     <!-- Wasteland Wheatgrass - Health drink with disease resistance -->
-    <recipe name="drinkWastelandWheatgrass" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="15">
+    <recipe name="drinkWastelandWheatgrass" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="15" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarBoiledWater" count="1"/>
       <ingredient name="resourceYuccaFibers" count="5"/>
       <ingredient name="resourcePaper" count="5"/>
     </recipe>
 
     <!-- Cold Brew Coffee - Long brew time, long duration, high stamina regen, heat resistance -->
-    <recipe name="drinkColdBrewCoffee" count="5" craft_time="1800">
+    <recipe name="drinkColdBrewCoffee" count="5" craft_time="1800" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarBoiledWater" count="5"/>
       <ingredient name="resourceCropCoffeeBeans" count="5"/>
       <ingredient name="resourceSnowBall" count="5"/>
@@ -105,48 +105,48 @@
     <!-- ========================================================== -->
 
     <!-- Purified Water - Base water for Level 2 drinks, improved health and efficiency -->
-    <recipe name="drinkJarPurifiedWater" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="20">
+    <recipe name="drinkJarPurifiedWater" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="20" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarBoiledWater" count="1"/>
       <ingredient name="resourceCoal" count="1"/>
     </recipe>
 
-    <recipe name="drinkJarPurifiedWater" count="1" craft_area="espressoDrinks_hgBB" craft_tool="toolBeaker" craft_time="10">
+    <recipe name="drinkJarPurifiedWater" count="1" craft_area="espressoDrinks_hgBB" craft_tool="toolBeaker" craft_time="10" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarBoiledWater" count="1"/>
       <ingredient name="resourceCoal" count="1"/>
     </recipe>
 
     <!-- Shot of Espresso - Concentrated coffee with high initial burst -->
-    <recipe name="drinkShotOfEspresso" count="2" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="60">
+    <recipe name="drinkShotOfEspresso" count="2" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="60" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarPurifiedWater" count="1"/>
       <ingredient name="resourceCropCoffeeBeans" count="2"/>
     </recipe>
 
     <!-- Americano - Extended espresso with better hydration -->
-    <recipe name="drinkAmericano" count="1" craft_time="5">
+    <recipe name="drinkAmericano" count="1" craft_time="5" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkShotOfEspresso" count="2"/>
       <ingredient name="drinkJarPurifiedWater" count="1"/>
     </recipe>
 
     <!-- Black Strap Coffee - Miners' special with gunpowder boost -->
-    <recipe name="drinkBlackStrapCoffee" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="20">
+    <recipe name="drinkBlackStrapCoffee" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="20" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarBoiledWater" count="1"/>
       <ingredient name="resourceCropCoffeeBeans" count="1"/>
       <ingredient name="resourceGunPowder" count="5"/>
     </recipe>
 
-    <recipe name="drinkBlackStrapCoffee" count="1" craft_area="espressoDrinks_hgBB" craft_tool="toolBeaker" craft_time="10">
+    <recipe name="drinkBlackStrapCoffee" count="1" craft_area="espressoDrinks_hgBB" craft_tool="toolBeaker" craft_time="10" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarBoiledWater" count="1"/>
       <ingredient name="resourceCropCoffeeBeans" count="1"/>
       <ingredient name="resourceGunPowder" count="5"/>
     </recipe>
 
-    <recipe name="drinkBlackStrapCoffee" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="180">
+    <recipe name="drinkBlackStrapCoffee" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="180" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkHotCupOfJoe" count="1"/>
       <ingredient name="resourceGunPowder" count="5"/>
     </recipe>
 
     <!-- Premium Cold Brew - Luxury version with purified water -->
-    <recipe name="drinkPremiumColdBrew" count="5" craft_time="1800">
+    <recipe name="drinkPremiumColdBrew" count="5" craft_time="1800" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarPurifiedWater" count="5"/>
       <ingredient name="resourceCropCoffeeBeans" count="5"/>
       <ingredient name="resourceSnowBall" count="5"/>
@@ -157,53 +157,53 @@
     <!-- ========================================================== -->
 
     <!-- Double Tap - Enhanced espresso with stacking capability -->
-    <recipe name="drinkDoubleTap" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="120">
+    <recipe name="drinkDoubleTap" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="120" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarPurifiedWater" count="2"/>
       <ingredient name="resourceCropCoffeeBeans" count="4"/>
     </recipe>
 
-    <recipe name="drinkDoubleTap" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="5">
+    <recipe name="drinkDoubleTap" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="5" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkShotOfEspresso" count="2"/>
     </recipe>
 
     <!-- Cappuccino - 1 - Classic espresso with canned milk -->
-    <recipe name="drinkCappuccino" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="60">
+    <recipe name="drinkCappuccino" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="60" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkDoubleTap" count="1"/>
       <ingredient name="foodCanMilk" count="1"/>
     </recipe>
 
     <!-- Cappuccino - 2 - Classic espresso with jarred milk -->
-    <recipe name="drinkCappuccino" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="60">
+    <recipe name="drinkCappuccino" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="60" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkDoubleTap" count="1"/>
       <ingredient name="drinkJarMilk" count="1"/>
     </recipe>
 
     <!-- Café Latte - Double espresso with steamed milk (canned) -->
-    <recipe name="drinkCafeLatte" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="60">
+    <recipe name="drinkCafeLatte" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="60" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkDoubleTap" count="1"/>
       <ingredient name="foodCanMilk" count="2"/>
     </recipe>
 
     <!-- Café Latte - Double espresso with steamed milk (jarred) -->
-    <recipe name="drinkCafeLatte" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="60">
+    <recipe name="drinkCafeLatte" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="60" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkDoubleTap" count="1"/>
       <ingredient name="drinkJarMilk" count="2"/>
     </recipe>
 
     <!-- Café Crème - Espresso with creamer for richness -->
-    <recipe name="drinkCafeCreme" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="60">
+    <recipe name="drinkCafeCreme" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="60" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkDoubleTap" count="1"/>
       <ingredient name="drinkJarCreamer" count="1"/>
     </recipe>
 
     <!-- Café Breve - Rich double espresso with double creamer -->
-    <recipe name="drinkCafeBreve" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="60">
+    <recipe name="drinkCafeBreve" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="60" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkDoubleTap" count="1"/>
       <ingredient name="drinkJarCreamer" count="2"/>
     </recipe>
 
     <!-- Affogato - Dessert coffee assembled anywhere -->
-    <recipe name="drinkAffogato" count="1" craft_time="5">
+    <recipe name="drinkAffogato" count="1" craft_time="5" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkDoubleTap" count="1"/>
       <ingredient name="drinkJarCreamer" count="2"/>
       <ingredient name="resourceSnowBall" count="2"/>
@@ -216,22 +216,22 @@
     <!-- ========================================================== -->
 
     <!-- Tripwire - Triple shot espresso base for combat drinks -->
-    <recipe name="drinkTripwire" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="180">
+    <recipe name="drinkTripwire" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="180" tags="perkBattlefieldBarista,learnable">
        <ingredient name="drinkJarPurifiedWater" count="3"/>
       <ingredient name="resourceCropCoffeeBeans" count="6"/>
     </recipe>
 
-    <recipe name="drinkTripwire" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="5">
+    <recipe name="drinkTripwire" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="5" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkShotOfEspresso" count="3"/>
     </recipe>
 
-    <recipe name="drinkTripwire" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="5">
+    <recipe name="drinkTripwire" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="5" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkDoubleTap" count="1"/>
       <ingredient name="drinkShotOfEspresso" count="2"/>
     </recipe>
 
     <!-- Cuppa Spring-Heeled Joe - Combat coffee with enhanced mobility -->
-    <recipe name="drinkSpringHeeledJoe" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120">
+    <recipe name="drinkSpringHeeledJoe" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkTripwire" count="1"/>
       <ingredient name="drugOhShitzDrops" count="1"/>
       <ingredient name="resourceSpring" count="1"/>
@@ -239,7 +239,7 @@
     </recipe>
 
     <!-- Pumpkin-Spiked Latte - Combat coffee for club specialists -->
-    <recipe name="drinkPumpkinSpikeLatte" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120">
+    <recipe name="drinkPumpkinSpikeLatte" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkTripwire" count="1"/>
       <ingredient name="drugSkullCrushers" count="1"/>
       <ingredient name="foodCropPumpkin" count="1"/>
@@ -248,7 +248,7 @@
     </recipe>
 
     <!-- Recipe remains the same -->
-    <recipe name="drinkBearBrew" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120">
+    <recipe name="drinkBearBrew" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkTripwire" count="1"/>
       <ingredient name="resourceTestosteroneExtract" count="1"/>
       <ingredient name="resourceAnimalFat" count="3"/>
@@ -256,7 +256,7 @@
     </recipe>
 
     <!-- Recipe remains the same -->
-    <recipe name="drinkBulletproofCoffee" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120">
+    <recipe name="drinkBulletproofCoffee" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkTripwire" count="1"/>
       <ingredient name="foodCanMilk" count="1"/>
       <ingredient name="foodHoney" count="1"/>
@@ -265,7 +265,7 @@
     </recipe>
 
     <!-- London Fog Latte - Stealth-focused tea latte -->
-    <recipe name="drinkLondonFogLatte" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120">
+    <recipe name="drinkLondonFogLatte" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarRedTea" count="1"/>
       <ingredient name="drinkJarGoldenRodTea" count="1"/>
       <ingredient name="foodCanMilk" count="1"/>
@@ -275,7 +275,7 @@
     </recipe>
 
     <!-- Nightmare Nitro Cold Brew - Ultimate pressurized coffee -->
-    <recipe name="drinkNightmareNitroColdBrew" count="5" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="2400">
+    <recipe name="drinkNightmareNitroColdBrew" count="5" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="2400" tags="perkBattlefieldBarista,learnable">
       <ingredient name="resourceCropCoffeeBeans" count="5"/>
       <ingredient name="drinkJarPurifiedWater" count="5"/>
       <ingredient name="resourceSnowBall" count="5"/>
@@ -289,26 +289,26 @@
     <!-- ========================================================== -->
 
     <!-- The Quad - Base Level 5 drink -->
-    <recipe name="drinkQuad" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="240">
+    <recipe name="drinkQuad" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="240" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarPurifiedWater" count="4"/>
       <ingredient name="resourceCropCoffeeBeans" count="8"/>
     </recipe>
 
     <!-- Alternative recipes for The Quad -->
-    <recipe name="drinkQuad" count="1" craft_time="5">
+    <recipe name="drinkQuad" count="1" craft_time="5" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkShotOfEspresso" count="4"/>
     </recipe>
 
-    <recipe name="drinkQuad" count="1" craft_time="5">
+    <recipe name="drinkQuad" count="1" craft_time="5" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkDoubleTap" count="2"/>
     </recipe>
 
-    <recipe name="drinkQuad" count="1" craft_time="5">
+    <recipe name="drinkQuad" count="1" craft_time="5" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkTripwire" count="1"/>
       <ingredient name="drinkShotOfEspresso" count="1"/>
     </recipe>
     <!-- Dragon's Breath Espresso -->
-    <recipe name="drinkDragonsBreathEspresso" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120">
+    <recipe name="drinkDragonsBreathEspresso" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120" tags="perkBattlefieldBarista,learnable">
         <ingredient name="drinkQuad" count="2"/>
         <ingredient name="drinkJarCreamer" count="1"/>
         <ingredient name="foodHoney" count="2"/>
@@ -318,7 +318,7 @@
     </recipe>
 
     <!-- The Apex Brew -->
-    <recipe name="drinkApexBrew" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120">
+    <recipe name="drinkApexBrew" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120" tags="perkBattlefieldBarista,learnable">
         <ingredient name="drinkQuad" count="2"/>
         <ingredient name="drinkJarCreamer" count="1"/>
         <ingredient name="foodHoney" count="2"/>
@@ -328,7 +328,7 @@
     </recipe>
 
     <!-- Phoenix Fire Latte -->
-    <recipe name="drinkPhoenixFireLatte" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120">
+    <recipe name="drinkPhoenixFireLatte" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120" tags="perkBattlefieldBarista,learnable">
         <ingredient name="drinkQuad" count="2"/>
         <ingredient name="drinkJarCreamer" count="1"/>
         <ingredient name="foodHoney" count="2"/>
@@ -339,7 +339,7 @@
     </recipe>
 
     <!-- Grandpa's Last Stand -->
-    <recipe name="drinkGrandpasLastStand" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120">
+    <recipe name="drinkGrandpasLastStand" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120" tags="perkBattlefieldBarista,learnable">
         <ingredient name="drinkQuad" count="2"/>
         <ingredient name="drinkJarCreamer" count="1"/>
         <ingredient name="foodHoney" count="2"/>

@@ -2125,5 +2125,206 @@
       <property name="Unlocks" value="drinkGrandpasLastStand"/>
     </item>
 
+    <!-- Recipe items for Level 1 -->
+    <item name="drinkFilthyJoeRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkFilthyJoe"/>
+      <property name="Unlocks" value="drinkFilthyJoe"/>
+    </item>
+
+    <item name="drinkWastelandWheatgrassRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkWastelandWheatgrass"/>
+      <property name="Unlocks" value="drinkWastelandWheatgrass"/>
+    </item>
+
+    <item name="drinkHotCupOfJoeRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkHotCupOfJoe"/>
+      <property name="Unlocks" value="drinkHotCupOfJoe"/>
+    </item>
+
+    <item name="drinkIcedCoffeeRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkIcedCoffee"/>
+      <property name="Unlocks" value="drinkIcedCoffee"/>
+    </item>
+
+    <item name="drinkColdBrewCoffeeRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkColdBrewCoffee"/>
+      <property name="Unlocks" value="drinkColdBrewCoffee"/>
+    </item>
+
+    <!-- Recipe items for Level 2 -->
+    <item name="drinkJarPurifiedWaterRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkJarPurifiedWater"/>
+      <property name="Unlocks" value="drinkJarPurifiedWater"/>
+    </item>
+
+    <item name="drinkShotOfEspressoRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkShotOfEspresso"/>
+      <property name="Unlocks" value="drinkShotOfEspresso"/>
+    </item>
+
+    <item name="drinkAmericanoRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkAmericano"/>
+      <property name="Unlocks" value="drinkAmericano"/>
+    </item>
+
+    <item name="drinkBlackStrapCoffeeRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkBlackStrap"/>
+      <property name="Unlocks" value="drinkBlackStrapCoffee"/>
+    </item>
+
+    <item name="drinkPremiumColdBrewRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkPremiumColdBrew"/>
+      <property name="Unlocks" value="drinkPremiumColdBrew"/>
+    </item>
+
+    <!-- Recipe items for Level 3 -->
+    <item name="drinkDoubleTapRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkDoubleTap"/>
+      <property name="Unlocks" value="drinkDoubleTap"/>
+    </item>
+
+    <item name="drinkCappuccinoRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkCappuccino"/>
+      <property name="Unlocks" value="drinkCappuccino"/>
+    </item>
+
+    <item name="drinkCafeLatteRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkCafeLatte"/>
+      <property name="Unlocks" value="drinkCafeLatte"/>
+    </item>
+
+    <item name="drinkCafeCremeRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkCafeCreme"/>
+      <property name="Unlocks" value="drinkCafeCreme"/>
+    </item>
+
+    <item name="drinkCafeBreveRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkCafeBreve"/>
+      <property name="Unlocks" value="drinkCafeBreve"/>
+    </item>
+
+    <item name="drinkAffogatoRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkAffogato"/>
+      <property name="Unlocks" value="drinkAffogato"/>
+    </item>
+
+    <!-- Recipe items for Level 4 -->
+    <item name="drinkTripwireRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkTripwire"/>
+      <property name="Unlocks" value="drinkTripwire"/>
+    </item>
+
+    <item name="drinkSpringHeeledJoeRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkSpringHeeledJoe"/>
+      <property name="Unlocks" value="drinkSpringHeeledJoe"/>
+    </item>
+
+    <item name="drinkPumpkinSpikeLatteRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkPumpkinSpikeLatte"/>
+      <property name="Unlocks" value="drinkPumpkinSpikeLatte"/>
+    </item>
+
+    <item name="drinkBearBrewRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkBearBrew"/>
+      <property name="Unlocks" value="drinkBearBrew"/>
+    </item>
+
+    <item name="drinkBulletproofCoffeeRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkBulletproofCoffee"/>
+      <property name="Unlocks" value="drinkBulletproofCoffee"/>
+    </item>
+
+    <item name="drinkLondonFogLatteRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkLondonFogLatte"/>
+      <property name="Unlocks" value="drinkLondonFogLatte"/>
+    </item>
+
+    <item name="drinkNightmareNitroColdBrewRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkNightmareNitro"/>
+      <property name="Unlocks" value="drinkNightmareNitroColdBrew"/>
+    </item>
+
+    <!-- Recipe items for Level 5 -->
+    <item name="drinkQuadRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkQuad"/>
+      <property name="Unlocks" value="drinkQuad"/>
+    </item>
+
+    <item name="drinkDragonsBreathEspressoRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkDragonsBreathEspresso"/>
+      <property name="Unlocks" value="drinkDragonsBreathEspresso"/>
+    </item>
+
+    <item name="drinkApexBrewRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkApexBrew"/>
+      <property name="Unlocks" value="drinkApexBrew"/>
+    </item>
+
+    <item name="drinkPhoenixFireLatteRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkPhoenixFireLatte"/>
+      <property name="Unlocks" value="drinkPhoenixFireLatte"/>
+    </item>
+
+    <item name="drinkGrandpasLastStandRecipe">
+      <property name="Extends" value="schematicNoQualityRecipeMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="drinkGrandpasLastStand"/>
+      <property name="Unlocks" value="drinkGrandpasLastStand"/>
+    </item>
+
   </append>
 </hurgleburgler>
