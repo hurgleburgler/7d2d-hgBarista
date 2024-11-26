@@ -91,7 +91,7 @@
     <!--   Creamer: Higher food, lower health/water (10/5/5)           -->
     <!-- ============================================================= -->
     <item name="drinkJarMilk">
-      <property name="CustomIcon" value="drinkJarMilk"/>
+      <property name="CustomIcon" value="drinkJarMilk_160"/>
       <property name="Extends" value="hgDR_milkBase"/>
 
       <property class="Action-1">

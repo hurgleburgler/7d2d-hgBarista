@@ -9,6 +9,70 @@
     <lootgroup name="groupCoffeePowderBundle" count="all">
       <item name="coffeePowderBundle" count="1"/>
     </lootgroup>
+
+    <lootgroup name="groupCoffeeRecipesT1">
+      <item name="drinkFilthyJoeRecipe"/>
+      <item name="drinkWastelandWheatgrassRecipe"/>
+      <item name="drinkHotCupOfJoeRecipe"/>
+      <item name="drinkIcedCoffeeRecipe"/>
+      <item name="drinkColdBrewCoffeeRecipe"/>
+    </lootgroup>
+
+    <lootgroup name="groupCoffeeRecipesT2">
+      <item name="drinkJarPurifiedWaterRecipe"/>
+      <item name="drinkShotOfEspressoRecipe"/>
+      <item name="drinkAmericanoRecipe"/>
+      <item name="drinkBlackStrapCoffeeRecipe"/>
+      <item name="drinkPremiumColdBrewRecipe"/>
+    </lootgroup>
+
+    <lootgroup name="groupCoffeeRecipesT3">
+      <item name="drinkDoubleTapRecipe"/>
+      <item name="drinkCappuccinoRecipe"/>
+      <item name="drinkCafeLatteRecipe"/>
+      <item name="drinkCafeCremeRecipe"/>
+      <item name="drinkCafeBreveRecipe"/>
+      <item name="drinkAffogatoRecipe"/>
+    </lootgroup>
+
+    <lootgroup name="groupCoffeeRecipesT4">
+      <item name="drinkTripwireRecipe"/>
+      <item name="drinkSpringHeeledJoeRecipe"/>
+      <item name="drinkPumpkinSpikeLatteRecipe"/>
+      <item name="drinkBearBrewRecipe"/>
+      <item name="drinkBulletproofCoffeeRecipe"/>
+      <item name="drinkLondonFogLatteRecipe"/>
+      <item name="drinkNightmareNitroColdBrewRecipe"/>
+    </lootgroup>
+
+    <lootgroup name="groupCoffeeRecipesT5">
+      <item name="drinkQuadRecipe"/>
+      <item name="drinkDragonsBreathEspressoRecipe"/>
+      <item name="drinkApexBrewRecipe"/>
+      <item name="drinkPhoenixFireLatteRecipe"/>
+      <item name="drinkGrandpasLastStandRecipe"/>
+    </lootgroup>
+
+    <!-- Combat/battle focused coffee drinks -->
+    <lootgroup name="groupBattleCoffee">
+      <item name="drinkTripwire"/>
+      <item name="drinkSpringHeeledJoe"/>
+      <item name="drinkPumpkinSpikeLatte"/>
+      <item name="drinkBearBrew"/>
+      <item name="drinkBulletproofCoffee"/>
+      <item name="drinkLondonFogLatte"/>
+      <item name="drinkNightmareNitroColdBrew"/>
+    </lootgroup>
+
+    <!-- Legendary/endgame coffee recipes -->
+    <lootgroup name="groupLegendaryCoffee">
+        <item name="drinkGrandpasLastStand"/>
+        <item name="drinkPhoenixFireLatte"/>
+        <item name="drinkDragonsBreathEspresso"/>
+        <item name="drinkApexBrew"/>
+        <item name="drinkQuad"/>
+    </lootgroup>
+
   </insertAfter>
 
   <!-- Add coffee bundle to various air drop tiers -->
@@ -50,12 +114,8 @@
 
   <append xpath="/lootcontainers/lootgroup[@name='groupFoodDriedRations']">
     <item name="resourcePowderedMilk" count="1,2" loot_prob_template="med"/>
-    <item name="resourceInstantCoffee" count="1" loot_prob_template="low"/>
-    <item name="resourcePowderedCreamer" count="1,2" loot_prob_template="med"/>
-  </append>
-
-  <append xpath="/lootcontainers/lootgroup[@name='groupFoodDriedRations']">
     <item name="resourceInstantCoffee" count="1,2" loot_prob_template="med"/>
+    <item name="resourcePowderedCreamer" count="1,2" loot_prob_template="med"/>
   </append>
 
   <append xpath="/lootcontainers/lootgroup[@name='groupIngredientsUncommon']">
@@ -80,6 +140,8 @@
     <item name="resourceInstantCoffee" count="1,2" loot_prob_template="med"/>
     <item name="drinkJarCreamer" count="1" loot_prob_template="low"/>
     <item name="resourcePowderedCreamer" count="1" loot_prob_template="med"/>
+    <item group="groupCoffeeRecipesT1" loot_prob_template="low"/>
+    <item group="groupCoffeeRecipesT2" loot_prob_template="veryLow"/>
   </append>
 
     <!-- Add to kitchen/cooking locations -->
@@ -91,6 +153,110 @@
     <!-- Add rare ingredients -->
   <append xpath="/lootcontainers/lootgroup[@name='groupIngredientsRare']">
     <item name="resourcePowderedMilk" count="2,4"/>
+  </append>
+
+  <append xpath="/lootcontainers/lootgroup[@name='groupShamwayShelves']">
+    <item group="groupCoffeeRecipesT1" loot_prob_template="med"/>
+    <item group="groupCoffeeRecipesT2" loot_prob_template="low"/>
+  </append>
+
+  <append xpath="/lootcontainers/lootgroup[@name='groupShamwayCrate']">
+    <item group="groupCoffeeRecipesT2" loot_prob_template="low"/>
+    <item group="groupCoffeeRecipesT3" loot_prob_template="veryLow"/>
+  </append>
+
+  <!-- Add lower tier recipes to common food containers -->
+  <append xpath="/lootcontainers/lootgroup[@name='groupCupboard']">
+    <item group="groupCoffeeRecipesT1" loot_prob_template="low"/>
+  </append>
+
+  <append xpath="/lootcontainers/lootgroup[@name='groupRefrigerator']">
+    <item group="groupCoffeeRecipesT1" loot_prob_template="low"/>
+    <item group="groupCoffeeRecipesT2" loot_prob_template="veryLow"/>
+  </append>
+
+  <!-- Add mid-tier recipes to working stiffs (they might have break room coffee machines) -->
+  <append xpath="/lootcontainers/lootgroup[@name='groupWorkingStiffs01']">
+    <item group="groupCoffeeRecipesT2" loot_prob_template="low"/>
+    <item group="groupCoffeeRecipesT3" loot_prob_template="veryLow"/>
+  </append>
+
+  <!-- Add high tier recipes to hardened chests -->
+  <append xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT4']">
+    <item group="groupCoffeeRecipesT4" loot_prob_template="low"/>
+  </append>
+
+  <!-- Bookstore shelves -->
+  <append xpath="/lootcontainers/lootgroup[@name='groupCrackabookShelves']">
+    <item group="groupCoffeeRecipesT1" loot_prob_template="med"/>
+    <item group="groupCoffeeRecipesT2" loot_prob_template="low"/>
+    <item group="groupCoffeeRecipesT3" loot_prob_template="veryLow"/>
+  </append>
+
+  <!-- Soda fountain (often found in coffee shops/diners) -->
+  <append xpath="/lootcontainers/lootgroup[@name='groupSodaFountain']">
+    <item group="groupCoffeeRecipesT1" loot_prob_template="med"/>
+    <item group="groupCoffeeRecipesT2" loot_prob_template="low"/>
+  </append>
+
+  <!-- Book piles (can contain coffee recipe books) -->
+  <append xpath="/lootcontainers/lootgroup[@name='groupBookPile']">
+    <item group="groupCoffeeRecipesT1" loot_prob_template="low"/>
+    <item group="groupCoffeeRecipesT2" loot_prob_template="veryLow"/>
+  </append>
+
+  <!-- Add to fetch quest reward pools -->
+  <append xpath="/lootcontainers/lootgroup[@name='groupQuestFoodT2']">
+    <item group="groupCoffeePowderBundle"/>
+  </append>
+
+  <append xpath="/lootcontainers/lootgroup[@name='groupQuestFoodT3']">
+    <item group="groupCoffeePowderBundle"/>
+  </append>
+
+  <!-- Add to trader reward pools -->
+  <append xpath="/lootcontainers/lootgroup[@name='groupQuestT2Food']">
+    <item group="groupCoffeePowderBundle" count="1"/>
+  </append>
+
+  <append xpath="/lootcontainers/lootgroup[@name='groupQuestT3Food']">
+    <item group="groupCoffeePowderBundle" count="1"/>
+  </append>
+
+  <!-- Add legendary coffee to appropriate high-tier loot -->
+  <append xpath="/lootcontainers/lootgroup[@name='groupHardenedChestT5']">
+    <item group="groupCoffeeRecipesT5" loot_prob_template="low"/>
+    <item group="groupLegendaryCoffee" loot_prob_template="veryLow"/>
+  </append>
+
+  <append xpath="/lootcontainers/lootgroup[@name='rareFoodDrink']">
+    <item group="groupCoffeeRecipesT4" loot_prob_template="low"/>
+    <item group="groupCoffeeRecipesT5" loot_prob_template="veryLow"/>
+    <item group="groupLegendaryCoffee" loot_prob_template="veryLow"/>
+  </append>
+
+  <!-- Add battle coffee to military/gun loot -->
+  <append xpath="/lootcontainers/lootgroup[@name='groupArmyTruck']">
+    <item group="groupBattleCoffee" loot_prob_template="low"/>
+    <item group="groupCoffeeRecipesT4" loot_prob_template="veryLow"/>
+  </append>
+
+  <append xpath="/lootcontainers/lootgroup[@name='groupGunSafeSecure']">
+    <item group="groupBattleCoffee" loot_prob_template="veryLow"/>
+    <item group="groupCoffeeRecipesT4" loot_prob_template="veryLow"/>
+  </append>
+
+  <append xpath="/lootcontainers/lootgroup[@name='groupShotgunMessiahCrate']">
+    <item group="groupBattleCoffee" loot_prob_template="low"/>
+    <item group="groupCoffeeRecipesT4" loot_prob_template="veryLow"/>
+  </append>
+
+  <!-- Add to bookstore rare finds -->
+  <append xpath="/lootcontainers/lootgroup[@name='groupCrackabookCrate']">
+    <item group="groupCoffeeRecipesT2" loot_prob_template="med"/>
+    <item group="groupCoffeeRecipesT3" loot_prob_template="low"/>
+    <item group="groupCoffeeRecipesT4" loot_prob_template="veryLow"/>
+    <item group="groupLegendaryCoffee" loot_prob_template="veryLow"/>
   </append>
 
 </configs>
