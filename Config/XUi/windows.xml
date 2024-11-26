@@ -17,7 +17,7 @@
 
     <append xpath="/windows/window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']">
         <rect depth="1" pos="153,-45" name="ingredients" width="447" height="36" visible="{showingredients}">
-            <grid rows="10" width="447" height="32" cell_height="31" cell_width="447" controller="IngredientList" arrangement="vertical">
+            <grid rows="10" width="447" height="30" cell_height="30" cell_width="447" controller="IngredientList" arrangement="vertical">
                 <ingredient_header name="0"/>
                 <ingredient_row name="1"/>
                 <ingredient_row name="2"/>

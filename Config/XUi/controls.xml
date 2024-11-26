@@ -46,19 +46,19 @@
     <ingredient_header>
       <rect name="header" width="447" height="30">
         <rect depth="2" width="65" height="30">
-          <sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="71" height="32" color="[darkGrey]" type="sliced" fillcenter="false"/>
-          <sprite color="[darkGrey]" type="sliced"/>
-          <label depth="3" text="ITEM" text_key="lblitem" pos="32,-12" height="18" font_size="18" justify="center" pivot="center"/>
+          <sprite depth="2" name="backgroundMain" sprite="menu_empty2px" pos="-3,2" width="71" height="32" color="[black]" type="sliced" fillcenter="false"/>
+          <sprite color="[lightGrey]" type="sliced"/>
+          <label depth="3" text="ITEM" text_key="lblitem" pos="32,-14" height="24" font_size="24" justify="center" pivot="center"/>
         </rect>
         <rect depth="2" width="236" height="30" pos="68,0">
-          <sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="242" height="32" color="[darkGrey]" type="sliced" fillcenter="false"/>
-          <sprite color="[darkGrey]" type="sliced"/>
-          <label depth="3" text="NAME" text_key="mmTextName" pos="117,-12" width="230" height="18" font_size="18" justify="center" pivot="center"/>
+          <sprite depth="2" name="backgroundMain" sprite="menu_empty2px" pos="-3,2" width="242" height="32" color="[black]" type="sliced" fillcenter="false"/>
+          <sprite color="[lightGrey]" type="sliced"/>
+          <label depth="3" text="NAME" text_key="mmTextName" pos="117,-14" width="230" height="24" font_size="24" justify="center" pivot="center"/>
         </rect>
         <rect depth="2" width="140" height="30" pos="307,0">
-          <sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="146" height="32" color="[darkGrey]" type="sliced" fillcenter="false"/>
-          <sprite color="[darkGrey]" type="sliced"/>
-          <label depth="3" text="COUNT" text_key="lblContextCraftCount" pos="70,-12" width="64" height="18" font_size="18" justify="center" pivot="center"/>
+          <sprite depth="2" name="backgroundMain" sprite="menu_empty2px" pos="-3,2" width="146" height="32" color="[black]" type="sliced" fillcenter="false"/>
+          <sprite color="[lightGrey]" type="sliced"/>
+          <label depth="3" text="COUNT" text_key="lblContextCraftCount" pos="70,-14" width="64" height="24" font_size="24" justify="center" pivot="center"/>
         </rect>
       </rect>
     </ingredient_header>
@@ -66,19 +66,19 @@
     <ingredient_row>
       <rect name="row" width="447" height="30" controller="IngredientEntry">
         <rect depth="2" width="65" height="30">
-          <sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="71" height="32" color="[darkGrey]" type="sliced" fillcenter="false"/>
+          <sprite depth="2" name="backgroundMain" sprite="menu_empty2px" pos="-3,2" width="71" height="32" color="[black]" type="sliced" fillcenter="false"/>
           <sprite color="[lightGrey]" type="sliced"/>
-          <sprite depth="2" name="icon" pos="30,-12" width="20" height="20" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pivot="center" foregroundlayer="true"/>
+          <sprite depth="2" name="icon" pos="30,-14" width="26" height="26" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pivot="center" foregroundlayer="true"/>
         </rect>
         <rect depth="2" width="236" height="30" pos="68,0">
-          <sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="242" height="32" color="[darkGrey]" type="sliced" fillcenter="false"/>
+          <sprite depth="2" name="backgroundMain" sprite="menu_empty2px" pos="-3,2" width="242" height="32" color="[black]" type="sliced" fillcenter="false"/>
           <sprite color="[lightGrey]" type="sliced"/>
-          <label depth="3" name="name" pos="117,-12" width="230" height="15" font_size="15" color="[labelColor]" justify="center" pivot="center" text="{itemname}"/>
+          <label depth="3" name="name" pos="117,-14" width="230" height="22" font_size="22" color="[labelColor]" justify="center" pivot="center" text="{itemname}"/>
         </rect>
         <rect depth="2" width="140" height="30" pos="307,0">
-          <sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="146" height="32" color="[darkGrey]" type="sliced" fillcenter="false"/>
+          <sprite depth="2" name="backgroundMain" sprite="menu_empty2px" pos="-3,2" width="146" height="32" color="[black]" type="sliced" fillcenter="false"/>
           <sprite color="[lightGrey]" type="sliced"/>
-          <label depth="3" name="needCount" pos="70,-12" width="120" height="15" font_size="15" color="[labelColor]" justify="center" pivot="center" text="{haveneedcount}"/>
+          <label depth="3" name="needCount" pos="70,-14" width="120" height="22" font_size="22" color="[labelColor]" justify="center" pivot="center" text="{haveneedcount}"/>
         </rect>
       </rect>
     </ingredient_row>
