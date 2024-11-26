@@ -44,21 +44,21 @@
     </ingredient_row>-->
 
     <ingredient_row>
-      <rect name="row" width="447" height="25" controller="IngredientEntry">
-        <rect depth="2" width="65" height="24">
-          <sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="71" height="26" color="[black]" type="sliced" fillcenter="false"/>
+      <rect name="row" width="447" height="27" controller="IngredientEntry">
+        <rect depth="2" width="65" height="26">
+          <sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="71" height="28" color="[black]" type="sliced" fillcenter="false"/>
           <sprite color="[lightGrey]" type="sliced"/>
-          <sprite depth="2" name="icon" width="20" height="20" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pos="30,-22" pivot="center" foregroundlayer="true"/>
+          <sprite depth="2" name="icon" width="20" height="20" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pos="30,-12" pivot="center" foregroundlayer="true"/>
         </rect>
-        <rect depth="2" width="236" height="24" pos="68,0">
-          <sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="242" height="26" color="[black]" type="sliced" fillcenter="false"/>
+        <rect depth="2" width="236" height="26" pos="68,0">
+          <sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="242" height="28" color="[black]" type="sliced" fillcenter="false"/>
           <sprite color="[lightGrey]" type="sliced"/>
-          <label depth="3" name="name" pos="117,-23" width="230" height="13" font_size="13" color="[labelColor]" justify="center" pivot="center" text="{itemname}"/>
+          <label depth="3" name="name" pos="117,-12" width="230" height="15" font_size="15" color="[labelColor]" justify="center" pivot="center" text="{itemname}"/>
         </rect>
-        <rect depth="2" width="140" height="24" pos="307,0">
-          <sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="146" height="26" color="[black]" type="sliced" fillcenter="false"/>
+        <rect depth="2" width="140" height="26" pos="307,0">
+          <sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="146" height="28" color="[black]" type="sliced" fillcenter="false"/>
           <sprite color="[lightGrey]" type="sliced"/>
-          <label depth="3" name="needCount" pos="70,-23" width="120" height="13" font_size="13" color="[labelColor]" justify="center" pivot="center" text="{haveneedcount}"/>
+          <label depth="3" name="needCount" pos="70,-12" width="120" height="15" font_size="15" color="[labelColor]" justify="center" pivot="center" text="{haveneedcount}"/>
         </rect>
       </rect>
     </ingredient_row>
