@@ -205,15 +205,6 @@
     <item group="groupCoffeeRecipesT2" loot_prob_template="veryLow"/>
   </append>
 
-  <!-- Add to fetch quest reward pools -->
-  <append xpath="/lootcontainers/lootgroup[@name='groupQuestFoodT2']">
-    <item group="groupCoffeePowderBundle"/>
-  </append>
-
-  <append xpath="/lootcontainers/lootgroup[@name='groupQuestFoodT3']">
-    <item group="groupCoffeePowderBundle"/>
-  </append>
-
   <!-- Add to trader reward pools -->
   <append xpath="/lootcontainers/lootgroup[@name='groupQuestT2Food']">
     <item group="groupCoffeePowderBundle" count="1"/>

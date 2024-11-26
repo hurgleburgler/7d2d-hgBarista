@@ -744,7 +744,7 @@
       <property name="Extends" value="hgBB_Level2"/>
       <property name="EconomicValue" value="200"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
-      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkBlackStrapCoffeeRecipe"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkBlackStrapCoffeeRecipe,perkArtOfMiningBlackStrap"/>
 
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="5"/>
