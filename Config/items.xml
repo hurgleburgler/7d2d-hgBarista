@@ -305,7 +305,7 @@
     <item name="hgBB_Level1">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="Stacknumber" value="50"/>
-      <property name="EconomicBundleSize" value="50"/>
+      <property name="EconomicBundleSize" value="10"/>
     </item>
 
     <item name="drinkFilthyJoe">
@@ -564,7 +564,7 @@
     <item name="hgBB_Level2">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="Stacknumber" value="25"/>
-      <property name="EconomicBundleSize" value="25"/>
+      <property name="EconomicBundleSize" value="5"/>
     </item>
 
     <item name="drinkJarPurifiedWater">
@@ -880,7 +880,7 @@
     <item name="hgBB_Level3">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="Stacknumber" value="10"/>
-      <property name="EconomicBundleSize" value="10"/>
+      <property name="EconomicBundleSize" value="5"/>
     </item>
 
     <item name="drinkDoubleTap">
@@ -1328,7 +1328,7 @@
     <item name="hgBB_Level4">
       <property name="Extends" value="drinkJarBoiledWater"/>
       <property name="Stacknumber" value="5"/>
-      <property name="EconomicBundleSize" value="5"/>
+      <property name="EconomicBundleSize" value="1"/>
     </item>
 
     <item name="drinkTripwire">
@@ -2011,7 +2011,7 @@
     <!-- ========================================================= -->
     <item name="drinkDragonsBreathEspresso">
       <property name="Extends" value="hgBB_Level5"/>
-      <property name="EconomicValue" value="12000"/>
+      <property name="EconomicValue" value="6000"/>
       <property name="DisplayType" value="drinkDragonsBreathEspresso"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkDragonsBreathEspressoRecipe"/>
 
@@ -2056,7 +2056,7 @@
     <!-- ========================================================= -->
     <item name="drinkApexBrew">
       <property name="Extends" value="hgBB_Level5"/>
-      <property name="EconomicValue" value="1250"/>
+      <property name="EconomicValue" value="12500"/>
       <property name="DisplayType" value="drinkApexBrew"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkApexBrewRecipe"/>
 
