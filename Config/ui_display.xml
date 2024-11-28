@@ -18,7 +18,7 @@
     </item_display_info>
 
     <item_display_info display_type="hgDR_milkBase" display_group="groupConsumables">
-      <display_entry name="dFoodAmountAdd" title_key="statWaterAmount"/>
+      <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
       <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
       <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
     </item_display_info>
