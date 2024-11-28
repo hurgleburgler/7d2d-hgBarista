@@ -2160,13 +2160,13 @@
       </effect_group>
     </item>
 
-    <item name="coffeePowderBundle">
+    <item name="coffeePowerBundle">
       <property name="Extends" value="noteTestersDelightAdmin"/>
       <property name="CreativeMode" value="Player"/>
       <property name="CustomIcon" value="bundleCoffee"/>
       <property name="CustomIconTint" value="FFFFFF"/>
       <property name="ItemTypeIcon" value="bundle"/>
-      <property name="DescriptionKey" value="coffeePowderBundleDesc"/>
+      <property name="DescriptionKey" value="coffeePowerBundleDesc"/>
       <property class="Action0">
         <property name="Create_item" value="toolBeaker"/>
         <property name="Create_item_count" value="1"/>
