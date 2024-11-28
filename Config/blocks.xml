@@ -18,17 +18,21 @@
 			<property name="CloseSound" value="chem_station_close"/>
 			<property name="CraftSound" value="chem_station_mix_click"/>
 			<property name="CraftCompleteSound" value="chem_station_complete_item"/>
+
 			<property class="RepairItems">
 				<property name="resourceForgedIron" value="2"/>
 				<property name="resourceElectricParts" value="4"/>
 			</property>
+
 			<property name="Texture" value="282"/>
 			<property name="IsTerrainDecoration" value="true"/>
+
 			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 			<drop event="Harvest" name="resourceElectricParts" count="0" tag="salvageHarvest"/>
-			<drop event="Destroy" name="coffeeMakerCommercialJT" count="1" prob="0.7"/>
+			<drop event="Destroy" name="espressoMachine_hgBB" count="1" prob="0.5"/>
 			<drop event="Destroy" name="resourceScrapIron" count="0"/>
-			<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+			<drop event="Fall" name="scrapMetalPile" count="1" prob="0.5" stick_chance="1"/>
+
 			<property name="EconomicValue" value="244"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="Group" value="Decor/Miscellaneous"/>
@@ -41,7 +45,7 @@
 
 			<property class="Workstation">
 				<property name="Modules" value="output"/>
-				<property name="CraftingAreaRecipes" value="coffeemakerJT,espressoDrinks_hgBB"/>
+				<property name="CraftingAreaRecipes" value="espressoDrinks_hgBB"/>
 			</property>
 
 			<property name="CraftActionName" value="lblContextActionMix"/>
