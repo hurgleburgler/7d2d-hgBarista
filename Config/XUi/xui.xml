@@ -1,13 +1,30 @@
 <hurgleburgler>
 	<append xpath="/xui/ruleset">
-		<window_group name="workstation_espressoMachine_hgBB" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
+
+		<window_group name="workstation_cntCoffeeMaker_hgBB" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
+			<window name="windowCraftingList"/>
+			<window name="craftingInfoPanel"/>
+			<window name="windowCraftingQueueSmall"/>
+			<window name="windowOutputSmall"/>
+			<window name="windowNonPagingHeader"/>
+		</window_group>
+
+		<window_group name="workstation_cntCoffeeMakerCommercial_hgBB" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowCraftingList"/>
 			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
-			<window name="windowToolsEspressoMachine_hgBB"/>
-			<!--<window name="windowFuel"/>-->
 			<window name="windowOutput"/>
 			<window name="windowNonPagingHeader"/>
 		</window_group>
+
+		<window_group name="workstation_espressoMachine_hgBB" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
+			<window name="windowCraftingList"/>
+			<window name="craftingInfoPanel"/>
+			<window name="windowCraftingQueueSmall"/>
+			<window name="windowToolsEspressoMachine_hgBB"/>
+			<window name="windowOutputSmall"/>
+			<window name="windowNonPagingHeader"/>
+		</window_group>
+
 	</append>
 </hurgleburgler>
