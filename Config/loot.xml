@@ -5,10 +5,6 @@
       <item name="drinkJarCreamer" count="1" loot_prob_template="verylow"/>
     </lootgroup>
 
-    <append xpath="/lootcontainers/lootgroup[@name='cannedfood']">
-      <item name="foodCanMilk" count="1" loot_prob_template="verylow"/>
-    </append>
-
     <lootgroup name="groupCoffeePowerBundle" count="all">
       <item name="coffeePowerBundle" count="1"/>
     </lootgroup>

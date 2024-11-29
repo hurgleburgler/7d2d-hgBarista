@@ -575,7 +575,7 @@
 
       <effect_group tiered="false" name="Drink Tier 2">
         <display_value name="dWaterAmountAdd" value="40"/>
-        <display_value name="dStaminaEfficiency" value="5"/>
+        <display_value name="dStaminaEfficiency" value=".05"/>
         <display_value name="dDuration" value="180"/>
         <display_value name="dDurationMax" value="540"/>
 
