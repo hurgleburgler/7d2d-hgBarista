@@ -366,7 +366,7 @@
       </effect_group>
     </buff>
 
-    <buff name="buffStaminaEfficiency" name_key="buffStaminaEfficiency" description_key="buffStaminaEfficiencyDesc" icon="ui_game_symbol_run" icon_color="0,153,153">
+    <buff name="buffStaminaEfficiency" name_key="buffStaminaEfficiency" description_key="buffStaminaEfficiencyDesc" icon="ui_game_symbol_stomach" icon_color="0,153,153">
       <stack_type value="replace"/>
       <duration value="0"/>
       <display_value value=".buffStaminaEfficiencyDisplay"/>
