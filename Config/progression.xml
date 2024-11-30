@@ -1,7 +1,7 @@
 <hurgleburgler>
     <append xpath="/progression/perks">
         <perk name="perkBattlefieldBarista" parent="skillStrengthGeneral" name_key="perkBattlefieldBaristaName"
-              desc_key="perkBattlefieldBaristaDesc" icon="ui_game_symbol_thirst">
+              desc_key="perkBattlefieldBaristaDesc" icon="ui_game_symbol_battlefield_barista">
 
             <level_requirements level="1">
                 <requirement name="ProgressionLevel" progression_name="attStrength" operation="GTE" value="1" desc_key="reqStrengthLevel01"/>

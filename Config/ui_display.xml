@@ -3,7 +3,7 @@
   <append xpath="/ui_display_info/crafting_category_display">
 
     <crafting_category_list display_type="EspressoMachine_hgBB">
-      <crafting_category name="CFDrink/Cooking" icon="ui_game_symbol_thirst" display_name="lblCategoryDrink"/>
+      <crafting_category name="CFDrink/Cooking" icon="ui_game_symbol_battlefield_barista" display_name="lblCategoryDrink"/>
     </crafting_category_list>
 
   </append>
