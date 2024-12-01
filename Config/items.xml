@@ -44,6 +44,39 @@
       </effect_group>
     </item>
 
+    <item name="cntCoffeeMaker_hgBBSchematic">
+      <property name="Extends" value="schematicNoQualityMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="cntCoffeeMaker"/>
+      <property name="Unlocks" value="cntCoffeeMaker_hgBB"/>
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="cntCoffeeMaker_hgBB" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+    </item>
+
+    <item name="cntCommercialCoffeeMaker_hgBBSchematic">
+      <property name="Extends" value="schematicNoQualityMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="cntCommercialCoffeeMaker"/>
+      <property name="Unlocks" value="cntCommercialCoffeeMaker_hgBB"/>
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="cntCommercialCoffeeMaker_hgBB" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+    </item>
+
+    <item name="espressoMachine_hgBBSchematic">
+      <property name="Extends" value="schematicNoQualityMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="espressoMachine_hgBB"/>
+      <property name="Unlocks" value="espressoMachine_hgBB"/>
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="espressoMachine_hgBB" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+    </item>
+
     <!-- ============================================================= -->
     <!-- ==================== BASE ITEMS GROUP ======================= -->
     <!-- ============================================================= -->

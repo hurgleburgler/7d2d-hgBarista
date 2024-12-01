@@ -23,7 +23,6 @@
 			<property name="CloseSound" value="chem_station_close"/>
 			<property name="CraftSound" value="chem_station_mix_click"/>
 			<property name="CraftCompleteSound" value="chem_station_complete_item"/>
-			<property name="UnlockedBy" value="perkBattlefieldBarista"/>
 
 			<property class="RepairItems">
 				<property name="resourceForgedIron" value="2"/>
@@ -51,6 +50,7 @@
 			<property name="CustomIcon" value="cntCoffeeMaker"/>
 			<property name="DescriptionKey" value="cntCoffeeMaker"/>
 			<property name="EconomicValue" value="200"/>
+			<property name="UnlockedBy" value="cntCoffeeMaker_hgBBSchematic,perkBattlefieldBarista"/>
 			<drop event="Destroy" name="cntCoffeeMaker_hgBB" count="1" prob="1"/>
 
 			<property class="Workstation">
@@ -66,6 +66,7 @@
 			<property name="EconomicValue" value="500"/>
 			<property name="CustomIcon" value="cntCoffeeMakerCommercial"/>
 			<property name="DescriptionKey" value="cntCoffeeMakerCommercial"/>
+			<property name="UnlockedBy" value="cntCoffeeMakerCommercial_hgBBSchematic,perkBattlefieldBarista"/>
 			<drop event="Destroy" name="cntCoffeeMakerCommercial_hgBB" count="1" prob="1"/>
 
 			<property class="Workstation">
@@ -80,6 +81,7 @@
 			<property name="EconomicValue" value="3000"/>
 			<property name="CustomIcon" value="espressoMachine_hgBB"/>
 			<property name="DescriptionKey" value="espressoMachine_hgBB"/>
+			<property name="UnlockedBy" value="espressoMachine_hgBBSchematic,perkBattlefieldBarista"/>
 			<drop event="Destroy" name="espressoMachine_hgBB" count="1" prob="1"/>
 
 			<property class="Workstation">

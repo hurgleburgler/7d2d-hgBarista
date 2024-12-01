@@ -26,13 +26,13 @@
                 <passive_effect name="CraftingTime" operation="perc_add" level="1,5" value="-.1,-.5" tags="perkBattlefieldBarista"/>
 
                 <!-- Level 1: Basic Coffee Drinks -->
-                <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1" tags="cntCoffeeMaker_hgBB,drinkJarBoiledWater,drinkFilthyJoe,drinkWastelandWheatgrass,drinkHotCupOfJoe,drinkIcedCoffee,drinkColdBrewCoffee"/>
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1" tags="drinkJarBoiledWater,drinkFilthyJoe,drinkWastelandWheatgrass,drinkHotCupOfJoe,drinkIcedCoffee,drinkColdBrewCoffee"/>
 
                 <!-- Level 2: Advanced Coffee and Purified Base -->
-                <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,5" value="1" tags="cntCoffeeMakerCommercial_hgBB,drinkJarPurifiedWater,drinkShotOfEspresso,drinkAmericano,drinkBlackStrapCoffee,drinkPremiumColdBrew"/>
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,5" value="1" tags="espressoMachine_hgBB,cntCoffeeMaker_hgBB,drinkJarPurifiedWater,drinkShotOfEspresso,drinkAmericano,drinkBlackStrapCoffee,drinkPremiumColdBrew"/>
 
                 <!-- Level 3: Espresso Machine and Milk-Based Drinks -->
-                <passive_effect name="RecipeTagUnlocked" operation="base_set" level="3,5" value="1" tags="espressoMachine_hgBB,drinkDoubleTap,drinkCappuccino,drinkCafeLatte,drinkCafeCreme,drinkCafeBreve,drinkAffogato"/>
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" level="3,5" value="1" tags="cntCoffeeMakerCommercial_hgBB,drinkDoubleTap,drinkCappuccino,drinkCafeLatte,drinkCafeCreme,drinkCafeBreve,drinkAffogato"/>
 
                 <!-- Level 4: Combat Coffee Drinks -->
                 <passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1"
