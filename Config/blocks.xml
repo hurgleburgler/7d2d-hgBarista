@@ -90,6 +90,22 @@
 			</property>
 		</block>
 
+		<block name="frenchPress_hgBB">
+			<property name="Extends" value="hgBattlefieldBaristaWorkstation"/>
+			<property name="Model" value="#@modfolder:Resources/hgBarista_FrenchPress.unity3d?FrenchPressPrefab"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="EconomicValue" value="500"/>
+			<property name="CustomIcon" value="espressoMachine_hgBB"/>
+			<property name="DescriptionKey" value="espressoMachine_hgBB"/>
+			<property name="UnlockedBy" value="perkBattlefieldBarista"/>
+			<drop event="Destroy" name="espressoMachine_hgBB" count="1" prob="1"/>
+
+			<property class="Workstation">
+				<property name="Modules" value="output"/>
+				<property name="CraftingAreaRecipes" value="coffeeDrinks_hgBB"/>
+			</property>
+		</block>
+
 	</append>
 
 </hurgleburgler>

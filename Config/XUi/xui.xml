@@ -17,6 +17,15 @@
 			<window name="windowNonPagingHeader"/>
 		</window_group>
 
+		<window_group name="workstation_frenchPress_hgBB" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
+			<window name="windowCraftingList"/>
+			<window name="craftingInfoPanel"/>
+			<window name="windowCraftingQueueSmall"/>
+			<window name="windowToolsFrenchPress_hgBB"/>
+			<window name="windowOutputSmall"/>
+			<window name="windowNonPagingHeader"/>
+		</window_group>
+
 		<window_group name="workstation_espressoMachine_hgBB" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowCraftingList"/>
 			<window name="craftingInfoPanel"/>
