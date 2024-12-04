@@ -24,12 +24,27 @@
       <ingredient name="toolCookingPot" count="1"/>
     </recipe>
 
+    <recipe name="frenchPress_hgBB" count="1" craft_area="workbench" tags="learnable,perkBattlefieldBarista">
+      <ingredient name="resourceScrapPolymers" count="5"/>
+      <ingredient name="toolBeaker" count="1"/>
+      <ingredient name="resourceForgedIron" count="5"/>
+    </recipe>
+
     <recipe name="espressoMachine_hgBB" count="1" craft_area="workbench" tags="learnable,perkBattlefieldBarista">
       <ingredient name="resourceForgedIron" count="15"/>
       <ingredient name="resourceElectricParts" count="10"/>
       <ingredient name="resourceMechanicalParts" count="5"/>
       <ingredient name="resourceMetalPipe" count="4"/>
       <ingredient name="toolCookingPot" count="1"/>
+    </recipe>
+
+    <recipe name="antiqueCoffeeMachine_hgBB" count="1" craft_area="workbench" tags="learnable,perkBattlefieldBarista">
+      <ingredient name="resourceForgedSteel" count="25"/>
+      <ingredient name="resourceScrapBrass" count="500"/>
+      <ingredient name="resourceMetalPipe" count="10"/>
+      <ingredient name="resourceMechanicalParts" count="15"/>
+      <ingredient name="toolCookingPot" count="1"/>
+      <ingredient name="meleeToolRepairT1ClawHammer" count="1"/>
     </recipe>
 
     <!--
@@ -546,7 +561,7 @@
       <ingredient name="drinkShotOfEspresso" count="1"/>
     </recipe>
     <!-- Dragon's Breath Espresso -->
-    <recipe name="drinkDragonsBreathEspresso" count="1" craft_area="forge" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkDragonsBreathEspresso" count="1" craft_area="antiqueCoffeeMachineDrinks_hgBB" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkQuad" count="2"/>
       <ingredient name="drinkJarCreamer" count="1"/>
       <ingredient name="foodHoney" count="2"/>
@@ -556,7 +571,7 @@
     </recipe>
 
     <!-- The Apex Brew -->
-    <recipe name="drinkApexBrew" count="1" craft_area="forge" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkApexBrew" count="1" craft_area="antiqueCoffeeMachineDrinks_hgBB" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkQuad" count="2"/>
       <ingredient name="drinkJarCreamer" count="1"/>
       <ingredient name="foodHoney" count="2"/>
@@ -566,7 +581,7 @@
     </recipe>
 
     <!-- Phoenix Fire Latte -->
-    <recipe name="drinkPhoenixFireLatte" count="1" craft_area="forge" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkPhoenixFireLatte" count="1" craft_area="antiqueCoffeeMachineDrinks_hgBB" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkQuad" count="2"/>
       <ingredient name="drinkJarCreamer" count="1"/>
       <ingredient name="foodHoney" count="2"/>
@@ -577,7 +592,7 @@
     </recipe>
 
     <!-- Grandpa's Last Stand -->
-    <recipe name="drinkGrandpasLastStand" count="1" craft_area="forge" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkGrandpasLastStand" count="1" craft_area="antiqueCoffeeMachineDrinks_hgBB" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkQuad" count="2"/>
       <ingredient name="drinkJarCreamer" count="1"/>
       <ingredient name="foodHoney" count="2"/>

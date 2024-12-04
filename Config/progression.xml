@@ -26,7 +26,7 @@
                 <passive_effect name="CraftingTime" operation="perc_add" level="1,5" value="-.1,-.5" tags="perkBattlefieldBarista"/>
 
                 <!-- Level 1: Basic Coffee Drinks -->
-                <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1" tags="drinkJarBoiledWater,drinkFilthyJoe,drinkWastelandWheatgrass,drinkHotCupOfJoe,drinkIcedCoffee,drinkColdBrewCoffee"/>
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1" tags="frenchPress_hgBB,drinkJarBoiledWater,drinkFilthyJoe,drinkWastelandWheatgrass,drinkHotCupOfJoe,drinkIcedCoffee,drinkColdBrewCoffee"/>
 
                 <!-- Level 2: Advanced Coffee and Purified Base -->
                 <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,5" value="1" tags="espressoMachine_hgBB,cntCoffeeMaker_hgBB,drinkJarPurifiedWater,drinkShotOfEspresso,drinkAmericano,drinkBlackStrapCoffee,drinkPremiumColdBrew"/>
@@ -39,7 +39,7 @@
                                 tags="drinkTripwire,drinkSpringHeeledJoe,drinkPumpkinSpikeLatte,drinkBearBrew,drinkBulletproofCoffee,drinkLondonFogLatte,drinkNightmareNitroColdBrew"/>
 
                 <!-- Level 5: Legendary Drinks -->
-                <passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,5" value="1" tags="drinkQuad,drinkDragonsBreathEspresso,drinkApexBrew,drinkPhoenixFireLatte,drinkGrandpasLastStand"/>
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,5" value="1" tags="antiqueCoffeeMachine_hgBB,drinkQuad,drinkDragonsBreathEspresso,drinkApexBrew,drinkPhoenixFireLatte,drinkGrandpasLastStand"/>
 
                 <effect_description level="1" desc_key="perkBattlefieldBaristaRank1Desc" long_desc_key="perkBattlefieldBaristaRank1LongDesc"/>
                 <effect_description level="2" desc_key="perkBattlefieldBaristaRank2Desc" long_desc_key="perkBattlefieldBaristaRank2LongDesc"/>
