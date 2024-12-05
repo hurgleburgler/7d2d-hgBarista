@@ -2,11 +2,15 @@
 
   <append xpath="/ui_display_info/crafting_category_display">
 
+    <crafting_category_list display_type="FrenchPress_hgBB">
+      <crafting_category name="CFDrink/Cooking" icon="ui_game_symbol_battlefield_barista" display_name="lblCategoryDrink"/>
+    </crafting_category_list>
+
     <crafting_category_list display_type="EspressoMachine_hgBB">
       <crafting_category name="CFDrink/Cooking" icon="ui_game_symbol_battlefield_barista" display_name="lblCategoryDrink"/>
     </crafting_category_list>
 
-    <crafting_category_list display_type="FrenchPress_hgBB">
+    <crafting_category_list display_type="CommercialEspressoMachine_hgBB">
       <crafting_category name="CFDrink/Cooking" icon="ui_game_symbol_battlefield_barista" display_name="lblCategoryDrink"/>
     </crafting_category_list>
 
@@ -83,6 +87,16 @@
     </item_display_info>
 
     <item_display_info display_type="drinkBB_BasicMilkCoffee" display_group="groupConsumables">
+      <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
+      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
+      <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
+      <display_entry name="dColdResist" title_key="statColdResistance"/>
+      <display_entry name="dFoodAmountAdd" title_key="statFoodAmount"/>
+      <display_entry name="dFoodHealthAmount" title_key="statHealthAmount"/>
+      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+    </item_display_info>
+
+    <item_display_info display_type="drinkBB_BasicMilkCoffee2" display_group="groupConsumables">
       <display_entry name="dWaterAmountAdd" title_key="statWaterAmount"/>
       <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
       <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>

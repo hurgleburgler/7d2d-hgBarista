@@ -398,7 +398,13 @@
       <property name="DisplayType" value="drinkWastelandWheatgrass"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkWastelandWheatgrassRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 1">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.02"/>
         <display_value name="dDiseaseResist" value="-5"/>
@@ -447,7 +453,13 @@
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkHotCupOfJoeRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 1">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.2"/>
         <display_value name="dDehydration" value="5"/>
@@ -491,7 +503,13 @@
       <property name="DisplayType" value="drinkBB_BasicColdCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkIcedCoffeeRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 1">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.2"/>
         <display_value name="dDehydration" value="5"/>
@@ -535,7 +553,13 @@
       <property name="DisplayType" value="drinkBB_BasicColdCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkColdBrewCoffeeRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 1">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.3"/>
         <display_value name="dDehydration" value="6.8"/>
@@ -613,6 +637,7 @@
 
       <effect_group tiered="false" name="Drink Tier 2">
         <requirement name="NotHasBuff" buff="buffIsOnFire"/>
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
 
         <display_value name="dWaterAmountAdd" value="40"/>
         <display_value name="dStaminaEfficiency" value=".10"/>
@@ -664,7 +689,13 @@
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkShotOfEspressoRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 2">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.15"/>
         <display_value name="dDehydration" value="5"/>
@@ -723,7 +754,13 @@
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkAmericanoRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 2">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dWaterAmountAdd" value="15"/>
         <display_value name="dStaminaRegen" value="0.25"/>
         <display_value name="dDehydration" value="7.5"/>
@@ -853,7 +890,13 @@
       <property name="DisplayType" value="drinkPremiumColdBrew"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkPremiumColdBrewRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 2">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.33"/>
         <display_value name="dDehydration" value="5.1"/>
@@ -929,7 +972,13 @@
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkDoubleTapRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 3">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_entry name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.34"/>
         <display_value name="dDehydration" value="10"/>
@@ -995,7 +1044,13 @@
       <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkCappuccinoRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 3">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dWaterAmountAdd" value="10"/>
         <display_value name="dStaminaRegen" value="0.29"/>
         <display_value name="dDehydration" value="7.5"/>
@@ -1065,7 +1120,13 @@
       <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkCafeLatteRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 3">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dWaterAmountAdd" value="20"/>
         <display_value name="dStaminaRegen" value="0.255"/>
         <display_value name="dDehydration" value="5"/>
@@ -1132,10 +1193,16 @@
     <item name="drinkCafeCreme">
       <property name="Extends" value="hgBB_Level3"/>
       <property name="EconomicValue" value="300"/>
-      <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
+      <property name="DisplayType" value="drinkBB_BasicMilkCoffee2"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkCafeCremeRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 3">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.305"/>
         <display_value name="dDehydration" value="9"/>
@@ -1207,7 +1274,13 @@
       <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkCafeBreveRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 3">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dWaterAmountAdd" value="10"/>
         <display_value name="dStaminaRegen" value="0.29"/>
         <display_value name="dDehydration" value="8"/>
@@ -1282,7 +1355,13 @@
       <property name="DisplayType" value="drinkAffogato"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkAffogatoRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 3">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dStaminaRegen" value="0.37"/>
         <display_value name="dDehydration" value="8.5"/>
         <display_value name="dHeatResist" value="20"/>
@@ -1377,7 +1456,13 @@
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkTripwireRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 4">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dStaminaRegen" value="0.52"/>
         <display_value name="dDehydration" value="15"/>
         <display_value name="dColdResist" value="25"/>
@@ -1443,7 +1528,13 @@
       <property name="DisplayType" value="drinkSpringHeeledJoe"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkSpringHeeledJoeRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 4">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dMobilityBoost" value=".5"/>
         <display_value name="dJumpBoost" value="2"/>
         <display_value name="dJumpBoostMax" value="4"/>
@@ -1534,7 +1625,13 @@
       <property name="DisplayType" value="drinkPumpkinSpikeLatte"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkPumpkinSpikeLatteRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 4">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <!-- Consolidated to 7 key display values -->
         <display_value name="dStaminaRegen" value="0.46"/>
         <display_value name="dDehydration" value="15"/>
@@ -1632,7 +1729,13 @@
       <property name="DisplayType" value="drinkBearBrew"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkBearBrewRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 4">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <!-- Consolidated to 7 key display values -->
         <display_value name="dNutrition" value="12"/>            <!-- Combined food/health -->
         <display_value name="dStaminaRegen" value="0.48"/>
@@ -1735,7 +1838,13 @@
       <property name="DisplayType" value="drinkBulletproofCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkBulletproofCoffeeRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 4">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dPhysicalResist" value="0.6"/>
         <display_value name="dGeneralResist" value="0.4"/>
         <display_value name="dNutrition" value="20"/>        <!-- Combined food and health -->
@@ -1816,7 +1925,13 @@
       <property name="DisplayType" value="drinkLondonFogLatte"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkLondonFogLatteRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 4">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dSneakDamage" value="1.5"/>
         <display_value name="dStealthBonus" value="0.5"/>  <!-- Combined noise/light reduction ~50% -->
         <display_value name="dMovementBonus" value="0.3"/>  <!-- Crouch speed -->
@@ -1996,7 +2111,13 @@
       <property name="DisplayType" value="drinkQuad"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkQuadRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 5">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dWaterAmountAdd" value="5"/>
         <display_value name="dStaminaRegen" value="0.92"/>
         <display_value name="dDehydration" value="30.0"/>
@@ -2100,7 +2221,13 @@
       <property name="DisplayType" value="drinkApexBrew"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkApexBrewRecipe"/>
 
+      <effect_group tiered="false">
+        <requirement name="HasBuff" buff="buffIsOnFire"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+      </effect_group>
+
       <effect_group tiered="false" name="Drink Tier 5">
+        <requirement name="NotHasBuff" buff="buffIsOnFire"/>
         <display_value name="dApexPredator" value="1"/>
 
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkApexBrewTooltip"/>

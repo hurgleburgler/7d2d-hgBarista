@@ -75,6 +75,22 @@
 			</property>
 		</block>
 
+		<block name="frenchPress_hgBB">
+			<property name="Extends" value="hgBattlefieldBaristaWorkstation"/>
+			<property name="Model" value="#@modfolder:Resources/hgBarista.unity3d?FrenchPressPrefab"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="EconomicValue" value="499"/>
+			<property name="CustomIcon" value="frenchPress_hgBB"/>
+			<property name="DescriptionKey" value="frenchPress_hgBB"/>
+			<property name="UnlockedBy" value="perkBattlefieldBarista"/>
+			<drop event="Destroy" name="frenchPress_hgBB" count="0" prob="1"/>
+
+			<property class="Workstation">
+				<property name="Modules" value="output"/>
+				<property name="CraftingAreaRecipes" value="coffeeDrinks_hgBB"/>
+			</property>
+		</block>
+
 		<block name="espressoMachine_hgBB">
 			<property name="Model" value="#@modfolder:Resources/hgBarista.unity3d?EspressoMachinePrefab"/>
 			<property name="Extends" value="hgBattlefieldBaristaWorkstation"/>
@@ -91,15 +107,15 @@
 			</property>
 		</block>
 
-		<block name="frenchPress_hgBB">
+		<block name="commercialEspressoMachine_hgBB">
 			<property name="Extends" value="hgBattlefieldBaristaWorkstation"/>
-			<property name="Model" value="#@modfolder:Resources/hgBarista.unity3d?FrenchPressPrefab"/>
+			<property name="Model" value="#@modfolder:Resources/hgBarista.unity3d?CommercialEspressoMachinePrefab"/>
 			<property name="CreativeMode" value="Player"/>
-			<property name="EconomicValue" value="500"/>
-			<property name="CustomIcon" value="frenchPress_hgBB"/>
-			<property name="DescriptionKey" value="frenchPress_hgBB"/>
+			<property name="EconomicValue" value="499"/>
+			<property name="CustomIcon" value="commercialEspressoMachine_hgBB"/>
+			<property name="DescriptionKey" value="commercialEspressoMachine_hgBB"/>
 			<property name="UnlockedBy" value="perkBattlefieldBarista"/>
-			<drop event="Destroy" name="frenchPress_hgBB" count="1" prob="1"/>
+			<drop event="Destroy" name="commercialEspressoMachine_hgBB" count="0" prob="1"/>
 
 			<property class="Workstation">
 				<property name="Modules" value="output"/>

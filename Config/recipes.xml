@@ -13,7 +13,7 @@
       <ingredient name="resourceElectricParts" count="2"/>
       <ingredient name="resourceMechanicalParts" count="1"/>
       <ingredient name="resourceMetalPipe" count="1"/>
-      <ingredient name="toolCookingPot" count="1"/>
+      <ingredient name="toolBeaker" count="1"/>
     </recipe>
 
     <recipe name="cntCoffeeMakerCommercial_hgBB" count="1" craft_area="workbench" tags="learnable,perkBattlefieldBarista">
@@ -21,7 +21,7 @@
       <ingredient name="resourceElectricParts" count="5"/>
       <ingredient name="resourceMechanicalParts" count="3"/>
       <ingredient name="resourceMetalPipe" count="2"/>
-      <ingredient name="toolCookingPot" count="1"/>
+      <ingredient name="toolBeaker" count="1"/>
     </recipe>
 
     <recipe name="frenchPress_hgBB" count="1" craft_area="workbench" tags="learnable,perkBattlefieldBarista">
@@ -36,6 +36,14 @@
       <ingredient name="resourceMechanicalParts" count="5"/>
       <ingredient name="resourceMetalPipe" count="4"/>
       <ingredient name="toolCookingPot" count="1"/>
+    </recipe>
+
+    <recipe name="commercialEspressoMachine_hgBB" count="1" craft_area="workbench" tags="learnable,perkBattlefieldBarista">
+      <ingredient name="resourceForgedIron" count="30"/>
+      <ingredient name="resourceElectricParts" count="20"/>
+      <ingredient name="resourceMechanicalParts" count="10"/>
+      <ingredient name="resourceMetalPipe" count="8"/>
+      <ingredient name="toolCookingPot" count="2"/>
     </recipe>
 
     <recipe name="antiqueCoffeeMachine_hgBB" count="1" craft_area="workbench" tags="learnable,perkBattlefieldBarista">
@@ -183,21 +191,21 @@
     <!-- ==================== Level 1 Drinks ====================== -->
     <!-- ========================================================== -->
 
-    <recipe name="drinkJarBoiledWater" count="1" craft_area="coffeeDrinks_hgBB" craft_tool="toolBeaker" craft_time="20" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkJarBoiledWater" count="1" craft_area="coffeeDrinks_hgBB" craft_time="20" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarRiverWater" count="1"/>
     </recipe>
 
-    <recipe name="drinkJarRedTea" count="1" craft_area="coffeeDrinks_hgBB" craft_tool="toolBeaker" craft_time="20" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkJarRedTea" count="1" craft_area="coffeeDrinks_hgBB" craft_time="20" tags="perkBattlefieldBarista,learnable">
       <ingredient name="resourceCropChrysanthemumPlant" count="1"/>
       <ingredient name="drinkJarBoiledWater" count="1"/>
     </recipe>
 
-    <recipe name="drinkJarGoldenRodTea" count="1" craft_area="coffeeDrinks_hgBB" craft_tool="toolBeaker" craft_time="20" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkJarGoldenRodTea" count="1" craft_area="coffeeDrinks_hgBB" craft_time="20" tags="perkBattlefieldBarista,learnable">
       <ingredient name="resourceCropGoldenrodPlant" count="1"/>
       <ingredient name="drinkJarBoiledWater" count="1"/>
     </recipe>
 
-    <recipe name="drinkJarPureMineralWater" count="1" craft_area="coffeeDrinks_hgBB" craft_tool="toolBeaker" craft_time="20" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkJarPureMineralWater" count="1" craft_area="coffeeDrinks_hgBB"  craft_time="20" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarRiverWater" count="1"/>
       <ingredient name="resourceCoal" count="1"/>
       <ingredient name="resourceCropGoldenrodPlant" count="1"/>
@@ -210,7 +218,7 @@
       <ingredient name="resourceCropCoffeeBeans" count="2"/>
     </recipe>
 
-    <recipe name="drinkFilthyJoe" count="5" craft_area="coffeeDrinks_hgBB" craft_tool="toolBeaker" craft_time="30" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkFilthyJoe" count="5" craft_area="coffeeDrinks_hgBB" craft_time="30" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarRiverWater" count="5"/>
       <ingredient name="resourceCropCoffeeBeans" count="2"/>
     </recipe>
@@ -224,7 +232,7 @@
       </effect_group>
     </recipe>
 
-    <recipe name="drinkFilthyJoe" count="15" craft_area="coffeeDrinks_hgBB" craft_tool="toolBeaker" craft_time="30" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkFilthyJoe" count="15" craft_area="coffeeDrinks_hgBB" craft_time="30" tags="perkBattlefieldBarista,learnable">
       <ingredient name="resourceInstantCoffee" count="1"/>
       <ingredient name="drinkJarRiverWater" count="15"/>
       <effect_group>
@@ -234,27 +242,13 @@
     </recipe>
 
     <!-- Hot Cup of Joe - Standard coffee with cold resistance -->
-    <recipe name="drinkHotCupOfJoe" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="20" tags="perkBattlefieldBarista,learnable">
-      <ingredient name="drinkJarBoiledWater" count="1"/>
-      <ingredient name="resourceCropCoffeeBeans" count="1"/>
-    </recipe>
-
-    <recipe name="drinkHotCupOfJoe" count="1" craft_area="coffeeDrinks_hgBB" craft_tool="toolBeaker" craft_time="10" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkHotCupOfJoe" count="1" craft_area="coffeeDrinks_hgBB" craft_time="10" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarBoiledWater" count="1"/>
       <ingredient name="resourceCropCoffeeBeans" count="1"/>
     </recipe>
 
     <!-- Hot Cup of Joe with instant coffee - 5 output for 5 water -->
-    <recipe name="drinkHotCupOfJoe" count="5" craft_area="campfire" craft_tool="toolBeaker" craft_time="20" tags="perkBattlefieldBarista,learnable">
-      <ingredient name="resourceInstantCoffee" count="1"/>
-      <ingredient name="drinkJarBoiledWater" count="5"/>
-      <effect_group>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="drinkJarBoiledWater"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-2" tags="drinkJarBoiledWater"/>
-      </effect_group>
-    </recipe>
-
-    <recipe name="drinkHotCupOfJoe" count="5" craft_area="coffeeDrinks_hgBB" craft_tool="toolBeaker" craft_time="10" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkHotCupOfJoe" count="5" craft_area="coffeeDrinks_hgBB" craft_time="10" tags="perkBattlefieldBarista,learnable">
       <ingredient name="resourceInstantCoffee" count="1"/>
       <ingredient name="drinkJarBoiledWater" count="5"/>
       <effect_group>
@@ -264,16 +258,7 @@
     </recipe>
 
     <!-- Hot Cup of Joe with instant coffee and purified water -->
-    <recipe name="drinkHotCupOfJoe" count="6" craft_area="campfire" craft_tool="toolBeaker" craft_time="20" tags="perkBattlefieldBarista,learnable">
-      <ingredient name="resourceInstantCoffee" count="1"/>
-      <ingredient name="drinkJarPurifiedWater" count="5"/>
-      <effect_group>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-2" tags="drinkJarPurifiedWater"/>
-      </effect_group>
-    </recipe>
-
-    <recipe name="drinkHotCupOfJoe" count="6" craft_area="coffeeDrinks_hgBB" craft_tool="toolBeaker" craft_time="10" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkHotCupOfJoe" count="6" craft_area="coffeeDrinks_hgBB" craft_time="10" tags="perkBattlefieldBarista,learnable">
       <ingredient name="resourceInstantCoffee" count="1"/>
       <ingredient name="drinkJarPurifiedWater" count="5"/>
       <effect_group>
@@ -289,7 +274,7 @@
     </recipe>
 
     <!-- Wasteland Wheatgrass - Health drink with disease resistance -->
-    <recipe name="drinkWastelandWheatgrass" count="1" craft_area="campfire" craft_tool="toolBeaker" craft_time="15" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkWastelandWheatgrass" count="1" craft_area="coffeeDrinks_hgBB" craft_time="15" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarBoiledWater" count="1"/>
       <ingredient name="resourceYuccaFibers" count="5"/>
       <ingredient name="resourcePaper" count="5"/>
@@ -313,7 +298,7 @@
       <ingredient name="resourceCoal" count="1"/>
     </recipe>
 
-    <recipe name="drinkJarPurifiedWater" count="1" craft_area="coffeeDrinks_hgBB" craft_tool="toolBeaker" craft_time="10" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkJarPurifiedWater" count="1" craft_area="coffeeDrinks_hgBB" craft_time="10" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarBoiledWater" count="1"/>
       <ingredient name="resourceCoal" count="1"/>
     </recipe>
@@ -341,18 +326,9 @@
       </effect_group>
     </recipe>
 
-    <recipe name="drinkBlackStrapCoffee" count="1" craft_area="coffeeDrinks_hgBB" craft_tool="toolBeaker" craft_time="10" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkBlackStrapCoffee" count="1" craft_area="coffeeDrinks_hgBB" craft_time="10" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkJarBoiledWater" count="1"/>
       <ingredient name="resourceCropCoffeeBeans" count="1"/>
-      <ingredient name="resourceGunPowder" count="5"/>
-      <effect_group>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="resourceGunPowder"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-2" tags="resourceGunPowder"/>
-      </effect_group>
-    </recipe>
-
-    <recipe name="drinkBlackStrapCoffee" count="1" craft_time="180" tags="perkBattlefieldBarista,learnable">
-      <ingredient name="drinkHotCupOfJoe" count="1"/>
       <ingredient name="resourceGunPowder" count="5"/>
       <effect_group>
         <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="resourceGunPowder"/>
@@ -373,38 +349,13 @@
       </effect_group>
     </recipe>
 
-    <recipe name="drinkBlackStrapCoffee" count="5" craft_area="coffeeDrinks_hgBB" craft_tool="toolBeaker" craft_time="10" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkBlackStrapCoffee" count="5" craft_area="coffeeDrinks_hgBB" craft_time="10" tags="perkBattlefieldBarista,learnable">
       <ingredient name="resourceInstantCoffee" count="1"/>
       <ingredient name="drinkJarBoiledWater" count="5"/>
       <ingredient name="resourceGunPowder" count="15"/>
       <effect_group>
         <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="drinkJarBoiledWater"/>
         <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-2" tags="drinkJarBoiledWater"/>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-5" tags="resourceGunPowder"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-10" tags="resourceGunPowder"/>
-      </effect_group>
-    </recipe>
-
-    <!-- Black Strap Coffee with instant coffee and purified water -->
-    <recipe name="drinkBlackStrapCoffee" count="6" craft_area="campfire" craft_tool="toolBeaker" craft_time="20" tags="perkBattlefieldBarista,learnable">
-      <ingredient name="resourceInstantCoffee" count="1"/>
-      <ingredient name="drinkJarPurifiedWater" count="5"/>
-      <ingredient name="resourceGunPowder" count="15"/>
-      <effect_group>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-2" tags="drinkJarPurifiedWater"/>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-5" tags="resourceGunPowder"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-10" tags="resourceGunPowder"/>
-      </effect_group>
-    </recipe>
-
-    <recipe name="drinkBlackStrapCoffee" count="6" craft_area="coffeeDrinks_hgBB" craft_tool="toolBeaker" craft_time="10" tags="perkBattlefieldBarista,learnable">
-      <ingredient name="resourceInstantCoffee" count="1"/>
-      <ingredient name="drinkJarPurifiedWater" count="5"/>
-      <ingredient name="resourceGunPowder" count="15"/>
-      <effect_group>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-2" tags="drinkJarPurifiedWater"/>
         <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-5" tags="resourceGunPowder"/>
         <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-10" tags="resourceGunPowder"/>
       </effect_group>
@@ -427,7 +378,7 @@
       <ingredient name="resourceCropCoffeeBeans" count="4"/>
     </recipe>
 
-    <recipe name="drinkDoubleTap" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="5" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkDoubleTap" count="1" craft_time="5" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkShotOfEspresso" count="2"/>
     </recipe>
 
@@ -474,11 +425,11 @@
       <ingredient name="resourceCropCoffeeBeans" count="6"/>
     </recipe>
 
-    <recipe name="drinkTripwire" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="5" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkTripwire" count="1" craft_time="5" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkShotOfEspresso" count="3"/>
     </recipe>
 
-    <recipe name="drinkTripwire" count="1" craft_area="espressoDrinks_hgBB" craft_tool="meleeToolRepairT1ClawHammer" craft_time="5" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkTripwire" count="1" craft_time="5" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkDoubleTap" count="1"/>
       <ingredient name="drinkShotOfEspresso" count="2"/>
     </recipe>
