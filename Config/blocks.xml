@@ -51,6 +51,7 @@
 			<property name="DescriptionKey" value="cntCoffeeMaker"/>
 			<property name="EconomicValue" value="200"/>
 			<property name="UnlockedBy" value="cntCoffeeMaker_hgBBSchematic,perkBattlefieldBarista"/>
+			<drop event="Harvest" name="cntCoffeeMaker_hgBB" count="1" prob="1"/>
 			<drop event="Destroy" name="cntCoffeeMaker_hgBB" count="1" prob="1"/>
 
 			<property class="Workstation">
@@ -67,6 +68,7 @@
 			<property name="CustomIcon" value="cntCoffeeMakerCommercial"/>
 			<property name="DescriptionKey" value="cntCoffeeMakerCommercial"/>
 			<property name="UnlockedBy" value="cntCoffeeMakerCommercial_hgBBSchematic,perkBattlefieldBarista"/>
+			<drop event="Harvest" name="cntCoffeeMakerCommercial_hgBB" count="1" prob="1"/>
 			<drop event="Destroy" name="cntCoffeeMakerCommercial_hgBB" count="1" prob="1"/>
 
 			<property class="Workstation">
@@ -83,7 +85,8 @@
 			<property name="CustomIcon" value="frenchPress_hgBB"/>
 			<property name="DescriptionKey" value="frenchPress_hgBB"/>
 			<property name="UnlockedBy" value="perkBattlefieldBarista"/>
-			<drop event="Destroy" name="frenchPress_hgBB" count="0" prob="1"/>
+			<drop event="Harvest" name="frenchPress_hgBB" count="1" prob="1"/>
+			<drop event="Destroy" name="frenchPress_hgBB" count="1" prob="1"/>
 
 			<property class="Workstation">
 				<property name="Modules" value="output"/>
@@ -99,6 +102,7 @@
 			<property name="CustomIcon" value="espressoMachine_hgBB"/>
 			<property name="DescriptionKey" value="espressoMachine_hgBB"/>
 			<property name="UnlockedBy" value="espressoMachine_hgBBSchematic,perkBattlefieldBarista"/>
+			<drop event="Harvest" name="espressoMachine_hgBB" count="1" prob="1"/>
 			<drop event="Destroy" name="espressoMachine_hgBB" count="1" prob="1"/>
 
 			<property class="Workstation">
@@ -115,7 +119,8 @@
 			<property name="CustomIcon" value="commercialEspressoMachine_hgBB"/>
 			<property name="DescriptionKey" value="commercialEspressoMachine_hgBB"/>
 			<property name="UnlockedBy" value="perkBattlefieldBarista"/>
-			<drop event="Destroy" name="commercialEspressoMachine_hgBB" count="0" prob="1"/>
+			<drop event="Harvest" name="commercialEspressoMachine_hgBB" count="1" prob="1"/>
+			<drop event="Destroy" name="commercialEspressoMachine_hgBB" count="1" prob="1"/>
 
 			<property class="Workstation">
 				<property name="Modules" value="output"/>
@@ -133,6 +138,7 @@
 			<property name="CustomIcon" value="antiqueCoffeeMachine_hgBB"/>
 			<property name="DescriptionKey" value="antiqueCoffeeMachine_hgBB"/>
 			<property name="UnlockedBy" value="perkBattlefieldBarista"/>
+			<drop event="Harvest" name="antiqueCoffeeMachine_hgBB" count="1" prob="1"/>
 			<drop event="Destroy" name="antiqueCoffeeMachine_hgBB" count="1" prob="1"/>
 
 			<property class="Workstation">

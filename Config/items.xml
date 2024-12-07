@@ -66,6 +66,17 @@
       </effect_group>
     </item>
 
+    <item name="frenchPress_hgBBSchematic">
+      <property name="Extends" value="schematicNoQualityMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="frenchPress_hgBB"/>
+      <property name="Unlocks" value="frenchPress_hgBB"/>
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="frenchPress_hgBB" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+    </item>
+
     <item name="espressoMachine_hgBBSchematic">
       <property name="Extends" value="schematicNoQualityMaster"/>
       <property name="CreativeMode" value="Player"/>
@@ -73,6 +84,17 @@
       <property name="Unlocks" value="espressoMachine_hgBB"/>
       <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="espressoMachine_hgBB" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+    </item>
+
+    <item name="commercialEspressoMachine_hgBBSchematic">
+      <property name="Extends" value="schematicNoQualityMaster"/>
+      <property name="CreativeMode" value="Player"/>
+      <property name="CustomIcon" value="commercialEspressoMachine_hgBB"/>
+      <property name="Unlocks" value="commercialEspressoMachine_hgBB"/>
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="commercialEspressoMachine_hgBB" operation="set" value="1"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
       </effect_group>
     </item>
@@ -346,6 +368,14 @@
       <property name="EconomicValue" value="40"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkFilthyJoeRecipe"/>
+
+      <property class="Action1">
+        <property name="Class" value="Eat"/>
+        <property name="Delay" value="1.0"/>
+        <property name="Use_time" value="..."/>
+        <property name="Sound_start" value="bucketfill_water"/>
+        <property name="Create_item" value="drinkJarEmpty"/>
+      </property>
 
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>

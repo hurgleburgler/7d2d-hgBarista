@@ -434,6 +434,10 @@
       <ingredient name="drinkShotOfEspresso" count="2"/>
     </recipe>
 
+    <recipe name="drinkTripwire" count="2" craft_time="5" tags="perkBattlefieldBarista,learnable">
+      <ingredient name="drinkDoubleTap" count="3"/>
+    </recipe>
+
     <!-- Cuppa Spring-Heeled Joe - Combat coffee with enhanced mobility -->
     <recipe name="drinkSpringHeeledJoe" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkTripwire" count="1"/>
