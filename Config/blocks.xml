@@ -124,7 +124,7 @@
 
 			<property class="Workstation">
 				<property name="Modules" value="output"/>
-				<property name="CraftingAreaRecipes" value="coffeeDrinks_hgBB"/>
+				<property name="CraftingAreaRecipes" value="coffeeDrinks_hgBB,espressoDrinks_hgBB"/>
 			</property>
 		</block>
 
@@ -143,7 +143,7 @@
 
 			<property class="Workstation">
 				<property name="Modules" value="output"/>
-				<property name="CraftingAreaRecipes" value="coffeeDrinks_hgBB,espressoDrinks_hgBB,antiqueCoffeeMachineDrinks_hgBB"/>
+				<property name="CraftingAreaRecipes" value="coffeeDrinks_hgBB,espressoDrinks_hgBB,legendaryCoffeeDrinks_hgBB"/>
 			</property>
 		</block>
 

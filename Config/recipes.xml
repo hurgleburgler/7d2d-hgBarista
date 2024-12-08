@@ -516,7 +516,7 @@
       <ingredient name="drinkShotOfEspresso" count="1"/>
     </recipe>
     <!-- Dragon's Breath Espresso -->
-    <recipe name="drinkDragonsBreathEspresso" count="1" craft_area="antiqueCoffeeMachineDrinks_hgBB" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkDragonsBreathEspresso" count="1" craft_area="legendaryCoffeeDrinks_hgBB" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkQuad" count="2"/>
       <ingredient name="drinkJarCreamer" count="1"/>
       <ingredient name="foodHoney" count="2"/>
@@ -526,7 +526,7 @@
     </recipe>
 
     <!-- The Apex Brew -->
-    <recipe name="drinkApexBrew" count="1" craft_area="antiqueCoffeeMachineDrinks_hgBB" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkApexBrew" count="1" craft_area="legendaryCoffeeDrinks_hgBB" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkQuad" count="2"/>
       <ingredient name="drinkJarCreamer" count="1"/>
       <ingredient name="foodHoney" count="2"/>
@@ -536,7 +536,7 @@
     </recipe>
 
     <!-- Phoenix Fire Latte -->
-    <recipe name="drinkPhoenixFireLatte" count="1" craft_area="antiqueCoffeeMachineDrinks_hgBB" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkPhoenixFireLatte" count="1" craft_area="legendaryCoffeeDrinks_hgBB" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkQuad" count="2"/>
       <ingredient name="drinkJarCreamer" count="1"/>
       <ingredient name="foodHoney" count="2"/>
@@ -547,7 +547,7 @@
     </recipe>
 
     <!-- Grandpa's Last Stand -->
-    <recipe name="drinkGrandpasLastStand" count="1" craft_area="antiqueCoffeeMachineDrinks_hgBB" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkGrandpasLastStand" count="1" craft_area="legendaryCoffeeDrinks_hgBB" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkQuad" count="2"/>
       <ingredient name="drinkJarCreamer" count="1"/>
       <ingredient name="foodHoney" count="2"/>

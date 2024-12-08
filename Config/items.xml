@@ -345,6 +345,17 @@
     <!--   Cold Brew: Extended duration                                -->
     <!-- ============================================================= -->
 
+    <item name="hgBB_Drinks">
+      <property name="Extends" value="drinkJarBoiledWater"/>
+
+      <property class="Action1">
+        <property name="Class" value="Eat"/>
+        <property name="Delay" value="1.0"/>
+        <property name="Use_time" value="..."/>
+        <property name="Sound_start" value="bucketfill_water"/>
+        <property name="Create_item" value="drinkJarEmpty"/>
+      </property>
+    </item>
 
     <!-- ============================================================= -->
     <!-- ======================== FILTHY JOE ========================= -->
@@ -358,7 +369,7 @@
     <!--   Cold Resist: 10                                             -->
     <!-- ============================================================= -->
     <item name="hgBB_Level1">
-      <property name="Extends" value="drinkJarBoiledWater"/>
+      <property name="Extends" value="hgBB_Drinks"/>
       <property name="Stacknumber" value="50"/>
       <property name="EconomicBundleSize" value="10"/>
     </item>
@@ -368,14 +379,6 @@
       <property name="EconomicValue" value="40"/>
       <property name="DisplayType" value="drinkBB_BasicHotCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkFilthyJoeRecipe"/>
-
-      <property class="Action1">
-        <property name="Class" value="Eat"/>
-        <property name="Delay" value="1.0"/>
-        <property name="Use_time" value="..."/>
-        <property name="Sound_start" value="bucketfill_water"/>
-        <property name="Create_item" value="drinkJarEmpty"/>
-      </property>
 
       <effect_group tiered="false" name="Drink Tier 1">
         <display_value name="dWaterAmountAdd" value="5"/>
@@ -649,7 +652,7 @@
     <!--   Requires charcoal filtration process                    -->
     <!-- ========================================================= -->
     <item name="hgBB_Level2">
-      <property name="Extends" value="drinkJarBoiledWater"/>
+      <property name="Extends" value="hgBB_Drinks"/>
       <property name="Stacknumber" value="25"/>
       <property name="EconomicBundleSize" value="5"/>
     </item>
@@ -991,7 +994,7 @@
     <!--   Demonstrates diminishing returns on stacking            -->
     <!-- ========================================================= -->
     <item name="hgBB_Level3">
-      <property name="Extends" value="drinkJarBoiledWater"/>
+      <property name="Extends" value="hgBB_Drinks"/>
       <property name="Stacknumber" value="10"/>
       <property name="EconomicBundleSize" value="5"/>
     </item>
@@ -1475,7 +1478,7 @@
     <!--   Risk/reward balanced for highest tier                    -->
     <!-- ========================================================== -->
     <item name="hgBB_Level4">
-      <property name="Extends" value="drinkJarBoiledWater"/>
+      <property name="Extends" value="hgBB_Drinks"/>
       <property name="Stacknumber" value="5"/>
       <property name="EconomicBundleSize" value="1"/>
     </item>
@@ -2130,7 +2133,7 @@
     <!--   Requires master brewing technique                       -->
     <!-- ========================================================= -->
     <item name="hgBB_Level5">
-      <property name="Extends" value="drinkJarBoiledWater"/>
+      <property name="Extends" value="hgBB_Drinks"/>
       <property name="Stacknumber" value="1"/>
       <property name="EconomicBundleSize" value="1"/>
     </item>
