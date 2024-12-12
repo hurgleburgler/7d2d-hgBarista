@@ -515,6 +515,11 @@
       <ingredient name="drinkTripwire" count="1"/>
       <ingredient name="drinkShotOfEspresso" count="1"/>
     </recipe>
+
+    <recipe name="drinkQuad" count="3" craft_time="5" tags="perkBattlefieldBarista,learnable">
+      <ingredient name="drinkTripwire" count="4"/>
+    </recipe>
+
     <!-- Dragon's Breath Espresso -->
     <recipe name="drinkDragonsBreathEspresso" count="1" craft_area="legendaryCoffeeDrinks_hgBB" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkQuad" count="2"/>
@@ -908,7 +913,7 @@
       </effect_group>
     </recipe>
 
-    <recipe name="drinkJarGrandpasAwesomeSauce" count="1" craft_area="legendaryCoffeeDrinks_hgBB" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+    <recipe name="drinkJarGrandpasAwesomeSauce" count="1" craft_area="legendaryCoffeeDrinks_hgBB" craft_tool="toolForgeCrucible" tags="perkMasterChef,learnable">
       <ingredient name="casinoCoin" count="50"/>
       <ingredient name="foodHoney" count="5"/>
       <ingredient name="foodCropMushrooms" count="5"/>
@@ -919,7 +924,7 @@
       </effect_group>
     </recipe>
 
-    <recipe name="drinkJarGrandpasLearningElixir" count="1" craft_area="legendaryCoffeeDrinks_hgBB" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+    <recipe name="drinkJarGrandpasLearningElixir" count="1" craft_area="legendaryCoffeeDrinks_hgBB" craft_tool="toolForgeCrucible" tags="perkMasterChef,learnable">
       <ingredient name="foodCanDogfood" count="2"/>
       <ingredient name="drinkJarRedTea" count="2"/>
       <ingredient name="resourceAcid" count="1"/>
@@ -927,7 +932,7 @@
       <ingredient name="foodCropGraceCorn" count="1"/>
     </recipe>
 
-    <recipe name="drinkJarGrandpasMoonshine" count="1" craft_area="legendaryCoffeeDrinks_hgBB" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+    <recipe name="drinkJarGrandpasMoonshine" count="1" craft_area="legendaryCoffeeDrinks_hgBB" craft_tool="toolForgeCrucible" tags="perkMasterChef,learnable">
       <ingredient name="foodCornMeal" count="5"/>
       <ingredient name="drinkJarBeer" count="1"/>
       <ingredient name="foodCropBlueberries" count="5"/>
