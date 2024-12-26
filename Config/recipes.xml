@@ -797,8 +797,7 @@
       <ingredient name="drinkJarPurifiedWater" count="5"/>
       <effect_group>
         <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-1" tags="foodRawMeat"/>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-2" tags="drinkJarPurifiedWater"/>
+        <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
       </effect_group>
     </recipe>
 
@@ -808,8 +807,7 @@
       <ingredient name="drinkJarPurifiedWater" count="5"/>
       <effect_group>
         <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-1" tags="foodRawMeat"/>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-2" tags="drinkJarPurifiedWater"/>
+        <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
       </effect_group>
     </recipe>
 
@@ -820,8 +818,7 @@
       <ingredient name="drinkJarPurifiedWater" count="5"/>
       <effect_group>
         <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-1" tags="foodRawMeat"/>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-2" tags="drinkJarPurifiedWater"/>
+        <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
       </effect_group>
     </recipe>
 
@@ -832,8 +829,7 @@
       <ingredient name="drinkJarPurifiedWater" count="5"/>
       <effect_group>
         <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-1" tags="foodRawMeat"/>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-2" tags="drinkJarPurifiedWater"/>
+        <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
       </effect_group>
     </recipe>
 
@@ -845,8 +841,7 @@
       <ingredient name="drinkJarPurifiedWater" count="5"/>
       <effect_group>
         <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-1" tags="foodRawMeat"/>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-2" tags="drinkJarPurifiedWater"/>
+        <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
       </effect_group>
     </recipe>
 
@@ -858,8 +853,7 @@
       <ingredient name="drinkJarPurifiedWater" count="5"/>
       <effect_group>
         <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-1" tags="foodRawMeat"/>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-2" tags="drinkJarPurifiedWater"/>
+        <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
       </effect_group>
     </recipe>
 
@@ -871,8 +865,6 @@
       <ingredient name="drinkJarPurifiedWater" count="1"/>
       <effect_group>
         <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-2" tags="foodRottingFlesh"/>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-2" tags="drinkJarPurifiedWater"/>
       </effect_group>
     </recipe>
 
@@ -884,8 +876,6 @@
       <ingredient name="drinkJarPurifiedWater" count="1"/>
       <effect_group>
         <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-2" tags="foodRottingFlesh"/>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-2" tags="drinkJarPurifiedWater"/>
       </effect_group>
     </recipe>
 
@@ -895,9 +885,7 @@
       <ingredient name="resourceFreezeDriedVegetableStew" count="1"/>
       <ingredient name="drinkJarPurifiedWater" count="1"/>
       <effect_group>
-        <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-2" tags="foodRottingFlesh"/>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-2" tags="drinkJarPurifiedWater"/>
+        <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-2" tags="foodCanSham"/>
       </effect_group>
     </recipe>
 
@@ -907,9 +895,7 @@
       <ingredient name="resourceFreezeDriedVegetableStew" count="1"/>
       <ingredient name="drinkJarPurifiedWater" count="1"/>
       <effect_group>
-        <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-2" tags="foodRottingFlesh"/>
-        <passive_effect name="CraftingIngredientCount" level="4" operation="base_add" value="-1" tags="drinkJarPurifiedWater"/>
-        <passive_effect name="CraftingIngredientCount" level="5" operation="base_add" value="-2" tags="drinkJarPurifiedWater"/>
+        <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-2" tags="foodCanSham"/>
       </effect_group>
     </recipe>
 

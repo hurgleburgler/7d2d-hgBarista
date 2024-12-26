@@ -1074,7 +1074,7 @@
     <item name="drinkCappuccino">
       <property name="Extends" value="hgBB_Level3"/>
       <property name="EconomicValue" value="250"/>
-      <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
+      <property name="DisplayType" value="drinkBB_BasicMilkCoffee2"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkCappuccinoRecipe"/>
 
       <effect_group tiered="false">
@@ -1150,7 +1150,7 @@
     <item name="drinkCafeLatte">
       <property name="Extends" value="hgBB_Level3"/>
       <property name="EconomicValue" value="280"/>
-      <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
+      <property name="DisplayType" value="drinkBB_BasicMilkCoffee2"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkCafeLatteRecipe"/>
 
       <effect_group tiered="false">
@@ -1226,7 +1226,7 @@
     <item name="drinkCafeCreme">
       <property name="Extends" value="hgBB_Level3"/>
       <property name="EconomicValue" value="300"/>
-      <property name="DisplayType" value="drinkBB_BasicMilkCoffee2"/>
+      <property name="DisplayType" value="drinkBB_BasicMilkCoffee"/>
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkCafeCremeRecipe"/>
 
       <effect_group tiered="false">
@@ -1242,7 +1242,6 @@
         <display_value name="dColdResist" value="20"/>
         <display_value name="dFoodAmountAdd" value="10"/>  <!-- Kept separate since health is different -->
         <display_value name="dFoodHealthAmount" value="5"/>
-        <display_value name="dDuration" value="180"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="540"/>
@@ -1320,7 +1319,6 @@
         <display_value name="dColdResist" value="20"/>
         <display_value name="dFoodAmountAdd" value="20"/>
         <display_value name="dFoodHealthAmount" value="10"/>
-        <display_value name="dDuration" value="210"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="630"/>
