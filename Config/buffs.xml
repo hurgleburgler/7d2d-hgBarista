@@ -429,9 +429,6 @@
         <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$parkourJumpBonus" operation="set" value="@$parkourJumpStacks"/>
         <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$parkourJumpBonus" operation="multiply" value="2"/>
 
-        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$parkourJumpBonus" operation="set" value="@$parkourJumpStacks"/>
-        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$parkourJumpBonus" operation="multiply" value="2"/>
-
         <passive_effect name="StaminaLoss" operation="perc_add" value="-.75" tags="jumping"/>
         <!--<triggered_effect trigger="onSelfJump" action="PlaySound" sound="twitch_jump" play_in_head="false"/>-->
       </effect_group>
@@ -718,6 +715,10 @@
           <requirement name="!EntityTagCompare" target="other" tags="npc,vehicle,player,turret,drone"/>
         </triggered_effect>
 
+        <passive_effect name="BuffResistance" operation="base_add" value="5" tags="buffBurningMolotov"/>
+        <passive_effect name="BuffResistance" operation="base_add" value="5" tags="buffBurningFlamingArrow"/>
+        <passive_effect name="BuffResistance" operation="base_add" value="5" tags="buffBurningEnvironmentHack"/>
+        <passive_effect name="BuffResistance" operation="base_add" value="5" tags="buffBurningEnvironment"/>
         <passive_effect name="HypothermalResist" operation="base_add" value="100"/>
         <passive_effect name="HyperthermalResist" operation="base_add" value="100"/>
         <passive_effect name="ElementalDamageResist" operation="base_add" value="20000" tags="heat"/>
