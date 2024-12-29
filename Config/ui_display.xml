@@ -164,6 +164,15 @@
       <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
     </item_display_info>
 
+    <item_display_info display_type="drinkDarkRoastRevenant" display_group="groupConsumables">
+      <display_entry name="dMobilityBoost" title_key="statMobilityBoost" display_type="Percent"/>
+      <display_entry name="dJumpBoost" title_key="statJumpBoost" display_type="Percent"/>
+      <display_entry name="dEntityDamage" title_key="statEntityDamage" display_type="Percent"/>
+      <display_entry name="dStaminaRegen" title_key="statStealthBonus" display_type="Percent"/>
+      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+      <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
+    </item_display_info>
+
     <item_display_info display_type="drinkNightmareNitroColdBrew" display_group="groupConsumables">
       <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
       <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>

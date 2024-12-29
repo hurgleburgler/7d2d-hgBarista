@@ -69,6 +69,8 @@ buffBulletproofCoffee,buffs,Buff,Pumpkin Spiked Latte
 buffBulletproofCoffeeDesc,buffs,Buff,Pumpkin Spiked Latte
 buffLondonFogStealth,buffs,Buff,London Fog Stealth
 buffLondonFogStealthDesc,buffs,Buff,London Fog Stealth
+buffVampireName,buffs,Buff,"Vampiric Power"
+buffVampireDesc,buffs,Buff,"Dark powers course through your veins. At night, you move faster and hit harder, healing from your kills. But beware the burning light of day, for it saps your strength and vitality."
 buffDragonsBreath,buffs,Buff,Dragon's Breath
 buffDragonsBreathDesc,buffs,Buff,Your very presence ignites the air around you. Fire cannot harm you.
 buffPumpkinClubBonus,buffs,Buff,Club Master
@@ -131,6 +133,8 @@ drinkBulletproofCoffee,items,Item,Bullet-proof Coffee
 drinkBulletproofCoffeeDesc,items,Item,"A powerful blend reminiscent of black strap, this robust coffee merges the richness of brewed beans with nutrient-dense animal fat. It’s designed to sustain you through grueling challenges, boosting both your health and stamina when the world feels bleak. This brew is your ally, fortifying you for whatever dangers lie ahead."
 drinkLondonFogLatte,items,Item,London Fog Latte
 drinkLondonFogLatteDesc,items,Item,"This cozy blend of tea, milk, and honey wraps you in warmth while sharpening your senses. Perfect for quiet moments, it enhances your stealth and vision, keeping you alert amidst the chaos. Sip this comforting brew and feel ready to navigate the dangers of the wasteland with newfound awareness."
+drinkDarkRoastRevenant,items,Item,"Dark Roast Revenant"
+drinkDarkRoastRevenantDesc,items,Item,"A sinister blend that bestows vampiric powers through dark coffee magic. During the night, you'll move faster and hit harder while healing from your kills, but beware the harsh light of day. The perfect drink for nocturnal predators who aren't afraid of paying the price for power."
 drinkNightmareNitroColdBrew,items,Item,Nightmare Nitro Cold Brew
 drinkNightmareNitroColdBrewDesc,items,Item,"A terrifying concoction of pressurized cold brew infused with pure nitrogen. The extreme cold and pressure create unnatural effects, dramatically enhancing speed and power while chilling you to the bone. Warning: May cause extreme jitters, heart palpitations, and an overwhelming urge to fight everything that moves."
 drinkQuad,items,Item,The Quad
@@ -154,6 +158,7 @@ statCombatSpeed,stats,Stat,Combat Speed
 statDamageBonus,stats,Stat,Damage Bonus
 statDehydration,stats,Stat,Total Water Cost
 statDiseaseResist,stats,Stat,Disease Resistance
+statEntityDamage,stats,Stat,Entity Damage
 statFallResist,stats,Stat,Fall Resistance
 statGeneralResist,stats,Stat,General Resistance
 statHealthDrain,stats,Stat,Health Drain

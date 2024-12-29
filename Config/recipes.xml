@@ -439,7 +439,7 @@
     </recipe>
 
     <!-- Cuppa Spring-Heeled Joe - Combat coffee with enhanced mobility -->
-    <recipe name="drinkSpringHeeledJoe" count="1" craft_area="espressoDrinks_hgBB" craft_tool="resourceMetalPipe" craft_time="120" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkSpringHeeledJoe" count="1" craft_area="espressoDrinks_hgBB" craft_time="120" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkTripwire" count="1"/>
       <ingredient name="drugOhShitzDrops" count="1"/>
       <ingredient name="resourceSpring" count="1"/>
@@ -480,6 +480,14 @@
       <ingredient name="foodHoney" count="1"/>
       <ingredient name="drugCovertCats" count="1"/>
       <ingredient name="apparelBandana" count="1"/>
+    </recipe>
+
+    <!-- Recipe -->
+    <recipe name="drinkDarkRoastRevenant" count="0" craft_area="espressoDrinks_hgBB" craft_time="120" tags="perkBattlefieldBarista,learnable">
+      <ingredient name="drinkTripwire" count="1"/>
+      <ingredient name="medicalBloodBag" count="1"/>
+      <ingredient name="foodHoney" count="1"/>
+      <ingredient name="drugPainkillers" count="1"/>
     </recipe>
 
     <!-- Nightmare Nitro Cold Brew - Ultimate pressurized coffee -->

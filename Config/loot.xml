@@ -66,6 +66,7 @@
       <item name="drinkBearBrewRecipe" count="1" loot_prob_template="verylow"/>
       <item name="drinkBulletproofCoffeeRecipe" count="1" loot_prob_template="verylow"/>
       <item name="drinkLondonFogLatteRecipe" count="1" loot_prob_template="verylow"/>
+      <item name="drinkDarkRoastRevenantRecipe" count="1" loot_prob_template="verylow"/>
       <item name="drinkNightmareNitroColdBrewRecipe" count="1" loot_prob_template="verylow"/>
     </lootgroup>
 
@@ -76,6 +77,7 @@
       <item name="drinkBearBrew" count="1" loot_prob_template="verylow"/>
       <item name="drinkBulletproofCoffee" count="1" loot_prob_template="verylow"/>
       <item name="drinkLondonFogLatte" count="1" loot_prob_template="verylow"/>
+      <item name="drinkDarkRoastRevenant" count="1" loot_prob_template="verylow"/>
       <item name="drinkNightmareNitroColdBrew" count="1" loot_prob_template="verylow"/>
     </lootgroup>
 

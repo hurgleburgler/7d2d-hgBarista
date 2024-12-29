@@ -12,6 +12,7 @@
     <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPumpkinClubBonusDuration" operation="set" value="0"/>
     <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffBulletproofCoffeeDuration" operation="set" value="0"/>
     <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffLondonFogStealthDuration" operation="set" value="0"/>
+    <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffVampireDuration" operation="set" value="0"/>
     <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffDragonsBreathDuration" operation="set" value="0"/>
     <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffApexPeakDuration" operation="set" value="0"/>
     <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDragonsBreath"/>
@@ -667,6 +668,62 @@
         <requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
         <passive_effect name="DamageBonus" operation="base_add" value="1.5"/> <!--For UI-->
         <passive_effect name="EntityDamage" operation="perc_add" value="1.5"/>
+      </effect_group>
+    </buff>
+
+    <buff name="buffVampire" name_key="buffVampireName" description_key="buffVampireDesc" icon="ui_game_symbol_buff_vampire" icon_color="255,0,0">
+      <stack_type value="replace"/>
+      <duration value="0"/>
+      <display_value value=".buffVampireDisplay"/>
+      <display_value_format value="time"/>
+
+      <effect_group>
+        <!-- Duration cap check -->
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffVampireDuration" operation="set" value="@$buffVampireDurationMax">
+          <requirement name="CVarCompare" cvar="$buffVampireDuration" operation="GT" value="@$buffVampireDurationMax"/>
+        </triggered_effect>
+
+        <!-- Duration management -->
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffVampireDuration" operation="subtract" value="@$MetabolismDuration"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffVampireDisplay" operation="set" value="@$buffVampireDuration"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffVampireDisplay" operation="divide" value="@$MetabolismDuration"/>
+
+        <!-- Kill effects -->
+        <triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Health" operation="add" value="50"/>
+        <triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Stamina" operation="add" value="50"/>
+        <triggered_effect trigger="onSelfKilledOther" action="PlaySound" sound="player_healed" play_in_head="true"/>
+      </effect_group>
+
+      <!-- Rest of the effect groups remain the same -->
+      <effect_group name="NightPowers">
+        <requirement name="IsNight"/>
+        <passive_effect name="RunSpeed" operation="perc_add" value="0.5"/>
+        <passive_effect name="WalkSpeed" operation="perc_add" value="0.5"/>
+        <passive_effect name="CrouchSpeed" operation="perc_add" value="0.5"/>
+        <passive_effect name="JumpStrength" operation="perc_add" value="0.5"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value="0.25"/>
+        <passive_effect name="StaminaChangeOT" operation="perc_add" value="0.25"/>
+      </effect_group>
+
+      <effect_group name="DayWeakness">
+        <requirement name="!IsNight"/>
+        <passive_effect name="RunSpeed" operation="perc_add" value="-0.5"/>
+        <passive_effect name="WalkSpeed" operation="perc_add" value="-0.5"/>
+        <passive_effect name="CrouchSpeed" operation="perc_add" value="-0.5"/>
+        <passive_effect name="JumpStrength" operation="perc_add" value="-0.5"/>
+        <passive_effect name="StaminaChangeOT" operation="perc_add" value="-0.25"/>
+        <passive_effect name="HealthChangeOT" operation="base_add" value="-0.5"/>
+      </effect_group>
+
+      <!-- Cleanup -->
+      <effect_group>
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffVampire">
+          <requirement name="CVarCompare" cvar="$buffVampireDuration" operation="LTE" value="0"/>
+        </triggered_effect>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffVampireDisplay" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffVampireDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffVampireDurationMax" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" effect_name="Nightvision"/>
       </effect_group>
     </buff>
 

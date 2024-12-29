@@ -36,7 +36,7 @@
 
                 <!-- Level 4: Combat Coffee Drinks -->
                 <passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1"
-                                tags="commercialEspressoMachine_hgBB,drinkTripwire,drinkSpringHeeledJoe,drinkPumpkinSpikeLatte,drinkBearBrew,drinkBulletproofCoffee,drinkLondonFogLatte,drinkNightmareNitroColdBrew"/>
+                                tags="commercialEspressoMachine_hgBB,drinkTripwire,drinkSpringHeeledJoe,drinkPumpkinSpikeLatte,drinkBearBrew,drinkBulletproofCoffee,drinkLondonFogLatte,drinkDarkRoastRevenant,drinkNightmareNitroColdBrew"/>
 
                 <!-- Level 5: Legendary Drinks -->
                 <passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,5" value="1" tags="antiqueCoffeeMachine_hgBB,drinkQuad,drinkDragonsBreathEspresso,drinkApexBrew,drinkPhoenixFireLatte,drinkGrandpasLastStand"/>

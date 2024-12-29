@@ -2006,6 +2006,68 @@
       </effect_group>
     </item>
 
+    <!-- ========================================================== -->
+    <!-- ================= DARK ROAST REVENANT ==================== -->
+    <!-- ========================================================== -->
+    <!-- Level 4 vampiric coffee with day/night cycle effects      -->
+    <!-- Base Mathematics:                                         -->
+    <!--   Starting from Tripwire: 52% regen, 210s duration       -->
+    <!-- Vampire Effects:                                          -->
+    <!--   Kill Rewards: +50 health and stamina on kills          -->
+    <!--   Night Powers: +50% movement speed, +25% damage         -->
+    <!--   Day Weakness: -50% movement speed, health drain        -->
+    <!-- Calculations:                                            -->
+    <!--   Base Tripwire: 52% regen                               -->
+    <!--   Vampiric Adjustment: -20% (blood thirst)               -->
+    <!--   Final Regen: 52% × 0.8 = ~42%                          -->
+    <!-- Duration Logic:                                          -->
+    <!--   Base Duration: 300s (5 minutes)                        -->
+    <!--   Maximum Stack: 900s (15 minutes)                       -->
+    <!--   Aligned with buff duration                             -->
+    <!-- Notes:                                                   -->
+    <!--   Perfect for night operations                           -->
+    <!--   High risk/reward ratio                                 -->
+    <!--   Kill rewards encourage aggressive play                 -->
+    <!--   Requires careful day/night cycle management            -->
+    <!-- ========================================================== -->
+
+    <item name="drinkDarkRoastRevenant">
+      <property name="Extends" value="hgBB_Level4"/>
+      <property name="EconomicValue" value="700"/>
+      <property name="DisplayType" value="drinkDarkRoastRevenant"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkDarkRoastRevenantRecipe"/>
+
+      <effect_group tiered="false" name="Drink Tier 4">
+        <display_value name="dMobilityBoost" value=".5"/>
+        <display_value name="dJumpBoost" value=".5"/>
+        <display_value name="dEntityDamage" value="0.25"/>
+        <display_value name="dStaminaRegen" value="0.25"/>
+        <display_value name="dDuration" value="300"/>
+        <display_value name="dDurationMax" value="900"/>
+
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkDarkRoastRevenantTooltip"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="player_poison_warning" play_in_head="true"/>
+
+        <!-- Caffeine buff setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="900"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="300"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="0.42"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="15"/>
+
+        <!-- Set up vampire buff duration with cap -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffVampireDurationMax" operation="set" value="900"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffVampireDuration" operation="add" value="300"/>
+
+        <!-- Apply duration cap if exceeded -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffVampireDuration" operation="set" value="@$buffVampireDurationMax">
+          <requirement name="CVarCompare" cvar="$buffVampireDuration" operation="GT" value="@$buffVampireDurationMax"/>
+        </triggered_effect>
+
+        <!-- Add buffs -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffVampire"/>
+      </effect_group>
+    </item>
+
     <!-- ========================================================= -->
     <!-- ============= NIGHTMARE NITRO COLD BREW ================= -->
     <!-- ========================================================= -->
@@ -2634,7 +2696,6 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkBearBrew" operation="set" value="1"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
       </effect_group>
-
     </item>
 
     <item name="drinkBulletproofCoffeeRecipe">
@@ -2647,7 +2708,6 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkBulletproofCoffee" operation="set" value="1"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
       </effect_group>
-
     </item>
 
     <item name="drinkLondonFogLatteRecipe">
@@ -2660,7 +2720,18 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkLondonFogLatte" operation="set" value="1"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
       </effect_group>
+    </item>
 
+    <item name="drinkDarkRoastRevenantRecipe">
+      <property name="Extends" value="hgBB_RecipeMain"/>
+      <property name="CustomIcon" value="drinkDarkRoastRevenant"/>
+      <property name="Unlocks" value="drinkDarkRoastRevenant"/>
+      <property name="EconomicValue" value="25000"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkLondonFogLatte" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
     </item>
 
     <item name="drinkNightmareNitroColdBrewRecipe">
@@ -2673,7 +2744,6 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkNightmareNitroColdBrew" operation="set" value="1"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
       </effect_group>
-
     </item>
 
     <!-- Recipe items for Level 5 -->
