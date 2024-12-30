@@ -2379,6 +2379,69 @@
       </effect_group>
     </item>
 
+    <!-- ========================================================= -->
+    <!-- =================== ROLAND'S ROAST ====================== -->
+    <!-- ========================================================= -->
+    <!-- Legendary gunslinger-focused combat coffee                -->
+    <!-- Base (Quad):                                              -->
+    <!--   Duration: 300s base, 900s max                           -->
+    <!--   Stamina: 100%                                           -->
+    <!--   No dehydration (Legendary perk)                         -->
+    <!-- Combat Package:                                           -->
+    <!--   Primary Effects:                                        -->
+    <!--     - 200% increased gun damage                           -->
+    <!--     - 300% headshot damage                                -->
+    <!--     - 100% reload speed                                   -->
+    <!--     - 25% critical chance                                 -->
+    <!--   Gunslinger Effects:                                     -->
+    <!--     - Additional 100% damage with revolvers               -->
+    <!--     - Enhanced accuracy while moving                      -->
+    <!--     - 30% faster movement                                 -->
+    <!--     - Health/stamina restore on kills                     -->
+    <!-- Visual Effects:                                           -->
+    <!--   - World goes grayscale during focus                     -->
+    <!--   - Revolver sound effects                                -->
+    <!-- Notes:                                                    -->
+    <!--   - No negative effects due to legendary status           -->
+    <!--   - Perfect recreation of gunslinger's supernatural focus -->
+    <!--   - Designed for pistol/revolver specialists              -->
+    <!--   - Deadly accuracy with constant movement                -->
+    <!-- ========================================================= -->
+
+    <item name="drinkRolandsRoast">
+      <property name="Extends" value="hgBB_Level5"/>
+      <property name="EconomicValue" value="35000"/>
+      <property name="DisplayType" value="drinkRolandsRoast"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkRolandsRoastRecipe"/>
+
+      <effect_group tiered="false" name="Drink Tier 5">
+        <!-- The 6 displayed values -->
+        <display_value name="dStaminaRegen" value="1"/>
+        <display_value name="dGunDamage" value="2"/>
+        <display_value name="dHeadshotBonus" value="3"/>
+        <display_value name="dRevolverBonus" value="1"/>
+        <display_value name="dDuration" value="300"/>
+        <display_value name="dDurationMax" value="900"/>
+
+        <!-- Caffeine buff setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="900"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="300"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDehydrate"/>
+
+        <!-- Gunslinger buff duration setup with cap -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffGunslingerDurationMax" operation="set" value="900"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffGunslingerDuration" operation="add" value="300"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffGunslingerDuration" operation="set" value="@$buffGunslingerDurationMax">
+          <requirement name="CVarCompare" cvar="$buffGunslingerDuration" operation="GT" value="@$buffGunslingerDurationMax"/>
+        </triggered_effect>
+
+        <!-- Add core buffs -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffGunslinger"/>
+      </effect_group>
+    </item>
+
     <!-- ======================================================== -->
     <!-- ================ GRANDPA'S LAST STAND ================== -->
     <!-- ======================================================== -->
@@ -2726,6 +2789,18 @@
       <property name="Extends" value="hgBB_RecipeMain"/>
       <property name="CustomIcon" value="drinkDarkRoastRevenant"/>
       <property name="Unlocks" value="drinkDarkRoastRevenant"/>
+      <property name="EconomicValue" value="25000"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkLondonFogLatte" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+      </effect_group>
+    </item>
+
+    <item name="drinkRolandsRoastRecipe">
+      <property name="Extends" value="hgBB_RecipeMain"/>
+      <property name="CustomIcon" value="drinkRolandsRoast"/>
+      <property name="Unlocks" value="drinkRolandsRoast"/>
       <property name="EconomicValue" value="25000"/>
 
       <effect_group tiered="false">

@@ -19,6 +19,7 @@
     <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffApexCrash"/>
     <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffPhoenixRebirth"/>
     <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffPhoenixFire"/>
+    <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffGunslinger"/>
     <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffGrandpasInfection"/>
     <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffGrandpasLegacy"/>
   </append>
@@ -962,6 +963,84 @@
       <effect_group>
         <triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffPhoenixRebirth"/>
         <triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffPhoenixRebirth"/>
+      </effect_group>
+    </buff>
+
+    <buff name="buffGunslinger" name_key="buffGunslingerName" description_key="buffGunslingerDesc" icon="ui_game_symbol_buff_gunslinger" icon_color="153,51,51">
+      <stack_type value="ignore"/>
+      <duration value="0"/>
+      <display_value value=".buffGunslingerDisplay"/>
+      <display_value_format value="time"/>
+
+      <effect_group name="Timer">
+        <!-- Duration cap check -->
+        <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffGunslingerDuration" operation="set" value="@$buffGunslingerDurationMax">
+          <requirement name="CVarCompare" cvar="$buffGunslingerDuration" operation="GT" value="@$buffGunslingerDurationMax"/>
+        </triggered_effect>
+
+        <!-- Timer management -->
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffGunslingerDuration" operation="subtract" value="@$MetabolismDuration"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffGunslingerDisplay" operation="set" value="@$buffGunslingerDuration"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffGunslingerDisplay" operation="divide" value="@$MetabolismDuration"/>
+
+        <!-- Cleanup -->
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffGunslinger">
+          <requirement name="CVarCompare" cvar="$buffGunslingerDuration" operation="LTE" value="0"/>
+        </triggered_effect>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffGunslingerDisplay" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffGunslingerDuration" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffGunslingerDurationMax" operation="set" value="0"/>
+      </effect_group>
+
+      <!-- Rest of the effect groups remain the same -->
+      <!-- Core combat effects -->
+      <effect_group name="WeaponMastery">
+
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkRolandsRoastTooltip"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="44magnum_reload" play_in_head="true"/>
+
+        <!-- The shooter's art -->
+        <passive_effect name="EntityDamage" operation="perc_add" value="2.0" tags="perkGunslinger"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value="1.5" tags="perkDeadEye"/>
+
+        <!-- Bandolier-style reload and handling -->
+        <passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="1.0" tags="perkGunslinger,perkDeadEye"/>
+        <passive_effect name="WeaponHandling" operation="base_add" value="50" tags="perkGunslinger,perkDeadEye"/>
+
+        <!-- Deadly accuracy -->
+        <passive_effect name="DamageModifier" operation="perc_add" value="3" tags="head"/>
+        <passive_effect name="CriticalChance" operation="base_add" value=".75" tags="perkGunslinger,perkDeadEye"/>
+        <passive_effect name="DamageBonus" operation="base_add" value="2.0" tags="perkGunslinger,perkDeadEye"/>
+      </effect_group>
+
+      <!-- Movement and combat mobility -->
+      <effect_group name="Mobility">
+        <passive_effect name="RunSpeed" operation="perc_add" value="0.3"/>
+        <passive_effect name="WalkSpeed" operation="perc_add" value="0.3"/>
+
+        <!-- Run and gun mastery -->
+        <passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-1" tags="perkGunslinger,perkDeadEye"/>
+        <passive_effect name="SpreadMultiplierAiming" operation="base_subtract" value="0.5" tags="perkGunslinger,perkDeadEye"/>
+        <passive_effect name="SpreadMultiplierRunning" operation="base_subtract" value="0.3" tags="perkGunslinger,perkDeadEye"/>
+      </effect_group>
+
+      <!-- Special effects for revolvers -->
+      <effect_group name="RevolverSpecialist">
+        <requirement name="HoldingItemHasTags" tags="revolver"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value="1.0"/> <!-- Additional 100% damage with revolvers -->
+        <passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="1.0"/> <!-- Even faster reload with revolvers -->
+        <passive_effect name="MaxRange" operation="perc_add" value="0.5"/> <!-- Enhanced range -->
+
+        <!-- Kill effects -->
+        <triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Health" operation="add" value="20"/>
+        <triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Stamina" operation="add" value="20"/>
+        <triggered_effect trigger="onSelfKilledOther" action="PlaySound" sound="twitch_celebrate" play_in_head="true"/>
+      </effect_group>
+
+      <!-- Visual effects -->
+      <effect_group>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="1" effect_name="Greyscale"/> <!-- World goes grayscale like focusing -->
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Greyscale"/>
       </effect_group>
     </buff>
 

@@ -482,7 +482,6 @@
       <ingredient name="apparelBandana" count="1"/>
     </recipe>
 
-    <!-- Recipe -->
     <recipe name="drinkDarkRoastRevenant" count="0" craft_area="espressoDrinks_hgBB" craft_time="120" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkTripwire" count="1"/>
       <ingredient name="medicalBloodBag" count="1"/>
@@ -557,6 +556,19 @@
       <ingredient name="thrownAmmoMolotovCocktail" count="1"/>
       <ingredient name="drugAntibiotics" count="5"/>
       <ingredient name="resourceGoldNugget" count="2"/>
+    </recipe>
+
+    <!-- Roland's Roast -->
+    <recipe name="drinkRolandsRoast" count="1" craft_area="legendaryCoffeeDrinks_hgBB" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
+      <ingredient name="drinkQuad" count="2"/>
+      <ingredient name="drinkJarCreamer" count="1"/>
+      <ingredient name="foodHoney" count="2"/>
+      <ingredient name="apparelCoatLeatherDuster" count="1"/>
+      <ingredient name="drugRecog" count="1"/>
+      <ingredient name="ammo44MagnumBulletBall" count="5"/>
+      <ingredient name="ammo762mmBulletBall" count="5"/>
+      <ingredient name="ammo9mmBulletBall" count="5"/>
+      <ingredient name="resourceRawDiamond" count="2"/>
     </recipe>
 
     <!-- Grandpa's Last Stand -->
