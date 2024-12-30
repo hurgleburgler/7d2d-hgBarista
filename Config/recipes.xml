@@ -482,7 +482,7 @@
       <ingredient name="apparelBandana" count="1"/>
     </recipe>
 
-    <recipe name="drinkDarkRoastRevenant" count="0" craft_area="espressoDrinks_hgBB" craft_time="120" tags="perkBattlefieldBarista,learnable">
+    <recipe name="drinkDarkRoastRevenant" count="1" craft_area="espressoDrinks_hgBB" craft_time="120" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkTripwire" count="1"/>
       <ingredient name="medicalBloodBag" count="1"/>
       <ingredient name="foodHoney" count="1"/>
