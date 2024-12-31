@@ -1,0 +1,74 @@
+<hurgleburgler>
+  <append xpath="/Sounds">
+    <SoundDataNode name="ash_on_start">
+      <AudioSource name="Sounds/AudioSource_VO"/>
+      <Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+      <AudioClip ClipName="#@modfolder:Resources/AshSounds.unity3d?bad_guy_with_the_gun"/>
+      <AudioClip ClipName="#@modfolder:Resources/AshSounds.unity3d?boomstick_short"/>
+      <AudioClip ClipName="#@modfolder:Resources/AshSounds.unity3d?fancy_pants"/>
+      <AudioClip ClipName="#@modfolder:Resources/AshSounds.unity3d?hail_to_the_king_baby"/>
+      <AudioClip ClipName="#@modfolder:Resources/AshSounds.unity3d?klaatu_verata_cough"/>
+      <AudioClip ClipName="#@modfolder:Resources/AshSounds.unity3d?names_ash_housewares"/>
+      <AudioClip ClipName="#@modfolder:Resources/AshSounds.unity3d?yo_she_bitch"/>
+      <LocalCrouchVolumeScale value="1.0"/>
+      <CrouchNoiseScale value="0.5"/>
+      <NoiseScale value="1"/>
+      <MaxVoices value="10"/>
+      <MaxRepeatRate value="1.111"/>
+      <runningvolumescale value="2"/>
+    </SoundDataNode>
+
+    <SoundDataNode name="ash_on_kill">
+      <AudioSource name="Sounds/AudioSource_VO"/>
+      <Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+      <AudioClip ClipName="#@modfolder:Resources/AshSounds.unity3d?gimme_some_sugar"/>
+      <AudioClip ClipName="#@modfolder:Resources/AshSounds.unity3d?groovy"/>
+      <AudioClip ClipName="#@modfolder:Resources/AshSounds.unity3d?jack_and_shit"/>
+      <AudioClip ClipName="#@modfolder:Resources/AshSounds.unity3d?taste"/>
+      <AudioClip ClipName="#@modfolder:Resources/AshSounds.unity3d?yeah_baby"/>
+      <LocalCrouchVolumeScale value="1.0"/>
+      <CrouchNoiseScale value="0.5"/>
+      <NoiseScale value="1"/>
+      <MaxVoices value="10"/>
+      <MaxRepeatRate value="1.111"/>
+      <runningvolumescale value="2"/>
+    </SoundDataNode>
+
+    <SoundDataNode name="ash_on_injury">
+      <AudioSource name="Sounds/AudioSource_VO"/>
+      <Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+      <AudioClip ClipName="#@modfolder:Resources/AshSounds.unity3d?bastards"/>
+      <LocalCrouchVolumeScale value="1.0"/>
+      <CrouchNoiseScale value="0.5"/>
+      <NoiseScale value="1"/>
+      <MaxVoices value="10"/>
+      <MaxRepeatRate value="1.111"/>
+      <runningvolumescale value="2"/>
+    </SoundDataNode>
+
+    <SoundDataNode name="vampire_on_start">
+      <AudioSource name="Sounds/AudioSource_VO"/>
+      <Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+      <AudioClip ClipName="#@modfolder:Resources/VampireSounds.unity3d?dracula_cackle"/>
+      <LocalCrouchVolumeScale value="1.0"/>
+      <CrouchNoiseScale value="0.5"/>
+      <NoiseScale value="1"/>
+      <MaxVoices value="10"/>
+      <MaxRepeatRate value="1.111"/>
+      <runningvolumescale value="2"/>
+    </SoundDataNode>
+
+    <SoundDataNode name="vampire_on_kill">
+      <AudioSource name="Sounds/AudioSource_VO"/>
+      <Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+      <AudioClip ClipName="#@modfolder:Resources/VampireSounds.unity3d?suck_blood"/>
+      <LocalCrouchVolumeScale value="1.0"/>
+      <CrouchNoiseScale value="0.5"/>
+      <NoiseScale value="1"/>
+      <MaxVoices value="10"/>
+      <MaxRepeatRate value="1.111"/>
+      <runningvolumescale value="2"/>
+    </SoundDataNode>
+
+  </append>
+</hurgleburgler>

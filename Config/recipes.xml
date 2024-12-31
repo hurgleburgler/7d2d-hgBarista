@@ -571,6 +571,19 @@
       <ingredient name="resourceRawDiamond" count="2"/>
     </recipe>
 
+    <!-- Boomstick Brew -->
+    <recipe name="drinkBoomstickBrew" count="1" craft_area="legendaryCoffeeDrinks_hgBB" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
+      <ingredient name="drinkQuad" count="2"/>
+      <ingredient name="drinkJarCreamer" count="1"/>
+      <ingredient name="foodHoney" count="2"/>
+      <ingredient name="ammoGasCan" count="1"/>
+      <ingredient name="drugRecog" count="1"/>
+      <ingredient name="meleeToolAxeT3ChainsawParts" count="3"/>
+      <ingredient name="gunShotgunT1DoubleBarrelParts" count="3"/>
+      <ingredient name="ammoShotgunShell" count="50"/>
+      <ingredient name="resourceRawDiamond" count="2"/>
+    </recipe>
+
     <!-- Grandpa's Last Stand -->
     <recipe name="drinkGrandpasLastStand" count="1" craft_area="legendaryCoffeeDrinks_hgBB" craft_tool="toolForgeCrucible" craft_time="3600" tags="perkBattlefieldBarista,learnable">
       <ingredient name="drinkQuad" count="2"/>

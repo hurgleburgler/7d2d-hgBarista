@@ -35,7 +35,7 @@
   <append xpath="/buffs">
 
     <buff name="buffCursed" name_key="buffCursedCoffee" description_key="buffCursedCoffeeDesc" icon="ui_game_symbol_skull" icon_color="0,255,0" icon_blink="true">
-      <stack_type value="ignore"/>
+      <stack_type value="replace"/>
 
       <effect_group tiered="false">
         <!-- Apply stat penalties -->
@@ -491,6 +491,8 @@
 
       <!-- Club damage effects -->
       <effect_group>
+        <requirement name="HoldingItemHasTags" tags="club"/>
+
         <!-- Base club damage boost -->
         <passive_effect name="EntityDamage" operation="perc_add" value="0.5" tags="perkBrawler"/>
 
@@ -679,6 +681,8 @@
       <display_value_format value="time"/>
 
       <effect_group>
+        <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="vampire_on_start"/>
+
         <!-- Duration cap check -->
         <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffVampireDuration" operation="set" value="@$buffVampireDurationMax">
           <requirement name="CVarCompare" cvar="$buffVampireDuration" operation="GT" value="@$buffVampireDurationMax"/>
@@ -692,7 +696,7 @@
         <!-- Kill effects -->
         <triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Health" operation="add" value="50"/>
         <triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Stamina" operation="add" value="50"/>
-        <triggered_effect trigger="onSelfKilledOther" action="PlaySound" sound="player_healed" play_in_head="true"/>
+        <triggered_effect trigger="onSelfKilledOther" action="PlaySound" sound="vampire_on_kill"/>
       </effect_group>
 
       <!-- Rest of the effect groups remain the same -->
@@ -997,7 +1001,7 @@
       <effect_group name="WeaponMastery">
 
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkRolandsRoastTooltip"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="44magnum_reload" play_in_head="true"/>
+        <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="44magnum_reload"/>
 
         <!-- The shooter's art -->
         <passive_effect name="EntityDamage" operation="perc_add" value="2.0" tags="perkGunslinger"/>
@@ -1034,13 +1038,64 @@
         <!-- Kill effects -->
         <triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Health" operation="add" value="20"/>
         <triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Stamina" operation="add" value="20"/>
-        <triggered_effect trigger="onSelfKilledOther" action="PlaySound" sound="twitch_celebrate" play_in_head="true"/>
+        <triggered_effect trigger="onSelfKilledOther" action="PlaySound" sound="levelup" play_in_head="true"/>
       </effect_group>
 
       <!-- Visual effects -->
       <effect_group>
         <triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="1" effect_name="Greyscale"/> <!-- World goes grayscale like focusing -->
         <triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Greyscale"/>
+      </effect_group>
+    </buff>
+
+    <buff name="buffGroovy" name_key="buffGroovyName" description_key="buffGroovyDesc" icon="ui_game_symbol_chainsaw" icon_color="255,0,0">
+      <stack_type value="ignore"/>
+      <duration value="0"/>
+      <display_value value=".buffGroovyDisplay"/>
+      <display_value_format value="time"/>
+
+      <effect_group>
+        <!-- Timer management -->
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffGroovyDuration" operation="subtract" value="@$MetabolismDuration"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffGroovyDisplay" operation="set" value="@$buffGroovyDuration"/>
+        <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffGroovyDisplay" operation="divide" value="@$MetabolismDuration"/>
+
+        <!-- Sound effects - Ash's one-liners -->
+        <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="ash_on_start"/>
+        <triggered_effect trigger="onSelfKilledOther" action="PlaySound" sound="ash_on_kill"/>
+        <triggered_effect trigger="onSelfDamagedSelf" action="PlaySound" sound="ash_on_injury"/>
+
+        <!-- Cleanup -->
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffGroovy">
+          <requirement name="CVarCompare" cvar="$buffGroovyDuration" operation="LTE" value="0"/>
+        </triggered_effect>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffGroovyDisplay" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffGroovyDuration" operation="set" value="0"/>
+      </effect_group>
+
+      <!-- Combat effects channeling Ash's signature style -->
+      <effect_group name="GroovyCombat">
+        <!-- Enhanced chainsaw and boomstick damage -->
+        <passive_effect name="EntityDamage" operation="perc_add" value="2.0" tags="chainsaw"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value="2.0" tags="shotgun"/>
+
+        <!-- Faster reload and weapon handling -->
+        <passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="2.0" tags="shotgun"/>
+        <passive_effect name="WeaponHandling" operation="base_add" value="50" tags="shotgun"/>
+
+        <!-- Deadite slaying expertise -->
+        <passive_effect name="EntityDamage" operation="perc_add" value="3.0" target_tags="zombie,walker,radiated"/>
+
+        <!-- Health and stamina restore on kills -->
+        <triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Health" operation="add" value="10"/>
+        <triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Stamina" operation="add" value="10"/>
+      </effect_group>
+
+      <!-- Movement effects for Ash's dynamic combat style -->
+      <effect_group name="GroovyMobility">
+        <passive_effect name="RunSpeed" operation="perc_add" value="0.5"/>
+        <passive_effect name="JumpStrength" operation="perc_add" value="0.5"/>
+        <passive_effect name="GeneralDamageResist" operation="base_add" value="0.5"/>
       </effect_group>
     </buff>
 

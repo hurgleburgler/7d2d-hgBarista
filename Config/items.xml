@@ -2442,6 +2442,78 @@
       </effect_group>
     </item>
 
+    <!-- ========================================================= -->
+    <!-- ============== SHOP SMART, SHOP S-MART ESPRESSO ========= -->
+    <!-- ========================================================= -->
+    <!-- Legendary Evil Dead inspired combat coffee                -->
+    <!-- Base Mathematics:                                         -->
+    <!--   Starting from The Quad: Maximum safe caffeine           -->
+    <!--   Enhanced by ancient evil-fighting powers                -->
+    <!-- Combat Package:                                           -->
+    <!--   Primary Effects:                                        -->
+    <!--     - 200% increased chainsaw damage                      -->
+    <!--     - 200% increased boomstick damage                     -->
+    <!--     - 200% faster shotgun reload speed                    -->
+    <!--     - 300% bonus vs zombies/deadites                      -->
+    <!--   Combat Mechanics:                                       -->
+    <!--     - 200% one-handed weapon damage                       -->
+    <!--     - 100% general reload speed                           -->
+    <!--     - 50 health/stamina on kills                          -->
+    <!--     - Enhanced weapon handling                            -->
+    <!--   Mobility Effects:                                       -->
+    <!--     - 50% increased run speed                             -->
+    <!--     - 50% increased jump strength                         -->
+    <!--     - 50% damage resistance                               -->
+    <!-- Duration Logic:                                           -->
+    <!--   Base Duration: 300s (5 minutes)                         -->
+    <!--   Maximum Stack: 900s (15 minutes)                        -->
+    <!--   No dehydration (legendary perk)                         -->
+    <!-- Recipe Requirements:                                      -->
+    <!--   Quad-shot base for maximum power                        -->
+    <!--   Chainsaw parts for hack-and-slash                       -->
+    <!--   Shotgun parts for boomstick action                      -->
+    <!--   Ammo and gas can for authenticity                       -->
+    <!-- Final Values:                                             -->
+    <!--   Complete Combat Package:                                -->
+    <!--     - Maximum caffeine stimulation                        -->
+    <!--     - Enhanced deadite slaying                            -->
+    <!--     - Signature weapon mastery                            -->
+    <!--     - Superior mobility                                   -->
+    <!-- Notes:                                                    -->
+    <!--   Ultimate Evil Dead tribute drink                        -->
+    <!--   Combines Ash's signature weapons                        -->
+    <!--   Perfect for primitive screwhead slaying                 -->
+    <!--   Includes authentic one-liners                           -->
+    <!--   Remember to shop smart, shop S-Mart!                    -->
+    <!-- ========================================================= -->
+
+    <!-- Add to items.xml -->
+    <item name="drinkBoomstickBrew">
+      <property name="Extends" value="hgBB_Level5"/>
+      <property name="EconomicValue" value="40000"/>
+      <property name="DisplayType" value="drinkBoomstickBrew"/>
+      <property name="UnlockedBy" value="perkBattlefieldBarista,drinkBoomstickBrewRecipe"/>
+
+      <effect_group tiered="false" name="Drink Tier 5">
+        <!-- The core effects channel Ash's combat prowess -->
+        <display_value name="dGroovyPower" value="1"/>
+
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message_key="drinkShopSmartTooltip"/>
+
+        <!-- Base caffeine setup with no dehydration (legendary perk) -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="900"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDuration" operation="add" value="300"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineStaminaRegen" operation="set" value="1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDehydration" operation="set" value="0"/>
+
+        <!-- Shop Smart buff setup -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffGroovyDuration" operation="add" value="300"/>
+
+        <!-- Add the buffs -->
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffCaffeine,buffGroovy"/>
+      </effect_group>
+    </item>
+
     <!-- ======================================================== -->
     <!-- ================ GRANDPA'S LAST STAND ================== -->
     <!-- ======================================================== -->
@@ -2831,7 +2903,6 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkQuad" operation="set" value="1"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
       </effect_group>
-
     </item>
 
     <item name="drinkDragonsBreathEspressoRecipe">
@@ -2844,7 +2915,6 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkDragonsBreathEspresso" operation="set" value="1"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
       </effect_group>
-
     </item>
 
     <item name="drinkApexBrewRecipe">
@@ -2857,7 +2927,6 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkApexBrew" operation="set" value="1"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
       </effect_group>
-
     </item>
 
     <item name="drinkPhoenixFireLatteRecipe">
@@ -2870,7 +2939,18 @@
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkPhoenixFireLatte" operation="set" value="1"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
       </effect_group>
+    </item>
 
+    <item name="drinkBoomstickBrewRecipe">
+      <property name="Extends" value="hgBB_RecipeMain"/>
+      <property name="CustomIcon" value="drinkBoomstickBrew"/>
+      <property name="Unlocks" value="drinkBoomstickBrew"/>
+      <property name="EconomicValue" value="49999"/>
+
+      <effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="drinkBoomstickBrew" operation="set" value="0"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="49"/>
+      </effect_group>
     </item>
 
     <item name="drinkGrandpasLastStandRecipe">
