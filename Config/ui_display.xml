@@ -173,15 +173,6 @@
       <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
     </item_display_info>
 
-    <item_display_info display_type="drinkRolandsRoast" display_group="groupConsumables">
-      <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
-      <display_entry name="dGunDamage" title_key="statGunDamage" display_type="Percent"/>
-      <display_entry name="dHeadshotBonus" title_key="statHeadshotDamage" display_type="Percent"/>
-      <display_entry name="dRevolverBonus" title_key="statRevolverBonus" display_type="Percent"/>
-      <display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
-      <display_entry name="dDurationMax" title_key="statMaxDuration" display_type="Time"/>
-    </item_display_info>
-
     <item_display_info display_type="drinkNightmareNitroColdBrew" display_group="groupConsumables">
       <display_entry name="dStaminaRegen" title_key="statStaminaRegen" display_type="Percent"/>
       <display_entry name="dDehydration" title_key="statDehydration" display_type="Decimal1"/>
@@ -209,6 +200,14 @@
 
     <item_display_info display_type="drinkPhoenixFireLatte" display_group="groupConsumables">
       <display_entry name="dPhoenixFire" title_key="buffPhoenixFireNameShort" display_type="Percent"/>
+    </item_display_info>
+
+    <item_display_info display_type="drinkRolandsRoast" display_group="groupConsumables">
+      <display_entry name="dKatetPower" title_key="buffKatetNameShort" display_type="Percent"/>
+    </item_display_info>
+
+    <item_display_info display_type="drinkBoomstickBrew" display_group="groupConsumables">
+      <display_entry name="dGroovyPower" title_key="buffGroovyNameShort" display_type="Percent"/>
     </item_display_info>
 
     <item_display_info display_type="drinkGrandpasLastStand" display_group="groupConsumables">

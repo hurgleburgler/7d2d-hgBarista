@@ -20,6 +20,7 @@
     <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffPhoenixRebirth"/>
     <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffPhoenixFire"/>
     <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffGunslinger"/>
+    <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffGroovy"/>
     <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffGrandpasInfection"/>
     <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffGrandpasLegacy"/>
   </append>
@@ -732,7 +733,7 @@
       </effect_group>
     </buff>
 
-    <buff name="buffDragonsBreath" name_key="buffDragonsBreath" description_key="buffDragonsBreathDesc" icon="ui_game_symbol_fire" icon_color="255,0,0">
+    <buff name="buffDragonsBreath" name_key="buffDragonsBreath" description_key="buffDragonsBreathDesc" icon="ui_game_symbol_dragon">
       <stack_type value="replace"/>
       <duration value="0"/>
       <display_value value=".buffDragonsBreathDisplay"/>
@@ -792,7 +793,7 @@
       </effect_group>
     </buff>
 
-    <buff name="buffApexPeak" name_key="buffApexPeak" description_key="buffApexPeakDesc" icon="ui_game_symbol_perk" icon_color="132,0,155">
+    <buff name="buffApexPeak" name_key="buffApexPeak" description_key="buffApexPeakDesc" icon="ui_game_symbol_apex">
       <stack_type value="replace"/>
       <duration value="0"/>
       <display_value value=".buffApexPeakDisplay"/>
@@ -824,7 +825,7 @@
       <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffApexPeakDuration" operation="set" value="0"/>
     </buff>
 
-    <buff name="buffApexCrash" name_key="buffApexCrash" description_key="buffApexCrashDesc" icon="ui_game_symbol_fatigued" icon_color="127,187,34">
+    <buff name="buffApexCrash" name_key="buffApexCrash" description_key="buffApexCrashDesc" icon="ui_game_symbol_apex_crash">
       <stack_type value="replace"/>
       <duration value="300"/>
       <display_value value=".buffApexCrashDisplay"/>
@@ -841,7 +842,7 @@
       </effect_group>
     </buff>
 
-    <buff name="buffPhoenixFire" name_key="buffPhoenixFireNameShort" tooltip_key="buffPhoenixFireTooltip" description_key="drinkPhoenixFireLatteDesc" icon="ui_game_symbol_fire" icon_color="255,165,0">
+    <buff name="buffPhoenixFire" name_key="buffPhoenixFireNameShort" tooltip_key="buffPhoenixFireTooltip" description_key="drinkPhoenixFireLatteDesc" icon="ui_game_symbol_phoenix">
       <stack_type value="ignore"/>
       <display_value_key value="buffPhoenixFireNameShortSpace"/>
       <display_value value="xxx"/>
@@ -887,7 +888,7 @@
       </effect_group>
     </buff>
 
-    <buff name="buffPhoenixRebirth" name_key="buffPhoenixRebirth" tooltip_key="buffPhoenixRebirthTooltip" description_key="buffPhoenixRebirthDesc" icon="ui_game_symbol_fire" icon_color="0,255,0">
+    <buff name="buffPhoenixRebirth" name_key="buffPhoenixRebirth" tooltip_key="buffPhoenixRebirthTooltip" description_key="buffPhoenixRebirthDesc">
       <stack_type value="ignore"/>
       <duration value="5"/>
       <display_value_key value="buffPhoenixFireNameShortSpace"/>
@@ -970,13 +971,15 @@
       </effect_group>
     </buff>
 
-    <buff name="buffGunslinger" name_key="buffGunslingerName" description_key="buffGunslingerDesc" icon="ui_game_symbol_buff_gunslinger" icon_color="153,51,51">
+    <buff name="buffGunslinger" name_key="buffGunslingerName" description_key="buffGunslingerDesc" icon="ui_game_symbol_buff_gunslinger">
       <stack_type value="ignore"/>
       <duration value="0"/>
       <display_value value=".buffGunslingerDisplay"/>
       <display_value_format value="time"/>
 
       <effect_group name="Timer">
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDehydrate"/>
+
         <!-- Duration cap check -->
         <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffGunslingerDuration" operation="set" value="@$buffGunslingerDurationMax">
           <requirement name="CVarCompare" cvar="$buffGunslingerDuration" operation="GT" value="@$buffGunslingerDurationMax"/>
@@ -1048,13 +1051,15 @@
       </effect_group>
     </buff>
 
-    <buff name="buffGroovy" name_key="buffGroovyName" description_key="buffGroovyDesc" icon="ui_game_symbol_chainsaw" icon_color="255,0,0">
+    <buff name="buffGroovy" name_key="buffGroovyName" description_key="buffGroovyDesc" icon="ui_game_symbol_chainsaw">
       <stack_type value="ignore"/>
       <duration value="0"/>
       <display_value value=".buffGroovyDisplay"/>
       <display_value_format value="time"/>
 
       <effect_group>
+        <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDehydrate"/>
+
         <!-- Timer management -->
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffGroovyDuration" operation="subtract" value="@$MetabolismDuration"/>
         <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffGroovyDisplay" operation="set" value="@$buffGroovyDuration"/>

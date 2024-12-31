@@ -2415,13 +2415,7 @@
       <property name="UnlockedBy" value="perkBattlefieldBarista,drinkRolandsRoastRecipe"/>
 
       <effect_group tiered="false" name="Drink Tier 5">
-        <!-- The 6 displayed values -->
-        <display_value name="dStaminaRegen" value="1"/>
-        <display_value name="dGunDamage" value="2"/>
-        <display_value name="dHeadshotBonus" value="3"/>
-        <display_value name="dRevolverBonus" value="1"/>
-        <display_value name="dDuration" value="300"/>
-        <display_value name="dDurationMax" value="900"/>
+        <display_value name="dKatetPower" value="1"/>
 
         <!-- Caffeine buff setup -->
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCaffeineDurationMax" operation="set" value="900"/>
