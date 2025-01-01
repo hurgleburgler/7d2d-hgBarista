@@ -96,14 +96,14 @@
       </rect>
     </window>
 
-    <window name="windowToolsAntiqueCoffeeMachine_hgBB" width="228" height="121" panel="Right" cursor_area="true">
+    <window name="windowToolsAntiqueCoffeeMachine_hgBB" width="228" height="242" panel="Right" cursor_area="true">
       <panel style="header.panel">
         <sprite style="header.icon" sprite="ui_game_symbol_thirst"/>
         <label style="header.name" text="TOOLS" text_key="xuiTools"/>
       </panel>
 
-      <rect name="content" depth="0" pos="0,-46" height="150" disablefallthrough="true">
-        <grid name="inventory" rows="1" cols="4" pos="3,-3" cell_width="75" cell_height="75"
+      <rect name="content" depth="0" pos="0,-46" height="300" disablefallthrough="true">
+        <grid name="inventory" rows="2" cols="3" pos="3,-3" cell_width="75" cell_height="75"
               controller="WorkstationToolGrid" repeat_content="true"
               required_tools="toolForgeCrucible,resourceMetalPipe,meleeToolRepairT1ClawHammer,toolBeaker" required_tools_only="true">
           <item_stack controller="RequiredItemStack" name="0"/>
